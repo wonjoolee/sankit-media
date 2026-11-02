@@ -60,7 +60,7 @@ SANKIT MAGAZINE(@sankitmag) — "SKI · HIKE · OUTDOOR / 안목과 취향으로
 - 사고·부상·사망·소송·정치·선정적 주제는 다루지 않는다. 협찬·광고 콘텐츠는 자동 운영에서 만들지 않는다.
 
 ## 태그 (확인된 계정만)
-- @head_ski (HEAD), @atomic (Atomic). 그 외는 계정을 확실히 확인하지 못하면 태그하지 않는다(잘못된 계정 태그 금지).
+- @head_ski (HEAD), @atomic (Atomic), @garmin (Garmin), @lowa.outdoor (LOWA), @leki.ski.outdoor (LEKI). 그 외는 계정을 확실히 확인하지 못하면 태그하지 않는다(잘못된 계정 태그 금지).
 
 ## 운영 중지
 - 사용자가 멈추라고 하면 `queue/PAUSE` 파일을 만들어 푸시 → 게시가 즉시 멈춘다.
