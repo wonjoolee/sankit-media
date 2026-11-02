@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#ccc;font-family:'Noto Sans CJK KR','Noto Sans CJK JP',sans-serif;padding:40px;display:flex;flex-wrap:wrap;gap:40px;width:3600px}
+.card{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F4F2EC;color:#141615}
+.mono{font-family:'DejaVu Sans Mono',monospace}
+.wm{position:absolute;left:56px;top:56px;font-size:30px;font-weight:900;letter-spacing:10px;z-index:3}
+.wm i{font-style:normal;font-weight:300;letter-spacing:4px;margin-left:10px;font-size:.55em;vertical-align:middle}
+.kit{position:absolute;right:56px;top:62px;font-size:20px;letter-spacing:3px;z-index:3}
+.kick{position:absolute;left:56px;font-size:22px;letter-spacing:3px;color:#8a5521;font-weight:700}
+.head{position:absolute;left:56px;font-weight:800;letter-spacing:-1.5px;line-height:1.22}
+.body{position:absolute;font-size:36px;line-height:1.6;font-weight:500;letter-spacing:-.8px}
+.body b{font-weight:900}
+.foot{position:absolute;left:56px;right:56px;bottom:46px;display:flex;justify-content:space-between;font-size:19px;letter-spacing:2px;color:#666;border-top:2px solid #141615;padding-top:16px}
+.dark{background:#141615;color:#F4F2EC}
+.dark .foot{border-color:#F4F2EC;color:#9a9f9c}
+.dark .kick{color:#d9a441}
+/* 사진: 원본 비율 그대로, 위에 아무것도 얹지 않음 */
+.photo{position:absolute;display:block}
+.cred{position:absolute;font-size:15px;letter-spacing:2px;color:#8b8f8c}
+.ring{position:absolute;border:4px solid #141615;border-radius:50%;overflow:hidden;background:#F4F2EC}
+.tick{position:absolute;height:3px;background:#141615}
+.dark .tick{background:#F4F2EC}
+.call{position:absolute;font-size:20px;letter-spacing:2px;line-height:1.5}
+.spec{position:absolute;left:660px;right:56px}
+.spec div{border-top:2px solid #3a3d3b;padding:18px 0 20px}
+.spec small{display:block;font-size:17px;letter-spacing:3px;color:#9a9f9c}
+.spec b{display:block;font-family:'Noto Sans CJK KR',sans-serif;font-size:50px;font-weight:900;letter-spacing:-1px;line-height:1.15;margin-top:4px}
+.spec b span{font-size:24px;font-weight:500;margin-left:6px;letter-spacing:0}
+
+.full{position:absolute;left:0;top:0;width:1080px;object-fit:cover;display:block}
+.lens{position:absolute;border-radius:50%;border:5px solid #F4F2EC;background-repeat:no-repeat;box-shadow:0 0 0 2px rgba(0,0,0,.25)}
+.wmw .wm,.wmw .kit{color:#F4F2EC;text-shadow:0 1px 6px rgba(0,0,0,.35)}
+</style></head><body>
+<div class="card wmw" id="s1">
+<img class="full" src="img/gondola.jpg" style="height:900px;object-position:50% 35%">
+<div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 006</div>
+<div class="lens" style="left:740px;top:560px;width:280px;height:280px;background-image:url(img/gondola.jpg);background-size:3240px 4860px;background-position:-895px -4240px"></div>
+<div class="call mono" style="left:760px;top:850px;color:#141615;width:260px;text-align:center">110–140 CM</div>
+<div class="cred mono" style="left:56px;top:912px;color:#8b8f8c">PHOTO · SANKIT</div>
+<div class="kick" style="top:960px">LEKI WYLDBIRD VARIO TR</div>
+<div class="head" style="top:1004px;font-size:54px;right:56px">많은 폴이 있지만,<br>이것보다 편한 폴이 있었을까</div>
+<div class="foot mono"><span>GEAR / SKI</span><span>@SANKITMAG</span></div></div>
+<div class="card" id="s2"><div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 006 · 02/05</div>
+<div class="kick" style="top:200px">왜 이 폴</div>
+<div class="body" style="left:56px;width:520px;top:250px;font-size:40px">무엇보다<br><b>길이가 조절된다.</b><br><br>그리고 솔직히,<br><b>컬러가 가장<br>마음에 들었다.</b></div>
+<img class="photo" src="img/down.jpg" style="left:600px;top:140px;width:424px;height:565px;object-fit:cover">
+<div class="cred mono" style="right:56px;top:715px;color:#8b8f8c">PHOTO · SANKIT</div>
+<div class="body" style="left:56px;right:56px;top:830px;font-size:32px;color:#4a4f4c">리프트 위, 하이크 구간, 파우더. 110cm부터 140cm까지, 그날 설면에 맞춰 길이를 바꾼다. 폴 하나로 하루를 버티는 사람에게는 이게 제일 큰 차이다.</div>
+<div class="foot mono"><span>GEAR / SKI</span><span>@SANKITMAG</span></div></div>
+<div class="card dark" id="s3"><div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 006 · 03/05</div>
+<img class="photo" src="img/trigger.jpg" style="left:56px;top:140px;width:600px;height:800px;object-fit:cover">
+<div class="cred mono" style="left:56px;top:950px;color:#7f8481">PHOTO · SANKIT</div>
+<div class="kick" style="top:150px;left:690px">여기를 보세요 ①</div>
+<div class="body" style="left:690px;right:56px;top:200px;font-size:31px">트리거 3D<br>그립.<br><br>장갑을 낀 채<br><b>PUSH</b> 한 번이면<br>스트랩이<br>빠진다.</div>
+<div class="body" style="left:56px;right:56px;top:1010px;font-size:32px">리프트를 탈 때도, 넘어졌을 때도 손목이 폴에 묶여 있지 않다. 한 번 써 보면 일반 스트랩으로 돌아가기 어렵다.</div>
+<div class="foot mono"><span>GEAR / SKI</span><span>@SANKITMAG</span></div></div>
+<div class="card" id="s4"><div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 006 · 04/05</div>
+<img class="photo" src="img/wyld.jpg" style="right:56px;top:140px;width:520px;height:780px;object-fit:cover;object-position:50% 70%">
+<div class="cred mono" style="right:56px;top:930px;color:#8b8f8c">PHOTO · SANKIT</div>
+<div class="kick" style="top:200px">여기를 보세요 ②</div>
+<div class="body" style="left:56px;width:420px;top:250px;font-size:33px"><b>네온 오렌지</b>에<br>형광 노랑 글씨.<br><br>흐린 날 하얀 설면에서<br>제일 먼저 눈에<br>들어온다.</div>
+<div class="tick" style="left:56px;top:700px;width:120px;background:#8a5521"></div>
+<div class="call mono" style="left:56px;top:722px;color:#4a4f4c">SPEED LOCK<br>HTS 6.5 · 16/14 MM</div>
+<div class="body" style="left:56px;right:56px;top:990px;font-size:32px">길이는 스피드 록으로 고정한다. 조절식인데 278g, 가볍다. 바스켓은 피스테용과 빅마운틴용 두 가지가 들어 있다.</div>
+<div class="foot mono"><span>GEAR / SKI</span><span>@SANKITMAG</span></div></div>
+<div class="card dark" id="s5"><div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 006 · 05/05</div>
+<div class="kick" style="top:200px">SANKIT NOTE</div>
+<div class="body" style="left:56px;right:56px;top:250px;font-size:40px;font-weight:300">폴은 스키에서 가장 덜 고민하고 사는 장비다. 그런데 하루 종일 손에 쥐고 있는 건 결국 폴이다. 길이를 바꿀 수 있고, 장갑 낀 채로 풀리고, 눈에 확 띄는 색. <b>편하다는 건 결국 이런 작은 것들의 합</b>이었다.</div>
+<div class="mono" style="position:absolute;left:56px;right:56px;top:880px;font-size:21px;line-height:2;color:#cfd2cf;border-top:2px solid #3a3d3b;padding-top:24px">
+110–140 cm 조절 · Speed Lock · HTS 6.5 알루미늄 16/14 mm<br>Trigger 3D ProG 그립 · 278 g · Cobra Alpine + Big Mountain 바스켓<br>€120 (독일 공식 판매가) · 국내가는 판매처 확인</div>
+<div class="mono" style="position:absolute;left:56px;right:56px;top:1130px;font-size:17px;color:#7f8481;line-height:1.7">SOURCE: LEKI (leki.com)<br>PHOTO: SANKIT · 직접 촬영</div>
+<div class="foot mono"><span>GEAR / SKI</span><span>@SANKITMAG</span></div></div></body></html>

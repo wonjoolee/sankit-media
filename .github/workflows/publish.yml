@@ -1,0 +1,45 @@
+name: SANKIT publish
+
+on:
+  schedule:
+    - cron: "30 22 * * *"   # 07:30 KST
+    - cron: "10 3 * * *"    # 12:10 KST
+    - cron: "0 12 * * *"    # 21:00 KST
+  workflow_dispatch:
+    inputs:
+      slot:
+        description: "slot 1/2/3 (비우면 현재 시간 기준)"
+        required: false
+      dry_run:
+        description: "1이면 게시하지 않고 확인만"
+        required: false
+        default: "0"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sankit-publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Publish queued post
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          SLOT: ${{ github.event.inputs.slot }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: python pipeline/run_slot.py
+      - name: Save posted record
+        run: |
+          git config user.name "SANKIT bot"
+          git config user.email "sankit-bot@users.noreply.github.com"
+          git add queue || true
+          git diff --cached --quiet || (git commit -m "posted $(TZ=Asia/Seoul date +%F-%H%M)" && git push)

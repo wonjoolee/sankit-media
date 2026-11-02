@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#ccc;font-family:'Noto Sans CJK KR','Noto Sans CJK JP',sans-serif;padding:40px;display:flex;flex-wrap:wrap;gap:40px;width:3600px}
+.card{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F4F2EC;color:#141615}
+.mono{font-family:'DejaVu Sans Mono',monospace}
+.wm{position:absolute;left:56px;top:56px;font-size:30px;font-weight:900;letter-spacing:10px;z-index:3}
+.wm i{font-style:normal;font-weight:300;letter-spacing:4px;margin-left:10px;font-size:.55em;vertical-align:middle}
+.kit{position:absolute;right:56px;top:62px;font-size:20px;letter-spacing:3px;z-index:3}
+.kick{position:absolute;left:56px;font-size:22px;letter-spacing:3px;color:#8a5521;font-weight:700}
+.head{position:absolute;left:56px;font-weight:800;letter-spacing:-1.5px;line-height:1.22}
+.body{position:absolute;font-size:36px;line-height:1.6;font-weight:500;letter-spacing:-.8px}
+.body b{font-weight:900}
+.foot{position:absolute;left:56px;right:56px;bottom:46px;display:flex;justify-content:space-between;font-size:19px;letter-spacing:2px;color:#666;border-top:2px solid #141615;padding-top:16px}
+.dark{background:#141615;color:#F4F2EC}
+.dark .foot{border-color:#F4F2EC;color:#9a9f9c}
+.dark .kick{color:#d9a441}
+/* 사진: 원본 비율 그대로, 위에 아무것도 얹지 않음 */
+.photo{position:absolute;display:block}
+.cred{position:absolute;font-size:15px;letter-spacing:2px;color:#8b8f8c}
+.ring{position:absolute;border:4px solid #141615;border-radius:50%;overflow:hidden;background:#F4F2EC}
+.tick{position:absolute;height:3px;background:#141615}
+.dark .tick{background:#F4F2EC}
+.call{position:absolute;font-size:20px;letter-spacing:2px;line-height:1.5}
+.spec{position:absolute;left:660px;right:56px}
+.spec div{border-top:2px solid #3a3d3b;padding:18px 0 20px}
+.spec small{display:block;font-size:17px;letter-spacing:3px;color:#9a9f9c}
+.spec b{display:block;font-family:'Noto Sans CJK KR',sans-serif;font-size:50px;font-weight:900;letter-spacing:-1px;line-height:1.15;margin-top:4px}
+.spec b span{font-size:24px;font-weight:500;margin-left:6px;letter-spacing:0}
+</style></head><body>
+<div class="card" id="s1"><div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 004</div>
+<img class="photo" src="img/life.jpg" style="left:0;top:130px;width:1080px;height:720px">
+<div class="cred mono" style="right:56px;top:862px">PHOTO · ATOMIC</div>
+<div class="kick" style="top:914px">ATOMIC NEXUS</div>
+<div class="head" style="top:958px;font-size:56px;right:320px">잘 들어가면 약하다는<br>공식을 깨려는 부츠</div>
+<div class="ring" style="left:800px;top:906px;width:224px;height:224px"><div style="position:absolute;left:0;right:0;top:44px;text-align:center;font-size:118px;font-weight:900;letter-spacing:-6px;line-height:1">101</div></div>
+<div class="call mono" style="left:800px;top:1144px;width:224px;text-align:center">MM LAST</div>
+<div class="body" style="left:56px;right:320px;top:1112px;font-size:28px;color:#4a4f4c">쉬운 진입과 오버랩 부츠의 힘을<br>한 몸에 담겠다는 아토믹의 새 부츠</div>
+<div class="foot mono"><span>GEAR / SKI</span><span>@SANKITMAG</span></div></div>
+<div class="card" id="s2"><div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 004 · 02/05</div>
+<div class="kick" style="top:200px">왜 지금</div>
+<div class="body" style="left:56px;right:56px;top:250px;font-size:42px">부츠 가게에서 제일 많이 듣는 말.<br><b>"신는 게 너무 힘들어요."</b><br><br>편한 부츠는 내려올 때 힘이 빠지고,<br>잘 타는 부츠는 아침마다 전쟁이다.</div>
+<img class="photo" src="img/action.jpg" style="left:584px;top:720px;width:440px;height:550px">
+<div class="tick" style="left:400px;top:836px;width:170px"></div>
+<div class="call mono" style="left:56px;top:800px;color:#141615">"EASY IN.<br>POWERFUL DOWN."</div>
+<div class="body" style="left:56px;width:500px;top:900px;font-size:30px;color:#4a4f4c">아토믹이 내건 문구.<br>수십 년 묵은 이 타협을<br>끝내겠다는 선언이다.</div>
+<div class="cred mono" style="left:56px;top:1170px">PHOTO · ATOMIC</div>
+<div class="foot mono" style="right:520px"><span>GEAR / SKI</span><span>@SANKITMAG</span></div></div>
+<div class="card dark" id="s3"><div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 004 · 03/05</div>
+<img class="photo" src="img/boot.jpg" style="left:56px;top:140px;width:463px;height:840px">
+<div class="cred mono" style="left:56px;top:990px">PHOTO · ATOMIC</div>
+<div class="spec mono" style="top:150px;left:590px">
+<div><small>LAST · 120 BOA</small><b>101<span>mm</span></b></div>
+<div><small>LINEUP</small><b>7<span>models</span></b></div>
+<div><small>FIT</small><b style="font-size:40px">BOA + AFS</b></div>
+<div><small>ENTRY</small><b style="font-size:40px">QuickFlip</b></div></div>
+<div class="kick" style="top:1036px">여기를 보세요 ①</div>
+<div class="body" style="left:56px;right:56px;top:1076px;font-size:32px">핵심은 <b>넥스텝(NexStep) 구조</b>. 앞을 겹쳐 잠그는 오버랩 부츠의 힘은 그대로 두고, 신고 벗는 길만 새로 냈다.</div>
+<div class="foot mono"><span>GEAR / SKI</span><span>@SANKITMAG</span></div></div>
+<div class="card" id="s4"><div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 004 · 04/05</div>
+<img class="photo" src="img/lever.jpg" style="right:56px;top:140px;width:520px;height:693px">
+<div class="cred mono" style="right:56px;top:843px">PHOTO · ATOMIC</div>
+<div class="kick" style="top:200px">여기를 보세요 ②</div>
+<div class="body" style="left:56px;width:430px;top:250px;font-size:32px">레버 하나로 연다.<br><b>퀵플립 레버</b>로 들어가고<br>나오고, 발목 버클은<br>한 번 맞추면 하루 종일<br>그대로다.</div>
+<div class="tick" style="left:56px;top:640px;width:120px;background:#8a5521"></div>
+<div class="call mono" style="left:56px;top:662px;color:#4a4f4c">QUICKFLIP LEVER<br>SET-AND-FORGET</div>
+<div class="body" style="left:56px;right:56px;top:930px;font-size:32px">안쪽은 발 모양을 기억하는 <b>미믹 플래티넘 라이너</b>. 편의 장치를 이만큼 붙이고도 '단단함'을 지켰는지가 관건이다.</div>
+<div class="foot mono"><span>GEAR / SKI</span><span>@SANKITMAG</span></div></div>
+<div class="card dark" id="s5"><div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 004 · 05/05</div>
+<div class="kick" style="top:200px">SANKIT NOTE</div>
+<div class="body" style="left:56px;right:56px;top:250px;font-size:40px;font-weight:300">부츠를 고를 때 마지막에 남는 질문은 늘 같았다. "이걸 매일 아침 신을 수 있나." 올겨울 부츠의 키워드는 얼마나 단단한가보다 <b>얼마나 쉽게 신고 벗는가</b>다. 넥서스가 답이 될지는 직접 신어 봐야 안다.</div>
+<div class="mono" style="position:absolute;left:56px;right:56px;top:860px;font-size:21px;line-height:2;color:#cfd2cf;border-top:2px solid #3a3d3b;padding-top:24px">
+Nexus 130 BOA · 120 BOA · 110 BOA · 110 · 105 BOA W · 95 BOA W · 95 W<br>NexStep · QuickFlip Lever · BOA · AFS Cuff · Mimic Platinum Liner<br>가격·출시일 미공개 · 국내 출시 미확인</div>
+<div class="mono" style="position:absolute;left:56px;right:56px;top:1130px;font-size:17px;color:#7f8481;line-height:1.7">SOURCE: Atomic (press.atomic.com)<br>PHOTO: Atomic · Media Use, 원본 비변형</div>
+<div class="foot mono"><span>GEAR / SKI</span><span>@SANKITMAG</span></div></div></body></html>

@@ -1,0 +1,143 @@
+"""GitHub Actions에서 실행: 현재 KST 시간대의 queue 게시물을 인스타그램에 게시.
+
+queue/YYYY-MM-DD/slotN/
+  post.json   {"caption": "...", "tags": [{"username":"head_ski","x":0.5,"y":0.4}], "reel_caption": "..."}
+  01.jpg..05.jpg   카드 (1080x1350)
+  reel.mp4         릴스 (1080x1920, 선택)
+  posted.json      게시 후 자동 생성 (중복 게시 방지)
+
+환경변수: IG_TOKEN, IG_USER_ID, GITHUB_REPOSITORY, DRY_RUN(선택), SLOT(선택: 1/2/3 강제)
+queue/PAUSE 파일이 있으면 아무것도 게시하지 않음.
+"""
+import json, os, sys, time, datetime, urllib.request, urllib.parse
+
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+KST = datetime.timezone(datetime.timedelta(hours=9))
+now = datetime.datetime.now(KST)
+REPO = os.environ.get("GITHUB_REPOSITORY", "wonjoolee/sankit-media")
+RAW = f"https://raw.githubusercontent.com/{REPO}/main/"
+DRY = os.environ.get("DRY_RUN") == "1"
+T = os.environ.get("IG_TOKEN", "")
+U = os.environ.get("IG_USER_ID", "")
+B = "https://graph.facebook.com/v21.0"
+
+
+def slot_now():
+    if os.environ.get("SLOT"):
+        return int(os.environ["SLOT"])
+    h = now.hour
+    return 1 if h < 10 else (2 if h < 16 else 3)
+
+
+def call(method, path, params):
+    params = dict(params, access_token=T)
+    data = urllib.parse.urlencode(params).encode()
+    if method == "GET":
+        req = urllib.request.Request(B + path + "?" + data.decode())
+    else:
+        req = urllib.request.Request(B + path, data=data, method="POST")
+    try:
+        with urllib.request.urlopen(req, timeout=90) as r:
+            return json.load(r)
+    except urllib.error.HTTPError as e:
+        try:
+            return {"error": json.load(e).get("error")}
+        except Exception:
+            return {"error": str(e)}
+
+
+def wait(cid, tries=60, gap=5):
+    s = {}
+    for _ in range(tries):
+        s = call("GET", "/" + cid, {"fields": "status_code,status"})
+        if s.get("status_code") in ("FINISHED", "ERROR", "EXPIRED"):
+            return s
+        time.sleep(gap)
+    return s
+
+
+def permalink(mid):
+    return call("GET", "/" + mid, {"fields": "permalink"}).get("permalink")
+
+
+def carousel(rel, post):
+    imgs = sorted(f for f in os.listdir(os.path.join(ROOT, rel)) if f.endswith(".jpg"))[:10]
+    kids = []
+    for i, f in enumerate(imgs):
+        p = {"image_url": RAW + rel + "/" + f, "is_carousel_item": "true"}
+        if i == 0 and post.get("tags"):
+            p["user_tags"] = json.dumps(post["tags"])
+        r = call("POST", f"/{U}/media", p)
+        if "error" in r and "user_tags" in p:
+            print("tag failed, retry without tag:", r["error"])
+            p.pop("user_tags")
+            r = call("POST", f"/{U}/media", p)
+        if "error" in r:
+            raise SystemExit(f"child error {f}: {r}")
+        s = wait(r["id"], 30, 3)
+        if s.get("status_code") != "FINISHED":
+            raise SystemExit(f"child not finished {f}: {s}")
+        kids.append(r["id"])
+    r = call("POST", f"/{U}/media", {"media_type": "CAROUSEL", "children": ",".join(kids), "caption": post["caption"]})
+    if "error" in r:
+        raise SystemExit(f"carousel error: {r}")
+    s = wait(r["id"], 30, 3)
+    if s.get("status_code") != "FINISHED":
+        raise SystemExit(f"carousel not finished: {s}")
+    p = call("POST", f"/{U}/media_publish", {"creation_id": r["id"]})
+    if "error" in p:
+        raise SystemExit(f"publish error: {p}")
+    return p["id"], permalink(p["id"])
+
+
+def reel(rel, post):
+    r = call("POST", f"/{U}/media", {"media_type": "REELS", "video_url": RAW + rel + "/reel.mp4",
+                                     "caption": post.get("reel_caption") or post["caption"], "share_to_feed": "true"})
+    if "error" in r:
+        raise SystemExit(f"reel error: {r}")
+    s = wait(r["id"])
+    if s.get("status_code") != "FINISHED":
+        raise SystemExit(f"reel not finished: {s}")
+    p = call("POST", f"/{U}/media_publish", {"creation_id": r["id"]})
+    if "error" in p:
+        raise SystemExit(f"reel publish error: {p}")
+    return p["id"], permalink(p["id"])
+
+
+def main():
+    if os.path.exists(os.path.join(ROOT, "queue", "PAUSE")):
+        print("PAUSED: queue/PAUSE exists")
+        return
+    slot = slot_now()
+    rel = f"queue/{now:%Y-%m-%d}/slot{slot}"
+    d = os.path.join(ROOT, rel)
+    print("KST", now.isoformat(), "slot", slot, rel)
+    if not os.path.isdir(d) or not os.path.exists(os.path.join(d, "post.json")):
+        print("nothing queued")
+        return
+    if os.path.exists(os.path.join(d, "posted.json")):
+        print("already posted")
+        return
+    post = json.load(open(os.path.join(d, "post.json"), encoding="utf-8"))
+    if DRY:
+        imgs = [f for f in os.listdir(d) if f.endswith(".jpg")]
+        print("DRY RUN ok:", len(imgs), "cards, reel:", os.path.exists(os.path.join(d, "reel.mp4")))
+        print(post["caption"][:200])
+        return
+    if not (T and U):
+        raise SystemExit("IG_TOKEN / IG_USER_ID secrets missing")
+    out = {"slot": slot, "posted_at": datetime.datetime.now(KST).isoformat()}
+    out["carousel_id"], out["carousel_url"] = carousel(rel, post)
+    print("carousel:", out["carousel_url"])
+    if os.path.exists(os.path.join(d, "reel.mp4")):
+        try:
+            out["reel_id"], out["reel_url"] = reel(rel, post)
+            print("reel:", out["reel_url"])
+        except SystemExit as e:
+            out["reel_error"] = str(e)
+            print("reel failed:", e)
+    json.dump(out, open(os.path.join(d, "posted.json"), "w"), ensure_ascii=False, indent=1)
+
+
+if __name__ == "__main__":
+    main()

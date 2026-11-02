@@ -1,0 +1,66 @@
+# SANKIT 매일 제작 플레이북
+
+SANKIT MAGAZINE(@sankitmag) — "SKI · HIKE · OUTDOOR / 안목과 취향으로 고른 장비, 직접 써 보고 가 본 곳을 소개합니다."
+운영자: 이원주(Joo). 2026-11-04 ~ 2026-12-03 완전 자동 운영(사용자 지시).
+
+## 하루 일과 (예약 작업이 매일 05:30 KST에 실행)
+1. 오늘 날짜(KST)를 확인한다. `queue/PAUSE`가 있으면 아무것도 만들지 않고 종료.
+2. 기사 후보를 찾는다(아래 출처). 최근 7일 안의 소식 우선. 이미 다룬 주제는 `queue/` 과거 폴더와 `pipeline/LOG.md`로 확인해 중복 금지.
+3. 3개를 고른다: 슬롯1(07:30 출근길, 장비 신제품), 슬롯2(12:10 점심, 레이스·소식형), 슬롯3(21:00 퇴근 후, 생각할 거리·여행·시즌). 분야는 스키/산·의류/자전거/캠핑을 섞는다.
+4. 각 기사마다 `queue/YYYY-MM-DD/slotN/`에 아래를 만든다:
+   - 카드 5장 `01.jpg`~`05.jpg` (1080×1350) — `pipeline/render.js` + `pipeline/to_jpg.py`
+   - 릴스 `reel.mp4` — `pipeline/reel.py` (사진 3~5장, 15~20초, 무음)
+   - `post.json` — `{"caption": "...", "reel_caption": "...", "tags": [...]}`
+   - 작업용 html·이미지 원본은 `work/`에 두지 말고 세션 임시 폴더에 둔다(저장소에는 결과물만).
+5. 카드 이미지와 영상은 반드시 눈으로 확인(미리보기)한 뒤 커밋·푸시한다. 푸시는 그날 07:00 KST 전까지.
+6. `pipeline/LOG.md`에 한 줄씩 추가: 날짜, 슬롯, KIT 번호, 제목, 출처 URL.
+7. 게시는 GitHub Actions(`.github/workflows/publish.yml`)가 07:30/12:10/21:00에 자동으로 한다. 세션이 직접 게시하지 않는다.
+8. 마지막에 사용자에게 오늘 3개 요약(제목, 게시 시간, 출처)을 한국어로 짧게 보고한다.
+
+## KIT 번호
+`pipeline/LOG.md`의 마지막 KIT 번호 + 1부터 이어 붙인다(3자리, 예: KIT 009).
+
+## 출처 (이미지 사용 가능 순)
+- 공개 프레스룸(바로 다운로드, 라이선스 'Media Use' = 보도 목적·원본 비변형·출처 표기):
+  - HEAD: https://www.mynewsdesk.com/head (이미지 원본: mnd-assets.mynewsdesk.com/image/upload/fl_attachment/<id>)
+  - Atomic: https://press.atomic.com/
+  - Rab(Equip): https://www.mynewsdesk.com/com/equip-outdoor-technologies-ltd
+  - LOWA: https://lowa.com/en/experience-lowa/press (ZIP: media.lowa.de)
+  - Garmin: https://www.garmin.com/en-US/newsroom/ (이미지: res.garmin.com, s34181.pcdn.co)
+- 뉴스·리뷰(사실 확인용, 이미지 사용 금지): GearJunkie, POWDER, Freeskier, skiracing.com, 국내 언론
+- 국내 스키장·시즌 소식: 리조트 공지·보도(사실만 인용)
+- 쇼핑몰·매거진·SNS의 사진은 절대 쓰지 않는다. 이미지 없는 기사는 글자 카드(숫자 루페) 3장 + 프레스 사진 최소 2장이 확보될 때만 진행. 2장 미만이면 그 주제는 버리고 다른 주제로.
+
+## 카드 형식 (B-3 루페)
+- 기준 예시: `pipeline/assets/example_press_kit.html`(프레스 사진), `pipeline/assets/example_own_photo_kit.html`(직접 찍은 사진). 공통 CSS: `pipeline/assets/card_head.html`.
+- 5장 구성: 01 표지(사진 + 제목 + 숫자 루페) / 02 왜 지금 / 03 여기를 보세요 ①(숫자·구조) / 04 여기를 보세요 ② / 05 SANKIT NOTE(관점 + 사양 + SOURCE/PHOTO).
+- 상단 `SANKIT 산킷` 워드마크, `KIT 0NN · 0N/05`, 하단 `분야 / 세부 · @SANKITMAG`.
+- 색: 바탕 #F4F2EC, 먹 #141615, 키커 #8a5521, 다크 카드 키커 #d9a441.
+- **프레스 사진: 원본 비율 그대로, 자르기·확대·위에 글자/선/원 얹기 금지.** 루페는 사진 밖 숫자/단어에만. 사진마다 `PHOTO · 브랜드명`.
+- 직접 찍은 사진(사용자 제공)만 자르기·사진 위 루페 허용.
+- 한 카드 안 글자는 짧게. 줄바꿈이 어색하면 `<br>`로 직접 끊는다. 렌더 후 반드시 확인.
+- 디자인 원칙: 장식용 원·도형 금지, 이유 없는 빈칸 채우기 문구 금지, 감성 과잉 금지.
+
+## 릴스
+- `pipeline/reel.py config.json out.mp4` — config: `{"mode":"press"|"own","credit":"PHOTO · 브랜드  ·  @SANKITMAG","scenes":[{"img":...,"sec":3.6,"kick":"...","lines":["줄1","줄2"]}]}`
+- 프레스 사진은 mode "press"(원본 비율 그대로). 무음. 끝에 로고 엔딩 자동.
+- reel_caption은 2~3문장 + "자세한 이야기는 피드의 KIT 0NN에서." + 해시태그.
+
+## 글쓰기 (운영자 말투)
+- 한국어 평서체 반말 문장("~다."), 짧고 담백하게. 블로그 funtrain 말투: 직접 겪은 사람의 시선, 과장 없이 솔직한 한마디.
+- 뉴스 받아쓰기 금지. 반드시 SANKIT의 관점 한 줄(SANKIT NOTE): "왜 이게 흥미로운가".
+- 모든 숫자·날짜·가격·결과는 출처에서 확인한 것만. 확인 못 하면 쓰지 않거나 "미공개/미확인"으로.
+- 가격: 해외가는 "(독일/미국 판매가)" 명시, 국내 출시·가격은 확인된 경우만.
+- 캡션 구조: `KIT 0NN · 영문 제목` / 한 줄 제목 / 본문 2~3단락 / 사양 줄 / `Photo: 브랜드` / 태그 / 해시태그 8~10개(#SANKIT #산킷 포함).
+
+## 이해관계·민감 브랜드 (필수)
+- 운영자는 메드아웃도어(LEKI, LOWA, ORTOVOX 국내 수입)와 케슬레(Kästle) 한국 마케팅 컨설팅 관계가 있다. 이 브랜드들을 다루면 캡션 첫 줄에 "OOO 국내 수입사(메드아웃도어)와 업무 관계가 있음을 밝힙니다." 를 넣는다. 케슬레는 "케슬레 한국 마케팅에 참여하고 있음을 밝힙니다."
+- 케슬레·메드아웃도어 브랜드와 경쟁하는 브랜드(Stöckli, Völkl, Atomic, HEAD, Black Diamond, 탄탄스틱 등)는 사실 위주로 다루고 깎아내리거나 비교하지 않는다. 케슬레를 오가사카와 비교하지 않는다.
+- 같은 날 3개 중 같은 브랜드 2개 이상 금지. 한 주에 같은 브랜드 3회 이상 금지.
+- 사고·부상·사망·소송·정치·선정적 주제는 다루지 않는다. 협찬·광고 콘텐츠는 자동 운영에서 만들지 않는다.
+
+## 태그 (확인된 계정만)
+- @head_ski (HEAD), @atomic (Atomic). 그 외는 계정을 확실히 확인하지 못하면 태그하지 않는다(잘못된 계정 태그 금지).
+
+## 운영 중지
+- 사용자가 멈추라고 하면 `queue/PAUSE` 파일을 만들어 푸시 → 게시가 즉시 멈춘다.
