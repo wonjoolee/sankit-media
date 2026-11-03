@@ -43,6 +43,7 @@ SANKIT MAGAZINE(@sankitmag) — "SKI · HIKE · OUTDOOR / 안목과 취향으로
 - 디자인 원칙: 장식용 원·도형 금지, 이유 없는 빈칸 채우기 문구 금지, 감성 과잉 금지.
 
 ## 릴스
+- 게시할 때 릴스 영상이 스토리로도 자동 게시된다(운영자 지시, 2026-11-03). 스토리엔 캡션·링크가 붙지 않으므로 릴스 마지막 장면에 "피드의 KIT 0NN"처럼 어디서 더 볼지 보이게 한다.
 - `pipeline/reel.py config.json out.mp4` — config: `{"mode":"press"|"own","credit":"PHOTO · 브랜드  ·  @SANKITMAG","scenes":[{"img":...,"sec":3.6,"kick":"...","lines":["줄1","줄2"]}]}`
 - 프레스 사진은 mode "press"(원본 비율 그대로). 무음. 끝에 로고 엔딩 자동.
 - reel_caption은 2~3문장 + "자세한 이야기는 피드의 KIT 0NN에서." + 해시태그.
