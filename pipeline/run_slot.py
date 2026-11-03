@@ -22,17 +22,20 @@ U = os.environ.get("IG_USER_ID", "")
 B = "https://graph.facebook.com/v21.0"
 
 
+CRON_SLOT = {"30 22 * * *": 1, "0 1 * * *": 4, "10 3 * * *": 2, "0 9 * * *": 5, "0 12 * * *": 3}
+WINDOWS = [[1, 7, 10], [4, 10, 12], [2, 12, 18], [5, 18, 21], [3, 21, 24]]  # [slot, from_hour, to_hour_exclusive]
+
+
 def slot_now():
+    sched = os.environ.get("SCHEDULE", "").strip()
+    if sched in CRON_SLOT:
+        return CRON_SLOT[sched]
     if os.environ.get("SLOT"):
         return int(os.environ["SLOT"])
     h = now.hour
-    # 예약 시간대에만 게시 (GitHub 예약 실행이 늦어질 수 있어 뒤쪽으로 여유를 둠)
-    if 7 <= h < 12:
-        return 1
-    if 12 <= h < 18:
-        return 2
-    if 20 <= h <= 23:
-        return 3
+    for sl, a, b in WINDOWS:
+        if a <= h < b:
+            return sl
     return 0
 
 
@@ -112,8 +115,15 @@ def reel(rel, post):
 
 
 def story(rel):
-    """릴스 영상(9:16)을 스토리로도 게시. 스토리에는 캡션·링크가 붙지 않는다."""
-    r = call("POST", f"/{U}/media", {"media_type": "STORIES", "video_url": RAW + rel + "/reel.mp4"})
+    """스토리 게시: story.jpg(1080x1920) > reel.mp4 > 01.jpg 순서로 있는 것을 쓴다. 캡션·링크는 붙지 않는다."""
+    d = os.path.join(ROOT, rel)
+    if os.path.exists(os.path.join(d, "story.jpg")):
+        params = {"media_type": "STORIES", "image_url": RAW + rel + "/story.jpg"}
+    elif os.path.exists(os.path.join(d, "reel.mp4")):
+        params = {"media_type": "STORIES", "video_url": RAW + rel + "/reel.mp4"}
+    else:
+        params = {"media_type": "STORIES", "image_url": RAW + rel + "/01.jpg"}
+    r = call("POST", f"/{U}/media", params)
     if "error" in r:
         raise SystemExit(f"story error: {r}")
     s = wait(r["id"])
@@ -160,13 +170,13 @@ def main():
         except SystemExit as e:
             out["reel_error"] = str(e)
             print("reel failed:", e)
-        if os.environ.get("NO_STORY") != "1":
-            try:
-                out["story_id"] = story(rel)
-                print("story:", out["story_id"])
-            except SystemExit as e:
-                out["story_error"] = str(e)
-                print("story failed:", e)
+    if os.environ.get("NO_STORY") != "1":
+        try:
+            out["story_id"] = story(rel)
+            print("story:", out["story_id"])
+        except SystemExit as e:
+            out["story_error"] = str(e)
+            print("story failed:", e)
     json.dump(out, open(os.path.join(d, "posted.json"), "w"), ensure_ascii=False, indent=1)
 
 
