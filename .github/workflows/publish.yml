@@ -2,11 +2,7 @@ name: SANKIT publish
 
 on:
   schedule:
-    - cron: "30 22 * * *"
-    - cron: "0 1 * * *"
-    - cron: "10 3 * * *"
-    - cron: "0 9 * * *"
-    - cron: "0 12 * * *"
+    - cron: "*/15 22-23,0-14 * * *"   # 07:00~23:59 KST, 15분마다 밀린 게시 확인
   workflow_dispatch:
     inputs:
       slot:
@@ -38,7 +34,6 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           SLOT: ${{ github.event.inputs.slot }}
           DRY_RUN: ${{ github.event.inputs.dry_run }}
-          SCHEDULE: ${{ github.event.schedule }}
         run: python pipeline/run_slot.py
       - name: Save posted record
         run: |

@@ -22,20 +22,21 @@ U = os.environ.get("IG_USER_ID", "")
 B = "https://graph.facebook.com/v21.0"
 
 
-CRON_SLOT = {"30 22 * * *": 1, "0 1 * * *": 4, "10 3 * * *": 2, "0 9 * * *": 5, "0 12 * * *": 3}
-WINDOWS = [[1, 7, 10], [4, 10, 12], [2, 12, 18], [5, 18, 21], [3, 21, 24]]  # [slot, from_hour, to_hour_exclusive]
+SLOT_TIMES = {"1": "07:30", "4": "10:00", "2": "12:10", "5": "18:00", "3": "21:00"}  # 슬롯별 게시 시각(KST)
 
 
 def slot_now():
-    sched = os.environ.get("SCHEDULE", "").strip()
-    if sched in CRON_SLOT:
-        return CRON_SLOT[sched]
+    """수동 실행이면 SLOT 값. 예약 실행이면 '오늘 시각이 지났는데 아직 안 올라간' 가장 이른 슬롯 하나."""
     if os.environ.get("SLOT"):
         return int(os.environ["SLOT"])
-    h = now.hour
-    for sl, a, b in WINDOWS:
-        if a <= h < b:
-            return sl
+    hm = now.strftime("%H:%M")
+    day = os.path.join(ROOT, "queue", f"{now:%Y-%m-%d}")
+    for sl, t in sorted(SLOT_TIMES.items(), key=lambda kv: kv[1]):
+        if t > hm:
+            break
+        d = os.path.join(day, f"slot{sl}")
+        if os.path.exists(os.path.join(d, "post.json")) and not os.path.exists(os.path.join(d, "posted.json")):
+            return int(sl)
     return 0
 
 
@@ -141,7 +142,7 @@ def main():
         return
     slot = slot_now()
     if slot == 0:
-        print("KST", now.isoformat(), "outside posting windows — nothing to do")
+        print("KST", now.isoformat(), "nothing due")
         return
     rel = f"queue/{now:%Y-%m-%d}/slot{slot}"
     d = os.path.join(ROOT, rel)
