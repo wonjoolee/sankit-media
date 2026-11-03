@@ -89,6 +89,11 @@ SANKIT MAGAZINE(@sankitmag) — "SKI · HIKE · OUTDOOR / 안목과 취향으로
 - 사고·부상·사망·소송·정치·선정적 주제는 다루지 않는다. 협찬·광고 콘텐츠는 자동 운영에서 만들지 않는다.
 
 ## 태그 (확인된 계정만)
+- **브랜드를 소개할 때는 본사 계정과 국내 수입사(또는 국내 전개사의 한국 공식 계정)를 반드시 함께 태그한다(운영자 지시, 2026-11-03).**
+  - 사진 태그(post.json `tags`)에 둘 다 넣고, 캡션 태그 줄에도 `@본사 @국내계정`을 함께 쓴다.
+  - 캡션 사양 줄 끝에 `국내 수입: 회사명`을 적는다. 국내 출시 확인 결과와 같은 근거(한국 공식몰·수입사 공지)로 수입사를 확인한다.
+  - 수입사 인스타그램 계정은 수입사 공식 웹사이트의 링크로 확인된 것만 태그한다. 확인 못 하면 캡션에 회사명만 적고, `pipeline/LOG.md` 그 줄 끝에 `수입사 계정 확인 필요: 회사명`을 남긴다(운영자가 확인 후 아래 목록에 추가).
+  - 확인된 국내 계정: Arc'teryx → @arcteryxkorea · Salomon → @salomon_kr · Garmin → @garmin_korea · Helinox → @helinox_kr · 코오롱스포츠 → @_kolonsport · 아이더 → @eider.official
 - @head_ski (HEAD), @atomic (Atomic), @garmin (Garmin), @lowa.outdoor (LOWA), @leki.ski.outdoor (LEKI).
 - 한국 공식 계정(공식 사이트 링크로 확인): @arcteryxkorea, @salomon_kr, @garmin_korea, @helinox_kr, @_kolonsport, @eider.official, @high1_resort, @alpensia_official. 국내 출시·국내 행사·국내 스키장 소식이면 한국 계정을 함께 태그한다. 그 외는 계정을 확실히 확인하지 못하면 태그하지 않는다(잘못된 계정 태그 금지).
 
