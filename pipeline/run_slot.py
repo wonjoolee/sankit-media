@@ -26,7 +26,14 @@ def slot_now():
     if os.environ.get("SLOT"):
         return int(os.environ["SLOT"])
     h = now.hour
-    return 1 if h < 10 else (2 if h < 16 else 3)
+    # 예약 시간대에만 게시 (GitHub 예약 실행이 늦어질 수 있어 뒤쪽으로 여유를 둠)
+    if 7 <= h < 12:
+        return 1
+    if 12 <= h < 18:
+        return 2
+    if 20 <= h <= 23:
+        return 3
+    return 0
 
 
 def call(method, path, params):
@@ -109,6 +116,9 @@ def main():
         print("PAUSED: queue/PAUSE exists")
         return
     slot = slot_now()
+    if slot == 0:
+        print("KST", now.isoformat(), "outside posting windows — nothing to do")
+        return
     rel = f"queue/{now:%Y-%m-%d}/slot{slot}"
     d = os.path.join(ROOT, rel)
     print("KST", now.isoformat(), "slot", slot, rel)
