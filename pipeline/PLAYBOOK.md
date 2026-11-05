@@ -50,6 +50,13 @@ SANKIT MAGAZINE(@sankitmag) — "SKI · HIKE · OUTDOOR / 안목과 취향으로
 5. **WHY NOT KOREA·정보 가이드 완성도:** WHY NOT KOREA는 해외 화제 근거 숫자 1개 이상, 한국 현황 확인일, 이유 질문 2~3개, 독자 질문 CTA를 모두 갖춘다. 정보 가이드는 장소마다 높이·소요 시간·가는 법 3가지를 빠짐없이, 출처를 05에 적는다.
 6. **훅 테스트:** post.json에 `"type"`(product/news/brief/guide/weekly/whynot/owner)과 `"hook"`(question/number/contrast/statement)을 기록한다. 같은 type 안에서 날짜가 홀수면 question, 짝수면 number 훅을 우선 써서 번갈아 시험한다. 반응은 게시 실행 때마다 `pipeline/stats.csv`(좋아요·댓글)에 자동 기록된다. 매주 월요일 제작 세션은 보고 끝에 지난주 훅 유형별 평균 좋아요·댓글을 한 줄로 덧붙인다(팔로워가 적은 동안은 참고용).
 
+## 사진 모음 활용 (운영자 지시, 2026-11-05)
+- 스키장·산·지역 소식(단신, SANKIT WEEKLY, 정보 가이드, 시즌 기사)은 **첫 장에 사진을 넣는다.** 글자만 있는 첫 장은 사진을 못 찾았을 때만.
+- 찾는 순서: ① `assets/library/index.csv`에서 같은 장소(없으면 같은 지역·같은 계절) 운영자 사진 → ② 공공누리 제1유형 표시가 확인된 한국관광공사 사진(원문 페이지에서 유형 확인, 출처 표기, 원본 비율) → ③ 글자 카드.
+- 운영자 사진은 자르기·사진 위 루페 가능. 같은 사진을 7일 안에 다시 쓰지 않는다. 사진과 기사 장소가 다르면 쓰지 않는다(다른 스키장 사진으로 대신하지 않는다).
+- 공공누리 사진을 새로 받으면 `assets/library/`에 저장하고 index.csv에 출처·이용조건과 함께 기록한다.
+- 운영자가 사진을 보내면 대화 세션이 장소·날짜를 물어 index.csv에 기록한다.
+
 ## 카드 형식 (B-3 루페)
 - 기준 예시: `pipeline/assets/example_press_kit.html`(프레스 사진), `pipeline/assets/example_own_photo_kit.html`(직접 찍은 사진). 공통 CSS: `pipeline/assets/card_head.html`.
 - 5장 구성: 01 표지(사진 + 제목 + 숫자 루페) / 02 왜 지금 / 03 여기를 보세요 ①(숫자·구조) / 04 여기를 보세요 ② / 05 SANKIT NOTE(관점 + 사양 + SOURCE/PHOTO).
