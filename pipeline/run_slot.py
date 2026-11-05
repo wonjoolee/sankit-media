@@ -57,6 +57,18 @@ def call(method, path, params):
             return {"error": str(e)}
 
 
+def create(p, tries=3):
+    """미디어 컨테이너 생성. 인스타가 이미지를 못 받아 간 일시 오류(9004 등)는 잠시 뒤 다시 시도."""
+    r = {}
+    for i in range(tries):
+        r = create(p)
+        e = r.get("error") if isinstance(r.get("error"), dict) else None
+        if not e or not (e.get("code") == 9004 or e.get("is_transient")):
+            return r
+        time.sleep(15 * (i + 1))
+    return r
+
+
 def wait(cid, tries=60, gap=5):
     s = {}
     for _ in range(tries):
@@ -76,9 +88,9 @@ def single_image(rel, post, f):
     p = {"image_url": RAW + rel + "/" + f, "caption": post["caption"]}
     if post.get("tags"):
         p["user_tags"] = json.dumps(post["tags"])
-    r = call("POST", f"/{U}/media", p)
+    r = create(p)
     if "error" in r and "user_tags" in p:
-        p.pop("user_tags"); r = call("POST", f"/{U}/media", p)
+        p.pop("user_tags"); r = create(p)
     if "error" in r:
         raise SystemExit(f"image error: {r}")
     s = wait(r["id"], 30, 3)
@@ -99,11 +111,11 @@ def carousel(rel, post):
         p = {"image_url": RAW + rel + "/" + f, "is_carousel_item": "true"}
         if i == 0 and post.get("tags"):
             p["user_tags"] = json.dumps(post["tags"])
-        r = call("POST", f"/{U}/media", p)
+        r = create(p)
         if "error" in r and "user_tags" in p:
             print("tag failed, retry without tag:", r["error"])
             p.pop("user_tags")
-            r = call("POST", f"/{U}/media", p)
+            r = create(p)
         if "error" in r:
             raise SystemExit(f"child error {f}: {r}")
         s = wait(r["id"], 30, 3)
