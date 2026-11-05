@@ -9,7 +9,7 @@ queue/YYYY-MM-DD/slotN/
 환경변수: IG_TOKEN, IG_USER_ID, GITHUB_REPOSITORY, DRY_RUN(선택), SLOT(선택: 1/2/3 강제)
 queue/PAUSE 파일이 있으면 아무것도 게시하지 않음.
 """
-import json, os, sys, time, datetime, urllib.request, urllib.parse
+import json, os, re, sys, time, datetime, urllib.request, urllib.parse
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 KST = datetime.timezone(datetime.timedelta(hours=9))
@@ -71,8 +71,29 @@ def permalink(mid):
     return call("GET", "/" + mid, {"fields": "permalink"}).get("permalink")
 
 
+def single_image(rel, post, f):
+    """카드가 1장이면 캐러셀 대신 단일 이미지로 게시."""
+    p = {"image_url": RAW + rel + "/" + f, "caption": post["caption"]}
+    if post.get("tags"):
+        p["user_tags"] = json.dumps(post["tags"])
+    r = call("POST", f"/{U}/media", p)
+    if "error" in r and "user_tags" in p:
+        p.pop("user_tags"); r = call("POST", f"/{U}/media", p)
+    if "error" in r:
+        raise SystemExit(f"image error: {r}")
+    s = wait(r["id"], 30, 3)
+    if s.get("status_code") != "FINISHED":
+        raise SystemExit(f"image not finished: {s}")
+    pb = call("POST", f"/{U}/media_publish", {"creation_id": r["id"]})
+    if "error" in pb:
+        raise SystemExit(f"publish error: {pb}")
+    return pb["id"], permalink(pb["id"])
+
+
 def carousel(rel, post):
-    imgs = sorted(f for f in os.listdir(os.path.join(ROOT, rel)) if f.endswith(".jpg"))[:10]
+    imgs = sorted(f for f in os.listdir(os.path.join(ROOT, rel)) if re.fullmatch(r"\d\d\.jpg", f))[:10]
+    if len(imgs) == 1:
+        return single_image(rel, post, imgs[0])
     kids = []
     for i, f in enumerate(imgs):
         p = {"image_url": RAW + rel + "/" + f, "is_carousel_item": "true"}
