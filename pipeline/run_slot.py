@@ -61,7 +61,7 @@ def create(p, tries=3):
     """미디어 컨테이너 생성. 인스타가 이미지를 못 받아 간 일시 오류(9004 등)는 잠시 뒤 다시 시도."""
     r = {}
     for i in range(tries):
-        r = create(p)
+        r = call("POST", f"/{U}/media", p)
         e = r.get("error") if isinstance(r.get("error"), dict) else None
         if not e or not (e.get("code") == 9004 or e.get("is_transient")):
             return r
