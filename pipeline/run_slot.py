@@ -169,10 +169,30 @@ def story(rel):
     return p["id"]
 
 
+BLOCK_FILE = os.path.join(ROOT, "queue", "BLOCKED_UNTIL")
+
+
+def blocked(err):
+    """인스타의 활동 제한(action is blocked, 2207051 / code 4)이면 6시간 게시를 쉰다."""
+    t = str(err)
+    if "2207051" in t or "action is blocked" in t or "request limit reached" in t:
+        until = (datetime.datetime.now(KST) + datetime.timedelta(hours=6)).isoformat()
+        open(BLOCK_FILE, "w").write(until)
+        print("INSTAGRAM BLOCK — pausing until", until)
+        return True
+    return False
+
+
 def main():
     if os.path.exists(os.path.join(ROOT, "queue", "PAUSE")):
         print("PAUSED: queue/PAUSE exists")
         return
+    if os.path.exists(BLOCK_FILE):
+        until = datetime.datetime.fromisoformat(open(BLOCK_FILE).read().strip())
+        if now < until:
+            print("PAUSED by Instagram block until", until.isoformat())
+            return
+        os.remove(BLOCK_FILE)
     slot = slot_now()
     if slot == 0:
         print("KST", now.isoformat(), "nothing due")
@@ -195,7 +215,12 @@ def main():
     if not (T and U):
         raise SystemExit("IG_TOKEN / IG_USER_ID secrets missing")
     out = {"slot": slot, "posted_at": datetime.datetime.now(KST).isoformat()}
-    out["carousel_id"], out["carousel_url"] = carousel(rel, post)
+    try:
+        out["carousel_id"], out["carousel_url"] = carousel(rel, post)
+    except SystemExit as e:
+        if blocked(e):
+            return
+        raise
     print("carousel:", out["carousel_url"])
     if os.path.exists(os.path.join(d, "reel.mp4")):
         try:
