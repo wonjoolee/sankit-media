@@ -29,3 +29,5 @@
 - 2026-11-06 메모: 슬롯1(07:30) 없음. 이번 주 HEAD·Atomic·Garmin·Rab은 각 2회로 주간 상한, Haglöfs는 슬롯2에 사용(같은 날 중복 금지). Mammut(pr.mammut.com)·Salewa(oberalp.com) FW26 자료는 찾았으나 cdn.uc.assets.prezly.com·oberalp.com 이미지가 이 환경 프록시 403으로 다운로드 불가. WHY NOT KOREA 이번 주 미제작. 스키장 첫 장 사진은 assets/library가 비어 있고 공공누리 사진을 찾지 못해 글자 카드(KIT 021). 가이드 KIT 024는 후라노 버스 소요 시간을 공식 출처로 확인 못 해 2곳으로 축소.
 - 2026-11-06 어제 점검: 11-05 5개 중 4개 게시, 빠짐: 슬롯3(KIT 020). 11-04도 슬롯3·5 posted.json 없음.
 2026-11-06 | 1 (대화 세션, 08:30) | 025 | WHY NOT KOREA: 초경량 하이커 넷 중 하나가 쓰는 텐트 (Durston X-Mid) | durstongear.com/products/x-mid-1, trailpeaches.com/2026/08/11/lighterpackdata/ | 국내 공식 수입처 없음(11.06)
+
+- 2026-11-06 메모: 인스타 활동 제한으로 11/13까지 하루 3개. 오늘 단신 KIT 021·023은 queue/_dropped로 이동, KIT 025는 11/07 슬롯1로 이동.
