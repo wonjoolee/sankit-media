@@ -280,6 +280,18 @@ def main():
             print("PAUSED by Instagram block until", until.isoformat())
             return
         os.remove(BLOCK_FILE)
+    if os.environ.get("STORY_ONLY"):
+        if not (T and U):
+            raise SystemExit("IG_TOKEN / IG_USER_ID secrets missing")
+        rel = os.environ["STORY_ONLY"].strip("/")
+        try:
+            sid = story(rel)
+        except SystemExit as e:
+            blocked(e)
+            raise
+        open(os.path.join(ROOT, rel, "posted"), "w").write(f"{datetime.datetime.now(KST).isoformat()} {sid}\n")
+        print("story only:", rel, sid)
+        return
     if not DRY and T and U and not os.environ.get("SLOT") and retry_missing():
         return
     slot = slot_now()

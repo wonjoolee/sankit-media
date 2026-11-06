@@ -1,0 +1,60 @@
+name: SANKIT mountain safety alert
+
+on:
+  schedule:
+    - cron: "5 22 * * *"   # 07:05 KST
+    - cron: "5 8 * * *"    # 17:05 KST (내일 예보)
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "1이면 이미지만 만들고 게시하지 않음"
+        required: false
+        default: "0"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sankit-publish
+  cancel-in-progress: false
+
+jobs:
+  alert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fonts and packages
+        run: |
+          sudo apt-get install -y -q fonts-noto-cjk >/dev/null
+          pip install -q pillow
+      - name: Refresh mountain forecast
+        continue-on-error: true
+        env:
+          KMA_KEY: ${{ secrets.KMA_KEY }}
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+        run: python -c "import sys; sys.path.insert(0,'pipeline'); import fetch_data as f; f.mountain_weather()"
+      - name: Build alert story
+        id: build
+        run: |
+          python pipeline/alerts.py | tee /tmp/alert.log
+          rel=$(grep '^ALERT ' /tmp/alert.log | cut -d' ' -f2)
+          echo "rel=$rel" >> "$GITHUB_OUTPUT"
+          git config user.name "SANKIT bot"
+          git config user.email "sankit-bot@users.noreply.github.com"
+          git add data queue || true
+          git diff --cached --quiet || (git commit -m "alert $(TZ=Asia/Seoul date +%F-%H%M)" && git pull --rebase -q && git push && sleep 20)
+      - name: Post story
+        if: steps.build.outputs.rel != '' && github.event.inputs.dry_run != '1'
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          STORY_ONLY: ${{ steps.build.outputs.rel }}
+        run: python pipeline/run_slot.py
+      - name: Save record
+        if: always()
+        run: |
+          git add queue || true
+          git diff --cached --quiet || (git commit -m "alert posted $(TZ=Asia/Seoul date +%F-%H%M)" && git pull --rebase -q && git push)
