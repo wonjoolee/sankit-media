@@ -69,8 +69,10 @@ def create(p, tries=3):
     return r
 
 
-def wait(cid, tries=60, gap=5):
+def wait(cid, tries=40, gap=12):
+    """처리 상태 확인. 호출 수를 줄이려고 12초 간격(앱 전체 호출 한도가 두 계정 공유)."""
     s = {}
+    time.sleep(6)
     for _ in range(tries):
         s = call("GET", "/" + cid, {"fields": "status_code,status"})
         if s.get("status_code") in ("FINISHED", "ERROR", "EXPIRED"):
@@ -179,10 +181,10 @@ def blocked(err):
     - 그 밖의 오류(일시 오류 등)는 쉬지 않는다(False)."""
     t = str(err)
     low = t.lower()
-    if "2207051" in t or "action is blocked" in low:
+    if "request limit reached" in low or re.search(r"[\"']code[\"']:\s*(4|17|32)\b", t):
+        kind, hours = "rate limit", 1      # 앱 호출 한도(Application request limit). 계정 제한 아님
+    elif "2207051" in t or "action is blocked" in low:
         kind, hours = "action block", 3
-    elif "request limit reached" in low or re.search(r"[\"']code[\"']:\s*(4|17|32)\b", t):
-        kind, hours = "rate limit", 1
     else:
         return False
     log = os.path.join(ROOT, "queue", "BLOCK_LOG")
@@ -206,10 +208,17 @@ def blocked(err):
     return True
 
 
+def quiet():
+    """새벽·심야(23:00~06:59 KST)에는 다시 올리기·알림 스토리를 하지 않는다."""
+    return now.hour >= 23 or now.hour < 7
+
+
 def retry_missing():
     """게시는 됐지만 릴스·스토리가 빠진 슬롯을, 게시 1시간 뒤부터 최대 2번 다시 올린다(20시간 이내만).
     무언가 다시 올렸으면 True(이번 실행은 여기서 끝내 간격을 둔다)."""
     did = False
+    if quiet():
+        return False
     for day in (now - datetime.timedelta(days=1), now):
         base = os.path.join(ROOT, "queue", f"{day:%Y-%m-%d}")
         if not os.path.isdir(base):
@@ -284,6 +293,8 @@ def main():
         if not (T and U):
             raise SystemExit("IG_TOKEN / IG_USER_ID secrets missing")
         rel = os.environ["STORY_ONLY"].strip("/")
+        if quiet():
+            print("quiet hours — story later"); return
         try:
             sid = story(rel)
         except SystemExit as e:

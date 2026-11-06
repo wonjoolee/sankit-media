@@ -5,6 +5,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 T, U = os.environ.get("IG_TOKEN", ""), os.environ.get("IG_USER_ID", "")
 if not (T and U):
     raise SystemExit(0)
+import datetime  # every 3h: 호출 수 절약(앱 호출 한도)
+_n = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))
+if not os.environ.get("FORCE_STATS") and not (_n.hour % 3 == 0 and _n.minute < 15):
+    raise SystemExit(0)
 q = urllib.parse.urlencode({"fields": "id,like_count,comments_count", "limit": 100, "access_token": T})
 with urllib.request.urlopen(f"https://graph.facebook.com/v21.0/{U}/media?{q}", timeout=60) as r:
     m = {x["id"]: x for x in json.load(r).get("data", [])}

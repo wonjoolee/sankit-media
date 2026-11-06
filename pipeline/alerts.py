@@ -114,7 +114,11 @@ def main():
     rel = f"queue/alerts/{now:%Y-%m-%d}"
     d = os.path.join(ROOT, rel)
     if os.path.exists(os.path.join(d, "alert.json")):
-        print("already made today"); print("NO ALERT"); return
+        if os.path.exists(os.path.join(d, "posted")):
+            print("already posted today"); print("NO ALERT")
+        else:
+            print(f"ALERT {rel}")  # 만들었지만 아직 못 올림(심야 등) → 다시 게시 시도
+        return
     rows, base = findings()
     warns = warnings()
     if not rows and not warns:

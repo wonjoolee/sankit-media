@@ -173,3 +173,8 @@ SANKIT MAGAZINE(@sankitmag) — "SKI · HIKE · OUTDOOR / 안목과 취향으로
 - `.github/workflows/alerts.yml`이 매일 07:05(오늘)·17:05(내일) 산악예보를 보고, 정상부 최저 -10℃ 이하 · 풍속 10m/s 이상 · 눈 예보가 있으면 9:16 스토리를 자동 게시한다. 하루 최대 1개(queue/alerts/<날짜>/).
 - 스토리는 피드 게시 수(하루 3개)에 포함되지 않는다. 기상특보(data/latest/warnings.json)가 붙으면 특보를 맨 위에 올린다.
 - 문구는 사실만: 산 이름·고도·예보 값·발표 시각. 과장 금지.
+
+## 2026-11-07 원인 확인: "활동 제한"의 정체
+- BLOCK_LOG 원문: `Application request limit reached` (code 4, subcode 2207051). 계정 제한이 아니라 Meta 앱 전체의 시간당 API 호출 한도. SANKIT·MUKIT이 같은 앱을 써서 한도를 공유한다.
+- 대응: 처리 상태 확인 간격 5초→12초, 반응 통계는 3시간마다, 호출 한도 오류는 1시간만 쉰다.
+- 23:00~06:59에는 다시 올리기·알림 스토리를 하지 않는다(GitHub 예약이 몇 시간씩 밀려 새벽 게시가 생겼음).
