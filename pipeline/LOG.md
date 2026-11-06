@@ -35,3 +35,7 @@
 - 2026-11-06 메모: 운영자 요청으로 주말 가이드 KIT 026을 즉시 게시. 하루 3개 유지를 위해 KIT 022(하글로프스)를 슬롯2→슬롯5(18:00)로 옮김. 오늘 = KIT 026(지금) · KIT 022(18:00) · KIT 024(21:00).
 - 2026-11-06 14:45 정정: KIT 026 캐러셀은 게시됨(p/DfY4XwNkxEG). API가 활동 제한 오류를 돌려줘 posted.json이 안 생겼던 것 — 손으로 기록. 릴스·스토리는 제한으로 생략. KIT 025도 오전에 이미 게시돼 있었음(p/DfYL-O9IU2z) → 11/07 슬롯1 중복 게시 위험. KIT 025는 11/06 슬롯1(게시됨)로 되돌리고, KIT 022를 11/07 슬롯1(07:30)로 옮김. 오늘 = KIT 025 · KIT 026 · KIT 024(21:00) 3개.
 - run_slot.py: 게시 중 오류가 나도 최근 게시물 캡션 첫 줄이 같으면 게시된 것으로 기록(live_post). 두 저장소 모두.
+- 2026-11-07 어제 점검: 11-06 3개 중 3개 게시(슬롯1 KIT 025·슬롯4 KIT 026·슬롯3 KIT 024). 남은 reel_error·story_error 없음(KIT 025는 아침 세션 수동 게시라 릴스·스토리 기록 없음, KIT 026 스토리는 운영자 앱 게시).
+2026-11-07 | 2 (12:10) | 027 | 27일 휘닉스, 다음은 28일 알펜시아? (알펜시아 11.28 개장 목표) | fnnews.com/news/202611051608303057, ajunews.com/view/20261105173644093, youthdaily.co.kr/news/article.html?no=223570, view.asiae.co.kr/article/2026102809222423698
+2026-11-07 | 3 (21:00) | 028 | 정보 가이드: 겨울 한라산, 몇 시까지 들어가야 할까? | hdnews.co.kr/news/articleView.html?idxno=358235, ardentnews.co.kr/news/articleView.html?idxno=19806, en.wikipedia.org/wiki/Hallasan_National_Park, 기상청 단기예보(11.07 02:00)
+- 2026-11-07 메모: 슬롯1은 KIT 022(하글로프스 인스브루크, 전날 이동분) 그대로 둠. 하루 3개 체제. 산악예보(mountain_weather.json)는 11.06 11:00 발표분이 최신이라 단기예보를 씀. 한라산 코스 거리·시간은 visithalla 공식 페이지를 이 세션에서 열지 못해 Wikipedia(공식 탐방로 안내 인용) 기준. 사진은 assets/library 공공누리 제1유형(알펜시아 2016·한라산 2025).
