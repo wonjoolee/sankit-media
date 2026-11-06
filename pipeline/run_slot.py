@@ -173,15 +173,90 @@ BLOCK_FILE = os.path.join(ROOT, "queue", "BLOCKED_UNTIL")
 
 
 def blocked(err):
-    """인스타의 활동 제한(action is blocked, 2207051 / code 4)이면 6시간 게시를 쉰다."""
+    """인스타 제한 오류면 쉬는 시간을 정한다.
+    - 활동 제한(2207051, action is blocked): 3시간. 24시간 안에 두 번째면 6시간.
+    - 호출 한도(request limit reached, code 4/17/32): 1시간.
+    - 그 밖의 오류(일시 오류 등)는 쉬지 않는다(False)."""
     t = str(err)
-    if "2207051" in t or "action is blocked" in t or "request limit reached" in t:
-        until = (datetime.datetime.now(KST) + datetime.timedelta(hours=6)).isoformat()
-        open(BLOCK_FILE, "w").write(until)
-        print("INSTAGRAM BLOCK — pausing until", until)
-        print("API error text:", t[:500])
-        return True
-    return False
+    low = t.lower()
+    if "2207051" in t or "action is blocked" in low:
+        kind, hours = "action block", 3
+    elif "request limit reached" in low or re.search(r"[\"']code[\"']:\s*(4|17|32)\b", t):
+        kind, hours = "rate limit", 1
+    else:
+        return False
+    log = os.path.join(ROOT, "queue", "BLOCK_LOG")
+    recent = []
+    if os.path.exists(log):
+        for line in open(log):
+            try:
+                ts = datetime.datetime.fromisoformat(line.split(" | ")[0])
+                if now - ts < datetime.timedelta(hours=24):
+                    recent.append(line)
+            except ValueError:
+                pass
+    if kind == "action block" and any("action block" in l for l in recent):
+        hours = 6
+    until = (datetime.datetime.now(KST) + datetime.timedelta(hours=hours)).isoformat()
+    open(BLOCK_FILE, "w").write(until)
+    with open(log, "a") as f:
+        f.write(f"{datetime.datetime.now(KST).isoformat()} | {kind} | {hours}h | {t[:300]}\n")
+    print(f"INSTAGRAM {kind.upper()} — pausing {hours}h until", until)
+    print("API error text:", t[:500])
+    return True
+
+
+def retry_missing():
+    """게시는 됐지만 릴스·스토리가 빠진 슬롯을, 게시 1시간 뒤부터 최대 2번 다시 올린다(20시간 이내만).
+    무언가 다시 올렸으면 True(이번 실행은 여기서 끝내 간격을 둔다)."""
+    did = False
+    for day in (now - datetime.timedelta(days=1), now):
+        base = os.path.join(ROOT, "queue", f"{day:%Y-%m-%d}")
+        if not os.path.isdir(base):
+            continue
+        for sl in sorted(os.listdir(base)):
+            d = os.path.join(base, sl)
+            pj = os.path.join(d, "posted.json")
+            if not os.path.exists(pj):
+                continue
+            out = json.load(open(pj, encoding="utf-8"))
+            try:
+                age = now - datetime.datetime.fromisoformat(out["posted_at"])
+            except Exception:
+                continue
+            if age < datetime.timedelta(hours=1) or age > datetime.timedelta(hours=20) or out.get("retries", 0) >= 2:
+                continue
+            need = []
+            if "reel_error" in out and "reel_id" not in out and os.path.exists(os.path.join(d, "reel.mp4")):
+                need.append("reel")
+            if "story_error" in out and "story_id" not in out:
+                need.append("story")
+            if not need:
+                continue
+            rel = os.path.relpath(d, ROOT)
+            post = json.load(open(os.path.join(d, "post.json"), encoding="utf-8"))
+            out["retries"] = out.get("retries", 0) + 1
+            print("retry missing", rel, need)
+            stop = False
+            for k in need:
+                try:
+                    if k == "reel":
+                        out["reel_id"], out["reel_url"] = reel(rel, post)
+                    else:
+                        out["story_id"] = story(rel)
+                    out.pop(k + "_error", None)
+                    print(" ", k, "ok")
+                except SystemExit as e:
+                    out[k + "_error"] = str(e)
+                    print(" ", k, "failed:", e)
+                    if blocked(e):
+                        stop = True
+                        break
+            json.dump(out, open(pj, "w"), ensure_ascii=False, indent=1)
+            did = True
+            if stop:
+                return True
+    return did
 
 
 def live_post(post, minutes=20):
@@ -205,6 +280,8 @@ def main():
             print("PAUSED by Instagram block until", until.isoformat())
             return
         os.remove(BLOCK_FILE)
+    if not DRY and T and U and not os.environ.get("SLOT") and retry_missing():
+        return
     slot = slot_now()
     if slot == 0:
         print("KST", now.isoformat(), "nothing due")

@@ -5,5 +5,5 @@
  "carousel_url": "https://www.instagram.com/p/DfY4XwNkxEG/",
  "carousel_note": "API returned action-block, but post is live (recorded by hand)",
  "reel_error": "skipped: instagram block",
- "story_error": "skipped: instagram block"
+ "story_note": "owner posted a story manually in the app (11/06 afternoon) — not retried to avoid duplicate"
 }
