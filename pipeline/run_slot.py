@@ -183,6 +183,17 @@ def blocked(err):
     return False
 
 
+def live_post(post, minutes=20):
+    """게시 중 오류가 나도 실제로는 올라갔을 수 있다. 최근 게시물 캡션 첫 줄이 같으면 그 게시물을 돌려준다."""
+    first = post["caption"].split("\n")[0].strip()
+    r = call("GET", f"/{U}/media", {"fields": "id,timestamp,caption,permalink", "limit": 5})
+    for m in r.get("data", []):
+        ts = datetime.datetime.strptime(m["timestamp"], "%Y-%m-%dT%H:%M:%S%z")
+        if (m.get("caption") or "").split("\n")[0].strip() == first and datetime.datetime.now(datetime.timezone.utc) - ts < datetime.timedelta(minutes=minutes):
+            return m["id"], m["permalink"]
+    return None
+
+
 def main():
     if os.path.exists(os.path.join(ROOT, "queue", "PAUSE")):
         print("PAUSED: queue/PAUSE exists")
@@ -218,9 +229,17 @@ def main():
     try:
         out["carousel_id"], out["carousel_url"] = carousel(rel, post)
     except SystemExit as e:
+        hit = live_post(post)
+        if not hit:
+            if blocked(e):
+                return
+            raise
+        out["carousel_id"], out["carousel_url"] = hit
+        out["carousel_note"] = "error after publish, but post is live: " + str(e)[:200]
         if blocked(e):
+            out["reel_error"] = out["story_error"] = "skipped: instagram block"
+            json.dump(out, open(os.path.join(d, "posted.json"), "w"), ensure_ascii=False, indent=1)
             return
-        raise
     print("carousel:", out["carousel_url"])
     if os.path.exists(os.path.join(d, "reel.mp4")):
         try:
