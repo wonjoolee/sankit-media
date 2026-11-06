@@ -26,7 +26,10 @@ def get(path, params, tries=3):
 
 def items(d):
     try:
-        it = d["response"]["body"]["items"]
+        body = d["response"]["body"] if "response" in d else d["body"]
+        it = body["items"]
+        if isinstance(it, list):
+            return it
         it = it.get("item", []) if isinstance(it, dict) else []
         return it if isinstance(it, list) else [it]
     except Exception:
