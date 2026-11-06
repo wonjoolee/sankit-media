@@ -104,6 +104,27 @@ def festivals():
     keep.sort(key=lambda x: (not x["short"], x["start"] or "", x["title"] or ""))
     save("latest/festivals.json", keep)
 
+def festivals_std():
+    """전국문화축제표준데이터(지자체 등록 축제) — 관광공사 목록에 없는 지역 축제 보완."""
+    start = NOW.strftime("%Y-%m-%d"); end = (NOW + datetime.timedelta(days=21)).strftime("%Y-%m-%d")
+    res, page = [], 1
+    while page <= 20:
+        q = urllib.parse.urlencode({"serviceKey": K, "type": "json", "numOfRows": 500, "pageNo": page})
+        try:
+            with urllib.request.urlopen("https://api.data.go.kr/openapi/tn_pubr_public_cltur_fstvl_api?" + q, timeout=40) as r:
+                d = json.loads(r.read().decode("utf-8", "ignore"))
+        except Exception as e:
+            print("fail festivals_std", e); break
+        it = items(d)
+        if not it: break
+        res += it; page += 1
+        if len(it) < 500: break
+    keep = [{"title": i.get("fstvlNm"), "start": i.get("fstvlStartDate"), "end": i.get("fstvlEndDate"), "place": i.get("opar"),
+             "content": (i.get("fstvlCo") or "")[:120], "org": i.get("mnnstNm"), "addr": i.get("rdnmadr") or i.get("lnmadr"), "url": i.get("homepageUrl")}
+            for i in res if (i.get("fstvlEndDate") or "0") >= start and (i.get("fstvlStartDate") or "9") <= end]
+    keep.sort(key=lambda x: x["start"] or "")
+    save("latest/festivals_local.json", keep)
+
 SIGUNGU = {"평창": ("51", "51760"), "정선": ("51", "51770"), "홍천": ("51", "51720"), "속초": ("51", "51210"), "인제": ("51", "51810"),
            "춘천": ("51", "51110"), "강릉": ("51", "51150"), "무주": ("52", "52730"), "구례": ("46", "46730"), "제주": ("50", "50110")}
 def congestion():
@@ -133,6 +154,6 @@ def reference():
 if __name__ == "__main__":
     if not K:
         raise SystemExit("DATA_GO_KR_KEY missing")
-    for f in (festivals, weather, congestion, reference):
+    for f in (festivals, festivals_std, weather, congestion, reference):
         try: f()
         except Exception as e: print("ERROR", f.__name__, e)
