@@ -56,6 +56,8 @@ SANKIT MAGAZINE(@sankitmag) — "SKI · HIKE · OUTDOOR / 안목과 취향으로
 - `data/latest/festivals.json`: 오늘~21일 축제·행사(한국관광공사). `short:true`(31일 이하)가 진짜 '이번 주' 행사. **SANKIT WEEKLY와 단신의 축제 후보는 여기서 먼저 고른다.** 날짜·장소는 여기 값으로 쓰되, 요금·프로그램은 지자체 공지로 한 번 더 확인.
 - `data/latest/festivals_local.json`: 전국문화축제표준데이터(지자체 등록 축제, 오늘~21일). 관광공사 목록에 없는 지역 축제를 여기서 보완한다.
 - `data/latest/weather.json`: 스키장·명산 23곳 3일 단기예보(최저·최고기온, 강수확률, 눈·비, 하늘). WEEKLY·정보 가이드·스키장 단신에 "이번 주말 날씨" 한 줄을 넣는다. 출처 표기 `기상청 단기예보(발표 시각)`.
+- `data/latest/mountain_weather.json`: 명산 33곳 정상부 산악예보 5일치(최저·최고기온, 최대 풍속 m/s, 강수확률, 눈·비, 일출·일몰). 산 추천·WEEKLY 등산 코스에는 정상 체감 한 줄("설악산 정상 -9℃, 바람 4.5m/s — 방풍재킷 필수")을 넣는다. 출처 표기 `기상청 산악예보(발표 시각)`.
+- `data/latest/festivals_local.json`: 전국 지역축제 표준데이터(소규모 축제 포함). WEEKLY 축제 후보는 festivals.json과 합쳐서 고른다.
 - `data/latest/congestion.json`: 주요 시군 관광지 30일 혼잡 예측(100=가장 붐빔). "덜 붐비는 날·곳" 추천에 쓴다. 출처 `한국관광공사 관광지 집중률 예측`.
 - `data/reference/durunubi_courses.json`(걷기·자전거 길 코스: 거리·소요시간·난이도), `gocamping.json`(캠핑장), `barrier_free.json`(무장애 관광지): 정보 가이드 소재.
 - 그 밖에 승인된 API(산정보, 산악기상, 지역별 방문자수, 연관 관광지, 관광공모전 사진, 한눈에보는문화정보 등)는 운영자 대화 세션에서 필요할 때 받는다. 인증키는 GitHub secrets(DATA_GO_KR_KEY)에만 있고 저장소에 쓰지 않는다.

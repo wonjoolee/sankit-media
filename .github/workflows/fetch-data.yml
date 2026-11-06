@@ -23,6 +23,7 @@ jobs:
       - name: Fetch
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+          KMA_KEY: ${{ secrets.KMA_KEY }}
         run: python pipeline/fetch_data.py
       - name: Commit
         run: |

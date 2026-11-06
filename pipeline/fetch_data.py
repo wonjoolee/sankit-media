@@ -154,9 +154,48 @@ def reference():
     save("reference/gocamping.json", [{k: c.get(k) for k in ("facltNm", "lineIntro", "addr1", "induty", "doNm", "sigunguNm", "animalCmgCl", "homepage", "resveUrl")} for c in paged("/B551011/GoCamping/basedList", C)])
     save("reference/barrier_free.json", [{k: c.get(k) for k in ("title", "addr1", "areacode", "contentid", "contenttypeid")} for c in paged("/B551011/KorWithService2/areaBasedList2", C)])
 
+MTN = {1:"설악산",3:"오대산",5:"치악산",7:"태백산",13:"가리왕산",15:"두타산",40:"북한산",47:"도봉산",50:"용문산",51:"청계산",46:"명지산",43:"남한산성",53:"계룡산",57:"속리산",59:"월악산",61:"민주지산",62:"월출산",64:"지리산 노고단",65:"무등산",67:"조계산",75:"내장산",77:"덕유산",79:"대둔산",80:"마이산",86:"지리산 천왕봉",88:"가야산",90:"가지산",92:"신불산",95:"황매산",104:"금정산",105:"주왕산",107:"소백산",109:"청량산"}
+
+def mountain_weather():
+    kk = os.environ.get("KMA_KEY", "")
+    if not kk:
+        print("skip mountain_weather (KMA_KEY missing)"); return
+    now = datetime.datetime.utcnow() + datetime.timedelta(hours=9, minutes=-40)
+    h = max([x for x in (2, 5, 8, 11, 14, 17, 20, 23) if x <= now.hour], default=None)
+    if h is None:
+        now -= datetime.timedelta(days=1); h = 23
+    bd, bt = now.strftime("%Y%m%d"), f"{h:02d}00"
+    out = []
+    for n, name in MTN.items():
+        u = f"https://apihub.kma.go.kr/api/typ08/getMountainWeather?mountainNum={n}&base_date={bd}&base_time={bt}&authKey={kk}"
+        d = None
+        for _ in range(3):
+            try:
+                d = json.loads(urllib.request.urlopen(u, timeout=40).read()); break
+            except Exception:
+                time.sleep(2)
+        if not isinstance(d, list) or not d:
+            continue
+        days = {}
+        for x in d:
+            day = days.setdefault(x["fcstBase"], {})
+            c, v = x["category"], (x["fcstValue"] or "").strip()
+            if c in ("SRE", "SSE"):
+                day[c.lower()] = v; continue
+            try: f = float(v)
+            except ValueError:
+                if c in ("PCP", "SNO") and "없음" not in v: day.setdefault(c.lower(), v)
+                continue
+            if c == "TMP":
+                day["tmin"] = min(day.get("tmin", f), f); day["tmax"] = max(day.get("tmax", f), f)
+            elif c in ("WSD", "POP", "SKY"):
+                day[c.lower() + "_max"] = max(day.get(c.lower() + "_max", f), f)
+        out.append({"no": n, "name": name, "station": d[0]["stn_nm"], "alt": d[0]["alt"], "days": days})
+    save("latest/mountain_weather.json", {"base": bd + bt, "note": "기상청 산악예보(정상부). wsd m/s, pop %, sky 1맑음 3구름많음 4흐림", "mountains": out})
+
 if __name__ == "__main__":
     if not K:
         raise SystemExit("DATA_GO_KR_KEY missing")
-    for f in (festivals, festivals_std, weather, congestion, reference):
+    for f in (festivals, festivals_std, weather, mountain_weather, congestion, reference):
         try: f()
         except Exception as e: print("ERROR", f.__name__, e)
