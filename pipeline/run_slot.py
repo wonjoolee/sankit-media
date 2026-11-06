@@ -179,6 +179,7 @@ def blocked(err):
         until = (datetime.datetime.now(KST) + datetime.timedelta(hours=6)).isoformat()
         open(BLOCK_FILE, "w").write(until)
         print("INSTAGRAM BLOCK — pausing until", until)
+        print("API error text:", t[:500])
         return True
     return False
 
