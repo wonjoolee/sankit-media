@@ -9,16 +9,16 @@ date,slot,kind,title,type,hook,likes,comments,posted_at
 2026-11-04,slot1,reel,KIT 012 · GARMIN EDGE 1060,,,0,0,08:01
 2026-11-04,slot2,carousel,KIT 014 · X-PYR 2026,,,0,0,19:45
 2026-11-04,slot2,reel,KIT 014 · X-PYR 2026,,,0,0,19:45
-2026-11-04,slot4,carousel,KIT 013 · 단신,,,0,0,12:00
+2026-11-04,slot4,carousel,KIT 013 · 단신,,,,,12:00
 2026-11-05,slot1,carousel,KIT 017 · HAGLÖFS × POLARTEC STANDARD IS,,,0,0,09:04
-2026-11-05,slot1,reel,KIT 017 · HAGLÖFS × POLARTEC STANDARD IS,,,0,0,09:04
+2026-11-05,slot1,reel,KIT 017 · HAGLÖFS × POLARTEC STANDARD IS,,,,,09:04
 2026-11-05,slot2,carousel,SANKIT WEEKLY 01 · THIS WEEK,,,1,0,17:27
-2026-11-05,slot2,reel,SANKIT WEEKLY 01 · THIS WEEK,,,0,0,17:27
+2026-11-05,slot2,reel,SANKIT WEEKLY 01 · THIS WEEK,,,,,17:27
 2026-11-05,slot4,carousel,KIT 018 · 단신,,,0,0,09:59
-2026-11-05,slot5,carousel,KIT 019 · 단신,,,0,0,18:13
-2026-11-06,slot1,carousel,KIT 025 · WHY NOT KOREA? DURSTON X-MID,whynot,number,1,0,08:14
+2026-11-05,slot5,carousel,KIT 019 · 단신,,,,,18:13
+2026-11-06,slot1,carousel,KIT 025 · WHY NOT KOREA? DURSTON X-MID,whynot,number,,,08:14
 2026-11-06,slot3,carousel,KIT 024 · SANKIT GUIDE,guide,number,0,0,20:59
-2026-11-06,slot3,reel,KIT 024 · SANKIT GUIDE,guide,number,0,0,20:59
+2026-11-06,slot3,reel,KIT 024 · SANKIT GUIDE,guide,number,,,20:59
 2026-11-06,slot4,carousel,KIT 026 · WEEKEND GUIDE,guide,number,1,1,14:42
 2026-11-06,slot4,reel,KIT 026 · WEEKEND GUIDE,guide,number,0,0,14:42
 2026-11-07,slot1,carousel,KIT 022 · HAGLÖFS INNSBRUCK,news,number,1,0,07:29
@@ -26,3 +26,7 @@ date,slot,kind,title,type,hook,likes,comments,posted_at
 2026-11-07,slot2,carousel,KIT 027 · ALPENSIA 2026/27,news,question,0,0,12:09
 2026-11-07,slot2,reel,KIT 027 · ALPENSIA 2026/27,news,question,0,0,12:09
 2026-11-07,slot3,carousel,KIT 028 · SANKIT GUIDE,guide,question,0,0,20:58
+2026-11-07,slot3,reel,KIT 028 · SANKIT GUIDE,guide,question,0,0,20:58
+2026-11-08,slot1,carousel,"KIT 029 · SEORAKSAN, SNOW IN THE FORECAS",news,number,0,0,07:29
+2026-11-08,slot1,reel,"KIT 029 · SEORAKSAN, SNOW IN THE FORECAS",news,number,0,0,07:29
+2026-11-08,slot2,carousel,KIT 032 · SAUNA,owner,question,0,0,11:01
