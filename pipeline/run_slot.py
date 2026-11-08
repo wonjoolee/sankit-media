@@ -337,10 +337,10 @@ def main():
             raise
         out["carousel_id"], out["carousel_url"] = hit
         out["carousel_note"] = "error after publish, but post is live: " + str(e)[:200]
-        if blocked(e):
-            out["reel_error"] = out["story_error"] = "skipped: instagram block"
-            json.dump(out, open(os.path.join(d, "posted.json"), "w"), ensure_ascii=False, indent=1)
-            return
+        # Meta가 게시 성공 직후 'request limit' 오류를 돌려주는 경우가 반복됨(실제로는 올라감).
+        # 쉬지 않고 1분 뒤 릴스·스토리를 이어서 시도한다. 거기서도 막히면 그때 쉰다.
+        json.dump(out, open(os.path.join(d, "posted.json"), "w"), ensure_ascii=False, indent=1)
+        time.sleep(60)
     print("carousel:", out["carousel_url"])
     if os.path.exists(os.path.join(d, "reel.mp4")):
         try:
