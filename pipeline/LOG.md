@@ -47,3 +47,5 @@
 2026-11-08 | 2 (대화 세션, 11:20) | 032 | [OWNER] 강가에 사우나가 섰다. 이 열풍, 어디까지 갈까 (10월 카멜레이스 · 사우나쉽 · 사우나랩스) | sports.khan.co.kr/en/article/202610202246007, v.daum.net/v/20260709060106742, hankyung.com/article/2026102941661, news.bgov.com(2026.01.16)
 - 2026-11-08 메모: 운영자 사진 콘텐츠 즉시 게시 → 슬롯2 KIT 030(일본 스키 시즌)은 _dropped/2026-11-08-slot2. 오늘 = KIT 029 · KIT 032 · KIT 031(21:00).
 2026-11-09 | 2 (대화 세션 예약, 12:10) | START | [OWNER] 고정용 START HERE: 주말에 어디 갈지, 무엇을 살지 (태백산·소백산·하이원 KTO 사진 + 사우나 직접 촬영) | 운영자 요청 고정 게시물. 게시 후 운영자가 앱에서 프로필 고정.
+- 2026-11-09 어제 점검: 11-08 3개 중 3개 게시(슬롯1 KIT 029·슬롯2 KIT 032·슬롯3 KIT 031). reel_error·story_error 없음. 공공데이터 수집 실행·성공(mountain_weather.json은 11.06 11:00 발표분 그대로).
+2026-11-09 | 1 (07:30) | 033 | 149만 원부터, 무엇이 달라졌나? (가민 피닉스 9 국내 가격표) | garmin.com/ko-KR/newsroom/press-release/news-2026-sep-request-fenix9/, garmin.com/en-US/newsroom/press-release/outdoor/garmin-expands-its-flagship-performance-smartwatch-lineup-with-fenix9-and-fenix9-pro
