@@ -44,3 +44,5 @@
 2026-11-08 | 2 (12:10) | 030 | 나가노는 벌써 열었다, 10.31 (가루이자와 개장·츠가이케 제설기 92대) | princehotels.co.jp/press/202610_05/, bestcalendar.jp/press/159420, haveagood-holiday.com/ko/articles/tsugaike-mountain-resort-winter-2026-27-opening, youthdaily.co.kr/news/article.html?no=223570, fnnews.com/news/202611051608303057
 2026-11-08 | 3 (21:00) | 031 | 120일이던 스키장의 겨울이 줄었다 (운영 일수 80~100일·강원 이용객 -15.3%) | view.asiae.co.kr/en/article/2026070911185860819, heraldk.com/article/2026011300081905308, princehotels.co.jp/press/202610_05/
 - 2026-11-08 메모: 하루 3개 체제. 이번 주(11/2~8) HEAD·Atomic·Garmin·Haglöfs 각 2회, Rab/Equip 3회로 주간 상한 → 접근 가능한 프레스룸 브랜드가 모두 막혀 오늘은 제품 기사 없이 시즌·소식 3개. 사진은 assets/library 공공누리 제1유형(설악산 2025.11, 용평 2016.12 — 분위기 사진으로만 표기), KIT 030은 글자 카드. 시사저널(다음) 원문은 이 세션에서 열리지 않아 아시아경제·헤럴드경제 숫자로 대체.
+2026-11-08 | 2 (대화 세션, 11:20) | 032 | [OWNER] 강가에 사우나가 섰다. 이 열풍, 어디까지 갈까 (10월 카멜레이스 · 사우나쉽 · 사우나랩스) | sports.khan.co.kr/en/article/202610202246007, v.daum.net/v/20260709060106742, hankyung.com/article/2026102941661, news.bgov.com(2026.01.16)
+- 2026-11-08 메모: 운영자 사진 콘텐츠 즉시 게시 → 슬롯2 KIT 030(일본 스키 시즌)은 _dropped/2026-11-08-slot2. 오늘 = KIT 029 · KIT 032 · KIT 031(21:00).
