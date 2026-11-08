@@ -317,6 +317,8 @@ def main():
         return
     if os.path.exists(os.path.join(d, "posted.json")):
         print("already posted")
+        if not DRY and T and U:
+            retry_missing()  # 예약 실행(SLOT 지정)이어도 빠진 릴스·스토리는 이때 다시 올린다
         return
     post = json.load(open(os.path.join(d, "post.json"), encoding="utf-8"))
     if DRY:
