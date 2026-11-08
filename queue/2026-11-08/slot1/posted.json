@@ -4,6 +4,8 @@
  "carousel_id": "18121123139074954",
  "carousel_url": "https://www.instagram.com/p/DfdQjfDE_JX/",
  "carousel_note": "error after publish, but post is live: publish error: {'error': {'message': 'Application request limit reached', 'type': 'OAuthException', 'is_transient': False, 'code': 4, 'error_subcode': 2207051, 'error_user_title': 'action is blocked',",
- "reel_error": "skipped: instagram block",
- "story_error": "skipped: instagram block"
+ "retries": 1,
+ "reel_id": "18106816691299628",
+ "reel_url": "https://www.instagram.com/reel/DfdihtYIEJr/",
+ "story_id": "17990770950079183"
 }
