@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-06T13:47:11.583688+09:00",
+ "fetched_at": "2026-11-09T05:24:22.327093+09:00",
  "data": [
   {
    "crsKorNm": "남파랑길 1코스",
@@ -109,7 +109,7 @@
    "brdDiv": "DNWW",
    "crsSummary": "- 고현버스터미널에서 시작하여 석름봉과 대성사를 지나 장목파출소에서 끝나는 코스<br>- 대부분의 노선이 숲길로 이어지는 구간으로 곳곳에 쉼터, 정자 등이 잘 갖춰져 있어 쾌적한 걷기여행이 가능함 <br>- 맹종죽순체험길로 명명되어 있는 거제시의 ‘섬&섬길’ 일부가 포함한 아름다운 산길을 걸으며 힐링할 수 있는 코스",
    "crsTourInfo": "- 거제 석름봉 둘레길에서 느끼는 주왕산의 정취<br>- 맹종죽순체험길로 명명되어 있는 대나무 구간이 일부 포함되어 있어 이색적인 체험이 가능<br>- 하청야구장을 지나며 바라보는 바다 풍경",
-   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/file/2026/10/44a504f770de41c8ac052b287e840743.gpx"
+   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/file/2026/11/74df89fdd3d24cfdad1ea7aeec6d7317.gpx"
   },
   {
    "crsKorNm": "남파랑길 18코스",
@@ -649,6 +649,17 @@
    "crsSummary": "- 만대항에서 시작하여 바다가 보이는 조용한 임도가 이어지는 후망산을 지나는 코스<br>- 어촌의 풍경을 감상할 수 있는 마을길, 숲길, 해안길을 고루 거니는 코스",
    "crsTourInfo": "- 태안의 최북단 항구로 저렴한 가격의 횟집이 모여있는 '만대항'<br>- 갯벌체험, 독살체험 등 바다체험을 운영하고 있는 '만대어촌체험마을'",
    "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/file/2026/05/ce6dbc83b7544c03a6a4b21f1ba83b22.gpx"
+  },
+  {
+   "crsKorNm": "서해랑길 74코스",
+   "crsDstnc": "16",
+   "crsTotlRqrmHour": "360",
+   "crsLevel": "3",
+   "sigun": "충남 태안군",
+   "brdDiv": "DNWW",
+   "crsSummary": "- 바다가 내려다 보이는 노인봉, 국사봉, 마봉산을 지나는 고즈넉한 숲길을 걷는 코스",
+   "crsTourInfo": "- 삽시도에서는 가장 넓고 고운 백사장을 가진 '밤섬해수욕장'",
+   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/course/summap/T_CRS_MNG0000005348.gpx"
   },
   {
    "crsKorNm": "서해랑길 60코스",

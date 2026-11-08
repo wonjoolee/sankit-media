@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-06T13:47:11.583688+09:00",
+ "fetched_at": "2026-11-09T05:24:22.327093+09:00",
  "data": [
   {
    "title": "가경 터미널시장",
@@ -492,16 +492,9 @@
    "contenttypeid": "39"
   },
   {
-   "title": "감못(부지)",
-   "addr1": "경상북도 경산시 감못둑길 20 (갑제동)",
-   "areacode": "35",
-   "contentid": "3351911",
-   "contenttypeid": "12"
-  },
-  {
    "title": "감삼못공원",
    "addr1": "대구광역시 서구 서대구로3길 43 (내당동)",
-   "areacode": "4",
+   "areacode": "",
    "contentid": "1118418",
    "contenttypeid": "12"
   },
@@ -1565,7 +1558,7 @@
   {
    "title": "강화 아르미애월드",
    "addr1": "인천광역시 강화군 불은면 중앙로 742-2",
-   "areacode": "2",
+   "areacode": "",
    "contentid": "971122",
    "contenttypeid": "12"
   },
@@ -1614,7 +1607,7 @@
   {
    "title": "강화도령 화문석 체험장",
    "addr1": "인천광역시 강화군 송해면 강화대로 891",
-   "areacode": "2",
+   "areacode": "",
    "contentid": "2599177",
    "contenttypeid": "12"
   },
@@ -1789,7 +1782,7 @@
   {
    "title": "객사길",
    "addr1": "전북특별자치도 전주시 완산구 중앙동2가 10-1",
-   "areacode": "37",
+   "areacode": "",
    "contentid": "2774063",
    "contenttypeid": "12"
   },
@@ -1803,7 +1796,7 @@
   {
    "title": "갤러리 구루지",
    "addr1": "서울특별시 구로구 가마산로25길 21",
-   "areacode": "1",
+   "areacode": "",
    "contentid": "2591878",
    "contenttypeid": "14"
   },
@@ -2417,13 +2410,6 @@
    "contenttypeid": "28"
   },
   {
-   "title": "경기도해양수산자원연구소민물고기생태학습관",
-   "addr1": "경기도 양평군 용문면 상광길 23-2",
-   "areacode": "31",
-   "contentid": "3408892",
-   "contenttypeid": "14"
-  },
-  {
    "title": "경기도행정역사관",
    "addr1": "경기도 수원시 장안구 경수대로 1150 (파장동)",
    "areacode": "31",
@@ -2741,7 +2727,7 @@
   {
    "title": "경암동 철길마을",
    "addr1": "전북특별자치도 군산시 경촌4길 14",
-   "areacode": "37",
+   "areacode": "",
    "contentid": "2605528",
    "contenttypeid": "12"
   },
@@ -3364,7 +3350,7 @@
   {
    "title": "계양산",
    "addr1": "인천광역시 계양구 목상동",
-   "areacode": "2",
+   "areacode": "",
    "contentid": "1113230",
    "contenttypeid": "12"
   },
@@ -5128,7 +5114,7 @@
   {
    "title": "광주 경찰충혼탑",
    "addr1": "전남광주통합특별시 남구 사직길 49",
-   "areacode": "5",
+   "areacode": "",
    "contentid": "128158",
    "contenttypeid": "12"
   },
@@ -5660,7 +5646,7 @@
   {
    "title": "구로꿈나무장난감나라 오류점",
    "addr1": "서울특별시 구로구 경인로20가길 38 (오류동)",
-   "areacode": "1",
+   "areacode": "",
    "contentid": "2591885",
    "contenttypeid": "14"
   },
@@ -7214,7 +7200,7 @@
   {
    "title": "군산항",
    "addr1": "전북특별자치도 군산시 임해로 378-14 (소룡동)",
-   "areacode": "37",
+   "areacode": "",
    "contentid": "988466",
    "contenttypeid": "12"
   },
@@ -7238,13 +7224,6 @@
    "areacode": "",
    "contentid": "2826337",
    "contenttypeid": "28"
-  },
-  {
-   "title": "군포 중앙공원",
-   "addr1": "경기도 군포시 광정로 96 (산본동)",
-   "areacode": "31",
-   "contentid": "3353061",
-   "contenttypeid": "12"
   },
   {
    "title": "군포문화원",
@@ -7389,7 +7368,7 @@
   {
    "title": "권정생동화나라",
    "addr1": "경상북도 안동시 일직면 성남길 119",
-   "areacode": "35",
+   "areacode": "",
    "contentid": "2623228",
    "contenttypeid": "12"
   },
@@ -7697,7 +7676,7 @@
   {
    "title": "금강산콘도",
    "addr1": "강원특별자치도 고성군 현내면 금강산로 416",
-   "areacode": "32",
+   "areacode": "",
    "contentid": "137477",
    "contenttypeid": "32"
   },
@@ -7746,7 +7725,7 @@
   {
    "title": "금강온천",
    "addr1": "충청남도 공주시 고마나루길 51-12",
-   "areacode": "34",
+   "areacode": "",
    "contentid": "127850",
    "contenttypeid": "12"
   },
@@ -7774,7 +7753,7 @@
   {
    "title": "금강호 관광지",
    "addr1": "전북특별자치도 군산시 성산면 성덕리",
-   "areacode": "37",
+   "areacode": "",
    "contentid": "1624685",
    "contenttypeid": "12"
   },
@@ -10896,7 +10875,7 @@
   {
    "title": "노리매공원",
    "addr1": "제주특별자치도 서귀포시 대정읍 중산간서로 2260-15",
-   "areacode": "39",
+   "areacode": "",
    "contentid": "2704456",
    "contenttypeid": "12"
   },
@@ -12100,7 +12079,7 @@
   {
    "title": "달빛쌈지공원",
    "addr1": "경상남도 밀양시 내일중앙1길 21-29 (내일동)",
-   "areacode": "36",
+   "areacode": "",
    "contentid": "2625206",
    "contenttypeid": "12"
   },
@@ -12345,7 +12324,7 @@
   {
    "title": "담양호",
    "addr1": "전남광주통합특별시 담양군 금성면 금성산성길 366",
-   "areacode": "38",
+   "areacode": "",
    "contentid": "126323",
    "contenttypeid": "12"
   },
@@ -12394,7 +12373,7 @@
   {
    "title": "당정뜰",
    "addr1": "경기도 하남시 미사동",
-   "areacode": "31",
+   "areacode": "",
    "contentid": "2751647",
    "contenttypeid": "12"
   },
@@ -12911,7 +12890,7 @@
   },
   {
    "title": "대구앞산공원",
-   "addr1": "대구광역시 남구 앞산순환로 574-87",
+   "addr1": "대구광역시 남구 대명동 산227-1",
    "areacode": "",
    "contentid": "126132",
    "contenttypeid": "12"
@@ -13317,8 +13296,8 @@
   },
   {
    "title": "대왕암 송림",
-   "addr1": "울산광역시 동구 등대로 110",
-   "areacode": "7",
+   "addr1": "울산광역시 동구 등대로 95 (일산동)",
+   "areacode": "",
    "contentid": "1394298",
    "contenttypeid": "12"
   },
@@ -16433,7 +16412,7 @@
   {
    "title": "디스커버리 네이처스케이프 동탄점",
    "addr1": "경기도 화성시 동탄대로5길 21 (송동)",
-   "areacode": "31",
+   "areacode": "",
    "contentid": "2810869",
    "contenttypeid": "12"
   },
@@ -16944,7 +16923,7 @@
   {
    "title": "라베니체 마치에비뉴",
    "addr1": "경기도 김포시 김포한강2로23번길 72 (장기동)",
-   "areacode": "31",
+   "areacode": "",
    "contentid": "2720202",
    "contenttypeid": "12"
   },
@@ -17612,13 +17591,6 @@
    "areacode": "",
    "contentid": "2930853",
    "contenttypeid": "38"
-  },
-  {
-   "title": "로이테",
-   "addr1": "경기도 남양주시 조안면 북한강로 866",
-   "areacode": "31",
-   "contentid": "2877347",
-   "contenttypeid": "39"
   },
   {
    "title": "로지커피",
@@ -18560,8 +18532,8 @@
   },
   {
    "title": "리투스카페",
-   "addr1": "전북특별자치도 군산시 해망로 118",
-   "areacode": "37",
+   "addr1": "전북특별자치도 군산시 해망로 118 (금암동)",
+   "areacode": "",
    "contentid": "2877157",
    "contenttypeid": "39"
   },
@@ -18610,7 +18582,7 @@
   {
    "title": "리펠",
    "addr1": "경기도 남양주시 와부읍 경강로926번길 20",
-   "areacode": "31",
+   "areacode": "",
    "contentid": "2877376",
    "contenttypeid": "39"
   },
@@ -18715,7 +18687,7 @@
   {
    "title": "마라도 가파도 정기여객선",
    "addr1": "제주특별자치도 서귀포시 대정읍 최남단해안로 120",
-   "areacode": "39",
+   "areacode": "",
    "contentid": "2621914",
    "contenttypeid": "12"
   },
@@ -19716,7 +19688,7 @@
   {
    "title": "매탄공원",
    "addr1": "경기도 수원시 영통구 매탄로 185 (매탄동)",
-   "areacode": "31",
+   "areacode": "",
    "contentid": "2739476",
    "contenttypeid": "12"
   },
@@ -20794,7 +20766,7 @@
   {
    "title": "목포 북항",
    "addr1": "전남광주통합특별시 목포시 죽교동 620-232",
-   "areacode": "38",
+   "areacode": "",
    "contentid": "2784224",
    "contenttypeid": "12"
   },
@@ -21000,6 +20972,34 @@
    "areacode": "",
    "contentid": "1917067",
    "contenttypeid": "39"
+  },
+  {
+   "title": "몽양여운형기념관",
+   "addr1": "경기도 양평군 양서면 몽양길 66",
+   "areacode": "",
+   "contentid": "2758036",
+   "contenttypeid": "14"
+  },
+  {
+   "title": "몽촌토성",
+   "addr1": "서울특별시 송파구 올림픽로 424",
+   "areacode": "",
+   "contentid": "127525",
+   "contenttypeid": "12"
+  },
+  {
+   "title": "몽크로스 모다아울렛 인천점",
+   "addr1": "인천광역시 서해구 북항로32번안길 50 (원창동)",
+   "areacode": "",
+   "contentid": "3307172",
+   "contenttypeid": "38"
+  },
+  {
+   "title": "무각사",
+   "addr1": "전남광주통합특별시 서구 운천로 230",
+   "areacode": "",
+   "contentid": "2027193",
+   "contenttypeid": "12"
   }
  ]
 }

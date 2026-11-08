@@ -1,6 +1,28 @@
 {
- "fetched_at": "2026-11-06T13:47:11.583688+09:00",
+ "fetched_at": "2026-11-09T05:24:22.327093+09:00",
  "data": [
+  {
+   "facltNm": "라라플레이스&글램핑",
+   "lineIntro": "하조대 해변에서 보도거리 1분 위치에 있는 글램핑장",
+   "addr1": "강원특별자치도 양양군 현북면 하광정리 608-6 ",
+   "induty": "일반야영장",
+   "doNm": "강원특별자치도",
+   "sigunguNm": "양양군",
+   "animalCmgCl": "가능",
+   "homepage": "https://www.instagram.com/_lalaplace_/",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "공룡자연 팜핑장",
+   "lineIntro": "치유와 힐링을 할 수 있는 체험캠핑장",
+   "addr1": "경상남도 고성군 동해면 봉암4길 314-11",
+   "induty": "자동차야영장",
+   "doNm": "경상남도",
+   "sigunguNm": "고성군",
+   "animalCmgCl": "불가능",
+   "homepage": "https://cafe.naver.com/thefarmisgood",
+   "resveUrl": "https://new.smartplace.never.com/bizes/booking/1602568"
+  },
   {
    "facltNm": "섬진강 향가오토캠핑장",
    "lineIntro": "섬진강변에서 낭만 캠핑을 즐길 수 있는 향가오토캠핑장",
@@ -9176,17 +9198,6 @@
    "resveUrl": ""
   },
   {
-   "facltNm": "북분해수욕자 야영장",
-   "lineIntro": "",
-   "addr1": "강원특별자치도 양양군 현남면 동해대로 972",
-   "induty": "일반야영장",
-   "doNm": "강원특별자치도",
-   "sigunguNm": "양양군",
-   "animalCmgCl": "",
-   "homepage": "",
-   "resveUrl": ""
-  },
-  {
    "facltNm": "낙산해수욕장야영장",
    "lineIntro": "",
    "addr1": "강원특별자치도 양양군 양양읍 해맞이길 125, 야영장관리사",
@@ -11583,17 +11594,6 @@
    "animalCmgCl": "가능(소형견)",
    "homepage": "",
    "resveUrl": ""
-  },
-  {
-   "facltNm": "공룡자연 팜핑장",
-   "lineIntro": "치유와 힐링을 할 수 있는 체험캠핑장",
-   "addr1": "경상남도 고성군 동해면 봉암4길 314-11",
-   "induty": "자동차야영장",
-   "doNm": "경상남도",
-   "sigunguNm": "고성군",
-   "animalCmgCl": "불가능",
-   "homepage": "https://café.naver.com/thefarmisgood",
-   "resveUrl": "https://new.smartplace.never.com/bizes/booking/1602568"
   },
   {
    "facltNm": "한별마을 야영장",
@@ -18974,17 +18974,6 @@
    "sigunguNm": "안산시",
    "animalCmgCl": "불가능",
    "homepage": "",
-   "resveUrl": ""
-  },
-  {
-   "facltNm": "라라플레이스&글램핑",
-   "lineIntro": "하조대 해변에서 보도거리 1분 위치에 있는 글램핑장",
-   "addr1": "강원도 양양군 현북면 하광정리 608-6 ",
-   "induty": "일반야영장,글램핑",
-   "doNm": "강원도",
-   "sigunguNm": "양양군",
-   "animalCmgCl": "가능",
-   "homepage": "https://www.instagram.com/_lalaplace_/",
    "resveUrl": ""
   },
   {
@@ -32999,6 +32988,17 @@
    "sigunguNm": "파주시",
    "animalCmgCl": "",
    "homepage": "dmzflowertea.modoo.at",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "어깨동무 카라반 캠핑",
+   "lineIntro": "",
+   "addr1": "인천 강화군 길상면 동검길65번길 88-8",
+   "induty": "일반야영장",
+   "doNm": "인천광역시",
+   "sigunguNm": "강화군",
+   "animalCmgCl": "",
+   "homepage": "",
    "resveUrl": ""
   }
  ]
