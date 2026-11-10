@@ -239,3 +239,9 @@ SANKIT MAGAZINE(@sankitmag) — "SKI · HIKE · OUTDOOR / 안목과 취향으로
 - **올해 목표: 어디서든 광고 1건. 제품 증정도 성공.** 수입사에 한정하지 않는다. 자세한 계획은 EDITORIAL.md 9절(8절보다 우선).
 - 토요일 슬롯2 SMALL BRAND(국내 소규모 브랜드·공간) 신설, BUYER'S GUIDE에 국내 브랜드 1개 이상, 1순위 수입사 할당 주 6개 이상으로 조정, research/small_brands.csv 누적.
 - 표기: 돈 = "광고", 제품·체험 = "제품 제공". 제공받은 글은 자동 제작 금지.
+
+## 성장 우선 전환 (운영자 결정, 2026-11-10 밤)
+- **먼저 팔로워, 그다음 광고.** EDITORIAL.md 10절이 8·9절과 이 문서의 이전 비율 규칙보다 우선한다.
+- 하루 **broad 2 + narrow 1**(이전 narrow 2 + broad 1에서 변경). 핵심 지표 = 팔로워 수(pipeline/followers.csv).
+- 릴스는 카드 넘기기가 아니라 사진 중심 7~12초, 한 릴스 한 가지 사실. broad 글 마지막 장에 팔로우 이유 한 줄. 장소 글에는 research/reshare_accounts.csv의 공식 계정 태그(최대 3곳).
+- 광고·제품 증정 제안은 팔로워 300명 이후.
