@@ -21,7 +21,7 @@ def sheet(name,path,widths,status=None):
             row[status].fill=GAP if '공백' in v or '없음' in v else (TBD if '확인 필요' in v and not v.startswith('확인(') and not v.startswith('확인 (') and v!='확인' else OK)
     for i,w in enumerate(widths,1): ws.column_dimensions[get_column_letter(i)].width=w
     ws.freeze_panes='C2'; ws.auto_filter.ref=ws.dimensions; ws.row_dimensions[1].height=28
-sheet('브랜드_수입사_지도',os.path.join(D,'brand_map.csv'),[14,26,30,42,22,22,46,12],5)
+sheet('브랜드_수입사_지도',os.path.join(D,'brand_map.csv'),[14,26,30,42,30,24,24,50,12],6)
 hp=sorted(glob.glob(os.path.join(D,'hot_products_*.csv')))
 for p in hp[-3:]:
     sheet('화제제품_'+os.path.basename(p)[13:20],p,[12,18,26,44,30,26,24,46],5)

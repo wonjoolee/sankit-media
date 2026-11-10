@@ -212,3 +212,10 @@ SANKIT MAGAZINE(@sankitmag) — "SKI · HIKE · OUTDOOR / 안목과 취향으로
 - **수입사 계정 확인.** brand_map.csv에서 국내 공식 인스타가 '(확인 필요)'인 브랜드는 태그하지 않고 캡션에 수입사 이름만 적는다. 운영자가 앱에서 확인해 알려 준 계정은 brand_map.csv에 '확인(운영자 2026-MM-DD)'로 적고 그때부터 태그한다.
 - **노출 기록.** `pipeline/exposure.py`가 게시할 때마다 `research/exposure.csv`를 갱신한다(브랜드, 수입사, 다룬 횟수, 태그 횟수, 저장 합계, 마지막 게시, 링크). 12월 미디어킷과 수입사별 첫 제안의 근거다. 월요일 보고에 "이번 주 새로 다룬 수입사 N곳"을 한 줄 넣는다.
 - **주간 고정 편성 정리:** 수 BUYER'S GUIDE(narrow) · 목 WEEKLY(broad) · 금 주말 정상 날씨(broad) · 3일마다 정보 가이드(broad, 목·금과 겹치면 다음 날) · 나머지는 narrow 중심(장비 국내가·수입사, WHY NOT KOREA, 비교·리뷰).
+
+## 브랜드·수입사 지도 재조사 (2026-11-10)
+- research/brand_map.csv를 87개로 넓히고 '국내 홈페이지' 열을 추가했다. 국내 인스타 계정이 적힌 브랜드는 8곳 → 40곳.
+- **태그해도 되는 계정:** 상태에 '확인' 또는 '인스타 표시 이름 확인'이 적힌 계정(예: @patagoniakorea, @thenorthface_kr, @blackdiamondkr, @mammut_kr, @fjallraven_korea, @rab_korea_official, @goldwin_korea, @descente_kr, @fischer_sports_kr, @volkl_marker_dalbello_kr, @hoka_kr, @coros_kr, @columbia_kr, @millet_korea, @kor.andwander, @lasportiva__korea, @keenkorea, @merrell_korea, @snowpeakkorea, @burtonkorea, @phenix_kr, @spyder_korea, @dynafit_kr, @outdoork2, @nepaofficial, @blackyak.official, @kovea.official, @cotopaxikorea).
+- **태그하지 않는 것:** '확인 필요'·'후보'·'추정'이 붙은 계정(HEAD 두 계정, Zerogram 등)과 '(한국 계정 못 찾음)'. 이 경우 캡션에 수입사 이름만 적는다.
+- 수입사 이름이 '(확인 필요)'인 브랜드는 캡션에 수입사를 단정해 쓰지 않는다("국내 공식 계정 @xxx 기준"으로 쓴다).
+- 새로 확인된 운영사: 마운틴하드웨어 = 넬슨스포츠(2026 하반기), 예티 = 웍스아웃(2026 가을), 아솔로 = 오픈프로덕트, 써코니·새티스파이 = 조이웍스, 써클스포츠웨어 = 키네틱웍스, 몬츄라·루디프로젝트 = 밀레.

@@ -56,3 +56,10 @@
 - 디시 등산 갤러리 https://gall.dcinside.com/board/view/?id=climbing&no=227841
 - 로시뇰 매장 찾기 https://storefinder.rossignol.com/en-gb/store-locator/south-korea/seoul/incheon
 - 가민 한국 블로그(inReach) https://www.garmin.com/ko-KR/blog/?p=576
+
+
+## 2026-11-10 재조사 (운영자 지시)
+- 브랜드 지도 66 → 87개. 국내 인스타 계정 확인 8 → 40곳(계정 표시 이름 기준). '국내 홈페이지' 열 추가.
+- 새 운영사 확인(패션비즈): Mountain Hardwear → 넬슨스포츠(2026 하반기 프리뷰, 2027 봄 단독 매장) / YETI → 웍스아웃(2026 가을 도산공원 플래그십) / Asolo → 오픈프로덕트 / Saucony → 조이웍스 / Circle Sportswear → 키네틱웍스 / Rudy Project → 밀레.
+- 한국 계정을 못 찾은 주요 브랜드(= 수입사가 인스타를 안 하거나 공식 창구가 약함, WHY NOT KOREA·수입사 제안 후보): Atomic, Rossignol, Nordica, Stöckli, Kästle, Elan, Ogasaka, Black Crows, POC, Osprey, Gregory, Mystery Ranch, MSR, NEMO, Petzl, Suunto, Norrøna, Klättermusen, Helly Hansen, Salewa, Peak Performance, Montbell, Scarpa, Hilleberg, Icebreaker.
+- 다음 조사에서 채울 것: 수입사 이름이 '(확인 필요)'인 계정들의 운영사, 국내 홈페이지 열.

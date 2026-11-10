@@ -24,9 +24,10 @@ for pj in sorted(glob.glob(os.path.join(ROOT, "queue", "20*", "slot*", "posted.j
     tags = {"@" + (t["username"] if isinstance(t, dict) else str(t)).lstrip("@").lower() for t in post.get("tags", []) if t}
     for b in brands:
         name = b["브랜드"].strip()
-        insta = b["국내 공식 인스타"].strip().lower()
-        hit_tag = insta.startswith("@") and insta in tags
-        hit_name = len(name) >= 3 and re.search(r"(?<![A-Za-z])" + re.escape(name) + r"(?![A-Za-z])", cap, re.I)
+        handles = {h.lower() for h in re.findall(r"@[A-Za-z0-9._]+", b["국내 공식 인스타"]) if "본사" not in b["국내 공식 인스타"]}
+        hit_tag = bool(handles & tags)
+        hit_name = any(len(n) >= 3 and re.search(r"(?<![A-Za-z])" + re.escape(n) + r"(?![A-Za-z])", cap, re.I)
+                       for n in (x.strip() for x in name.split("/")))
         if not (hit_tag or hit_name):
             continue
         r = rows.setdefault(name, {"브랜드": name, "국내 수입사·운영사": b["국내 수입사·운영사"], "국내 공식 인스타": b["국내 공식 인스타"],
