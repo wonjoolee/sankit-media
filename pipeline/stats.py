@@ -47,8 +47,8 @@ for p in sorted(glob.glob(os.path.join(ROOT, "queue", "20*", "slot*", "posted.js
                 want_ins = False  # 권한 없음 → 이번 실행은 더 부르지 않음
             else:
                 sv, rc, sh = i.get("saved", ""), i.get("reach", ""), i.get("shares", "")
-        rows.append([day, slot, kind, cap[0][:40], post.get("type", ""), post.get("role", ""), post.get("hook", ""),
+        rows.append([day, slot, kind, cap[0][:40], post.get("type", ""), post.get("role", ""), post.get("format", ""), post.get("hook", ""),
                      x.get("like_count", ""), x.get("comments_count", ""), sv, rc, sh, po.get("posted_at", "")[11:16]])
 with open(os.path.join(ROOT, "pipeline", "stats.csv"), "w", newline="", encoding="utf-8") as f:
-    w = csv.writer(f); w.writerow(["date", "slot", "kind", "title", "type", "role", "hook", "likes", "comments", "saved", "reach", "shares", "posted_at"]); w.writerows(rows)
+    w = csv.writer(f); w.writerow(["date", "slot", "kind", "title", "type", "role", "format", "hook", "likes", "comments", "saved", "reach", "shares", "posted_at"]); w.writerows(rows)
 print("stats rows", len(rows))
