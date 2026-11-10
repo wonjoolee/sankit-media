@@ -38,6 +38,14 @@ def findings():
     out = []
     if not mw:
         return out, None
+    # 오래된 예보로 알림을 내지 않는다: 발표 시각(base)이 12시간 넘게 지났으면 무시
+    try:
+        b = datetime.datetime.strptime(mw["base"], "%Y%m%d%H%M").replace(tzinfo=KST)
+        if now - b > datetime.timedelta(hours=12):
+            print("mountain forecast is stale:", mw["base"], "- no alert from it (KMA_KEY secret missing?)")
+            return out, None
+    except Exception:
+        return out, None
     days = [(now + datetime.timedelta(days=i)).strftime("%Y%m%d") for i in (0, 1)]
     if now.hour >= 15:  # 오후에는 오늘보다 내일이 중요
         days = days[1:]
