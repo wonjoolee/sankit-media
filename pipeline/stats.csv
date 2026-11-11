@@ -1,7 +1,7 @@
 date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,posted_at
 2026-11-03,slot1,carousel,KIT 009 · GARMIN ENDURO 4,,,,,1,0,,,,09:09
 2026-11-03,slot1,reel,KIT 009 · GARMIN ENDURO 4,,,,,0,0,,,,09:09
-2026-11-03,slot2,carousel,KIT 010 · THE GEAR HE WINS ON,,,,,1,0,,,,12:33
+2026-11-03,slot2,carousel,KIT 010 · THE GEAR HE WINS ON,,,,,2,0,,,,12:33
 2026-11-03,slot2,reel,KIT 010 · THE GEAR HE WINS ON,,,,,3,0,,,,12:33
 2026-11-03,slot3,carousel,KIT 011 · ROAD TO NAMELESS TOWER,,,,,1,0,,,,19:46
 2026-11-03,slot3,reel,KIT 011 · ROAD TO NAMELESS TOWER,,,,,0,0,,,,19:46
@@ -40,8 +40,12 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-09,slot3,carousel,KIT 034 · SHIFFRIN'S EXPLORATION SEASON,news,broad,,question,0,0,,,,20:59
 2026-11-09,slot3,reel,KIT 034 · SHIFFRIN'S EXPLORATION SEASON,news,broad,,question,0,0,,,,20:59
 2026-11-10,slot1,carousel,KIT 035 · GARMIN MARQ (GEN 3),product,narrow,,number,1,0,,,,07:29
-2026-11-10,slot1,reel,KIT 035 · GARMIN MARQ (GEN 3),product,narrow,,number,0,0,,,,07:29
+2026-11-10,slot1,reel,KIT 035 · GARMIN MARQ (GEN 3),product,narrow,,number,1,0,,,,07:29
 2026-11-10,slot2,carousel,KIT 036 · HIGH1 RESORT 20TH SEASON,news,broad,,number,1,0,,,,12:09
 2026-11-10,slot2,reel,KIT 036 · HIGH1 RESORT 20TH SEASON,news,broad,,number,0,0,,,,12:09
 2026-11-10,slot3,carousel,KIT 037 · SEOUL SUBWAY HIKES,guide,broad,,number,0,0,,,,20:59
 2026-11-10,slot3,reel,KIT 037 · SEOUL SUBWAY HIKES,guide,broad,,number,0,0,,,,20:59
+2026-11-11,slot1,carousel,"토요일 설악산·오대산·덕유산·한라산 등 23곳 모두 비, 맑은 날은 목요",news,broad,E,number,0,0,,,,07:29
+2026-11-11,slot1,reel,"토요일 설악산·오대산·덕유산·한라산 등 23곳 모두 비, 맑은 날은 목요",news,broad,E,number,0,0,,,,07:29
+2026-11-11,slot2,carousel,"KIT 040 · 스키장 표지판 MARGINAL CONDITIONS, 무",owner,broad,guide,question,0,0,,,,12:09
+2026-11-11,slot2,reel,"KIT 040 · 스키장 표지판 MARGINAL CONDITIONS, 무",owner,broad,guide,question,0,0,,,,12:09
