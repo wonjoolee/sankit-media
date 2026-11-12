@@ -138,7 +138,9 @@ def carousel(rel, post):
 
 def reel(rel, post):
     r = call("POST", f"/{U}/media", {"media_type": "REELS", "video_url": RAW + rel + "/reel.mp4",
-                                     "caption": post.get("reel_caption") or post["caption"], "share_to_feed": "true"})
+                                     "caption": post.get("reel_caption") or post["caption"], "share_to_feed": "true",
+                                     # 그리드·릴스 탭 표지: 글자가 다 떠오른 1.5초 지점(첫 프레임은 글자가 덜 나온 상태)
+                                     "thumb_offset": str(post.get("thumb_offset_ms", 1500))})
     if "error" in r:
         raise SystemExit(f"reel error: {r}")
     s = wait(r["id"])
