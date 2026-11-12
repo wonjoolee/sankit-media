@@ -10,13 +10,16 @@ cfg=json.load(open(sys.argv[1])); out=sys.argv[2]; mode=cfg['mode']; sc=cfg['sce
 src=[ImageOps.exif_transpose(Image.open(s['img'])).convert('RGB') for s in sc]
 dark=Image.new('RGB',(W,H),(20,22,21))
 grad=Image.new('L',(1,H),0)
-for y in range(H): grad.putpixel((0,y),int(210*max(0,(y-H*.55)/(H*.45))**1.3))
+for y in range(H): grad.putpixel((0,y),int(215*min(1,max(0,(y-H*.45)/(H*.38)))**1.2))
 grad=grad.resize((W,H))
 def text(fr,s,t,a):
     d=ImageDraw.Draw(fr); d.text((64,96),'SANKIT',font=fw,fill=(244,242,236))
-    y0=H-470; d.text((64,y0),s['kick'],font=fk,fill=(217,164,65))
+    # 피드에서는 릴스가 가운데 4:5(y 285~1635)로 잘려 보이고, 릴스 탭에서는 아래쪽을 버튼·캡션이 가린다.
+    # 그래서 글자 묶음의 아래 끝을 y 1500에 맞춘다(2026-11-12, 운영자 지적: 둘째 줄 잘림).
+    n=len(s['lines']); y0=1500-(58+n*108)
+    d.text((64,y0),s['kick'],font=fk,fill=(217,164,65))
     for j,l in enumerate(s['lines']): d.text((64,y0+58+j*108+int((1-a)*30)),l,font=fb,fill=(244,242,236))
-    d.text((64,H-120),cfg.get('credit','@SANKITMAG'),font=fm,fill=(190,192,189))
+    d.text((64,1530),cfg.get('credit','@SANKITMAG'),font=fm,fill=(190,192,189))
 def frame(i,t):
     s=sc[i];im=src[i];iw,ih=im.size;p=min(1,max(0,t/s['sec']));a=min(1,t/.6)
     if mode=='press':
