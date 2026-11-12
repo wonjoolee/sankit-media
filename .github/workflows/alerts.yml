@@ -28,7 +28,13 @@ jobs:
           python-version: "3.12"
       - name: Fonts and packages
         run: |
-          sudo apt-get install -y -q fonts-noto-cjk >/dev/null
+          # 우분투 미러가 잠깐 안 잡힐 때가 있어 3번까지 다시 시도한다(2026-11-11 DNS 실패)
+          for i in 1 2 3; do
+            sudo apt-get update -q >/dev/null 2>&1 || true
+            sudo apt-get install -y -q fonts-noto-cjk >/dev/null && break
+            echo "font install failed ($i), retry in 20s"; sleep 20
+          done
+          fc-list | grep -q "Noto Sans CJK" || { echo "Korean font missing"; exit 1; }
           pip install -q pillow
       - name: Refresh mountain forecast
         continue-on-error: true
