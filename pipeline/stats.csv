@@ -59,5 +59,7 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-13,slot1,reel,"주말 내내 비 예보, 부산은 오늘 밤 황령산 (KIT 044)",guide,broad,E,contrast,0,0,,,,07:29
 2026-11-13,slot2,carousel,"18년 만에 처음, 비 막는 마이크로라이트 (KIT 042)",product,narrow,A,number,1,0,,,,12:09
 2026-11-13,slot2,reel,"18년 만에 처음, 비 막는 마이크로라이트 (KIT 042)",product,narrow,A,number,1,0,,,,12:09
-2026-11-13,slot3,carousel,주말 정상 날씨 #1 — 토요일은 23곳 모두 비 (KIT 045),weekly,broad,E,number,0,0,,,,20:59
-2026-11-13,slot3,reel,주말 정상 날씨 #1 — 토요일은 23곳 모두 비 (KIT 045),weekly,broad,E,number,0,0,,,,20:59
+2026-11-13,slot3,carousel,주말 정상 날씨 #1 — 토요일은 23곳 모두 비 (KIT 045),weekly,broad,E,number,1,0,,,,20:59
+2026-11-13,slot3,reel,주말 정상 날씨 #1 — 토요일은 23곳 모두 비 (KIT 045),weekly,broad,E,number,1,0,,,,20:59
+2026-11-14,slot1,carousel,"월요일 설악산에 눈 예보, 낮 최고 3℃ (KIT 046)",news,broad,E,number,1,0,,,,07:29
+2026-11-14,slot1,reel,"월요일 설악산에 눈 예보, 낮 최고 3℃ (KIT 046)",news,broad,E,number,1,0,,,,07:29
