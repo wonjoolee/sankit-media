@@ -161,7 +161,19 @@ def story(rel):
         params = {"media_type": "STORIES", "video_url": RAW + rel + "/reel.mp4"}
     else:
         params = {"media_type": "STORIES", "image_url": RAW + rel + "/01.jpg"}
+    # 스토리 언급(2026-11-16 운영자): 글에 태그한 공식 계정을 스토리에도 언급한다(최대 3).
+    # 언급된 계정은 알림을 받고, 한 번 눌러 자기 스토리에 다시 올릴 수 있다. 스티커는 API로 못 붙인다.
+    try:
+        pj = json.load(open(os.path.join(d, "post.json"), encoding="utf-8"))
+        names = [t["username"] if isinstance(t, dict) else str(t).lstrip("@") for t in pj.get("story_tags", pj.get("tags", []))][:3]
+        if names:
+            params["user_tags"] = json.dumps([{"username": n} for n in names])
+    except Exception:
+        pass
     r = call("POST", f"/{U}/media", params)
+    if "error" in r and "user_tags" in params:   # 태그 문제로 실패하면 태그 없이 한 번 더
+        print("story tag error, retry without tags:", r)
+        params.pop("user_tags"); r = call("POST", f"/{U}/media", params)
     if "error" in r:
         raise SystemExit(f"story error: {r}")
     s = wait(r["id"])
