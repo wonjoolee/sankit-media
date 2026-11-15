@@ -64,4 +64,8 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-14,slot1,carousel,"월요일 설악산에 눈 예보, 낮 최고 3℃ (KIT 046)",news,broad,E,number,1,0,,,,07:29
 2026-11-14,slot1,reel,"월요일 설악산에 눈 예보, 낮 최고 3℃ (KIT 046)",news,broad,E,number,1,0,,,,07:29
 2026-11-14,slot3,carousel,"11월 20일 휘닉스부터, 올겨울 스키 달력 (KIT 047)",guide,broad,E,number,0,0,,,,20:59
-2026-11-14,slot3,reel,"11월 20일 휘닉스부터, 올겨울 스키 달력 (KIT 047)",guide,broad,E,number,0,0,,,,20:59
+2026-11-14,slot3,reel,"11월 20일 휘닉스부터, 올겨울 스키 달력 (KIT 047)",guide,broad,E,number,2,0,,,,20:59
+2026-11-15,slot1,carousel,"오늘부터 한 달, 148구간이 닫힌다 (KIT 048)",news,broad,E,number,0,0,,,,07:29
+2026-11-15,slot1,reel,"오늘부터 한 달, 148구간이 닫힌다 (KIT 048)",news,broad,E,number,0,0,,,,07:29
+2026-11-15,slot2,carousel,주말 어디 다녀오셨어요 #1 — 첫 스키는 11월? 12월?,weekly,broad,E,question,0,0,,,,12:09
+2026-11-15,slot2,reel,주말 어디 다녀오셨어요 #1 — 첫 스키는 11월? 12월?,weekly,broad,E,question,0,0,,,,12:09
