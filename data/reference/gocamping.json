@@ -1,6 +1,545 @@
 {
- "fetched_at": "2026-11-09T08:06:58.818232+09:00",
+ "fetched_at": "2026-11-16T05:24:56.184457+09:00",
  "data": [
+  {
+   "facltNm": "80포레스트카라반캠프((주)포레스트카라반 대구점)",
+   "lineIntro": "청정 숲속에 글램핑과 오토캠핑이 공존하는 공간",
+   "addr1": "대구광역시 군위군 부계면 한티로 1525-6",
+   "induty": "자동차야영장",
+   "doNm": "대구광역시",
+   "sigunguNm": "군위군",
+   "animalCmgCl": "가능",
+   "homepage": "http://80sscamping.com/",
+   "resveUrl": "http://80sscamping.com/04_reservation/sub_02_1.php"
+  },
+  {
+   "facltNm": "그루터기캠핑장",
+   "lineIntro": "",
+   "addr1": "강원특별자치도 양양군 서면 구룡령로 1694 ",
+   "induty": "자동차야영장",
+   "doNm": "강원특별자치도",
+   "sigunguNm": "양양군",
+   "animalCmgCl": "불가능",
+   "homepage": "http://www.yygrtgpension.com/",
+   "resveUrl": "http://www.yygrtgpension.com/"
+  },
+  {
+   "facltNm": "춘장대솔내음야영장",
+   "lineIntro": "춘장대해변 앞 솔밭에 자리한 대규모 캠핑장",
+   "addr1": "충청남도 서천군 서면 춘장대로151번길 20-6",
+   "induty": "일반야영장",
+   "doNm": "충청남도",
+   "sigunguNm": "서천군",
+   "animalCmgCl": "불가능",
+   "homepage": "",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "솔뜰",
+   "lineIntro": "수도권에 위치한 리조트급 캠핑장으로 솔숲이 일품",
+   "addr1": "경기도 양평군 옥천면 사기점길 45",
+   "induty": "일반야영장",
+   "doNm": "경기도",
+   "sigunguNm": "양평군",
+   "animalCmgCl": "가능",
+   "homepage": "www.solddeul.com",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "웅천친수공원 야영장",
+   "lineIntro": "즐길거리, 저렴한 가격 모두 갖춘 웅천친수공원 야영장",
+   "addr1": "전남광주통합특별시 여수시 웅천동 1692번지 ",
+   "induty": "일반야영장",
+   "doNm": "전남광주통합특별시",
+   "sigunguNm": "여수시",
+   "animalCmgCl": "불가능",
+   "homepage": "http://www.ystour.kr/tourism/tour/tourMUserList.do?mode=detail&cur_page=1&m2=-1&searchWord=&m3=&others=04&trSeqId=702",
+   "resveUrl": "http://ok.yeosu.go.kr/ok/stay/woongcheon/reservation/page.ok"
+  },
+  {
+   "facltNm": "초안산캠핑장",
+   "lineIntro": "",
+   "addr1": "서울특별시 노원구 마들로5가길 66-107 (월계동)",
+   "induty": "자동차야영장",
+   "doNm": "서울특별시",
+   "sigunguNm": "노원구",
+   "animalCmgCl": "불가능",
+   "homepage": "reservation.nowonsc.kr",
+   "resveUrl": "reservation.nowonsc.kr"
+  },
+  {
+   "facltNm": "축령산자연휴양림 야영장",
+   "lineIntro": "아름드리 잣나무 숲 자연휴양림 속 야영장",
+   "addr1": "경기도 남양주시 수동면 축령산로 299 ",
+   "induty": "일반야영장",
+   "doNm": "경기도",
+   "sigunguNm": "남양주시",
+   "animalCmgCl": "불가능",
+   "homepage": "https://foresttrip.go.kr/main.do",
+   "resveUrl": "https://foresttrip.go.kr/main.do"
+  },
+  {
+   "facltNm": "문경또또캠핑장",
+   "lineIntro": "개별화장실(개수대,샤워실)과 타프존, 주변인프라가 풍부한 캠핑장입니다.",
+   "addr1": "경상북도 문경시 가은읍 왕능강변길 71",
+   "induty": "자동차야영장",
+   "doNm": "경상북도",
+   "sigunguNm": "문경시",
+   "animalCmgCl": "가능",
+   "homepage": "",
+   "resveUrl": "네이버, 캠핏"
+  },
+  {
+   "facltNm": "럭셔리 비토섬 제이글램핑",
+   "lineIntro": "",
+   "addr1": "경상남도 사천시 서포면 거북길 468-116",
+   "induty": "일반야영장",
+   "doNm": "경상남도",
+   "sigunguNm": "사천시",
+   "animalCmgCl": "가능",
+   "homepage": "http://www.j-glamping.com/",
+   "resveUrl": "https://www.ddnayo.com/RsvSys/Calendar.aspx?id_hotel=11860"
+  },
+  {
+   "facltNm": "(주)크리스월드더레지던스",
+   "lineIntro": "북한강 수상레저 리조트에서 운영하는 글램핑",
+   "addr1": "경기도 가평군 가평읍 북한강변로 360-91",
+   "induty": "일반야영장",
+   "doNm": "경기도",
+   "sigunguNm": "가평군",
+   "animalCmgCl": "가능(소형견)",
+   "homepage": "http://chrisworld.co.kr/",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "약수동산",
+   "lineIntro": "남한강을 따라 양평시내까지 내려다 보이는 전망좋은  캠핑장",
+   "addr1": "경기도 양평군 옥천면 약수동산길 86",
+   "induty": "일반야영장",
+   "doNm": "경기도",
+   "sigunguNm": "양평군",
+   "animalCmgCl": "불가능",
+   "homepage": "https://www.instagram.com/yaksudongsan",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "알로프랑스",
+   "lineIntro": "고급스럽고 감성적인 카라반 캠핑장",
+   "addr1": "전북특별자치도 무주군 무풍면 구천동로 559-12",
+   "induty": "일반야영장",
+   "doNm": "전북특별자치도",
+   "sigunguNm": "무주군",
+   "animalCmgCl": "가능",
+   "homepage": "https://www.instagram.com/amazingpark6211/",
+   "resveUrl": "https://pf.kakao.com/_YAtks"
+  },
+  {
+   "facltNm": "(주)젠틀펫",
+   "lineIntro": "반려견 관련 부대시설이 알찬 글램핑장",
+   "addr1": "경상북도 문경시 문경읍 문경대로 2430",
+   "induty": "일반야영장",
+   "doNm": "경상북도",
+   "sigunguNm": "문경시",
+   "animalCmgCl": "가능",
+   "homepage": "https://gentlepetparadise.modoo.at/",
+   "resveUrl": "https://naver.me/F42wIJEc"
+  },
+  {
+   "facltNm": "별하숲캠핑장",
+   "lineIntro": "",
+   "addr1": "경상북도 문경시 가은읍 작약로 656",
+   "induty": "일반야영장",
+   "doNm": "경상북도",
+   "sigunguNm": "문경시",
+   "animalCmgCl": "가능",
+   "homepage": "",
+   "resveUrl": "https://www.camfit.co.kr/camp/63e0b90af21f2f001ee339f4"
+  },
+  {
+   "facltNm": "쌍근오토캠핑장",
+   "lineIntro": "바닷가옆  조용하고 풍경좋은 캠핑장",
+   "addr1": "경상남도 거제시 남부면 남부해안로 1054",
+   "induty": "자동차야영장",
+   "doNm": "경상남도",
+   "sigunguNm": "거제시",
+   "animalCmgCl": "불가능",
+   "homepage": "",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "금오산 힐링캠프",
+   "lineIntro": "널찍한 사이트가 눈에 띄는 오토캠핑장",
+   "addr1": "경상북도 김천시 남면 오봉리 6-3",
+   "induty": "일반야영장",
+   "doNm": "경상북도",
+   "sigunguNm": "김천시",
+   "animalCmgCl": "가능(소형견)",
+   "homepage": "https://www.gumicamp.com/",
+   "resveUrl": "https://map.naver.com/p/entry/place/1961285063?c=18.30,0,0,0,dh"
+  },
+  {
+   "facltNm": "천안 놀이터 캠핑장",
+   "lineIntro": "어린이를 위한 폐교 캠핑장",
+   "addr1": "충청남도 천안시 동남구 동면 화덕1길 22-7",
+   "induty": "일반야영장",
+   "doNm": "충청남도",
+   "sigunguNm": "천안시",
+   "animalCmgCl": "가능",
+   "homepage": "",
+   "resveUrl": "https://map.naver.com/p/entry/place/1734741351?c=15.00,0,0,0,dh"
+  },
+  {
+   "facltNm": "행복한 시골 캠핑장",
+   "lineIntro": "",
+   "addr1": "전북특별자치도 고창군 흥덕면 동림로 151",
+   "induty": "일반야영장",
+   "doNm": "전북특별자치도",
+   "sigunguNm": "고창군",
+   "animalCmgCl": "",
+   "homepage": "",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "용동2리 마을 농촌체험센터",
+   "lineIntro": "",
+   "addr1": "경상북도 경주시 문무대왕면 와읍용동길 204-3",
+   "induty": "자동차야영장",
+   "doNm": "경상북도",
+   "sigunguNm": "경주시",
+   "animalCmgCl": "",
+   "homepage": "",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "유정호숫길캠핑장",
+   "lineIntro": "넓은 사이트(8m x 8m), 전망좋은 힐링 무인카페,  산책로로 이어진 캠핑장앞  유정호숫길 둘레길을 즐겨보세요!",
+   "addr1": "경기도 광주시 도척면 도척로 977",
+   "induty": "일반야영장",
+   "doNm": "경기도",
+   "sigunguNm": "광주시",
+   "animalCmgCl": "불가능",
+   "homepage": "",
+   "resveUrl": "네이버예약"
+  },
+  {
+   "facltNm": "글램인(GLAMIN)",
+   "lineIntro": "홍천비발디에 근접한 양평 단월면에 위치한 가족글램핑",
+   "addr1": "경기도 양평군 단월면 석산로 383",
+   "induty": "일반야영장",
+   "doNm": "경기도",
+   "sigunguNm": "양평군",
+   "animalCmgCl": "불가능",
+   "homepage": "glamin.kr",
+   "resveUrl": "https://naver.me/GCJHsMEY"
+  },
+  {
+   "facltNm": "충청남도산림자원연구소(금강자연휴양림)",
+   "lineIntro": "",
+   "addr1": "세종특별자치시 금남면 산림박물관길 110, 산림박물관, 산림환경연구소",
+   "induty": "일반야영장",
+   "doNm": "세종특별자치시",
+   "sigunguNm": "금남면",
+   "animalCmgCl": "",
+   "homepage": "",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "저맘때 글램핑",
+   "lineIntro": "",
+   "addr1": "경상북도 경주시 대추밭안길 128-38 (조양동)",
+   "induty": "자동차야영장",
+   "doNm": "경상북도",
+   "sigunguNm": "경주시",
+   "animalCmgCl": "",
+   "homepage": "",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "이화만리 캠핑 체험마을",
+   "lineIntro": "",
+   "addr1": "경상북도 김천시 농소면 벽봉로 1651",
+   "induty": "일반야영장",
+   "doNm": "경상북도",
+   "sigunguNm": "김천시",
+   "animalCmgCl": "불가능",
+   "homepage": "https://cafe.naver.com/plumcamping",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "여항꼴짝캠핑장",
+   "lineIntro": "",
+   "addr1": "경상남도 함안군 여항면 진함로 1113-2",
+   "induty": "일반야영장",
+   "doNm": "경상남도",
+   "sigunguNm": "함안군",
+   "animalCmgCl": "",
+   "homepage": "",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "만리포몰디브",
+   "lineIntro": "태안글램핑 배낚시",
+   "addr1": "충청남도 태안군 소원면 천리포1길 143-24",
+   "induty": "일반야영장",
+   "doNm": "충청남도",
+   "sigunguNm": "태안군",
+   "animalCmgCl": "불가능",
+   "homepage": "",
+   "resveUrl": "http://xn--bj0b46pgsbwd760lj0b.kr/"
+  },
+  {
+   "facltNm": "지리산천왕봉오토캠핑장",
+   "lineIntro": "미세먼지 No! 깨끗한 공기 가득 지리산천왕봉야영장",
+   "addr1": "전북특별자치도 남원시 산내면 내령리 428-9",
+   "induty": "일반야영장",
+   "doNm": "전북특별자치도",
+   "sigunguNm": "남원시",
+   "animalCmgCl": "가능(소형견)",
+   "homepage": "https://xn--oy2bi2kooa32ynkgykiq7c.com/",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "몽산포자동차야영장",
+   "lineIntro": "몽산포해수욕장 앞 국립공원관리공단에서 운영하는 캠핑장",
+   "addr1": "충청남도 태안군 남면 몽산포길 63-43",
+   "induty": "자동차야영장",
+   "doNm": "충청남도",
+   "sigunguNm": "태안군",
+   "animalCmgCl": "불가능",
+   "homepage": "https://reservation.knps.or.kr",
+   "resveUrl": "https://reservation.knps.or.kr"
+  },
+  {
+   "facltNm": "회산백련지 오토캠핑장",
+   "lineIntro": "회산 백련지에서 연꽃도 보고 캠핑도 하고 1석 2조",
+   "addr1": "전남광주통합특별시 무안군 일로읍 백련로 333",
+   "induty": "일반야영장",
+   "doNm": "전남광주통합특별시",
+   "sigunguNm": "무안군",
+   "animalCmgCl": "불가능",
+   "homepage": "http://tour.muan.go.kr/lotus",
+   "resveUrl": "http://tour.muan.go.kr/lotus/camping"
+  },
+  {
+   "facltNm": "가야산오토캠핑장",
+   "lineIntro": "청정자연 성주군에서 자연과 사람이 함께 쉬는 복합 힐링 공간",
+   "addr1": "경상북도 성주군 가천면 동신로 33",
+   "induty": "일반야영장,자동차야영장",
+   "doNm": "경상북도",
+   "sigunguNm": "성주군",
+   "animalCmgCl": "가능",
+   "homepage": "https://sj.go.kr/gayasan/camping/main.do",
+   "resveUrl": "https://sj.go.kr/gayasan/camping/page.do?mnu_uid=4151"
+  },
+  {
+   "facltNm": "해마루오토캠핑장&펜션",
+   "lineIntro": "",
+   "addr1": "강원특별자치도 평창군 봉평면 흥정계곡2길 75",
+   "induty": "일반야영장",
+   "doNm": "강원특별자치도",
+   "sigunguNm": "평창군",
+   "animalCmgCl": "가능(소형견)",
+   "homepage": "https://www.camfit.co.kr/camp/699c23452a813c001de0ef7c",
+   "resveUrl": "https://www.camfit.co.kr/camp/699c23452a813c001de0ef7c"
+  },
+  {
+   "facltNm": "무흘구곡펜션 야영장",
+   "lineIntro": "",
+   "addr1": "경상북도 성주군 금수면 성주로 322-10",
+   "induty": "일반야영장",
+   "doNm": "경상북도",
+   "sigunguNm": "성주군",
+   "animalCmgCl": "가능",
+   "homepage": "https://muheulgugokpension.modoo.at/",
+   "resveUrl": "https://booking.naver.com/booking/3/bizes/753133/items/4632049"
+  },
+  {
+   "facltNm": "앵봉산 가족캠핑장",
+   "lineIntro": "서울 서북권 최초의 테라스형 캠핌장",
+   "addr1": "서울특별시 은평구 통일로 1053 (진관동)",
+   "induty": "일반야영장",
+   "doNm": "서울특별시",
+   "sigunguNm": "은평구",
+   "animalCmgCl": "불가능",
+   "homepage": "https://www.efmc.or.kr/fmcs/1",
+   "resveUrl": "https://camp.xticket.kr/web/main?shopEncode=a12d6508ae5ea0562923cb1f2762761f3413ab4c988a6c8aa92ea7873e263bec"
+  },
+  {
+   "facltNm": "하우스플레이랩",
+   "lineIntro": "",
+   "addr1": "경기도 안성시 보개면 보삼로 120-3",
+   "induty": "일반야영장",
+   "doNm": "경기도",
+   "sigunguNm": "안성시",
+   "animalCmgCl": "가능",
+   "homepage": "",
+   "resveUrl": "https://www.camfit.co.kr/camp/6944f53c49f336001d659704"
+  },
+  {
+   "facltNm": "몽지리 캠핑장",
+   "lineIntro": "",
+   "addr1": "강원특별자치도 평창군 미탄면 청옥산길 249-21",
+   "induty": "자동차야영장",
+   "doNm": "강원특별자치도",
+   "sigunguNm": "평창군",
+   "animalCmgCl": "",
+   "homepage": "",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "썬라이즈 코스트",
+   "lineIntro": "호미곶 바다뷰 캠핑장",
+   "addr1": "경상북도 포항시 남구 호미곶면 강사리 1156",
+   "induty": "자동차야영장",
+   "doNm": "경상북도",
+   "sigunguNm": "포항시",
+   "animalCmgCl": "가능(소형견)",
+   "homepage": "썬라이즈코스트.kr",
+   "resveUrl": "https://map.naver.com/p/entry/place/2044520236?lng=129.5745805&lat=36.0605099&placePath=%2Froom%3Ffrom%3Dmap%26fromPanelNum%3D1%26additionalHeight%3D76%26timestamp%3D202611110915%26locale%3Dko%26svcName%3Dmap_pcv5%26businessCategory%3Dcamping%26entry%3Dbmp&entry=plt&searchType=place&c=15.00,0,0,2,dh"
+  },
+  {
+   "facltNm": "어름박골캠핑장",
+   "lineIntro": "",
+   "addr1": "경기도 이천시 마장면 작촌로35번길 317-31",
+   "induty": "일반야영장",
+   "doNm": "경기도",
+   "sigunguNm": "이천시",
+   "animalCmgCl": "",
+   "homepage": "",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "구룡자동차야영장(치악산국립공원)",
+   "lineIntro": "치악산 구룡사 가는 길, 계곡옆에 조성한 국립공원 캠핑장",
+   "addr1": "강원특별자치도 원주시 소초면 구룡마을길 14",
+   "induty": "자동차야영장",
+   "doNm": "강원특별자치도",
+   "sigunguNm": "원주시",
+   "animalCmgCl": "불가능",
+   "homepage": "http://www.knps.or.kr/",
+   "resveUrl": "http://www.knps.or.kr/knpshp/visit/reservation/camp.jsp?menuid=P10610&depth=3"
+  },
+  {
+   "facltNm": "해브펀 캠핑 어라운드",
+   "lineIntro": "",
+   "addr1": "경기도 파주시 월롱면 도감로 130",
+   "induty": "일반야영장",
+   "doNm": "경기도",
+   "sigunguNm": "파주시",
+   "animalCmgCl": "불가능",
+   "homepage": "www.havefungreen.com",
+   "resveUrl": "https://booking.naver.com/booking/3/bizes/871809"
+  },
+  {
+   "facltNm": "글로리아 캠핑장",
+   "lineIntro": "일출과 일몰을 한 곳에서 만날 수 있는  바다 앞 이글루 돔하우스 글램핑장",
+   "addr1": "경상남도 창원시 마산합포구 구산면 해양관광로 1090-90",
+   "induty": "일반야영장",
+   "doNm": "경상남도",
+   "sigunguNm": "창원시",
+   "animalCmgCl": "불가능",
+   "homepage": "https://www.instagram.com/gloria_glamping",
+   "resveUrl": "https://booking.naver.com/booking/3/bizes/1075954"
+  },
+  {
+   "facltNm": "제이제이캠핑장",
+   "lineIntro": "오직 1팀만을 위한 프라이빗 캠핑장",
+   "addr1": "경기도 양주시 칠봉산로120번길 96-7 (봉양동)",
+   "induty": "일반야영장",
+   "doNm": "경기도",
+   "sigunguNm": "양주시",
+   "animalCmgCl": "불가능",
+   "homepage": "https://cafe.naver.com/jjcampsite\t",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "산울림관광농원",
+   "lineIntro": "",
+   "addr1": "경기도 양평군 양동면 불개터길 65-19",
+   "induty": "자동차야영장",
+   "doNm": "경기도",
+   "sigunguNm": "양평군",
+   "animalCmgCl": "불가능",
+   "homepage": "https://blog.naver.com/sanullim_camp",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "시목 야영장",
+   "lineIntro": "",
+   "addr1": "전남광주통합특별시 신안군 도초면 오류리 965-2 ",
+   "induty": "일반야영장",
+   "doNm": "전남광주통합특별시",
+   "sigunguNm": "신안군",
+   "animalCmgCl": "불가능",
+   "homepage": "http://www.knps.or.kr/front/portal/visit/visitCourseMain.do?parkId=121200&parkNavGb=park_facView&vnewsId=173",
+   "resveUrl": "https://reservation.knps.or.kr"
+  },
+  {
+   "facltNm": "워터사이드 캠핑장",
+   "lineIntro": "하천 옆 캠핑장",
+   "addr1": "충청북도 진천군 백곡면 배티로 22-10",
+   "induty": "자동차야영장",
+   "doNm": "충청북도",
+   "sigunguNm": "진천군",
+   "animalCmgCl": "가능",
+   "homepage": "",
+   "resveUrl": "https://m.thankqcamping.com/resv/view.hbb?cseq=20980&go_main=Y&path=RP"
+  },
+  {
+   "facltNm": "꿀단지 캠핑장",
+   "lineIntro": "대부도 소규모 프라이빗 캠핑장",
+   "addr1": "경기도 안산시 단원구 선창길 87 (대부북동)",
+   "induty": "일반야영장",
+   "doNm": "경기도",
+   "sigunguNm": "안산시",
+   "animalCmgCl": "가능",
+   "homepage": "",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "노스센티넬",
+   "lineIntro": "",
+   "addr1": "경기도 가평군 설악면 미사리로645번길 185-164",
+   "induty": "일반야영장",
+   "doNm": "경기도",
+   "sigunguNm": "가평군",
+   "animalCmgCl": "",
+   "homepage": "",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "운장산계곡캠핑야영장",
+   "lineIntro": "시원한 계곡과 산세의 조화로 아름다운 캠핑환경",
+   "addr1": "전북특별자치도 완주군 동상면 동상주천로 464",
+   "induty": "일반야영장",
+   "doNm": "전북특별자치도",
+   "sigunguNm": "완주군",
+   "animalCmgCl": "가능(소형견)",
+   "homepage": "",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "왜목 석문산 야영장",
+   "lineIntro": "",
+   "addr1": "충청남도 당진시 석문면 교로리 2896",
+   "induty": "일반야영장",
+   "doNm": "충청남도",
+   "sigunguNm": "당진시",
+   "animalCmgCl": "",
+   "homepage": "",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "캠프투나잇",
+   "lineIntro": "",
+   "addr1": "경기도 가평군 조종면 대보간선로 591",
+   "induty": "자동차야영장",
+   "doNm": "경기도",
+   "sigunguNm": "가평군",
+   "animalCmgCl": "",
+   "homepage": "",
+   "resveUrl": ""
+  },
   {
    "facltNm": "라라플레이스&글램핑",
    "lineIntro": "하조대 해변에서 보도거리 1분 위치에 있는 글램핑장",
@@ -189,17 +728,6 @@
    "resveUrl": ""
   },
   {
-   "facltNm": "80 SS 오토캠핑장",
-   "lineIntro": "청정 숲속에 글램핑과 오토캠핑이 공존하는 공간",
-   "addr1": "대구광역시 군위군 부계면 한티로 1525-6",
-   "induty": "자동차야영장",
-   "doNm": "대구광역시",
-   "sigunguNm": "군위군",
-   "animalCmgCl": "가능",
-   "homepage": "http://80sscamping.com/",
-   "resveUrl": "http://80sscamping.com/04_reservation/sub_02_1.php"
-  },
-  {
    "facltNm": "산으로 캠핑장",
    "lineIntro": "",
    "addr1": "강원특별자치도 홍천군 서면 모곡로 365-139",
@@ -231,28 +759,6 @@
    "animalCmgCl": "가능(소형견)",
    "homepage": "https://cafe.naver.com/firemaple",
    "resveUrl": "https://cafe.naver.com/firemaple"
-  },
-  {
-   "facltNm": "약수동산",
-   "lineIntro": "남한강을 따라 양평시내까지 내려다 보이는 전망좋은  캠핑장",
-   "addr1": "경기도 양평군 옥천면 약수동산길 86",
-   "induty": "일반야영장",
-   "doNm": "경기도",
-   "sigunguNm": "양평군",
-   "animalCmgCl": "불가능",
-   "homepage": "https://www.instagram.com/yaksudongsan",
-   "resveUrl": ""
-  },
-  {
-   "facltNm": "워터사이드 캠핑장",
-   "lineIntro": "하천 옆 캠핑장",
-   "addr1": "충청북도 진천군 백곡면 배티로 22-10",
-   "induty": "자동차야영장",
-   "doNm": "충청북도",
-   "sigunguNm": "진천군",
-   "animalCmgCl": "가능",
-   "homepage": "",
-   "resveUrl": "https://m.thankqcamping.com/resv/view.hbb?cseq=20980&go_main=Y&path=RP"
   },
   {
    "facltNm": "느티나무 캠핑장",
@@ -407,17 +913,6 @@
    "animalCmgCl": "가능",
    "homepage": "https://htcamp.modoo.at/",
    "resveUrl": "https://store.camfit.co.kr/camp/642cdbaacc25eb001e0ec4e9"
-  },
-  {
-   "facltNm": "운장산계곡캠핑야영장",
-   "lineIntro": "",
-   "addr1": "전북특별자치도 완주군 동상면 동상주천로 464",
-   "induty": "일반야영장",
-   "doNm": "전북특별자치도",
-   "sigunguNm": "완주군",
-   "animalCmgCl": "",
-   "homepage": "",
-   "resveUrl": ""
   },
   {
    "facltNm": "태안바다드림 캠핑장",
@@ -827,17 +1322,6 @@
    "resveUrl": "http://www.myeonghakcamp.com/bbs/board.php?bo_table=0502"
   },
   {
-   "facltNm": "시목 야영장",
-   "lineIntro": "",
-   "addr1": "전남광주통합특별시 신안군 도초면 오류리 965-2 ",
-   "induty": "일반야영장",
-   "doNm": "전남광주통합특별시",
-   "sigunguNm": "신안군",
-   "animalCmgCl": "불가능",
-   "homepage": "http://www.knps.or.kr/front/portal/visit/visitCourseMain.do?parkId=121200&parkNavGb=park_facView&vnewsId=173",
-   "resveUrl": "https://reservation.knps.or.kr"
-  },
-  {
    "facltNm": "양지생태마을캠핑장",
    "lineIntro": "숲속 자연과 수영장을 함께 즐기는 가족 힐링 캠핑장",
    "addr1": "경상남도 거창군 마리면 진산길 157",
@@ -1036,17 +1520,6 @@
    "resveUrl": ""
   },
   {
-   "facltNm": "꿀단지 캠핑장",
-   "lineIntro": "",
-   "addr1": "경기도 안산시 단원구 선창길 87 (대부북동)",
-   "induty": "일반야영장",
-   "doNm": "경기도",
-   "sigunguNm": "안산시",
-   "animalCmgCl": "",
-   "homepage": "",
-   "resveUrl": ""
-  },
-  {
    "facltNm": "강변사리 캠핑장",
    "lineIntro": "시인이 걷던 섬진강 따라 떠나는 감성 문학캠핑",
    "addr1": "전북특별자치도 임실군 덕치면 강동로 865-20",
@@ -1155,17 +1628,6 @@
    "animalCmgCl": "",
    "homepage": "",
    "resveUrl": ""
-  },
-  {
-   "facltNm": "글램인(GLAMIN)",
-   "lineIntro": "홍천비발디에 근접한 양평 단월면에 위치한 가족글램핑",
-   "addr1": "경기도 양평군 단월면 석산로 383",
-   "induty": "일반야영장",
-   "doNm": "경기도",
-   "sigunguNm": "양평군",
-   "animalCmgCl": "불가능",
-   "homepage": "glamin.kr",
-   "resveUrl": "https://naver.me/GCJHsMEY"
   },
   {
    "facltNm": "송천마을 협동조합 야영장",
@@ -1484,28 +1946,6 @@
    "sigunguNm": "하남시",
    "animalCmgCl": "",
    "homepage": "https://map.naver.com/p/entry/place/2081035231?lng=127.2339426&lat=37.5312993&placePath=%2Fhome&searchType=place",
-   "resveUrl": ""
-  },
-  {
-   "facltNm": "썬라이즈 코스트",
-   "lineIntro": "",
-   "addr1": "경상북도 포항시 남구 호미곶면 호미로 1170",
-   "induty": "자동차야영장",
-   "doNm": "경상북도",
-   "sigunguNm": "포항시",
-   "animalCmgCl": "",
-   "homepage": "",
-   "resveUrl": ""
-  },
-  {
-   "facltNm": "어름박골캠핑장",
-   "lineIntro": "",
-   "addr1": "경기도 이천시 마장면 작촌로35번길 317-31",
-   "induty": "일반야영장",
-   "doNm": "경기도",
-   "sigunguNm": "이천시",
-   "animalCmgCl": "",
-   "homepage": "",
    "resveUrl": ""
   },
   {
@@ -1938,17 +2378,6 @@
    "resveUrl": ""
   },
   {
-   "facltNm": "태안노을숲캠핑장",
-   "lineIntro": "마검포 바다 앞에 위치한 노을 보기 좋은 바다뷰 캠핑장",
-   "addr1": "충청남도 태안군 남면 마검포길 311-42",
-   "induty": "일반야영장",
-   "doNm": "충청남도",
-   "sigunguNm": "태안군",
-   "animalCmgCl": "가능(소형견)",
-   "homepage": "",
-   "resveUrl": ""
-  },
-  {
    "facltNm": "밴프 야영장",
    "lineIntro": "구룡령초입 공수전계곡 아래쪽  강변 캠핑장",
    "addr1": "강원특별자치도 양양군 서면 구룡령로 3080-70",
@@ -2035,17 +2464,6 @@
    "animalCmgCl": "",
    "homepage": "https://hsecofarm.hscity.go.kr/",
    "resveUrl": "https://hsecofarm.hscity.go.kr/"
-  },
-  {
-   "facltNm": "태안오션뷰캠핑장",
-   "lineIntro": "",
-   "addr1": "충청남도 태안군 원북면 구례포길 47-84, 태안오션뷰캠핑장",
-   "induty": "일반야영장",
-   "doNm": "충청남도",
-   "sigunguNm": "태안군",
-   "animalCmgCl": "",
-   "homepage": "",
-   "resveUrl": ""
   },
   {
    "facltNm": "달자캠핑장",
@@ -2219,17 +2637,6 @@
    "induty": "자동차야영장",
    "doNm": "경기도",
    "sigunguNm": "파주시",
-   "animalCmgCl": "",
-   "homepage": "",
-   "resveUrl": ""
-  },
-  {
-   "facltNm": "마검포힐링캠핑장-A",
-   "lineIntro": "",
-   "addr1": "충청남도 태안군 남면 신온리 952-105 외 1필지",
-   "induty": "일반야영장",
-   "doNm": "충청남도",
-   "sigunguNm": "태안군",
    "animalCmgCl": "",
    "homepage": "",
    "resveUrl": ""
@@ -2502,17 +2909,6 @@
    "facltNm": "노스센티넬 야영장",
    "lineIntro": "",
    "addr1": "경기도 가평군 설악면 미사리로645번길 185-162",
-   "induty": "일반야영장",
-   "doNm": "경기도",
-   "sigunguNm": "가평군",
-   "animalCmgCl": "",
-   "homepage": "",
-   "resveUrl": ""
-  },
-  {
-   "facltNm": "노스센티넬 프레스트 캐빈",
-   "lineIntro": "",
-   "addr1": "경기도 가평군 설악면 미사리로645번길 185-164",
    "induty": "일반야영장",
    "doNm": "경기도",
    "sigunguNm": "가평군",
@@ -2926,17 +3322,6 @@
    "animalCmgCl": "불가능",
    "homepage": "",
    "resveUrl": ""
-  },
-  {
-   "facltNm": "유정호숫길캠핑장",
-   "lineIntro": "태화산과 유정호숫길의 아름다운 자연을 함께 즐길 수 있는 곳입니다. ",
-   "addr1": "경기도 광주시 도척면 도척로 977",
-   "induty": "일반야영장",
-   "doNm": "경기도",
-   "sigunguNm": "광주시",
-   "animalCmgCl": "불가능",
-   "homepage": "",
-   "resveUrl": "네이버예약"
   },
   {
    "facltNm": "(주)청도 프로방스 글램핑",
@@ -4490,17 +4875,6 @@
    "resveUrl": "네이버 (https://naver.me/5S9zLmnF)"
   },
   {
-   "facltNm": "국립김천숲속야영장",
-   "lineIntro": "산림청2호캠핑장. 국립시설 최초의 반려견 동반 야영장",
-   "addr1": "경상북도 김천시 대덕면 조룡길 865",
-   "induty": "일반야영장",
-   "doNm": "경상북도",
-   "sigunguNm": "김천시",
-   "animalCmgCl": "가능",
-   "homepage": "https://www.foresttrip.go.kr",
-   "resveUrl": "https://www.foresttrip.go.kr"
-  },
-  {
    "facltNm": "여수밤바다카라반",
    "lineIntro": "",
    "addr1": "전남광주통합특별시 여수시 화양면 연말길 46",
@@ -5326,17 +5700,6 @@
    "resveUrl": "http://muduri.yangjusarang.com/index.htm"
   },
   {
-   "facltNm": "포레스트 카라반 랜드",
-   "lineIntro": "",
-   "addr1": "경기도 가평군 가평읍 상지로 705-38",
-   "induty": "자동차야영장",
-   "doNm": "경기도",
-   "sigunguNm": "가평군",
-   "animalCmgCl": "가능",
-   "homepage": "www.포레스트카라반.kr",
-   "resveUrl": "www.포레스트카라반.kr"
-  },
-  {
    "facltNm": "프라이빗 캠프닉",
    "lineIntro": "",
    "addr1": "충청북도 충주시 살미면 월악로 1233",
@@ -5645,17 +6008,6 @@
    "resveUrl": "https://www.i815.or.kr/campsite/camp/site.do"
   },
   {
-   "facltNm": "공현진1리 해변 야영장",
-   "lineIntro": "",
-   "addr1": "강원특별자치도 고성군 죽왕면 공현진리 143-39 선 공유수면",
-   "induty": "일반야영장",
-   "doNm": "강원특별자치도",
-   "sigunguNm": "고성군",
-   "animalCmgCl": "불가능",
-   "homepage": "",
-   "resveUrl": ""
-  },
-  {
    "facltNm": "멍글멍글 펫 글램핑(주)",
    "lineIntro": "",
    "addr1": "충청북도 청주시 청원구 오창읍 오산가좌로 650-28, 백현리 193-21,193-18(2필지)",
@@ -5818,17 +6170,6 @@
    "sigunguNm": "경주시",
    "animalCmgCl": "",
    "homepage": "",
-   "resveUrl": ""
-  },
-  {
-   "facltNm": "송림오토캠핑장",
-   "lineIntro": "빼곡한 송림 사이에서 즐기는 캠핑",
-   "addr1": "경상북도 경주시 감포읍 동해안로 2015",
-   "induty": "일반야영장",
-   "doNm": "경상북도",
-   "sigunguNm": "경주시",
-   "animalCmgCl": "불가능",
-   "homepage": "http://songrimauto.co.kr/",
    "resveUrl": ""
   },
   {
@@ -6635,17 +6976,6 @@
    "resveUrl": "http://www.ypforest.com/main.php?sp=reserv"
   },
   {
-   "facltNm": "웅천친수공원 야영장",
-   "lineIntro": "즐길거리, 저렴한 가격 모두 갖춘 웅천친수공원 야영장",
-   "addr1": "전남광주통합특별시 여수시 웅천동 1692번지 ",
-   "induty": "일반야영장",
-   "doNm": "전남광주통합특별시",
-   "sigunguNm": "여수시",
-   "animalCmgCl": "불가능",
-   "homepage": "http://www.ystour.kr/tourism/tour/tourMUserList.do?mode=detail&cur_page=1&m2=-1&searchWord=&m3=&others=04&trSeqId=702",
-   "resveUrl": "http://ok.yeosu.go.kr/ok/stay/woongcheon/reservation/page.ok"
-  },
-  {
    "facltNm": "월성 산아래 글램핑",
    "lineIntro": "자연과 함께한 힐링캠프, 월성 산아래 글램핑",
    "addr1": "전남광주통합특별시 장성군 북하면 월성안길16-33",
@@ -7273,17 +7603,6 @@
    "resveUrl": ""
   },
   {
-   "facltNm": "회산백련지 오토캠핑장",
-   "lineIntro": "회산 백련지에서 연꽃도 보고 캠핑도 하고 1석 2조",
-   "addr1": "전남광주통합특별시 무안군 일로읍 복룡리 203",
-   "induty": "일반야영장",
-   "doNm": "전남광주통합특별시",
-   "sigunguNm": "무안군",
-   "animalCmgCl": "불가능",
-   "homepage": "http://tour.muan.go.kr/lotus",
-   "resveUrl": "http://tour.muan.go.kr/lotus/camping"
-  },
-  {
    "facltNm": "캠핑아이",
    "lineIntro": "법성포 인근에 자리한 깔끔한 대규모 캠핑장",
    "addr1": "전남광주통합특별시 영광군 백수읍 법백로 39",
@@ -7777,17 +8096,6 @@
    "animalCmgCl": "불가능",
    "homepage": "https://blog.naver.com/dronesportskorea",
    "resveUrl": "https://dronecamping.modoo.at/?link=cxcui9jf"
-  },
-  {
-   "facltNm": "화순돔아일랜드",
-   "lineIntro": "안락한 돔하우스 캠핑",
-   "addr1": "전남광주통합특별시 화순군 화순읍 학포로 2653-20",
-   "induty": "일반야영장",
-   "doNm": "전남광주통합특별시",
-   "sigunguNm": "화순군",
-   "animalCmgCl": "가능",
-   "homepage": "http://hwasundome.modoo.at/",
-   "resveUrl": "네이버/ 화순돔아일랜드 검색"
   },
   {
    "facltNm": "을왕리 솔트 캠핑장",
@@ -9176,45 +9484,12 @@
    "resveUrl": ""
   },
   {
-   "facltNm": "원포해수욕장 야영장",
-   "lineIntro": "",
-   "addr1": "강원특별자치도 양양군 현남면 원포리 1-10",
-   "induty": "일반야영장",
-   "doNm": "강원특별자치도",
-   "sigunguNm": "양양군",
-   "animalCmgCl": "",
-   "homepage": "",
-   "resveUrl": ""
-  },
-  {
    "facltNm": "남애3리 갯마을해수욕장 야영장",
    "lineIntro": "",
    "addr1": "강원특별자치도 양양군 현남면 남애리 600-14",
    "induty": "일반야영장",
    "doNm": "강원특별자치도",
    "sigunguNm": "양양군",
-   "animalCmgCl": "",
-   "homepage": "",
-   "resveUrl": ""
-  },
-  {
-   "facltNm": "낙산해수욕장야영장",
-   "lineIntro": "",
-   "addr1": "강원특별자치도 양양군 양양읍 해맞이길 125, 야영장관리사",
-   "induty": "일반야영장",
-   "doNm": "강원특별자치도",
-   "sigunguNm": "양양군",
-   "animalCmgCl": "",
-   "homepage": "",
-   "resveUrl": ""
-  },
-  {
-   "facltNm": "화진포 솔밭 야영장",
-   "lineIntro": "",
-   "addr1": "강원특별자치도 고성군 현내면 초도리 94 외 13필지",
-   "induty": "일반야영장",
-   "doNm": "강원특별자치도",
-   "sigunguNm": "고성군",
    "animalCmgCl": "",
    "homepage": "",
    "resveUrl": ""
@@ -9238,17 +9513,6 @@
    "doNm": "강원특별자치도",
    "sigunguNm": "홍천군",
    "animalCmgCl": "가능",
-   "homepage": "",
-   "resveUrl": ""
-  },
-  {
-   "facltNm": "삼포 해변 야영장",
-   "lineIntro": "",
-   "addr1": "강원특별자치도 고성군 죽왕면 삼포리 243-18",
-   "induty": "일반야영장",
-   "doNm": "강원특별자치도",
-   "sigunguNm": "고성군",
-   "animalCmgCl": "불가능",
    "homepage": "",
    "resveUrl": ""
   },
@@ -9372,17 +9636,6 @@
    "animalCmgCl": "불가능",
    "homepage": "https://cafe.naver.com/undukcampp",
    "resveUrl": "https://www.camfit.co.kr/camp/64477c2f804b52001e6273c3"
-  },
-  {
-   "facltNm": "만리포몰디브",
-   "lineIntro": "태안글램핑 배낚시",
-   "addr1": "충청남도 태안군 소원면 천리포1길 143-24",
-   "induty": "일반야영장,침대,TV,에어컨,냉장고,유무선인터넷,취사도구",
-   "doNm": "충청남도",
-   "sigunguNm": "태안군",
-   "animalCmgCl": "불가능",
-   "homepage": "",
-   "resveUrl": "http://xn--bj0b46pgsbwd760lj0b.kr/"
   },
   {
    "facltNm": "올캠프(ALL camp)",
@@ -9682,17 +9935,6 @@
    "resveUrl": ""
   },
   {
-   "facltNm": "해마루오토캠핑장&펜션",
-   "lineIntro": "",
-   "addr1": "강원특별자치도 평창군 봉평면 흥정계곡2길 75",
-   "induty": "일반야영장",
-   "doNm": "강원특별자치도",
-   "sigunguNm": "평창군",
-   "animalCmgCl": "가능(소형견)",
-   "homepage": "https://www.camfit.co.kr/camp/699c23452a813c001de0ef7c",
-   "resveUrl": "https://www.camfit.co.kr/camp/699c23452a813c001de0ef7c"
-  },
-  {
    "facltNm": "한계산솔밭야영장",
    "lineIntro": "",
    "addr1": "강원특별자치도 인제군 북면 한계리 896",
@@ -9836,17 +10078,6 @@
    "resveUrl": ""
   },
   {
-   "facltNm": "공현진2리 해변 야영장",
-   "lineIntro": "",
-   "addr1": "강원특별자치도 고성군 죽왕면 공현진리 431-8",
-   "induty": "일반야영장",
-   "doNm": "강원특별자치도",
-   "sigunguNm": "고성군",
-   "animalCmgCl": "",
-   "homepage": "",
-   "resveUrl": ""
-  },
-  {
    "facltNm": "원주느린숲캠프",
    "lineIntro": "자연과 함께, 천천히 머무는 시간",
    "addr1": "강원특별자치도 원주시 지정면 지정로 717",
@@ -9856,17 +10087,6 @@
    "animalCmgCl": "가능(소형견)",
    "homepage": "",
    "resveUrl": "https://camfit.co.kr/"
-  },
-  {
-   "facltNm": "산울림관광농원",
-   "lineIntro": "",
-   "addr1": "경기도 양평군 양동면 불개터길 65-19",
-   "induty": "자동차야영장",
-   "doNm": "경기도",
-   "sigunguNm": "양평군",
-   "animalCmgCl": "불가능",
-   "homepage": "https://blog.naver.com/sanullim_camp",
-   "resveUrl": ""
   },
   {
    "facltNm": "바람재 오토캠핑장",
@@ -10441,17 +10661,6 @@
    "resveUrl": ""
   },
   {
-   "facltNm": "(주)크리스월드더레지던스",
-   "lineIntro": "북한강 수상레저 리조트에서 운영하는 글램핑",
-   "addr1": "경기도 가평군 가평읍 북한강변로 360-93",
-   "induty": "일반야영장",
-   "doNm": "경기도",
-   "sigunguNm": "가평군",
-   "animalCmgCl": "가능(소형견)",
-   "homepage": "http://chrisworld.co.kr/",
-   "resveUrl": ""
-  },
-  {
    "facltNm": "신두57글램핑&빌리지",
    "lineIntro": "신두리해수욕장에 자리한 캠핑장",
    "addr1": "충청남도 태안군 원북면 신두해변길 201-31",
@@ -10724,17 +10933,6 @@
    "sigunguNm": "연천군",
    "animalCmgCl": "불가능",
    "homepage": "https://www.yccs.or.kr/sisul/sisul_01_3/",
-   "resveUrl": ""
-  },
-  {
-   "facltNm": "용동2리 마을 농촌체험센터",
-   "lineIntro": "",
-   "addr1": "경상북도 경주시 문무대왕면 와읍용동길 204-3",
-   "induty": "자동차야영장",
-   "doNm": "경상북도",
-   "sigunguNm": "경주시",
-   "animalCmgCl": "",
-   "homepage": "",
    "resveUrl": ""
   },
   {
@@ -12641,17 +12839,6 @@
    "resveUrl": ""
   },
   {
-   "facltNm": "하우스플레이랩",
-   "lineIntro": "",
-   "addr1": "경기도 안성시 보개면 보삼로 120-3",
-   "induty": "일반야영장",
-   "doNm": "경기도",
-   "sigunguNm": "안성시",
-   "animalCmgCl": "불가능",
-   "homepage": "",
-   "resveUrl": "https://www.camfit.co.kr/camp/6944f53c49f336001d659704"
-  },
-  {
    "facltNm": "소백산국립공원 남천야영장",
    "lineIntro": "더 넓어진 간격과 안전한 물놀이장, 아이들 체험 프로그램과 전기 기반 친환경 운영을 갖춘 남천야영장",
    "addr1": "충청북도 단양군 영춘면 남천계곡로 378",
@@ -12782,17 +12969,6 @@
    "animalCmgCl": "가능(소형견)",
    "homepage": "https://blog.naver.com/starlightcamping",
    "resveUrl": "https://map.naver.com/p/entry/place/2027393892?placePath=%252Fhome%253Fentry%253Dplt&searchType=place&lng=127.1932294&lat=38.1580290"
-  },
-  {
-   "facltNm": "가야산오토캠핑장",
-   "lineIntro": "청정자연 성주군에서 자연과 사람이 함께 쉬는 복합 힐링 공간",
-   "addr1": "경상북도 성주군 가천면 동신로 33",
-   "induty": "일반야영장,자동차야영장",
-   "doNm": "경상북도",
-   "sigunguNm": "성주군",
-   "animalCmgCl": "가능",
-   "homepage": "https://sj.go.kr/gayasan/camping/main.do",
-   "resveUrl": "https://sj.go.kr/gayasan/camping/page.do?mnu_uid=4151"
   },
   {
    "facltNm": "북한산 사기막야영장",
@@ -14720,17 +14896,6 @@
    "resveUrl": ""
   },
   {
-   "facltNm": "몽산포 자동차 야영장",
-   "lineIntro": "몽산포해수욕장 앞 국립공원관리공단에서 운영하는 캠핑장",
-   "addr1": "충남 태안군 남면 몽산포길 63-43",
-   "induty": "자동차야영장",
-   "doNm": "충청남도",
-   "sigunguNm": "태안군",
-   "animalCmgCl": "불가능",
-   "homepage": "https://reservation.knps.or.kr",
-   "resveUrl": "https://reservation.knps.or.kr"
-  },
-  {
    "facltNm": "글로리아 캠핑장",
    "lineIntro": "",
    "addr1": "충남 홍성군 서부면 서부서길554번길 58",
@@ -15015,17 +15180,6 @@
    "animalCmgCl": "가능",
    "homepage": "https://blog.naver.com/jeepsin2282/221609501888",
    "resveUrl": ""
-  },
-  {
-   "facltNm": "문경또또캠핑장",
-   "lineIntro": "개별화장실(개수대,샤워실)과 타프존, 주변인프라가 풍부한 캠핑장입니다.",
-   "addr1": "경북 문경시 가은읍 왕능강변길 71",
-   "induty": "일반야영장",
-   "doNm": "경상북도",
-   "sigunguNm": "문경시",
-   "animalCmgCl": "가능",
-   "homepage": "",
-   "resveUrl": "네이버, 캠핏"
   },
   {
    "facltNm": "석병관광농원 야영장",
@@ -16282,17 +16436,6 @@
    "resveUrl": ""
   },
   {
-   "facltNm": "엘리시안 강촌 캠핑파크",
-   "lineIntro": "엘리시안 강촌리조트에 마련한 캠핑장",
-   "addr1": "강원 춘천시 남산면 북한강변길 688",
-   "induty": "일반야영장,글램핑",
-   "doNm": "강원도",
-   "sigunguNm": "춘천시",
-   "animalCmgCl": "불가능",
-   "homepage": "https://www.elysian.co.kr/gangchon/restaurant/restaurant.asp?facility_id=FCT00000000000000201",
-   "resveUrl": "https://home-ticket.co.kr/elysian/mall/?siteFlag=room&id=&com="
-  },
-  {
    "facltNm": "포시즌파크",
    "lineIntro": "",
    "addr1": "강원 횡성군 강림면 주천강로월현3길 157-78",
@@ -16302,28 +16445,6 @@
    "animalCmgCl": "불가능",
    "homepage": "http://cafe.naver.com/4seasonpark",
    "resveUrl": "http://camplink.co.kr/?camp=4seasonpark"
-  },
-  {
-   "facltNm": "와룡자연휴양림 일반야영장",
-   "lineIntro": "휴양과 놀이시설 모두 갖춘 와룡자연휴양림야영장",
-   "addr1": "전북특별자치도 장수군 천천면 비룡로 632",
-   "induty": "일반야영장",
-   "doNm": "전라북도",
-   "sigunguNm": "장수군",
-   "animalCmgCl": "불가능",
-   "homepage": "www.jangsuhuyang.kr/Waryong/",
-   "resveUrl": "www.jangsuhuyang.kr/Waryong/"
-  },
-  {
-   "facltNm": "와룡자연휴양림 자동차야영장",
-   "lineIntro": "와룡자연휴양림내 자동차야영장",
-   "addr1": "전라북도 장수군 천천면 비룡리 632 ",
-   "induty": "자동차야영장",
-   "doNm": "전라북도",
-   "sigunguNm": "장수군",
-   "animalCmgCl": "불가능",
-   "homepage": "http://www.jangsuhuyang.kr/Waryong/reserveF/list.asp?p_type=야영데크",
-   "resveUrl": ""
   },
   {
    "facltNm": "두리캠핑장",
@@ -17162,17 +17283,6 @@
    "resveUrl": ""
   },
   {
-   "facltNm": "행복한 시골 캠핑장",
-   "lineIntro": "",
-   "addr1": "전북특별자치도 고창군 흥덕면 용반리 58 ",
-   "induty": "일반야영장",
-   "doNm": "전라북도",
-   "sigunguNm": "고창군",
-   "animalCmgCl": "",
-   "homepage": "",
-   "resveUrl": ""
-  },
-  {
    "facltNm": "남강사계절 야영장",
    "lineIntro": "",
    "addr1": "경상남도 진주시 진성면 온수리 83-2 ",
@@ -17390,17 +17500,6 @@
    "sigunguNm": "공주시",
    "animalCmgCl": "",
    "homepage": "",
-   "resveUrl": ""
-  },
-  {
-   "facltNm": "지리산천왕봉오토캠핑장",
-   "lineIntro": "미세먼지 No! 깨끗한 공기 가득 지리산천왕봉야영장",
-   "addr1": "전북특별자치도 남원시 산내면 지리산로 1242",
-   "induty": "일반야영장",
-   "doNm": "전라북도",
-   "sigunguNm": "남원시",
-   "animalCmgCl": "가능(소형견)",
-   "homepage": "https://xn--oy2bi2kooa32ynkgykiq7c.com/",
    "resveUrl": ""
   },
   {
@@ -20440,17 +20539,6 @@
    "resveUrl": "http://hpcamping.com/page/03_01.php"
   },
   {
-   "facltNm": "가온휴양빌리지 계곡 글램핑 카라반 캠핑",
-   "lineIntro": "",
-   "addr1": "강원도 홍천군 서면 한서로 1304",
-   "induty": "일반야영장,글램핑",
-   "doNm": "강원도",
-   "sigunguNm": "홍천군",
-   "animalCmgCl": "불가능",
-   "homepage": "www.gaonglamoing.com",
-   "resveUrl": ""
-  },
-  {
    "facltNm": "제천공전자연캠핑장",
    "lineIntro": "",
    "addr1": "충북 제천시 봉양읍 의암로 345",
@@ -20733,17 +20821,6 @@
    "doNm": "경기도",
    "sigunguNm": "가평군",
    "animalCmgCl": "가능",
-   "homepage": "",
-   "resveUrl": ""
-  },
-  {
-   "facltNm": "쌍근오토캠핑장",
-   "lineIntro": "바닷가옆  조용하고 풍경좋은 캠핑장",
-   "addr1": "경남 거제시 남부면 남부해안로 1054",
-   "induty": "자동차야영장",
-   "doNm": "경상남도",
-   "sigunguNm": "거제시",
-   "animalCmgCl": "불가능",
    "homepage": "",
    "resveUrl": ""
   },
@@ -21353,17 +21430,6 @@
    "resveUrl": ""
   },
   {
-   "facltNm": "몽지리 캠핑장",
-   "lineIntro": "",
-   "addr1": "강원특별자치도 평창군 미탄면 청옥산길 249-21",
-   "induty": "자동차야영장",
-   "doNm": "강원도",
-   "sigunguNm": "평창군",
-   "animalCmgCl": "",
-   "homepage": "",
-   "resveUrl": ""
-  },
-  {
    "facltNm": "영덕 천연 탄산수 캠핑장",
    "lineIntro": "",
    "addr1": "경북 영덕군 영해면 대동로 691",
@@ -21516,17 +21582,6 @@
    "animalCmgCl": "가능",
    "homepage": "https://dotforesthealingcamp.dothome.co.kr",
    "resveUrl": "https://booking.naver.com/booking/3/bizes/691217"
-  },
-  {
-   "facltNm": "해브펀 캠핑 어라운드",
-   "lineIntro": "",
-   "addr1": "경기 파주시 월롱면 도감로 130",
-   "induty": "일반야영장,카라반,글램핑",
-   "doNm": "경기도",
-   "sigunguNm": "파주시",
-   "animalCmgCl": "불가능",
-   "homepage": "www.havefungreen.com",
-   "resveUrl": "https://booking.naver.com/booking/3/bizes/871809"
   },
   {
    "facltNm": "잼보리 캠프",
@@ -22462,17 +22517,6 @@
    "animalCmgCl": "불가능",
    "homepage": "http://www.xn--2e0bw4qvqnfxal0uxnktf.com/",
    "resveUrl": "https://naver.me/5LHNdNYg"
-  },
-  {
-   "facltNm": "구룡자동차야영장(치악산국립공원)",
-   "lineIntro": "치악산 구룡사 가는 길, 계곡옆에 조성한 국립공원 캠핑장",
-   "addr1": "강원 원주시 소초면 구룡마을길 14",
-   "induty": "자동차야영장,카라반",
-   "doNm": "강원도",
-   "sigunguNm": "원주시",
-   "animalCmgCl": "불가능",
-   "homepage": "http://www.knps.or.kr/",
-   "resveUrl": "http://www.knps.or.kr/knpshp/visit/reservation/camp.jsp?menuid=P10610&depth=3"
   },
   {
    "facltNm": "치올라 캠핑장",
@@ -25863,17 +25907,6 @@
    "resveUrl": "http://dusonggreen.kr/html/online.html"
   },
   {
-   "facltNm": "금오산 힐링캠프",
-   "lineIntro": "널찍한 사이트가 눈에 띄는 오토캠핑장",
-   "addr1": "경북 김천시 남면 우장길 442-15",
-   "induty": "일반야영장",
-   "doNm": "경상북도",
-   "sigunguNm": "김천시",
-   "animalCmgCl": "가능(소형견)",
-   "homepage": "https://www.gumicamp.com/",
-   "resveUrl": "https://map.naver.com/p/entry/place/1961285063?c=18.30,0,0,0,dh"
-  },
-  {
    "facltNm": "금오산 풀타운",
    "lineIntro": "널찍한 사이트가 눈에 띄는 오토캠핑장",
    "addr1": "경북 김천시 남면 우장길 442-15",
@@ -26510,17 +26543,6 @@
    "animalCmgCl": "불가능",
    "homepage": "",
    "resveUrl": "https://map.naver.com/p/search/%EB%8F%84%EC%86%94%EC%BA%A0%ED%95%91%EC%95%A4%EA%B7%B8%EB%A6%B4/place/1284844784?c=15.00,0,0,0,dh&isCorrectAnswer=true"
-  },
-  {
-   "facltNm": "천안 놀이터 캠핑장",
-   "lineIntro": "어린이를 위한 폐교 캠핑장",
-   "addr1": "충남 천안시 동남구 동면 화덕1길 22-7",
-   "induty": "일반야영장",
-   "doNm": "충청남도",
-   "sigunguNm": "천안시",
-   "animalCmgCl": "가능",
-   "homepage": "",
-   "resveUrl": "https://map.naver.com/p/entry/place/1734741351?c=15.00,0,0,0,dh"
   },
   {
    "facltNm": "이른아침 캠핑장",
@@ -29229,17 +29251,6 @@
    "resveUrl": ""
   },
   {
-   "facltNm": "젠틀펫 파라다이스",
-   "lineIntro": "반려견 관련 부대시설이 알찬 글램핑장",
-   "addr1": "경북 문경시 문경읍 문경대로 2430",
-   "induty": "글램핑",
-   "doNm": "경상북도",
-   "sigunguNm": "문경시",
-   "animalCmgCl": "가능",
-   "homepage": "https://gentlepetparadise.modoo.at/",
-   "resveUrl": "https://naver.me/F42wIJEc"
-  },
-  {
    "facltNm": "산들캠핑파크",
    "lineIntro": "",
    "addr1": "경남 의령군 칠곡면 한티로5남길 53-6",
@@ -30560,17 +30571,6 @@
    "resveUrl": "https://map.naver.com/p/search/%EB%B8%94%EB%A3%A8%EC%95%84%EC%9D%BC%EB%9E%9C%EB%93%9C%20%EC%BA%A0%ED%95%91%EC%9E%A5/place/1821935324?c=15.00,0,0,0,dh&isCorrectAnswer=true"
   },
   {
-   "facltNm": "무흘구곡펜션 야영장",
-   "lineIntro": "",
-   "addr1": "경북 성주군 금수면 성주로 322-10",
-   "induty": "일반야영장",
-   "doNm": "경상북도",
-   "sigunguNm": "성주군",
-   "animalCmgCl": "가능",
-   "homepage": "https://muheulgugokpension.modoo.at/",
-   "resveUrl": "https://booking.naver.com/booking/3/bizes/753133/items/4632049"
-  },
-  {
    "facltNm": "북두칠성캠핑장",
    "lineIntro": "",
    "addr1": "충북 괴산군 칠성면 칠성로10길 27",
@@ -30888,17 +30888,6 @@
    "animalCmgCl": "가능(소형견)",
    "homepage": "",
    "resveUrl": ""
-  },
-  {
-   "facltNm": "별하숲캠핑장",
-   "lineIntro": "",
-   "addr1": "경북 문경시 가은읍 작약로 656",
-   "induty": "일반야영장",
-   "doNm": "경상북도",
-   "sigunguNm": "문경시",
-   "animalCmgCl": "가능",
-   "homepage": "",
-   "resveUrl": "https://www.camfit.co.kr/camp/63e0b90af21f2f001ee339f4"
   },
   {
    "facltNm": "279캠핑장",
@@ -32997,6 +32986,17 @@
    "induty": "일반야영장",
    "doNm": "인천광역시",
    "sigunguNm": "강화군",
+   "animalCmgCl": "",
+   "homepage": "",
+   "resveUrl": ""
+  },
+  {
+   "facltNm": "서산버드랜드 야영장",
+   "lineIntro": "",
+   "addr1": "충남 서산시 부석면 천수만로 655-73",
+   "induty": "일반야영장",
+   "doNm": "충청남도",
+   "sigunguNm": "서산시",
    "animalCmgCl": "",
    "homepage": "",
    "resveUrl": ""

@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-09T08:06:58.818232+09:00",
+ "fetched_at": "2026-11-16T05:24:56.184457+09:00",
  "data": [
   {
    "crsKorNm": "남파랑길 1코스",
@@ -13,6 +13,17 @@
    "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/course/summap/T_CRS_MNG0000005116.gpx"
   },
   {
+   "crsKorNm": "남파랑길 2코스",
+   "crsDstnc": "19",
+   "crsTotlRqrmHour": "450",
+   "crsLevel": "2",
+   "sigun": "부산 중구",
+   "brdDiv": "DNWW",
+   "crsSummary": "- 부산역에서 시작하여 걷기 좋은 봉래산을 지나 흰여울문화마을로 이어지는 코스 <br>- 영도구에 조성되어 있는 봉래산 둘레길 및 태종대 일원을 걷는 구간이 포함되어 있어 숲길과 바닷길, 마을길 등을 다양하게 접할 수 있는 매력을 보유하고 있는 구간<br>- 6.25전쟁 때 피난민의 추억과 애환이 서린 부산 최초의 연륙교인 영도대교를 포하하여 영도구 원도심 개발에 따라 핫 스페이스로 떠오르고 있는 깡깡이 예술마을, 흰여울 마을 등이 인접하고 있어 매력적인 걷기여행이 가능한 코스<br>- 부산의 갈맷길 3-3코스가 포함된 구간으로 초보자에게도 어렵지 않은 코스",
+   "crsTourInfo": "- 산책을 하기 좋고 약수터 물맛 좋은 '봉래산' <br>- 바다와 배가 어우러진 풍경을 만나는 ‘절영해안길’<br>- 멋있는 절경과 아름다운 벽화를 볼 수 있는 '흰여울 문화마을'",
+   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/file/2026/11/68620ddb4d99438f9843b3ae6c324595.gpx"
+  },
+  {
    "crsKorNm": "남파랑길 3코스",
    "crsDstnc": "14",
    "crsTotlRqrmHour": "330",
@@ -21,7 +32,7 @@
    "brdDiv": "DNWW",
    "crsSummary": "- 부산의 가장 떠오르는 관광명소인 송도해상케이블카와 송도해수욕장, 암남공원, 감천항까지 이어지는 코스<br>- 부산의 유명 관광지들을 둘러볼 수 있는 다채로운 코스이자 동양의 나폴리라 불리울 만큼 바다와 자연을 어우르는 아름다운 해안경관을 감상할 수 있는 구간<br>- 부산 갈맷길 4-1코스가 포함되어 있는 코스",
    "crsTourInfo": "- 부산의 유명한 관광지인 용두산공원, 국제시장, 활기찬 '자갈치 수산시장'<br>- 우리나라 제1호 해수욕장으로 동양의 나폴리라고 칭송받을 만큼 아름다운 해안선이 유명한 '송도해수욕장'<br>- 두도전망대까지 이어지는 숲과 해안절경이 어우러진 '암남공원’<br>- 단층면의 윗부분이 아래로 떨어진 정단층을 만날 수 있는 '지질생태탐방로'",
-   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/file/2025/05/5917b2c95528439596244d4f3275258b.gpx"
+   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/file/2026/11/3f30e10cbbb240548119c5c2566c21b3.gpx"
   },
   {
    "crsKorNm": "남파랑길 4코스",
@@ -109,7 +120,7 @@
    "brdDiv": "DNWW",
    "crsSummary": "- 고현버스터미널에서 시작하여 석름봉과 대성사를 지나 장목파출소에서 끝나는 코스<br>- 대부분의 노선이 숲길로 이어지는 구간으로 곳곳에 쉼터, 정자 등이 잘 갖춰져 있어 쾌적한 걷기여행이 가능함 <br>- 맹종죽순체험길로 명명되어 있는 거제시의 ‘섬&섬길’ 일부가 포함한 아름다운 산길을 걸으며 힐링할 수 있는 코스",
    "crsTourInfo": "- 거제 석름봉 둘레길에서 느끼는 주왕산의 정취<br>- 맹종죽순체험길로 명명되어 있는 대나무 구간이 일부 포함되어 있어 이색적인 체험이 가능<br>- 하청야구장을 지나며 바라보는 바다 풍경",
-   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/file/2026/11/74df89fdd3d24cfdad1ea7aeec6d7317.gpx"
+   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/course/summap/T_CRS_MNG0000005132.gpx"
   },
   {
    "crsKorNm": "남파랑길 18코스",
@@ -794,17 +805,6 @@
    "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/file/2025/08/3019f36628c44b87b696367381cad889.gpx"
   },
   {
-   "crsKorNm": "서해랑길 12코스",
-   "crsDstnc": "22",
-   "crsTotlRqrmHour": "420",
-   "crsLevel": "2",
-   "sigun": "전남 진도군",
-   "brdDiv": "DNWW",
-   "crsSummary": "- 푸른 하늘과 파도소리를 함께 감상하며 걷는 재미는 특별한 코스<br>- 서해의 낙조와 백조가 노니는 호수를 즐길 수 있는 코스",
-   "crsTourInfo": "- 조개잡이체험, 개매기체험 등의 다양한 체험이 가능한 '청룡어촌체험마을'<br>- 서남해안 유일의 백조도래지로 호수와 어우러진 겨울 철새의 군무가 장관인 '군내호' <br>- 명챵대첩의 현장인 울돌목과 잘 어우러지는 대표 상징물 '충무공이순신동상'",
-   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/file/2025/11/c555ca5482df4d92a85e9ab6882710b5.gpx"
-  },
-  {
    "crsKorNm": "서해랑길 14코스",
    "crsDstnc": "18",
    "crsTotlRqrmHour": "360",
@@ -1066,7 +1066,7 @@
    "brdDiv": "DNWW",
    "crsSummary": "- 평택과 화성의 경계를 짓는 남양호로 향하는 코스<br>- 산업단지와 농촌마을, 방조제 주변을 걷는 코스",
    "crsTourInfo": "- 원효대사가 깨달음을 얻은 도랑 '수도사'<br>- 체육시설이 있는 복합 체육공간 '신당근린공원'<br>- 간척지 개답과 농업용수확보를 위해 발안천 하구를 막아 축조된 '남양방조제'",
-   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/file/2026/10/3c1a0bfa8d0e43d39554676f9552aec3.gpx"
+   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/file/2026/11/6d7f68f6ac5c4850a0bf0ece4745a64f.gpx"
   },
   {
    "crsKorNm": "서해랑길 92코스",
@@ -1309,39 +1309,6 @@
    "crsSummary": "- 풍산교에서 출발해 평화의댐이 있는 국제평화아트파크까지 걷는 길이다.<br>- 평화누리 자전거길과 함께 걸어 안전하게 이용 가능한 코스다.<br>- 평화의댐과 양의대습지, 안동철교 등 DMZ 인접 지역의 풍경을 조망할 수 있는 구간이다.",
    "crsTourInfo": "- 여름철과 겨울철에 각기 다른 풍경으로 반전 매력을 선사하는 해산 자작나무숲<br>- 한국전쟁 직후 피난 온 사람들이 정착하여 화전 밭을 일구며 형성된 마을, 비수구미<br>- 남북분단의 현실을 돌아보고, 평화의 메시지를 담아내고 있는 평화의댐과 세계평화의종<br>- 남북은 물론, 세계 평화를 기원하는 의미를 담아 조성한 국제평화아트파크",
    "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/file/2026/10/760ba56effc04203943a8e773817ca8f.gpx"
-  },
-  {
-   "crsKorNm": "DMZ 평화의 길 24코스",
-   "crsDstnc": "15",
-   "crsTotlRqrmHour": "360",
-   "crsLevel": "3",
-   "sigun": "강원 화천군",
-   "brdDiv": "DNWW",
-   "crsSummary": "- 화천 국제평화아트파크에서 양구 금악교까지 걷는 길이다.<br>- 산세가 험하며, 차도를 지나는 구간이 많아 난도가 높은 코스다.<br>- 평화의댐, 세계평화의종공원 등 여러 안보관광지를 지나는 구간이다.",
-   "crsTourInfo": "- 남북분단과 긴장의 역사를 상징하는 평화의댐<br>- 세계의 분쟁지역에서 찾은 총알과 탄피를 녹여서 만든 종이 있는 세계평화의종공원<br>- 기암절벽이 감싸고 있으며, 차가운 물이 흘러 여름철 피서객이 즐겨 찾는 파서탕",
-   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/course/summap/T_CRS_MNG0000005648.gpx"
-  },
-  {
-   "crsKorNm": "DMZ 평화의 길 25코스",
-   "crsDstnc": "14",
-   "crsTotlRqrmHour": "300",
-   "crsLevel": "1",
-   "sigun": "강원 양구군",
-   "brdDiv": "DNWW",
-   "crsSummary": "- 종점상회에서 출발해 양구 두타연갤러리로 이어지는 길이다.<br>- 수입천변을 따라 탐방로가 조성되어 있어 쾌적하게 걸을 수 있는 구간이다.<br>- 양구 두타연갤러리에는 DMZ평화의길 거점센터가 있다.",
-   "crsTourInfo": "- 백자로 유명했던 방산 지역의 도자기를 모아 전시한 양구백자박물관<br>- 파로호로 이어지는 34.8km 길이의 대하천, 수입천<br>- 독특한 형태의 암벽과 그 사이로 쏟아지는 물줄기가 절경을 이루는 직연폭포",
-   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/course/summap/T_CRS_MNG0000005649.gpx"
-  },
-  {
-   "crsKorNm": "DMZ 평화의 길 26코스 (예약노선)",
-   "crsDstnc": "19",
-   "crsTotlRqrmHour": "420",
-   "crsLevel": "2",
-   "sigun": "강원 양구군",
-   "brdDiv": "DNWW",
-   "crsSummary": "- 양구 두타연갤러리에서 피의능선 전투전적비까지 걷는 길이다.<br>- 두타연의 청정 생태 환경과 수려한 자연 경관을 누릴 수 있는 구간이다.<br>- 민통선 출입으로 인해 방문 전 예약이 필요한 코스다.",
-   "crsTourInfo": "- 국내 최대 열목어 서식지로 알려진 두타연계곡<br>- 6.25전쟁 당시 치열한 고지전이 펼쳐졌던 피의능선 전투의 전적비<br>- 무명용사 등 호국 영령의 넋을 기리는 양구전투위령비",
-   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/course/summap/T_CRS_MNG0000005650.gpx"
   },
   {
    "crsKorNm": "DMZ 평화의 길 26-1코스(우회로)",
@@ -1803,7 +1770,7 @@
    "brdDiv": "DNWW",
    "crsSummary": "- 수산항에서 출발해 낙산 해변과 낙산사를 지나 설악해맞이공원에 이르는 길<br>- 역사와 전통을 지닌 낙산사와 동해안 관동팔경을 감상할 수 있는 코스",
    "crsTourInfo": "- 관동팔경 중 하나로 신라 의상대사가 창건한 낙산사<br>- 오색온천, 설악산, 낙산사, 하조대 등 주변 관광지와 더불어 사랑받는 설악해변<br>- 동해바다와 설악산에 둘러싸인 공원으로 조각작품이 전시된 설악해맞이공원<br>- 숙박시설과 맛집 싱싱한 활어회를 맛볼 수 있는 양양의 대표 어항 물치항",
-   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/file/2026/01/4a9333209b4c4969a345dd3010a8fa2b.gpx"
+   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/course/summap/T_CRS_MNG0000004213.gpx"
   },
   {
    "crsKorNm": "해파랑길 45코스",
