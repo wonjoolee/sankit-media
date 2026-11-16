@@ -138,7 +138,9 @@ def carousel(rel, post):
 
 def reel(rel, post):
     r = call("POST", f"/{U}/media", {"media_type": "REELS", "video_url": RAW + rel + "/reel.mp4",
-                                     "caption": post.get("reel_caption") or post["caption"], "share_to_feed": "true",
+                                     "caption": post.get("reel_caption") or post["caption"],
+                                     # 2026-11-16 운영자: 그리드에 같은 주제가 두 칸씩 반복돼 보인다 → 릴스는 릴스 탭·추천에만(그리드엔 카드 글만)
+                                     "share_to_feed": "true" if post.get("reel_to_grid") else "false",
                                      # 그리드·릴스 탭 표지: 글자가 다 떠오른 1.5초 지점(첫 프레임은 글자가 덜 나온 상태)
                                      "thumb_offset": str(post.get("thumb_offset_ms", 1500))})
     if "error" in r:
