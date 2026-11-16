@@ -37,7 +37,7 @@ jobs:
             git config user.name "SANKIT bot"
             git config user.email "sankit-bot@users.noreply.github.com"
             git add queue
-            git commit -m "story images $(TZ=Asia/Seoul date +%F-%H%M)" && git push && sleep 15
+            git commit -m "story images $(TZ=Asia/Seoul date +%F-%H%M)" && (for i in 1 2 3 4 5; do git pull --rebase -q && git push && break; sleep $((i*7)); done) && sleep 15
           fi
       - name: Publish queued post
         env:
@@ -61,4 +61,4 @@ jobs:
           git config user.name "SANKIT bot"
           git config user.email "sankit-bot@users.noreply.github.com"
           git add queue pipeline/stats.csv pipeline/followers.csv research/exposure.csv || true
-          git diff --cached --quiet || (git commit -m "posted $(TZ=Asia/Seoul date +%F-%H%M)" && git push)
+          git diff --cached --quiet || (git commit -m "posted $(TZ=Asia/Seoul date +%F-%H%M)" && for i in 1 2 3 4 5; do git pull --rebase -q && git push && break; sleep $((i*7)); done)

@@ -282,12 +282,14 @@ def retry_missing():
     return did
 
 
-def live_post(post, minutes=20):
+def live_post(post, minutes=20, limit=5):
     """게시 중 오류가 나도 실제로는 올라갔을 수 있다. 최근 게시물 캡션 첫 줄이 같으면 그 게시물을 돌려준다."""
     first = post["caption"].split("\n")[0].strip()
-    r = call("GET", f"/{U}/media", {"fields": "id,timestamp,caption,permalink", "limit": 5})
+    r = call("GET", f"/{U}/media", {"fields": "id,timestamp,caption,permalink,media_type", "limit": limit})
     for m in r.get("data", []):
         ts = datetime.datetime.strptime(m["timestamp"], "%Y-%m-%dT%H:%M:%S%z")
+        if m.get("media_type") == "VIDEO" and minutes > 60:   # 중복 검사는 피드 글(캐러셀·사진)만 본다
+            continue
         if (m.get("caption") or "").split("\n")[0].strip() == first and datetime.datetime.now(datetime.timezone.utc) - ts < datetime.timedelta(minutes=minutes):
             return m["id"], m["permalink"]
     return None
@@ -343,6 +345,16 @@ def main():
     if not (T and U):
         raise SystemExit("IG_TOKEN / IG_USER_ID secrets missing")
     out = {"slot": slot, "posted_at": datetime.datetime.now(KST).isoformat()}
+    # 중복 게시 방지(2026-11-16 KIT 049가 두 번 올라감: 게시는 됐는데 posted.json 저장 push가 충돌해 사라짐)
+    # 같은 캡션 첫 줄의 게시물이 최근 36시간 안에 이미 있으면 다시 올리지 않고 기록만 한다.
+    dup = live_post(post, minutes=36 * 60, limit=25)
+    if dup:
+        out["carousel_id"], out["carousel_url"] = dup
+        out["carousel_note"] = "already live (found in recent media) - not reposted"
+        json.dump(out, open(os.path.join(d, "posted.json"), "w"), ensure_ascii=False, indent=1)
+        print("ALREADY LIVE, recorded only:", dup[1])
+        retry_missing()
+        return
     try:
         out["carousel_id"], out["carousel_url"] = carousel(rel, post)
     except SystemExit as e:
