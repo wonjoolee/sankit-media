@@ -46,7 +46,7 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-10,slot3,carousel,KIT 037 · SEOUL SUBWAY HIKES,guide,broad,,number,0,0,,,,20:59
 2026-11-10,slot3,reel,KIT 037 · SEOUL SUBWAY HIKES,guide,broad,,number,0,0,,,,20:59
 2026-11-11,slot1,carousel,"토요일 설악산·오대산·덕유산·한라산 등 23곳 모두 비, 맑은 날은 목요",news,broad,E,number,0,0,,,,07:29
-2026-11-11,slot1,reel,"토요일 설악산·오대산·덕유산·한라산 등 23곳 모두 비, 맑은 날은 목요",news,broad,E,number,0,0,,,,07:29
+2026-11-11,slot1,reel,"토요일 설악산·오대산·덕유산·한라산 등 23곳 모두 비, 맑은 날은 목요",news,broad,E,number,1,0,,,,07:29
 2026-11-11,slot2,carousel,"스키장에 선 노란 표지판, 무슨 뜻일까 (KIT 040)",owner,broad,guide,question,0,0,,,,12:09
 2026-11-11,slot2,reel,"스키장에 선 노란 표지판, 무슨 뜻일까 (KIT 040)",owner,broad,guide,question,2,0,,,,12:09
 2026-11-11,slot3,carousel,"핀란드 레비 월드컵 회전 개막전, 이번 주말 토·일 저녁 18시·21시(",news,broad,C,number,1,0,,,,21:00
@@ -62,7 +62,7 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-13,slot3,carousel,주말 정상 날씨 #1 — 토요일은 23곳 모두 비 (KIT 045),weekly,broad,E,number,2,0,,,,20:59
 2026-11-13,slot3,reel,주말 정상 날씨 #1 — 토요일은 23곳 모두 비 (KIT 045),weekly,broad,E,number,3,0,,,,20:59
 2026-11-14,slot1,carousel,"월요일 설악산에 눈 예보, 낮 최고 3℃ (KIT 046)",news,broad,E,number,1,0,,,,07:29
-2026-11-14,slot1,reel,"월요일 설악산에 눈 예보, 낮 최고 3℃ (KIT 046)",news,broad,E,number,1,0,,,,07:29
+2026-11-14,slot1,reel,"월요일 설악산에 눈 예보, 낮 최고 3℃ (KIT 046)",news,broad,E,number,2,0,,,,07:29
 2026-11-14,slot3,carousel,"11월 20일 휘닉스부터, 올겨울 스키 달력 (KIT 047)",guide,broad,E,number,0,0,,,,20:59
 2026-11-14,slot3,reel,"11월 20일 휘닉스부터, 올겨울 스키 달력 (KIT 047)",guide,broad,E,number,2,0,,,,20:59
 2026-11-15,slot1,carousel,"오늘부터 한 달, 148구간이 닫힌다 (KIT 048)",news,broad,E,number,0,0,,,,07:29
@@ -73,3 +73,4 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-16,slot1,reel,"사흘 비 그친 목요일, 23곳 중 22곳이 영하 (KIT 049)",news,broad,E,number,,,,,,10:00
 2026-11-16,slot2,carousel,최근 써 본 스틱 중 두께와 색이 가장 좋았다 (KIT 052),owner,narrow,review,owner,1,0,,,,12:09
 2026-11-16,slot2,reel,최근 써 본 스틱 중 두께와 색이 가장 좋았다 (KIT 052),owner,narrow,review,owner,2,0,,,,12:09
+2026-11-16,slot3,carousel,"PCT에서 가장 많이 쓴 텐트, 왜 한국엔 없을까 (KIT 051)",whynot,narrow,A,number,0,0,,,,21:00
