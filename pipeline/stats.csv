@@ -8,7 +8,7 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-04,slot1,carousel,KIT 012 · GARMIN EDGE 1060,,,,,1,0,,,,08:01
 2026-11-04,slot1,reel,KIT 012 · GARMIN EDGE 1060,,,,,0,0,,,,08:01
 2026-11-04,slot2,carousel,KIT 014 · X-PYR 2026,,,,,0,0,,,,19:45
-2026-11-04,slot2,reel,KIT 014 · X-PYR 2026,,,,,0,0,,,,19:45
+2026-11-04,slot2,reel,KIT 014 · X-PYR 2026,,,,,1,0,,,,19:45
 2026-11-04,slot4,carousel,KIT 013 · 단신,,,,,,,,,,12:00
 2026-11-05,slot1,carousel,KIT 017 · HAGLÖFS × POLARTEC STANDARD IS,,,,,0,0,,,,09:04
 2026-11-05,slot1,reel,KIT 017 · HAGLÖFS × POLARTEC STANDARD IS,,,,,,,,,,09:04
@@ -27,7 +27,7 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-07,slot2,reel,KIT 027 · ALPENSIA 2026/27,news,,,question,0,0,,,,12:09
 2026-11-07,slot3,carousel,KIT 028 · SANKIT GUIDE,guide,,,question,1,0,,,,20:58
 2026-11-07,slot3,reel,KIT 028 · SANKIT GUIDE,guide,,,question,1,0,,,,20:58
-2026-11-08,slot1,carousel,"KIT 029 · SEORAKSAN, SNOW IN THE FORECAS",news,,,number,1,0,,,,07:29
+2026-11-08,slot1,carousel,"KIT 029 · SEORAKSAN, SNOW IN THE FORECAS",news,,,number,,,,,,07:29
 2026-11-08,slot1,reel,"KIT 029 · SEORAKSAN, SNOW IN THE FORECAS",news,,,number,1,0,,,,07:29
 2026-11-08,slot2,carousel,KIT 032 · SAUNA,owner,,,question,1,0,,,,11:01
 2026-11-08,slot2,reel,KIT 032 · SAUNA,owner,,,question,1,0,,,,11:01
@@ -60,7 +60,7 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-13,slot2,carousel,"18년 만에 처음, 비 막는 마이크로라이트 (KIT 042)",product,narrow,A,number,2,0,,,,12:09
 2026-11-13,slot2,reel,"18년 만에 처음, 비 막는 마이크로라이트 (KIT 042)",product,narrow,A,number,2,0,,,,12:09
 2026-11-13,slot3,carousel,주말 정상 날씨 #1 — 토요일은 23곳 모두 비 (KIT 045),weekly,broad,E,number,2,0,,,,20:59
-2026-11-13,slot3,reel,주말 정상 날씨 #1 — 토요일은 23곳 모두 비 (KIT 045),weekly,broad,E,number,2,0,,,,20:59
+2026-11-13,slot3,reel,주말 정상 날씨 #1 — 토요일은 23곳 모두 비 (KIT 045),weekly,broad,E,number,3,0,,,,20:59
 2026-11-14,slot1,carousel,"월요일 설악산에 눈 예보, 낮 최고 3℃ (KIT 046)",news,broad,E,number,1,0,,,,07:29
 2026-11-14,slot1,reel,"월요일 설악산에 눈 예보, 낮 최고 3℃ (KIT 046)",news,broad,E,number,1,0,,,,07:29
 2026-11-14,slot3,carousel,"11월 20일 휘닉스부터, 올겨울 스키 달력 (KIT 047)",guide,broad,E,number,0,0,,,,20:59
@@ -69,7 +69,7 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-15,slot1,reel,"오늘부터 한 달, 148구간이 닫힌다 (KIT 048)",news,broad,E,number,1,0,,,,07:29
 2026-11-15,slot2,carousel,주말 어디 다녀오셨어요 #1 — 첫 스키는 11월? 12월?,weekly,broad,E,question,2,0,,,,12:09
 2026-11-15,slot2,reel,주말 어디 다녀오셨어요 #1 — 첫 스키는 11월? 12월?,weekly,broad,E,question,3,0,,,,12:09
-2026-11-16,slot1,carousel,"사흘 비 그친 목요일, 23곳 중 22곳이 영하 (KIT 049)",news,broad,E,number,1,0,,,,10:00
-2026-11-16,slot1,reel,"사흘 비 그친 목요일, 23곳 중 22곳이 영하 (KIT 049)",news,broad,E,number,1,0,,,,10:00
-2026-11-16,slot2,carousel,최근 써 본 스틱 중 두께와 색이 가장 좋았다 (KIT 052),owner,narrow,review,owner,0,0,,,,12:09
-2026-11-16,slot2,reel,최근 써 본 스틱 중 두께와 색이 가장 좋았다 (KIT 052),owner,narrow,review,owner,0,0,,,,12:09
+2026-11-16,slot1,carousel,"사흘 비 그친 목요일, 23곳 중 22곳이 영하 (KIT 049)",news,broad,E,number,,,,,,10:00
+2026-11-16,slot1,reel,"사흘 비 그친 목요일, 23곳 중 22곳이 영하 (KIT 049)",news,broad,E,number,,,,,,10:00
+2026-11-16,slot2,carousel,최근 써 본 스틱 중 두께와 색이 가장 좋았다 (KIT 052),owner,narrow,review,owner,1,0,,,,12:09
+2026-11-16,slot2,reel,최근 써 본 스틱 중 두께와 색이 가장 좋았다 (KIT 052),owner,narrow,review,owner,2,0,,,,12:09
