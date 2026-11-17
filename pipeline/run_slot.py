@@ -111,8 +111,10 @@ def carousel(rel, post):
     kids = []
     for i, f in enumerate(imgs):
         p = {"image_url": RAW + rel + "/" + f, "is_carousel_item": "true"}
-        if i == 0 and post.get("tags"):
-            p["user_tags"] = json.dumps(post["tags"])
+        # 2026-11-17 운영자: 더 많이 태그. 표지는 tags, 안쪽 장은 card_tags {"2": [...], "3": [...]}(장 번호, 1부터)
+        ct = post["tags"] if i == 0 else (post.get("card_tags") or {}).get(str(i + 1))
+        if ct:
+            p["user_tags"] = json.dumps([t if isinstance(t, dict) else {"username": str(t).lstrip("@"), "x": 0.5, "y": 0.5} for t in ct][:20])
         r = create(p)
         if "error" in r and "user_tags" in p:
             print("tag failed, retry without tag:", r["error"])
@@ -163,11 +165,11 @@ def story(rel):
         params = {"media_type": "STORIES", "video_url": RAW + rel + "/reel.mp4"}
     else:
         params = {"media_type": "STORIES", "image_url": RAW + rel + "/01.jpg"}
-    # 스토리 언급(2026-11-16 운영자): 글에 태그한 공식 계정을 스토리에도 언급한다(최대 3).
+    # 스토리 언급(2026-11-16 운영자): 글에 태그한 공식 계정을 스토리에도 언급한다(최대 5, 2026-11-17 늘림).
     # 언급된 계정은 알림을 받고, 한 번 눌러 자기 스토리에 다시 올릴 수 있다. 스티커는 API로 못 붙인다.
     try:
         pj = json.load(open(os.path.join(d, "post.json"), encoding="utf-8"))
-        names = [t["username"] if isinstance(t, dict) else str(t).lstrip("@") for t in pj.get("story_tags", pj.get("tags", []))][:3]
+        names = [t["username"] if isinstance(t, dict) else str(t).lstrip("@") for t in pj.get("story_tags", pj.get("tags", []))][:5]
         if names:
             params["user_tags"] = json.dumps([{"username": n} for n in names])
     except Exception:
