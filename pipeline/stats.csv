@@ -35,7 +35,7 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-08,slot3,reel,KIT 031 · THE SHRINKING KOREAN SKI SEASO,news,,,number,1,0,,,,20:59
 2026-11-09,slot1,carousel,KIT 033 · GARMIN FĒNIX 9,product,narrow,,question,1,0,,,,07:29
 2026-11-09,slot1,reel,KIT 033 · GARMIN FĒNIX 9,product,narrow,,question,1,0,,,,07:29
-2026-11-09,slot2,carousel,SANKIT · START HERE,guide,broad,,statement,6,0,,,,09:43
+2026-11-09,slot2,carousel,SANKIT · START HERE,guide,broad,,statement,7,0,,,,09:43
 2026-11-09,slot2,reel,SANKIT · START HERE,guide,broad,,statement,1,0,,,,09:43
 2026-11-09,slot3,carousel,KIT 034 · SHIFFRIN'S EXPLORATION SEASON,news,broad,,question,0,0,,,,20:59
 2026-11-09,slot3,reel,KIT 034 · SHIFFRIN'S EXPLORATION SEASON,news,broad,,question,0,0,,,,20:59
@@ -74,7 +74,7 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-16,slot2,carousel,최근 써 본 스틱 중 두께와 색이 가장 좋았다 (KIT 052),owner,narrow,review,owner,4,0,,,,12:09
 2026-11-16,slot2,reel,최근 써 본 스틱 중 두께와 색이 가장 좋았다 (KIT 052),owner,narrow,review,owner,6,0,,,,12:09
 2026-11-16,slot3,carousel,"PCT에서 가장 많이 쓴 텐트, 왜 한국엔 없을까 (KIT 051)",whynot,narrow,A,number,5,0,,,,21:00
-2026-11-17,slot1,carousel,"한라산, 수요일부터 나흘 내리 눈 예보 (KIT 053)",news,broad,E,number,2,0,,,,07:29
-2026-11-17,slot1,reel,"한라산, 수요일부터 나흘 내리 눈 예보 (KIT 053)",news,broad,E,number,2,0,,,,07:29
-2026-11-17,slot2,carousel,"18분이면 1,458m, 케이블카로 가는 겨울 산 (KIT 050)",guide,broad,E,number,0,0,,,,12:09
+2026-11-17,slot1,carousel,"한라산, 수요일부터 나흘 내리 눈 예보 (KIT 053)",news,broad,E,number,3,0,,,,07:29
+2026-11-17,slot1,reel,"한라산, 수요일부터 나흘 내리 눈 예보 (KIT 053)",news,broad,E,number,3,0,,,,07:29
+2026-11-17,slot2,carousel,"18분이면 1,458m, 케이블카로 가는 겨울 산 (KIT 050)",guide,broad,E,number,3,0,,,,12:09
 2026-11-17,slot2,reel,"18분이면 1,458m, 케이블카로 가는 겨울 산 (KIT 050)",guide,broad,E,number,0,0,,,,12:09
