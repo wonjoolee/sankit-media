@@ -81,6 +81,17 @@ def wait(cid, tries=40, gap=12):
     return s
 
 
+def trim_tags(text, keep=5):
+    """인스타그램은 2025-12부터 해시태그를 게시물당 5개로 제한한다. 6번째부터는 지운다."""
+    n = 0
+    def f(m):
+        nonlocal n
+        n += 1
+        return m.group(0) if n <= keep else ""
+    out = re.sub(r"#[^\s#]+", f, text)
+    return re.sub(r"[ \t]+\n", "\n", re.sub(r"[ \t]{2,}", " ", out)).rstrip()
+
+
 def permalink(mid):
     return call("GET", "/" + mid, {"fields": "permalink"}).get("permalink")
 
@@ -341,6 +352,9 @@ def main():
             retry_missing()  # 예약 실행(SLOT 지정)이어도 빠진 릴스·스토리는 이때 다시 올린다
         return
     post = json.load(open(os.path.join(d, "post.json"), encoding="utf-8"))
+    post["caption"] = trim_tags(post["caption"])
+    if post.get("reel_caption"):
+        post["reel_caption"] = trim_tags(post["reel_caption"])
     if DRY:
         imgs = [f for f in os.listdir(d) if f.endswith(".jpg")]
         print("DRY RUN ok:", len(imgs), "cards, reel:", os.path.exists(os.path.join(d, "reel.mp4")))
