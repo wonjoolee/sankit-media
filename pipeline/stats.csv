@@ -81,5 +81,6 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-17,slot3,carousel,"프리라이드 챔피언의 스키, 왜 한국엔 없을까 (KIT 054)",whynot,narrow,A,question,5,0,,,,21:00
 2026-11-17,slot5,carousel,낙엽이 다 떨어지기 전에 브롬톤을 타자고요 :) (KIT 055),owner,narrow,news,question,10,1,,,,22:09
 2026-11-17,slot5,reel,낙엽이 다 떨어지기 전에 브롬톤을 타자고요 :) (KIT 055),owner,narrow,news,question,1,0,,,,22:09
-2026-11-18,slot1,carousel,"강원 스키장 6곳 오늘 눈, 내일 아침은 -7℃ (KIT 056)",news,broad,E,number,8,0,,,,07:29
+2026-11-18,slot1,carousel,"강원 스키장 6곳 오늘 눈, 내일 아침은 -7℃ (KIT 056)",news,broad,E,number,9,0,,,,07:29
 2026-11-18,slot1,reel,"강원 스키장 6곳 오늘 눈, 내일 아침은 -7℃ (KIT 056)",news,broad,E,number,1,0,,,,07:29
+2026-11-18,slot3,carousel,"유타에 이번 주 1m 눈 예보, 파크시티 금요일 개장 (KIT 057)",news,broad,D,number,0,0,,,,21:00
