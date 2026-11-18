@@ -17,7 +17,7 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-05,slot4,carousel,KIT 018 · 단신,,,,,0,0,,,,09:59
 2026-11-05,slot5,carousel,KIT 019 · 단신,,,,,,,,,,18:13
 2026-11-06,slot1,carousel,KIT 025 · WHY NOT KOREA? DURSTON X-MID,whynot,,,number,,,,,,08:14
-2026-11-06,slot3,carousel,KIT 024 · SANKIT GUIDE,guide,,,number,0,0,,,,20:59
+2026-11-06,slot3,carousel,KIT 024 · SANKIT GUIDE,guide,,,number,1,0,,,,20:59
 2026-11-06,slot3,reel,KIT 024 · SANKIT GUIDE,guide,,,number,,,,,,20:59
 2026-11-06,slot4,carousel,KIT 026 · WEEKEND GUIDE,guide,,,number,1,1,,,,14:42
 2026-11-06,slot4,reel,KIT 026 · WEEKEND GUIDE,guide,,,number,0,0,,,,14:42
@@ -35,9 +35,9 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-08,slot3,reel,KIT 031 · THE SHRINKING KOREAN SKI SEASO,news,,,number,1,0,,,,20:59
 2026-11-09,slot1,carousel,KIT 033 · GARMIN FĒNIX 9,product,narrow,,question,1,0,,,,07:29
 2026-11-09,slot1,reel,KIT 033 · GARMIN FĒNIX 9,product,narrow,,question,1,0,,,,07:29
-2026-11-09,slot2,carousel,SANKIT · START HERE,guide,broad,,statement,7,0,,,,09:43
+2026-11-09,slot2,carousel,SANKIT · START HERE,guide,broad,,statement,9,0,,,,09:43
 2026-11-09,slot2,reel,SANKIT · START HERE,guide,broad,,statement,1,0,,,,09:43
-2026-11-09,slot3,carousel,KIT 034 · SHIFFRIN'S EXPLORATION SEASON,news,broad,,question,0,0,,,,20:59
+2026-11-09,slot3,carousel,KIT 034 · SHIFFRIN'S EXPLORATION SEASON,news,broad,,question,1,0,,,,20:59
 2026-11-09,slot3,reel,KIT 034 · SHIFFRIN'S EXPLORATION SEASON,news,broad,,question,0,0,,,,20:59
 2026-11-10,slot1,carousel,KIT 035 · GARMIN MARQ (GEN 3),product,narrow,,number,1,0,,,,07:29
 2026-11-10,slot1,reel,KIT 035 · GARMIN MARQ (GEN 3),product,narrow,,number,1,0,,,,07:29
@@ -59,7 +59,7 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-13,slot1,reel,"주말 내내 비 예보, 부산은 오늘 밤 황령산 (KIT 044)",guide,broad,E,contrast,1,0,,,,07:29
 2026-11-13,slot2,carousel,"18년 만에 처음, 비 막는 마이크로라이트 (KIT 042)",product,narrow,A,number,2,0,,,,12:09
 2026-11-13,slot2,reel,"18년 만에 처음, 비 막는 마이크로라이트 (KIT 042)",product,narrow,A,number,3,0,,,,12:09
-2026-11-13,slot3,carousel,주말 정상 날씨 #1 — 토요일은 23곳 모두 비 (KIT 045),weekly,broad,E,number,3,0,,,,20:59
+2026-11-13,slot3,carousel,주말 정상 날씨 #1 — 토요일은 23곳 모두 비 (KIT 045),weekly,broad,E,number,5,0,,,,20:59
 2026-11-13,slot3,reel,주말 정상 날씨 #1 — 토요일은 23곳 모두 비 (KIT 045),weekly,broad,E,number,4,0,,,,20:59
 2026-11-14,slot1,carousel,"월요일 설악산에 눈 예보, 낮 최고 3℃ (KIT 046)",news,broad,E,number,2,0,,,,07:29
 2026-11-14,slot1,reel,"월요일 설악산에 눈 예보, 낮 최고 3℃ (KIT 046)",news,broad,E,number,2,0,,,,07:29
@@ -74,8 +74,12 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-16,slot2,carousel,최근 써 본 스틱 중 두께와 색이 가장 좋았다 (KIT 052),owner,narrow,review,owner,4,0,,,,12:09
 2026-11-16,slot2,reel,최근 써 본 스틱 중 두께와 색이 가장 좋았다 (KIT 052),owner,narrow,review,owner,6,0,,,,12:09
 2026-11-16,slot3,carousel,"PCT에서 가장 많이 쓴 텐트, 왜 한국엔 없을까 (KIT 051)",whynot,narrow,A,number,5,0,,,,21:00
-2026-11-17,slot1,carousel,"한라산, 수요일부터 나흘 내리 눈 예보 (KIT 053)",news,broad,E,number,3,0,,,,07:29
-2026-11-17,slot1,reel,"한라산, 수요일부터 나흘 내리 눈 예보 (KIT 053)",news,broad,E,number,3,0,,,,07:29
-2026-11-17,slot2,carousel,"18분이면 1,458m, 케이블카로 가는 겨울 산 (KIT 050)",guide,broad,E,number,3,0,,,,12:09
+2026-11-17,slot1,carousel,"한라산, 수요일부터 나흘 내리 눈 예보 (KIT 053)",news,broad,E,number,4,0,,,,07:29
+2026-11-17,slot1,reel,"한라산, 수요일부터 나흘 내리 눈 예보 (KIT 053)",news,broad,E,number,4,0,,,,07:29
+2026-11-17,slot2,carousel,"18분이면 1,458m, 케이블카로 가는 겨울 산 (KIT 050)",guide,broad,E,number,5,0,,,,12:09
 2026-11-17,slot2,reel,"18분이면 1,458m, 케이블카로 가는 겨울 산 (KIT 050)",guide,broad,E,number,0,0,,,,12:09
-2026-11-17,slot3,carousel,"프리라이드 챔피언의 스키, 왜 한국엔 없을까 (KIT 054)",whynot,narrow,A,question,0,0,,,,21:00
+2026-11-17,slot3,carousel,"프리라이드 챔피언의 스키, 왜 한국엔 없을까 (KIT 054)",whynot,narrow,A,question,2,0,,,,21:00
+2026-11-17,slot5,carousel,낙엽이 다 떨어지기 전에 브롬톤을 타자고요 :) (KIT 055),owner,narrow,news,question,5,1,,,,22:09
+2026-11-17,slot5,reel,낙엽이 다 떨어지기 전에 브롬톤을 타자고요 :) (KIT 055),owner,narrow,news,question,1,0,,,,22:09
+2026-11-18,slot1,carousel,"강원 스키장 6곳 오늘 눈, 내일 아침은 -7℃ (KIT 056)",news,broad,E,number,3,0,,,,07:29
+2026-11-18,slot1,reel,"강원 스키장 6곳 오늘 눈, 내일 아침은 -7℃ (KIT 056)",news,broad,E,number,1,0,,,,07:29
