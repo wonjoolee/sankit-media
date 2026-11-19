@@ -19,7 +19,7 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-06,slot1,carousel,KIT 025 · WHY NOT KOREA? DURSTON X-MID,whynot,,,number,,,,,,08:14
 2026-11-06,slot3,carousel,KIT 024 · SANKIT GUIDE,guide,,,number,1,0,,,,20:59
 2026-11-06,slot3,reel,KIT 024 · SANKIT GUIDE,guide,,,number,,,,,,20:59
-2026-11-06,slot4,carousel,KIT 026 · WEEKEND GUIDE,guide,,,number,1,1,,,,14:42
+2026-11-06,slot4,carousel,KIT 026 · WEEKEND GUIDE,guide,,,number,2,1,,,,14:42
 2026-11-06,slot4,reel,KIT 026 · WEEKEND GUIDE,guide,,,number,0,0,,,,14:42
 2026-11-07,slot1,carousel,KIT 022 · HAGLÖFS INNSBRUCK,news,,,number,1,0,,,,07:29
 2026-11-07,slot1,reel,KIT 022 · HAGLÖFS INNSBRUCK,news,,,number,2,0,,,,07:29
@@ -33,10 +33,10 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-08,slot2,reel,KIT 032 · SAUNA,owner,,,question,1,0,,,,11:01
 2026-11-08,slot3,carousel,KIT 031 · THE SHRINKING KOREAN SKI SEASO,news,,,number,1,0,,,,20:59
 2026-11-08,slot3,reel,KIT 031 · THE SHRINKING KOREAN SKI SEASO,news,,,number,1,0,,,,20:59
-2026-11-09,slot1,carousel,KIT 033 · GARMIN FĒNIX 9,product,narrow,,question,1,0,,,,07:29
+2026-11-09,slot1,carousel,KIT 033 · GARMIN FĒNIX 9,product,narrow,,question,2,0,,,,07:29
 2026-11-09,slot1,reel,KIT 033 · GARMIN FĒNIX 9,product,narrow,,question,1,0,,,,07:29
-2026-11-09,slot2,carousel,SANKIT · START HERE,guide,broad,,statement,13,0,,,,09:43
-2026-11-09,slot2,reel,SANKIT · START HERE,guide,broad,,statement,1,0,,,,09:43
+2026-11-09,slot2,carousel,SANKIT · START HERE,guide,broad,,statement,20,0,,,,09:43
+2026-11-09,slot2,reel,SANKIT · START HERE,guide,broad,,statement,2,0,,,,09:43
 2026-11-09,slot3,carousel,KIT 034 · SHIFFRIN'S EXPLORATION SEASON,news,broad,,question,1,0,,,,20:59
 2026-11-09,slot3,reel,KIT 034 · SHIFFRIN'S EXPLORATION SEASON,news,broad,,question,0,0,,,,20:59
 2026-11-10,slot1,carousel,KIT 035 · GARMIN MARQ (GEN 3),product,narrow,,number,1,0,,,,07:29
@@ -47,7 +47,7 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-10,slot3,reel,KIT 037 · SEOUL SUBWAY HIKES,guide,broad,,number,0,0,,,,20:59
 2026-11-11,slot1,carousel,"토요일 설악산·오대산·덕유산·한라산 등 23곳 모두 비, 맑은 날은 목요",news,broad,E,number,0,0,,,,07:29
 2026-11-11,slot1,reel,"토요일 설악산·오대산·덕유산·한라산 등 23곳 모두 비, 맑은 날은 목요",news,broad,E,number,1,0,,,,07:29
-2026-11-11,slot2,carousel,"스키장에 선 노란 표지판, 무슨 뜻일까 (KIT 040)",owner,broad,guide,question,1,0,,,,12:09
+2026-11-11,slot2,carousel,"스키장에 선 노란 표지판, 무슨 뜻일까 (KIT 040)",owner,broad,guide,question,2,0,,,,12:09
 2026-11-11,slot2,reel,"스키장에 선 노란 표지판, 무슨 뜻일까 (KIT 040)",owner,broad,guide,question,2,0,,,,12:09
 2026-11-11,slot3,carousel,"핀란드 레비 월드컵 회전 개막전, 이번 주말 토·일 저녁 18시·21시(",news,broad,C,number,1,0,,,,21:00
 2026-11-12,slot1,carousel,"오늘 오대산, 비 올 확률 0% (KIT 041)",guide,broad,E,number,2,0,,,,07:29
@@ -56,31 +56,33 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-12,slot3,carousel,"올겨울 첫 슬로프, 11월 20일 휘닉스 (KIT 043)",news,broad,list,date,0,0,,,,09:10
 2026-11-12,slot3,reel,"올겨울 첫 슬로프, 11월 20일 휘닉스 (KIT 043)",news,broad,list,date,3,0,,,,09:10
 2026-11-13,slot1,carousel,"주말 내내 비 예보, 부산은 오늘 밤 황령산 (KIT 044)",guide,broad,E,contrast,1,0,,,,07:29
-2026-11-13,slot1,reel,"주말 내내 비 예보, 부산은 오늘 밤 황령산 (KIT 044)",guide,broad,E,contrast,1,0,,,,07:29
+2026-11-13,slot1,reel,"주말 내내 비 예보, 부산은 오늘 밤 황령산 (KIT 044)",guide,broad,E,contrast,2,0,,,,07:29
 2026-11-13,slot2,carousel,"18년 만에 처음, 비 막는 마이크로라이트 (KIT 042)",product,narrow,A,number,3,0,,,,12:09
 2026-11-13,slot2,reel,"18년 만에 처음, 비 막는 마이크로라이트 (KIT 042)",product,narrow,A,number,3,0,,,,12:09
-2026-11-13,slot3,carousel,주말 정상 날씨 #1 — 토요일은 23곳 모두 비 (KIT 045),weekly,broad,E,number,6,0,,,,20:59
-2026-11-13,slot3,reel,주말 정상 날씨 #1 — 토요일은 23곳 모두 비 (KIT 045),weekly,broad,E,number,4,0,,,,20:59
+2026-11-13,slot3,carousel,주말 정상 날씨 #1 — 토요일은 23곳 모두 비 (KIT 045),weekly,broad,E,number,7,0,,,,20:59
+2026-11-13,slot3,reel,주말 정상 날씨 #1 — 토요일은 23곳 모두 비 (KIT 045),weekly,broad,E,number,6,0,,,,20:59
 2026-11-14,slot1,carousel,"월요일 설악산에 눈 예보, 낮 최고 3℃ (KIT 046)",news,broad,E,number,3,0,,,,07:29
-2026-11-14,slot1,reel,"월요일 설악산에 눈 예보, 낮 최고 3℃ (KIT 046)",news,broad,E,number,2,0,,,,07:29
-2026-11-14,slot3,carousel,"11월 20일 휘닉스부터, 올겨울 스키 달력 (KIT 047)",guide,broad,E,number,1,0,,,,20:59
+2026-11-14,slot1,reel,"월요일 설악산에 눈 예보, 낮 최고 3℃ (KIT 046)",news,broad,E,number,3,0,,,,07:29
+2026-11-14,slot3,carousel,"11월 20일 휘닉스부터, 올겨울 스키 달력 (KIT 047)",guide,broad,E,number,2,0,,,,20:59
 2026-11-14,slot3,reel,"11월 20일 휘닉스부터, 올겨울 스키 달력 (KIT 047)",guide,broad,E,number,2,0,,,,20:59
-2026-11-15,slot1,carousel,"오늘부터 한 달, 148구간이 닫힌다 (KIT 048)",news,broad,E,number,3,0,,,,07:29
-2026-11-15,slot1,reel,"오늘부터 한 달, 148구간이 닫힌다 (KIT 048)",news,broad,E,number,4,0,,,,07:29
-2026-11-15,slot2,carousel,주말 어디 다녀오셨어요 #1 — 첫 스키는 11월? 12월?,weekly,broad,E,question,5,0,,,,12:09
+2026-11-15,slot1,carousel,"오늘부터 한 달, 148구간이 닫힌다 (KIT 048)",news,broad,E,number,5,0,,,,07:29
+2026-11-15,slot1,reel,"오늘부터 한 달, 148구간이 닫힌다 (KIT 048)",news,broad,E,number,6,0,,,,07:29
+2026-11-15,slot2,carousel,주말 어디 다녀오셨어요 #1 — 첫 스키는 11월? 12월?,weekly,broad,E,question,6,0,,,,12:09
 2026-11-15,slot2,reel,주말 어디 다녀오셨어요 #1 — 첫 스키는 11월? 12월?,weekly,broad,E,question,3,0,,,,12:09
 2026-11-16,slot1,carousel,"사흘 비 그친 목요일, 23곳 중 22곳이 영하 (KIT 049)",news,broad,E,number,,,,,,10:00
 2026-11-16,slot1,reel,"사흘 비 그친 목요일, 23곳 중 22곳이 영하 (KIT 049)",news,broad,E,number,,,,,,10:00
-2026-11-16,slot2,carousel,최근 써 본 스틱 중 두께와 색이 가장 좋았다 (KIT 052),owner,narrow,review,owner,5,0,,,,12:09
-2026-11-16,slot2,reel,최근 써 본 스틱 중 두께와 색이 가장 좋았다 (KIT 052),owner,narrow,review,owner,7,0,,,,12:09
-2026-11-16,slot3,carousel,"PCT에서 가장 많이 쓴 텐트, 왜 한국엔 없을까 (KIT 051)",whynot,narrow,A,number,6,0,,,,21:00
-2026-11-17,slot1,carousel,"한라산, 수요일부터 나흘 내리 눈 예보 (KIT 053)",news,broad,E,number,6,0,,,,07:29
-2026-11-17,slot1,reel,"한라산, 수요일부터 나흘 내리 눈 예보 (KIT 053)",news,broad,E,number,4,0,,,,07:29
-2026-11-17,slot2,carousel,"18분이면 1,458m, 케이블카로 가는 겨울 산 (KIT 050)",guide,broad,E,number,10,0,,,,12:09
+2026-11-16,slot2,carousel,최근 써 본 스틱 중 두께와 색이 가장 좋았다 (KIT 052),owner,narrow,review,owner,6,0,,,,12:09
+2026-11-16,slot2,reel,최근 써 본 스틱 중 두께와 색이 가장 좋았다 (KIT 052),owner,narrow,review,owner,8,0,,,,12:09
+2026-11-16,slot3,carousel,"PCT에서 가장 많이 쓴 텐트, 왜 한국엔 없을까 (KIT 051)",whynot,narrow,A,number,7,0,,,,21:00
+2026-11-17,slot1,carousel,"한라산, 수요일부터 나흘 내리 눈 예보 (KIT 053)",news,broad,E,number,9,0,,,,07:29
+2026-11-17,slot1,reel,"한라산, 수요일부터 나흘 내리 눈 예보 (KIT 053)",news,broad,E,number,5,0,,,,07:29
+2026-11-17,slot2,carousel,"18분이면 1,458m, 케이블카로 가는 겨울 산 (KIT 050)",guide,broad,E,number,12,0,,,,12:09
 2026-11-17,slot2,reel,"18분이면 1,458m, 케이블카로 가는 겨울 산 (KIT 050)",guide,broad,E,number,0,0,,,,12:09
-2026-11-17,slot3,carousel,"프리라이드 챔피언의 스키, 왜 한국엔 없을까 (KIT 054)",whynot,narrow,A,question,5,0,,,,21:00
-2026-11-17,slot5,carousel,낙엽이 다 떨어지기 전에 브롬톤을 타자고요 :) (KIT 055),owner,narrow,news,question,10,1,,,,22:09
+2026-11-17,slot3,carousel,"프리라이드 챔피언의 스키, 왜 한국엔 없을까 (KIT 054)",whynot,narrow,A,question,9,0,,,,21:00
+2026-11-17,slot5,carousel,낙엽이 다 떨어지기 전에 브롬톤을 타자고요 :) (KIT 055),owner,narrow,news,question,13,1,,,,22:09
 2026-11-17,slot5,reel,낙엽이 다 떨어지기 전에 브롬톤을 타자고요 :) (KIT 055),owner,narrow,news,question,1,0,,,,22:09
-2026-11-18,slot1,carousel,"강원 스키장 6곳 오늘 눈, 내일 아침은 -7℃ (KIT 056)",news,broad,E,number,9,0,,,,07:29
+2026-11-18,slot1,carousel,"강원 스키장 6곳 오늘 눈, 내일 아침은 -7℃ (KIT 056)",news,broad,E,number,16,0,,,,07:29
 2026-11-18,slot1,reel,"강원 스키장 6곳 오늘 눈, 내일 아침은 -7℃ (KIT 056)",news,broad,E,number,1,0,,,,07:29
-2026-11-18,slot3,carousel,"유타에 이번 주 1m 눈 예보, 파크시티 금요일 개장 (KIT 057)",news,broad,D,number,0,0,,,,21:00
+2026-11-18,slot3,carousel,"유타에 이번 주 1m 눈 예보, 파크시티 금요일 개장 (KIT 057)",news,broad,D,number,7,0,,,,21:00
+2026-11-19,slot1,carousel,"일요일 모나용평 개장, 리프트권 1만 원 (KIT 058)",news,broad,E,number,5,0,,,,07:29
+2026-11-19,slot2,carousel,"포항 불꽃, 순창 떡볶이, 그리고 산 셋 (이번 주 산킷 #2)",weekly,broad,E,statement,0,0,,,,12:09
