@@ -11,10 +11,12 @@ K = _key()
 ROOT = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 LIB = os.path.join(ROOT, 'assets', 'library')
 IDX = os.path.join(LIB, 'index.json')
-WANT = ['스키','스노우','설경','설산','눈꽃','상고대','겨울','설천','빙벽','썰매','리조트',
-        '등산','산행','트레킹','둘레길','능선','정상','암벽','클라이밍','야영','캠핑','백패킹',
-        '국립공원','자연휴양림','케이블카','단풍','계곡','봉','산']
-SKIP = ['축제','공연','음식','먹거리','시장','카페','호텔','박물관','미술관','사찰','해수욕장','해변','항구','야경','도심']
+WANT = ['스키','스노보드','보드','슬로프','리프트','곤돌라','설경','설산','눈꽃','상고대','설원','빙벽','썰매',
+        '등산','산행','트레킹','등반','암벽','클라이밍','능선','정상','산정','봉우리','둘레길','종주','산길',
+        '국립공원','도립공원','자연휴양림','수목원','캠핑','야영','백패킹','산악','고원','계곡','폭포','단풍','숲길']
+SKIP = ['축제','공연','음식','먹거리','시장','카페','호텔','박물관','미술관','사찰','해수욕장','해변','항구','야경',
+        '도심','마을','한옥','다리','섬','바닷길','해안','유원지','성당','교회','거리','테마파크','전시','카페거리',
+        '놀이','수족관','온천','골프','자전거길','벽화','야시장','포구','등대','갯벌','염전','공항','역사관']
 
 def call(page, n=300):
     p = {'serviceKey': K, 'numOfRows': n, 'pageNo': page, 'MobileOS': 'ETC',
@@ -32,7 +34,7 @@ def slug(s):
     return (s[:28] or 'photo')
 
 def wanted(it):
-    hay = ' '.join(str(it.get(k) or '') for k in ('galTitle', 'galSearchKeyword', 'galPhotographyLocation'))
+    hay = ' '.join(str(it.get(k) or '') for k in ('galTitle', 'galSearchKeyword'))
     if any(b in hay for b in SKIP): return False
     return any(w in hay for w in WANT)
 
@@ -41,7 +43,7 @@ def main(limit=400):
     idx = json.load(open(IDX)) if os.path.exists(IDX) else {}
     have = {v.get('id') for v in idx.values()}
     first = call(1, 1); total = first['response']['body'].get('totalCount', 0)
-    print('포토코리아 전체', total, '장 / 보관함', len(idx), '장')
+    print('포토코리아 전체', total, '장 / 보관함', len(idx), '장', flush=True)
     got = 0; page = 1
     while got < limit and (page - 1) * 300 < total:
         try: b = call(page)['response']['body']
@@ -70,7 +72,8 @@ def main(limit=400):
                          'source': '한국관광공사 포토코리아'}
             have.add(cid); got += 1
             if got >= limit: break
-        print('페이지', page, '누적', got); page += 1
+        json.dump(idx, open(IDX, 'w'), ensure_ascii=False, indent=1)
+        print('페이지', page, '누적', got, flush=True); page += 1
     json.dump(idx, open(IDX, 'w'), ensure_ascii=False, indent=1)
     print('새로 받은 사진', got, '장 / 보관함 합계', len(idx))
 
