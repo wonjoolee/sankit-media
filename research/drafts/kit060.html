@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#ccc;font-family:'Noto Sans CJK KR','Noto Sans CJK JP',sans-serif;padding:40px;display:flex;flex-wrap:wrap;gap:40px;width:3600px}
+.card{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F4F2EC;color:#141615}
+.mono{font-family:'DejaVu Sans Mono',monospace}
+.wm{position:absolute;left:56px;top:56px;font-size:30px;font-weight:900;letter-spacing:10px;z-index:3}
+.wm i{font-style:normal;font-weight:300;letter-spacing:4px;margin-left:10px;font-size:.55em;vertical-align:middle}
+.kit{position:absolute;right:56px;top:62px;font-size:20px;letter-spacing:3px;z-index:3}
+.kick{position:absolute;left:56px;font-size:22px;letter-spacing:3px;color:#8a5521;font-weight:700}
+.head{position:absolute;left:56px;font-weight:800;letter-spacing:-1.5px;line-height:1.22}
+.body{position:absolute;font-size:36px;line-height:1.6;font-weight:500;letter-spacing:-.8px}
+.body b{font-weight:900}
+.foot{position:absolute;left:56px;right:56px;bottom:46px;display:flex;justify-content:space-between;font-size:19px;letter-spacing:2px;color:#666;border-top:2px solid #141615;padding-top:16px}
+.dark{background:#141615;color:#F4F2EC}
+.dark .foot{border-color:#F4F2EC;color:#9a9f9c}
+.dark .kick{color:#d9a441}
+/* 사진: 원본 비율 그대로, 위에 아무것도 얹지 않음 */
+.photo{position:absolute;display:block}
+.cred{position:absolute;font-size:15px;letter-spacing:2px;color:#8b8f8c}
+.ring{position:absolute;border:4px solid #141615;border-radius:50%;overflow:hidden;background:#F4F2EC}
+.tick{position:absolute;height:3px;background:#141615}
+.dark .tick{background:#F4F2EC}
+.call{position:absolute;font-size:20px;letter-spacing:2px;line-height:1.5}
+.spec{position:absolute;left:660px;right:56px}
+.spec div{border-top:2px solid #3a3d3b;padding:18px 0 20px}
+.spec small{display:block;font-size:17px;letter-spacing:3px;color:#9a9f9c}
+.spec b{display:block;font-family:'Noto Sans CJK KR',sans-serif;font-size:50px;font-weight:900;letter-spacing:-1px;line-height:1.15;margin-top:4px}
+.spec b span{font-size:24px;font-weight:500;margin-left:6px;letter-spacing:0}
+
+/* ===== 표지(01) 새 형식 (2026-11-11): 사진 한 장 + 한국어 두 줄. 키커·KIT 번호·푸터 없음 ===== */
+.cover{background:#141615;color:#F4F2EC}
+.cover .bg{position:absolute;left:0;top:0;width:1080px;height:1350px;object-fit:cover;display:block}          /* 운영자·공공누리 사진만(자르기 허용) */
+.cover .grad{position:absolute;left:0;right:0;bottom:0;height:720px;background:linear-gradient(180deg,rgba(20,22,21,0) 0%,rgba(20,22,21,.55) 45%,rgba(20,22,21,.92) 100%)}
+.cover .press{position:absolute;left:0;top:0;width:1080px;height:860px;display:flex;align-items:center;justify-content:center;background:#141615}
+.cover .press img{max-width:1080px;max-height:860px;display:block}                                            /* 프레스 사진: 원본 비율, 위에 아무것도 얹지 않음 */
+.cover .wm{color:#F4F2EC;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.cover .h2l{position:absolute;left:64px;right:64px;bottom:150px;font-size:76px;font-weight:900;line-height:1.22;letter-spacing:-2.5px;color:#F4F2EC;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.cover .lab{position:absolute;left:64px;bottom:80px;font-size:20px;letter-spacing:4px;color:rgba(244,242,236,.85)}
+.cover .cred{left:auto;right:64px;bottom:84px;top:auto;color:rgba(244,242,236,.6)}
+.cover .sub{position:absolute;left:64px;right:64px;bottom:128px;font-size:34px;font-weight:800;color:#F2C94C;letter-spacing:-.5px}
+.cover .sub ~ .h2l,.cover .h2l.withsub{bottom:192px}
+.cover .shade{position:absolute;left:0;right:0;top:0;height:220px;background:linear-gradient(180deg,rgba(20,22,21,.55),rgba(20,22,21,0))}
+</style></head><body>
+
+<!-- 01 표지 -->
+<div class="card cover" id="s1">
+  <img class="bg" src="../../assets/library/울산바위_추경_202411_3567272.jpg">
+  <div class="shade"></div><div class="grad"></div>
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="sub">국내 아웃도어 세 브랜드가 한 그룹으로</div>
+  <div class="h2l withsub">네파의 주인이<br>바뀝니다</div>
+  <div class="lab">2026.11.20 · 산킷</div>
+  <div class="cred">사진 이진옥 · 한국관광공사 · 분위기 사진</div>
+</div>
+
+<!-- 02 무슨 일인가 -->
+<div class="card" id="s2">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 060</div>
+  <div class="kick" style="top:200px">무슨 일인가</div>
+  <div class="head" style="top:246px;right:56px;font-size:76px">MBK가 13년 만에<br>손을 뗍니다</div>
+  <div class="body" style="left:56px;right:56px;top:470px">
+    <b>9월 22일</b> 계약했습니다. 네파가 기존 주주를 대상으로 유상증자를 하고,
+    그 신주를 <b>K2코리아그룹</b>이 인수합니다. 증자가 끝나면 K2가
+    <b>최대주주</b>가 되고 경영에 참여합니다.<br><br>
+    현재 최대주주인 <b>MBK파트너스는 증자에 참여하지 않습니다.</b>
+    K2가 그 물량을 전량 가져갑니다. MBK는 2013년 네파를 차입을 섞어 인수했고,
+    그때 생긴 금융비용이 네파에 부담으로 남아 있었습니다.
+  </div>
+  <div class="spec" style="left:56px;right:56px;top:950px">
+    <div><small>계약 체결</small><b>2026.09.22</b></div>
+    <div><small>인수 금액</small><b>비공개<span>기사에 없음</span></b></div>
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 060</span><span>출처 딜사이트·SBS Biz·MTN</span></div>
+</div>
+
+<!-- 03 숫자 -->
+<div class="card dark" id="s3">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 060</div>
+  <div class="kick" style="top:200px">2025년 실적</div>
+  <div class="head" style="top:246px;right:56px;font-size:72px">삼각편대가 되지만<br>셋 다 매출이 줄었습니다</div>
+  <div class="spec" style="left:56px;right:56px;top:470px">
+    <div><small>K2 · 케이투코리아 연결</small><b>3,674억 <span>-1.9% · 영업이익 489억(-10.2%)</span></b></div>
+    <div><small>아이더</small><b>2,232억 <span>-4.6% · 영업이익 165억(+16.4%)</span></b></div>
+    <div><small>네파</small><b>2,888억 <span>-2.9% · 영업손실 21억</span></b></div>
+    <div><small>K2그룹 주요 5개 법인 합산</small><b>9,615억 <span>-0.7% · 영업이익 866억(-10.6%)</span></b></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:1000px;font-size:31px">
+    아이더만 영업이익이 늘었습니다. 2020년 글로벌 상표권을 인수할 때 생긴
+    <b>상각비 부담이 끝난</b> 영향입니다.<br>
+    네파는 2024년 영업손실 8억에서 지난해 21억으로 커졌습니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 060</span><span>딜사이트 2026.10.13</span></div>
+</div>
+
+<!-- 04 반대쪽 숫자 -->
+<div class="card" id="s4">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 060</div>
+  <div class="kick" style="top:200px">그런데</div>
+  <div class="head" style="top:246px;right:56px;font-size:76px">시장 탓이라고<br>하기엔 어렵습니다</div>
+  <div class="spec" style="left:56px;right:56px;top:500px">
+    <div><small>영원아웃도어 · 노스페이스</small><b>1조 564억 <span>+5.1%</span></b></div>
+    <div><small>감성코퍼레이션 · 스노우피크어패럴</small><b>2,502억 <span>+13.5%</span></b></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:800px">
+    같은 해 업계 1위 노스페이스는 <b>늘었습니다.</b> 후발인 스노우피크어패럴은
+    <b>두 자릿수로</b> 늘었습니다.<br><br>
+    업계는 소비심리 위축을 배경으로 봅니다. 다만 국내 브랜드들의 실적이
+    이렇게 갈린 것을 보면, 업황만으로는 설명되지 않는다는 분석입니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 060</span><span>2025년 각 사 실적</span></div>
+</div>
+
+<!-- 05 무엇이 달라지나 -->
+<div class="card dark" id="s5">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 060</div>
+  <div class="kick" style="top:200px">앞으로</div>
+  <div class="head" style="top:246px;right:56px;font-size:70px">겹치는 게 걱정이고,<br>겹쳐도 됐던 전례가 있습니다</div>
+  <div class="body" style="left:56px;right:56px;top:470px;font-size:34px">
+    <b>우려</b> — K2·아이더·네파는 사업 영역과 고객층이 일부 겹칩니다.
+    정체성을 구분하지 못하면 브랜드를 늘린 효과가 제한적일 수 있다는 지적입니다.<br><br>
+    <b>회사</b> — "아이더 인수 때도 중복 우려가 있었지만 각 브랜드의 정체성과
+    고객층을 유지하며 성장시킨 경험이 있다. 네파도 고유의 정체성을 살려 운영하겠다."
+    구체적인 전략은 <b>인수가 끝난 뒤</b> 마련한다고 했습니다.
+  </div>
+  <div class="call" style="left:56px;right:56px;top:1010px;font-size:30px;line-height:1.55">
+    <b>산킷 한 줄</b> — 인수는 아직 <b>완료 전</b>입니다. 금액도 지분율도 공개되지 않았습니다.
+    소비자가 먼저 체감할 변화는 가격이나 매장이 아니라, 세 브랜드가 서로를
+    <b>무엇으로 다르게 부를지</b>에서 보일 겁니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 060</span><span>인수 완료 전 · 2026.11.20 기준</span></div>
+</div>
+</body></html>
