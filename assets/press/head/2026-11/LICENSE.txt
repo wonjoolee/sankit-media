@@ -1,0 +1,14 @@
+출처: Mynewsdesk 뉴스룸 — https://www.mynewsdesk.com/head
+수집일: 2026-11-19
+라이선스: Media Use
+
+조건 (원문):
+The content may be downloaded by journalists, bloggers, columnists, creators of public opinion, etc. It can be used and shared in different media channels to convey, narrate, and comment on your press releases, posts, or information, provided that the content is unmodified. The author or creator shall be attributed to the extent and in the manner required by good practice (this means, for example, that photographers should be attributed).
+
+산킷이 지킬 것:
+1. 사진을 수정하지 않는다. 자르지 않고, 글자를 얹지 않고, 색을 고치지 않는다.
+   카드에는 사진을 통째로 넣고 글자는 사진 밖 영역에 둔다.
+2. 촬영자 크레딧을 표기한다. 촬영자가 표기되지 않은 파일은 브랜드명을 출처로 적는다.
+3. 광고가 아니다. 대가를 받은 글에 쓰는 경우에는 '광고' 표기 규칙을 따른다.
+
+파일별 출처 페이지와 크레딧은 index.json 에 있다.

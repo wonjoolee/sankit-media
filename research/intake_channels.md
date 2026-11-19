@@ -162,3 +162,71 @@ www.amersports.com
 ```
 
 허용 뒤 `pipeline/fetch_press.py`를 만들어 1304·903 두 피드를 받아 키워드로 걸러 쌓는다.
+
+---
+
+# 4차 — 허용 목록이 열린 뒤 (2026-11-20)
+
+운영자가 도메인을 허용했다. 결과를 숫자로 적는다.
+
+## 열린 것 / 아직 막힌 것 (32곳 확인)
+
+열림: `api.newswire.co.kr`, `www.newswire.co.kr`, `press.atomic.com`,
+`www.mynewsdesk.com`, **`mnd-assets.mynewsdesk.com`**(사진 CDN).
+막힘(정책 거부 403): skiresort.or.kr, outdoornews.co.kr, mediacenter.oberalp.com, amersports.com,
+salomon, mammut, patagoniaworks, thenorthface, arcteryx, ortovox, leki, lowa, scarpa,
+blackdiamondequipment, snowpeak.co.jp, montbell.jp, goalzero, helinox, kaestle,
+japan.travel, taiwan.net.tw, newzealand.com, australia.com, myswitzerland.com, austria.info.
+
+**전부 `connect_rejected` = 허용 목록에 없을 뿐이다.** 사이트가 막은 게 아니다.
+→ 쉘에서 자동 수집이 필요한 곳만 추가로 허용받는다. 나머지는 WebFetch나 크롬으로 읽는다.
+
+## 이번에 뚫린 경로
+
+**1. 뉴스와이어 — 자동 수집 작동.** `pipeline/fetch_press.py`
+  - 분야 RSS 1304(야외 레저) + 903(의류와 잡화)을 받아 산킷 키워드로 걸러 쌓는다.
+  - `--backfill --pages=N` 으로 누적분을 거슬러 올라간다.
+  - 1차 결과: **기사 254건, 처음 본 회사 36곳** → `research/press_contacts_new.csv`
+  - 신호율: 최신 피드 30건 중 6건, 백필은 목록 제목으로 걸러 정밀도가 더 높다.
+
+**2. Mynewsdesk — 보도용 사진 자동 수집 작동.** `pipeline/fetch_presskit.py`
+  - **`www.mynewsdesk.com/<슬러그>` 로 모든 뉴스룸에 닿는다.** 브랜드마다 도메인 허용이 필요 없다.
+  - 사진은 `mnd-assets.mynewsdesk.com/image/upload/fl_attachment/<id>` 에서 원본으로 내려온다.
+  - 라이선스 `Media Use` — 쓸 수 있다. 단 **무수정 + 촬영자 크레딧** (21절).
+  - 1차 결과: atomic 5장, head 5장, haglofs 5장 = **15장 54MB**. 전부 Media Use.
+  - 브랜드 슬러그 80개를 찍어 본 결과 **셋만 존재**했다. 비중은 작다. 과장하지 않는다.
+  - 플레이라이트로 렌더링해야 사진 URL이 나온다 (목록이 자바스크립트로 실린다).
+
+**3. 다른 보도 플랫폼 — Prezly.** 마무트가 쓴다 (`pr.mammut.com`, 사진은 `cdn.uc.assets.prezly.com`).
+  Mynewsdesk 수집기와 구조가 달라 따로 만들어야 한다. 다음에 할 일.
+
+## 매듭 — 홍보대행사 지도 (개별 접촉보다 빠르다)
+
+| 대행사 | 쥐고 있는 브랜드 | 담당 |
+|---|---|---|
+| **KPR** | **블랙야크 + 노스페이스** (국내 1·2위를 동시에) | 김승필 02-3406-2178 / 이보람 02-3406-2179 |
+| 커뮤니크 | 아디다스, 써모스, 코치, 케이스티파이 | 정재경·김현정·이소미 02-788-73xx |
+| 커뮤니케이션즈 온 | 레드페이스 | 김상우 02-6933-4671 |
+| 에프엠투 | 도메틱(캠핑) | 이은지 070-4333-1244 |
+| **Verde Brand Communications** (미국) | **페츨 + 마무트** | alexa@verdepr.com |
+| crystal communications (독일) | 마무트 독일어권 | mammut@crystal-communications.de |
+| Denny Inc. (미국) | 애토믹 북미 | chris@dennyink.com |
+| 앤서 (한국) | 오스트리아관광청 | amy@nswer.kr |
+
+파타고니아는 나라별로 대행사가 다르다 (영국 Forster / DACH Geschwister Zack / 프랑스 187 COM / 이탈리아 Green Media Lab).
+
+## 추가로 허용받으면 좋은 도메인 (쉘 자동 수집용)
+
+```
+cdn.uc.assets.prezly.com    마무트 등 Prezly 뉴스룸 사진
+pr.mammut.com               마무트 뉴스룸
+skiresort.or.kr             스키장 개장 정보 (매일 쓰는 자료)
+www.outdoornews.co.kr       국내 아웃도어 전문지
+```
+
+## 이번에 확인한 사실
+
+- **영원아웃도어(노스페이스)** 가 "사이트 차단, 전화만"이었는데 KPR 경유로 담당자까지 나왔다.
+- **(주)동인기연** — 국내 최대 배낭 제조사. 운영자가 요청한 '한국 제조사' 경로의 첫 실체.
+- **승우여행사** — 트레킹 전문 여행사. 팸투어 경로.
+- 연락처 합계: **83행 / 이메일 73곳** (어제 60곳에서 늘었다).
