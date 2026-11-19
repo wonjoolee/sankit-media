@@ -1,0 +1,126 @@
+{
+ "subject": "[산킷 매거진] 프레스 자료 수신 요청 드립니다",
+ "count": 20,
+ "items": [
+  {
+   "n": 1,
+   "to": "medoutdoor@gmail.com",
+   "file": "research/sent/01_medoutdoor.txt",
+   "salut": "메드아웃도어 담당자님"
+  },
+  {
+   "n": 2,
+   "to": "tnjcompany20@gmail.com",
+   "file": "research/sent/02_tnjcompany20.txt",
+   "salut": "티엔제이컴퍼니 담당자님"
+  },
+  {
+   "n": 3,
+   "to": "jkseo@danwoosfg.co.kr",
+   "file": "research/sent/03_jkseo.txt",
+   "salut": "단우에스에프지 담당자님"
+  },
+  {
+   "n": 4,
+   "to": "head@headkorea.kr",
+   "file": "research/sent/04_head.txt",
+   "salut": "헤드 담당자님"
+  },
+  {
+   "n": 5,
+   "to": "info@hlsc.co.kr",
+   "file": "research/sent/05_info.txt",
+   "salut": "하이랜드스포츠 담당자님"
+  },
+  {
+   "n": 6,
+   "to": "tjdistribution@naver.com",
+   "file": "research/sent/06_tjdistribution.txt",
+   "salut": "버튼 담당자님"
+  },
+  {
+   "n": 7,
+   "to": "skiplus@empal.com",
+   "file": "research/sent/07_skiplus.txt",
+   "salut": "스키플러스 담당자님"
+  },
+  {
+   "n": 8,
+   "to": "spyderonline@brandsuniverse.com",
+   "file": "research/sent/08_spyderonline.txt",
+   "salut": "스파이더 담당자님"
+  },
+  {
+   "n": 9,
+   "to": "info@bdkorea.co.kr",
+   "file": "research/sent/09_info.txt",
+   "salut": "블랙다이아몬드 담당자님"
+  },
+  {
+   "n": 10,
+   "to": "korea.info@arcteryx.com",
+   "file": "research/sent/10_korea_info.txt",
+   "salut": "아크테릭스 담당자님"
+  },
+  {
+   "n": 11,
+   "to": "shlee@ontworld.com",
+   "file": "research/sent/11_shlee.txt",
+   "salut": "오엔티월드 담당자님"
+  },
+  {
+   "n": 12,
+   "to": "contact@goldwinkorea.co.kr",
+   "file": "research/sent/12_contact.txt",
+   "salut": "골드윈 담당자님"
+  },
+  {
+   "n": 13,
+   "to": "montbellweb@mbkcorp.co.kr",
+   "file": "research/sent/13_montbellweb.txt",
+   "salut": "몽벨 담당자님"
+  },
+  {
+   "n": 14,
+   "to": "kolonsport@kolon.com",
+   "file": "research/sent/14_kolonsport.txt",
+   "salut": "코오롱스포츠 담당자님"
+  },
+  {
+   "n": 15,
+   "to": "official_byn@blackyak.com",
+   "file": "research/sent/15_official_byn.txt",
+   "salut": "블랙야크 담당자님"
+  },
+  {
+   "n": 16,
+   "to": "hi@helinox.com",
+   "file": "research/sent/16_hi.txt",
+   "salut": "헬리녹스 담당자님"
+  },
+  {
+   "n": 17,
+   "to": "zerogram@zerogram.co.kr",
+   "file": "research/sent/17_zerogram.txt",
+   "salut": "제로그램 담당자님"
+  },
+  {
+   "n": 18,
+   "to": "marketing@mbdkorea.com",
+   "file": "research/sent/18_marketing.txt",
+   "salut": "머렐 담당자님"
+  },
+  {
+   "n": 19,
+   "to": "info@niio.co.kr",
+   "file": "research/sent/19_info.txt",
+   "salut": "니오 담당자님"
+  },
+  {
+   "n": 20,
+   "to": "coleman.cscenter@gmail.com",
+   "file": "research/sent/20_coleman_cscenter.txt",
+   "salut": "콜맨 담당자님"
+  }
+ ]
+}
