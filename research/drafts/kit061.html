@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#ccc;font-family:'Noto Sans CJK KR','Noto Sans CJK JP',sans-serif;padding:40px;display:flex;flex-wrap:wrap;gap:40px;width:3600px}
+.card{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F4F2EC;color:#141615}
+.mono{font-family:'DejaVu Sans Mono',monospace}
+.wm{position:absolute;left:56px;top:56px;font-size:30px;font-weight:900;letter-spacing:10px;z-index:3}
+.wm i{font-style:normal;font-weight:300;letter-spacing:4px;margin-left:10px;font-size:.55em;vertical-align:middle}
+.kit{position:absolute;right:56px;top:62px;font-size:20px;letter-spacing:3px;z-index:3}
+.kick{position:absolute;left:56px;font-size:22px;letter-spacing:3px;color:#8a5521;font-weight:700}
+.head{position:absolute;left:56px;font-weight:800;letter-spacing:-1.5px;line-height:1.22}
+.body{position:absolute;font-size:36px;line-height:1.6;font-weight:500;letter-spacing:-.8px}
+.body b{font-weight:900}
+.foot{position:absolute;left:56px;right:56px;bottom:46px;display:flex;justify-content:space-between;font-size:19px;letter-spacing:2px;color:#666;border-top:2px solid #141615;padding-top:16px}
+.dark{background:#141615;color:#F4F2EC}
+.dark .foot{border-color:#F4F2EC;color:#9a9f9c}
+.dark .kick{color:#d9a441}
+/* 사진: 원본 비율 그대로, 위에 아무것도 얹지 않음 */
+.photo{position:absolute;display:block}
+.cred{position:absolute;font-size:15px;letter-spacing:2px;color:#8b8f8c}
+.ring{position:absolute;border:4px solid #141615;border-radius:50%;overflow:hidden;background:#F4F2EC}
+.tick{position:absolute;height:3px;background:#141615}
+.dark .tick{background:#F4F2EC}
+.call{position:absolute;font-size:20px;letter-spacing:2px;line-height:1.5}
+.spec{position:absolute;left:660px;right:56px}
+.spec div{border-top:2px solid #3a3d3b;padding:18px 0 20px}
+.spec small{display:block;font-size:17px;letter-spacing:3px;color:#9a9f9c}
+.spec b{display:block;font-family:'Noto Sans CJK KR',sans-serif;font-size:50px;font-weight:900;letter-spacing:-1px;line-height:1.15;margin-top:4px}
+.spec b span{font-size:24px;font-weight:500;margin-left:6px;letter-spacing:0}
+
+/* ===== 표지(01) 새 형식 (2026-11-11): 사진 한 장 + 한국어 두 줄. 키커·KIT 번호·푸터 없음 ===== */
+.cover{background:#141615;color:#F4F2EC}
+.cover .bg{position:absolute;left:0;top:0;width:1080px;height:1350px;object-fit:cover;display:block}          /* 운영자·공공누리 사진만(자르기 허용) */
+.cover .grad{position:absolute;left:0;right:0;bottom:0;height:720px;background:linear-gradient(180deg,rgba(20,22,21,0) 0%,rgba(20,22,21,.55) 45%,rgba(20,22,21,.92) 100%)}
+.cover .press{position:absolute;left:0;top:0;width:1080px;height:860px;display:flex;align-items:center;justify-content:center;background:#141615}
+.cover .press img{max-width:1080px;max-height:860px;display:block}                                            /* 프레스 사진: 원본 비율, 위에 아무것도 얹지 않음 */
+.cover .wm{color:#F4F2EC;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.cover .h2l{position:absolute;left:64px;right:64px;bottom:150px;font-size:76px;font-weight:900;line-height:1.22;letter-spacing:-2.5px;color:#F4F2EC;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.cover .lab{position:absolute;left:64px;bottom:80px;font-size:20px;letter-spacing:4px;color:rgba(244,242,236,.85)}
+.cover .cred{left:auto;right:64px;bottom:84px;top:auto;color:rgba(244,242,236,.6)}
+.cover .sub{position:absolute;left:64px;right:64px;bottom:128px;font-size:34px;font-weight:800;color:#F2C94C;letter-spacing:-.5px}
+.cover .sub ~ .h2l,.cover .h2l.withsub{bottom:192px}
+.cover .shade{position:absolute;left:0;right:0;top:0;height:220px;background:linear-gradient(180deg,rgba(20,22,21,.55),rgba(20,22,21,0))}
+</style></head><body>
+
+<!-- 01 표지 : 사진 통째로, 글자는 사진 밖 -->
+<div class="card cover" id="s1">
+  <div class="press"><img src="../../assets/press/head/2026-11/Aicher_Levi_2026.JPG"></div>
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="sub">레비 · 11월 14–15일 · 알파인 월드컵</div>
+  <div class="h2l withsub">시즌이<br>열렸습니다</div>
+  <div class="lab">2026.11.21 · 산킷</div>
+  <div class="cred">사진 HEAD · 보도용</div>
+</div>
+
+<!-- 02 여자부 -->
+<div class="card" id="s2">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 061</div>
+  <div class="kick" style="top:200px">여자 회전 · 11월 14일</div>
+  <div class="head" style="top:246px;right:56px;font-size:74px">생일 다음 날,<br>첫 우승이었습니다</div>
+  <div class="body" style="left:56px;right:56px;top:470px">
+    <b>엠마 아이허</b>(독일, 23세)가 월드컵 회전에서 <b>처음</b> 우승했습니다.
+    1차 시기에서 가장 빨랐고 2차에서 그대로 지켰습니다.<br><br>
+    경기 전날이 생일이었습니다. 본인은 <b>"확실히 좋은 생일 선물"</b>이라고 했습니다.
+    지난달 죌덴 대회전에서 3위였고, 지난 시즌 종합 2위였습니다.
+  </div>
+  <div class="spec" style="left:56px;right:56px;top:860px">
+    <div><small>1위</small><b>엠마 아이허 <span>독일</span></b></div>
+    <div><small>2위</small><b>라라 콜투리 <span>알바니아</span></b></div>
+    <div><small>3위</small><b>카타리나 트루페 <span>오스트리아</span></b></div>
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 061</span><span>핀란드 레비</span></div>
+</div>
+
+<!-- 03 남자부 -->
+<div class="card dark" id="s3">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 061</div>
+  <div class="kick" style="top:200px">남자 회전 · 11월 15일</div>
+  <div class="head" style="top:246px;right:56px;font-size:74px">브라텐이<br>두 경기 연속 이겼습니다</div>
+  <div class="spec" style="left:56px;right:56px;top:480px">
+    <div><small>1위</small><b>루카스 피녜이루 브라텐 <span>브라질</span></b></div>
+    <div><small>2위</small><b>클레망 노엘 <span>프랑스 · +0.56초</span></b></div>
+    <div><small>3위</small><b>로이크 메이야르 <span>스위스 · +0.73초</span></b></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:900px;font-size:33px">
+    죌덴 개막전에 이어 <b>시즌 2연승</b>, 레비에서는 <b>2연패</b>입니다.
+    노르웨이 대표였다가 브라질로 옮겨 <b>세 번째 겨울</b>이고, 통산 10승 중 5승이 회전입니다.
+    브라질의 첫 월드컵 우승도 <b>지난 시즌 이곳 레비</b>에서 나왔습니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 061</span><span>레비 스키센터 · 키틸래</span></div>
+</div>
+
+<!-- 04 순록 전통 : 사진 통째로, 글자는 사진 밖 -->
+<div class="card dark" id="s4">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 061</div>
+  <div style="position:absolute;left:0;top:150px;width:1080px;height:610px;display:flex;align-items:center;justify-content:center;background:#141615">
+    <img src="../../assets/press/head/2026-11/Levi_Podium_press_2026.jpg" style="max-width:1080px;max-height:610px;display:block">
+  </div>
+  <div class="cred" style="right:56px;top:772px;left:auto">사진 HEAD · 보도용</div>
+  <div class="kick" style="top:820px">레비의 전통</div>
+  <div class="head" style="top:864px;right:56px;font-size:72px">이기면 순록을<br>받습니다</div>
+  <div class="body" style="left:56px;right:56px;top:1030px;font-size:31px">
+    레비에서 우승하면 <b>진짜 순록 한 마리</b>를 받습니다. 이름은 우승자가 직접 짓고,
+    순록은 데려가지 않고 <b>핀란드의 제 무리에 남습니다.</b><br>
+    미카엘라 시프린은 레비에서만 <b>아홉 번</b> 이겼습니다. 순록도 아홉 마리입니다.
+    올해는 오지 않았습니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 061</span><span>핀란드 레비</span></div>
+</div>
+
+<!-- 05 장비 각도 -->
+<div class="card" id="s5">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 061</div>
+  <div class="kick" style="top:200px">산킷이 본 것</div>
+  <div class="head" style="top:246px;right:56px;font-size:70px">남녀 우승이<br>장비로 갈렸습니다</div>
+  <div class="body" style="left:56px;right:56px;top:470px">
+    여자부 우승 아이허는 <b>헤드</b>, 남자부 우승 브라텐은 <b>애토믹</b>입니다.
+    두 회사 모두 오스트리아에서 시작했고, 지금은 레비 한 주말을 나눠 가졌습니다.<br><br>
+    브라텐은 올해 <b>애토믹과 재계약</b>했습니다. 본인이 타는 장비를 만드는 데
+    직접 관여한다는 것이 계약의 내용 중 하나입니다.
+  </div>
+  <div class="call" style="left:56px;right:56px;top:900px;font-size:30px;line-height:1.55">
+    <b>산킷 한 줄</b> — 레비는 해마다 11월에 시즌을 여는 자리입니다.
+    눈이 아직 적은 곳이 많은 11월에, <b>여기 결과가 그 해 회전의 첫 지도</b>가 됩니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 061</span><span>사진 HEAD · 보도용</span></div>
+</div>
+</body></html>
