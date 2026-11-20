@@ -123,7 +123,7 @@ def carousel(rel, post):
     for i, f in enumerate(imgs):
         p = {"image_url": RAW + rel + "/" + f, "is_carousel_item": "true"}
         # 2026-11-17 운영자: 더 많이 태그. 표지는 tags, 안쪽 장은 card_tags {"2": [...], "3": [...]}(장 번호, 1부터)
-        ct = post["tags"] if i == 0 else (post.get("card_tags") or {}).get(str(i + 1))
+        ct = post.get("tags") if i == 0 else (post.get("card_tags") or {}).get(str(i + 1))
         if ct:
             p["user_tags"] = json.dumps([t if isinstance(t, dict) else {"username": str(t).lstrip("@"), "x": 0.5, "y": 0.5} for t in ct][:20])
         r = create(p)
