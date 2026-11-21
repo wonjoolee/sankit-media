@@ -50,7 +50,7 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-11,slot2,carousel,"스키장에 선 노란 표지판, 무슨 뜻일까 (KIT 040)",owner,broad,guide,question,4,0,,,,12:09
 2026-11-11,slot2,reel,"스키장에 선 노란 표지판, 무슨 뜻일까 (KIT 040)",owner,broad,guide,question,3,0,,,,12:09
 2026-11-11,slot3,carousel,"핀란드 레비 월드컵 회전 개막전, 이번 주말 토·일 저녁 18시·21시(",news,broad,C,number,2,0,,,,21:00
-2026-11-12,slot1,carousel,"오늘 오대산, 비 올 확률 0% (KIT 041)",guide,broad,E,number,4,0,,,,07:29
+2026-11-12,slot1,carousel,"오늘 오대산, 비 올 확률 0% (KIT 041)",guide,broad,E,number,5,0,,,,07:29
 2026-11-12,slot1,reel,"오늘 오대산, 비 올 확률 0% (KIT 041)",guide,broad,E,number,2,1,,,,07:29
 2026-11-12,slot2,carousel,"이번 주 산킷 #1 — 주말 비 60%, 갈 곳 셋 (SANKIT WEE",weekly,broad,E,number,3,0,,,,12:09
 2026-11-12,slot3,carousel,"올겨울 첫 슬로프, 11월 20일 휘닉스 (KIT 043)",news,broad,list,date,1,0,,,,09:10
@@ -94,4 +94,6 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-20,slot4,carousel,"엔저에 아웃도어 쇼핑, 지금 어떨까요 (에디터가 다녀왔습니다 01)",owner,narrow,visit,question,19,0,,,,01:07
 2026-11-20,slot4,reel,"엔저에 아웃도어 쇼핑, 지금 어떨까요 (에디터가 다녀왔습니다 01)",owner,narrow,visit,question,5,0,,,,01:07
 2026-11-21,slot1,carousel,시즌이 열렸습니다 — 레비 (KIT 061),news,narrow,D,statement,7,0,,,,07:29
-2026-11-21,slot2,carousel,"하이원, 화요일 연다 종일권 2,000원 (KIT 064)",news,broad,E,number,2,0,,,,12:09
+2026-11-21,slot2,carousel,"하이원, 화요일 연다 종일권 2,000원 (KIT 064)",news,broad,E,number,3,0,,,,12:09
+2026-11-21,slot3,carousel,한라산 성판악은 오전 11시 30분에 닫힌다 (KIT 065),guide,broad,E,number,1,0,,,,20:59
+2026-11-21,slot3,reel,한라산 성판악은 오전 11시 30분에 닫힌다 (KIT 065),guide,broad,E,number,1,0,,,,20:59
