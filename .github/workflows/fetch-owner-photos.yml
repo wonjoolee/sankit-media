@@ -1,0 +1,109 @@
+name: SANKIT fetch owner photos
+
+# 대표님 구글 드라이브(링크 공개 상태)에서 사진을 받아 assets/owner/ 에 넣는다.
+# 컨테이너에서는 드라이브로 못 나가므로 깃허브 액션이 대신 받는다.
+
+on:
+  workflow_dispatch:
+    inputs:
+      folder:
+        description: "드라이브 폴더 ID (폴더 통째로 받기)"
+        required: false
+      files:
+        description: "파일 ID 목록, 쉼표로 구분 (특정 사진만 받기)"
+        required: false
+      dest:
+        description: "assets/owner/ 아래 폴더 이름"
+        required: true
+      maxpx:
+        description: "가로 최대 픽셀 (기본 2000, 0이면 원본 유지)"
+        required: false
+        default: "2000"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sankit-owner-photos
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install tools
+        run: pip install -q gdown pillow
+
+      - name: Download from Drive
+        env:
+          FOLDER: ${{ github.event.inputs.folder }}
+          FILES: ${{ github.event.inputs.files }}
+          DEST: ${{ github.event.inputs.dest }}
+        run: |
+          set -e
+          OUT="assets/owner/$DEST"
+          mkdir -p "$OUT"
+          if [ -n "$FOLDER" ]; then
+            echo "폴더 받기: $FOLDER"
+            gdown --folder "https://drive.google.com/drive/folders/$FOLDER" -O "$OUT" --remaining-ok || true
+          fi
+          if [ -n "$FILES" ]; then
+            echo "$FILES" | tr ',' '\n' | sed 's/[[:space:]]//g' | grep -v '^$' | while read -r ID; do
+              echo "파일 받기: $ID"
+              gdown "$ID" -O "$OUT/$ID.bin" --no-cookies || echo "실패: $ID"
+            done
+          fi
+          find "$OUT" -type f | head -50
+          echo "받은 파일 수: $(find "$OUT" -type f | wc -l)"
+
+      - name: Normalise (확장자 정리 + 리사이즈 + EXIF 제거)
+        env:
+          DEST: ${{ github.event.inputs.dest }}
+          MAXPX: ${{ github.event.inputs.maxpx }}
+        run: |
+          python - <<'PY'
+          import os, sys
+          from PIL import Image, ImageOps
+          dest = os.environ["DEST"]; maxpx = int(os.environ.get("MAXPX") or 2000)
+          root = os.path.join("assets", "owner", dest)
+          kept = 0; dropped = 0
+          for dirpath, _, names in os.walk(root):
+              for n in names:
+                  p = os.path.join(dirpath, n)
+                  try:
+                      im = Image.open(p)
+                      im.load()
+                  except Exception:
+                      print("이미지 아님, 삭제:", p); os.remove(p); dropped += 1; continue
+                  im = ImageOps.exif_transpose(im)        # 회전 보정
+                  if im.mode not in ("RGB", "L"):
+                      im = im.convert("RGB")
+                  if maxpx and im.width > maxpx:
+                      h = round(im.height * maxpx / im.width)
+                      im = im.resize((maxpx, h), Image.LANCZOS)
+                  base = os.path.splitext(p)[0]
+                  out = base + ".jpg"
+                  im.save(out, "JPEG", quality=88, optimize=True)   # EXIF(위치 포함) 제거됨
+                  if out != p:
+                      os.remove(p)
+                  kept += 1
+          print(f"정리 완료: {kept}장, 삭제 {dropped}개")
+          PY
+
+      - name: Commit
+        env:
+          DEST: ${{ github.event.inputs.dest }}
+        run: |
+          git config user.name "SANKIT bot"
+          git config user.email "sankit-bot@users.noreply.github.com"
+          git add assets/owner
+          if git diff --cached --quiet; then
+            echo "변경 없음"; exit 0
+          fi
+          N=$(find "assets/owner/$DEST" -type f | wc -l)
+          git commit -m "assets(owner): $DEST 사진 $N장 (드라이브에서 수신)"
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push && break; sleep $((i*7)); done
