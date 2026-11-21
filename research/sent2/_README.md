@@ -36,3 +36,44 @@ nanacom(Salewa 독일), geschwisterzack-pr(파타고니아 독일어권), forste
 - 서명에 쓰레드 주소를 추가했다.
 - 마무트에는 **pr.mammut.com 사진의 라이선스를 직접 물었다.** 답이 오기 전까지
   내려받지도 쓰지도 않았다고 명시했다. (EDITORIAL §21)
+
+## 3차 발송 (2026-11-21) — "주소 없음"이 틀렸다
+
+대표님 지적으로 11곳을 다시 확인했다. **"수집 차단"은 셸(agent proxy)이 막힌 것이지
+사이트가 막은 것이 아니었다.** 크롬으로 직접 들어가니 10곳에서 주소를 찾았다.
+
+| 회사 | 찾은 주소 | 어디서 |
+|---|---|---|
+| 아머스포츠코리아 | ecom.ops@amersports.co.kr | salomon.co.kr 개인정보처리방침 |
+| 컬럼비아코리아 | Brian.Han@columbia.com | columbiakorea.co.kr/etc/privacy.asp |
+| 데상트코리아 | privacy@descente.co.kr | dk-on.com 개인정보처리방침 |
+| 피닉스아웃도어코리아 | suhan.kim@fenixoutdoor.kr | 영업/제휴/이벤트 문의 페이지 |
+| 크리스에프앤씨(마무트) | htchang@creas.co.kr | mammut.kr 푸터 |
+| 엠케이아웃도어(NEMO) | mkoutdoor@mkoutdoor.kr | nemoequipment.co.kr 푸터 |
+| 쎄로또레(Osprey) | hongsu@cerrotorre.biz | trailhead.co.kr 푸터 |
+| 파타고니아코리아 | patagoniakorea@patagonia.kr | patagonia.co.kr |
+| 안나푸르나(Petzl) | help@annapurna.co.kr | annapurna.co.kr |
+| 넬슨스포츠(더기어샵) | info@nelson.co.kr | thegearshop.co.kr |
+| **호상사(Rab·MSR)** | **못 찾음** | hocorp.co.kr·msrgear.co.kr 접속 불가. 전화 02-749-0480만 |
+
+10통 발송 완료. 누적 53통.
+
+### 이 메일들은 문구를 바꿨다
+
+찾은 주소 상당수가 홍보 주소가 아니다 — 개인정보보호책임자, 이커머스 운영, 고객센터다.
+그래서 **첫 문단에 "홍보 담당자분께 전달 부탁드립니다"를 넣고, 어디서 주소를 찾았는지 밝혔다.**
+데상트는 개인정보 전용 주소라 번거롭게 한 데 대한 사과를 한 줄 넣었다.
+
+브랜드별로 한 문단씩 다르게 썼다.
+- 안나푸르나 — 리콜·사용 주의 안내도 받고 싶다(안전 장비라서)
+- 피닉스 — 피엘라벤 클래식·폭스트레킹 참가 신청 시점을 독자에게 미리 알리고 싶다
+- 쎄로또레 — 사칭 사이트 주의 공지를 봤다, 공식 구매처를 정확히 적는 것이 도움이 될 것
+- 엠케이아웃도어 — 니모 한국 공식 인스타를 못 찾았다, 어느 계정을 태그할지 알려달라
+- 파타고니아코리아 — 환경·수선 자료도 받고 싶다
+- 크리스에프앤씨 — pr.mammut.com 사진 라이선스 질의(본사에도 같은 내용 문의했다고 명시)
+
+### 교훈
+
+**"확인 실패"와 "주소 없음"은 다르다.** 셸에서 못 가져온 것을 사이트가 막았다고 적었고,
+그걸 그대로 대표님께 보고했다. 앞으로 수집이 실패하면 **크롬으로 한 번 더 확인하고** 적는다.
+한국 기업 사이트는 푸터보다 **개인정보처리방침**에 실제 담당자 주소가 있는 경우가 많다.
