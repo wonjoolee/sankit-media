@@ -46,6 +46,17 @@ jobs:
           SLOT: ${{ github.event.inputs.slot }}
           DRY_RUN: ${{ github.event.inputs.dry_run }}
         run: python pipeline/run_slot.py
+      - name: Post to Threads
+        if: always()
+        continue-on-error: true
+        env:
+          TH_TOKEN: ${{ secrets.TH_TOKEN }}
+          TH_USER_ID: ${{ secrets.TH_USER_ID }}
+          DRY_RUN: ${{ github.event.inputs.dry_run }}
+        run: |
+          if [ -z "$TH_TOKEN" ]; then echo "TH_TOKEN 없음 - 쓰레드 건너뜀"; exit 0; fi
+          python pipeline/threads.py
+
       - name: Update reaction stats
         if: always()
         continue-on-error: true
