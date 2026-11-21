@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#ccc;font-family:'Noto Sans CJK KR','Noto Sans CJK JP',sans-serif;padding:40px;display:flex;flex-wrap:wrap;gap:40px;width:3600px}
+.card{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F4F2EC;color:#141615}
+.mono{font-family:'DejaVu Sans Mono',monospace}
+.wm{position:absolute;left:56px;top:56px;font-size:30px;font-weight:900;letter-spacing:10px;z-index:3}
+.wm i{font-style:normal;font-weight:300;letter-spacing:4px;margin-left:10px;font-size:.55em;vertical-align:middle}
+.kit{position:absolute;right:56px;top:62px;font-size:20px;letter-spacing:3px;z-index:3}
+.kick{position:absolute;left:56px;font-size:22px;letter-spacing:3px;color:#8a5521;font-weight:700}
+.head{position:absolute;left:56px;font-weight:800;letter-spacing:-1.5px;line-height:1.22}
+.body{position:absolute;font-size:36px;line-height:1.6;font-weight:500;letter-spacing:-.8px}
+.body b{font-weight:900}
+.foot{position:absolute;left:56px;right:56px;bottom:46px;display:flex;justify-content:space-between;font-size:19px;letter-spacing:2px;color:#666;border-top:2px solid #141615;padding-top:16px}
+.dark{background:#141615;color:#F4F2EC}
+.dark .foot{border-color:#F4F2EC;color:#9a9f9c}
+.dark .kick{color:#d9a441}
+/* 사진: 원본 비율 그대로, 위에 아무것도 얹지 않음 */
+.photo{position:absolute;display:block}
+.cred{position:absolute;font-size:15px;letter-spacing:2px;color:#8b8f8c}
+.ring{position:absolute;border:4px solid #141615;border-radius:50%;overflow:hidden;background:#F4F2EC}
+.tick{position:absolute;height:3px;background:#141615}
+.dark .tick{background:#F4F2EC}
+.call{position:absolute;font-size:20px;letter-spacing:2px;line-height:1.5}
+.spec{position:absolute;left:660px;right:56px}
+.spec div{border-top:2px solid #3a3d3b;padding:18px 0 20px}
+.spec small{display:block;font-size:17px;letter-spacing:3px;color:#9a9f9c}
+.spec b{display:block;font-family:'Noto Sans CJK KR',sans-serif;font-size:50px;font-weight:900;letter-spacing:-1px;line-height:1.15;margin-top:4px}
+.spec b span{font-size:24px;font-weight:500;margin-left:6px;letter-spacing:0}
+
+/* ===== 표지(01) 새 형식 (2026-11-11): 사진 한 장 + 한국어 두 줄. 키커·KIT 번호·푸터 없음 ===== */
+.cover{background:#141615;color:#F4F2EC}
+.cover .bg{position:absolute;left:0;top:0;width:1080px;height:1350px;object-fit:cover;display:block}          /* 운영자·공공누리 사진만(자르기 허용) */
+.cover .grad{position:absolute;left:0;right:0;bottom:0;height:720px;background:linear-gradient(180deg,rgba(20,22,21,0) 0%,rgba(20,22,21,.55) 45%,rgba(20,22,21,.92) 100%)}
+.cover .press{position:absolute;left:0;top:0;width:1080px;height:860px;display:flex;align-items:center;justify-content:center;background:#141615}
+.cover .press img{max-width:1080px;max-height:860px;display:block}                                            /* 프레스 사진: 원본 비율, 위에 아무것도 얹지 않음 */
+.cover .wm{color:#F4F2EC;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.cover .h2l{position:absolute;left:64px;right:64px;bottom:150px;font-size:76px;font-weight:900;line-height:1.22;letter-spacing:-2.5px;color:#F4F2EC;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.cover .lab{position:absolute;left:64px;bottom:80px;font-size:20px;letter-spacing:4px;color:rgba(244,242,236,.85)}
+.cover .cred{left:auto;right:64px;bottom:84px;top:auto;color:rgba(244,242,236,.6)}
+.cover .sub{position:absolute;left:64px;right:64px;bottom:128px;font-size:34px;font-weight:800;color:#F2C94C;letter-spacing:-.5px}
+.cover .sub ~ .h2l,.cover .h2l.withsub{bottom:192px}
+.cover .shade{position:absolute;left:0;right:0;top:0;height:220px;background:linear-gradient(180deg,rgba(20,22,21,.55),rgba(20,22,21,0))}
+</style></head><body>
+
+<!-- 01 표지 -->
+<div class="card cover" id="s1">
+  <img class="bg" src="../../../assets/owner/mec/mec_ski_wall.jpg">
+  <div class="shade"></div><div class="grad"></div>
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="sub">왜 한국엔 없을까 · 캐나다 MEC</div>
+  <div class="h2l withsub">손님 540만 명이<br>주인이던 가게</div>
+  <div class="lab">2026.11.22 · 산킷</div>
+  <div class="cred">ⓒ SANKIT · 밴쿠버</div>
+</div>
+
+<!-- 02 안내문 사진 -->
+<div class="card dark" id="s2">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 066</div>
+  <div class="press" style="position:absolute;left:0;top:130px;width:1080px;height:620px;display:flex;align-items:center;justify-content:center;background:#141615">
+    <img src="../../../assets/owner/mec/mec_canadian_hands_sign.jpg" style="max-width:1080px;max-height:620px;display:block">
+  </div>
+  <div class="kick" style="top:790px">매장 창에 붙은 안내문</div>
+  <div class="head" style="top:832px;right:56px;font-size:58px">다시 캐나다의 손으로<br>돌아왔습니다</div>
+  <div class="body" style="left:56px;right:56px;top:1000px;font-size:30px">
+    안내문은 이렇게 적고 있습니다. <b>"2025년 5월 16일부로 MEC는 캐나다가
+    과반을 소유합니다."</b> 그리고 한 줄 더. "지금도, 앞으로의 모든 길에서도
+    당신 곁에 있겠습니다."<br>
+    돌아왔다는 말은, 한동안 떠나 있었다는 뜻입니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 066</span><span>ⓒ SANKIT · 밴쿠버 MEC 매장</span></div>
+</div>
+
+<!-- 03 조합이던 시절 -->
+<div class="card" id="s3">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 066</div>
+  <div class="kick" style="top:200px">원래 어떤 가게였나</div>
+  <div class="head" style="top:246px;right:56px;font-size:72px">5달러를 내면<br>주인이 됐습니다</div>
+  <div class="body" style="left:56px;right:56px;top:440px;font-size:33px">
+    1971년 밴쿠버. 브리티시컬럼비아대 산악부 학생 네 명이 베이커산에서
+    눈보라에 갇혔다가 내려와 만들었습니다. 장비를 싸게 사려면 같이 사면 된다는
+    생각이었습니다.
+  </div>
+  <div class="spec" style="left:56px;right:56px;top:640px">
+    <div><small>평생 조합비</small><b>5달러 <span>한 번 내면 평생 조합원</span></b></div>
+    <div><small>조합원</small><b>540만 명 <span>2020년 법원 서류 기준 570만</span></b></div>
+    <div><small>매장</small><b>22곳</b></div>
+    <div><small>2019년 매출</small><b>4억 6,200만 달러 <span>순손실 1,149만 달러</span></b></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:1150px;font-size:30px">
+    캐나다 인구가 약 4,000만 명입니다. <b>일곱 명 중 한 명</b>이 이 가게의
+    주인이었다는 뜻입니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 066</span><span>MEC 공식·법원 서류</span></div>
+</div>
+
+<!-- 04 2020년 -->
+<div class="card dark" id="s4">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 066</div>
+  <div class="kick" style="top:200px">2020년에 벌어진 일</div>
+  <div class="head" style="top:246px;right:56px;font-size:66px">주인 540만 명은<br>투표하지 못했습니다</div>
+  <div class="body" style="left:56px;right:56px;top:440px;font-size:32px">
+    적자가 쌓였고 회사는 회생 절차(CCAA)에 들어갔습니다. 2020년 9월 14일,
+    이사회는 미국 사모펀드 <b>킹스우드 캐피털</b>에 <b>1억 1,000만 달러</b>로
+    매각한다고 발표했습니다.<br><br>
+    조합원에게는 묻지 않았습니다. 이사회 의장은 <b>"회생 절차 중에는 조합원
+    투표가 필요하지 않다"</b>고 했습니다.
+  </div>
+  <div class="spec" style="left:56px;right:56px;top:860px">
+    <div><small>반대 청원 서명</small><b>13만 6,000명 <span>2020.09.26 기준</span></b></div>
+    <div><small>조합원 모금</small><b>5만 달러 <span>법원 절차 참여·이사회 교체 요구</span></b></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:1115px;font-size:30px">
+    매각은 진행됐습니다. 이듬해 이름에서 <b>'협동조합(Co-op)'이 빠지고</b>
+    '회사(Company)'가 들어갔습니다. 약자 MEC는 그대로 남았습니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 066</span><span>위키피디아·CBC·BNN 블룸버그</span></div>
+</div>
+
+<!-- 05 한국은 -->
+<div class="card" id="s5">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 066</div>
+  <div class="kick" style="top:200px">그래서 한국은</div>
+  <div class="head" style="top:246px;right:56px;font-size:70px">조합원이 주인인<br>장비 매장을<br>찾지 못했습니다</div>
+  <div class="body" style="left:56px;right:56px;top:530px;font-size:32px">
+    한국에도 생활협동조합은 있습니다. 다만 찾아본 범위에서는 <b>먹거리</b>가
+    중심이고, 등산·스키 장비를 조합원이 소유한 매장은 보이지 않았습니다
+    (11.21 확인).<br><br>
+    한국 아웃도어 매장은 브랜드 직영 아니면 대리점입니다. 손님은 사는 사람이지,
+    주인이 아닙니다.
+  </div>
+  <div class="call" style="left:56px;right:56px;top:940px;font-size:30px;line-height:1.55">
+    <b>산킷 한 줄</b> — MEC 이야기의 교훈은 "조합이 좋다"가 아닙니다.
+    540만 명이 주인이어도, 돈이 모자라면 <b>묻지 않고 팔 수 있다</b>는 것이
+    2020년에 확인됐습니다. 그래도 5달러짜리 주인이 540만 명 모였던 적이
+    있다는 사실은 남습니다. 한국에서 그런 가게를 본 적이 없다는 것도요.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 066</span><span>사진 ⓒ SANKIT</span></div>
+</div>
+</body></html>
