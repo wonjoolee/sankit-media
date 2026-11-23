@@ -1,5 +1,5 @@
 {
- "fetched_at": "2026-11-16T08:30:01.581191+09:00",
+ "fetched_at": "2026-11-23T09:27:54.612636+09:00",
  "data": [
   {
    "crsKorNm": "남파랑길 1코스",
@@ -153,7 +153,7 @@
    "brdDiv": "DNWW",
    "crsSummary": "- ‘섬&섬길’ 중 양지암등대길 일부 코스가 포함된 구간으로 곳곳에 잘 정비된 공원길이 조성되어 있으며, 한려해상의 아름다운 해안경관을 감상할 수 있는 코스<br>- 다양한 관광 포인트들을 즐길 수 있고, 편의시설을 이용할 수 있는 코스<br>- 해안데크, 공원, 해안도로 등 조성이 잘 되어 있어 아름다운 거제 해안을 바라보며 걷기여행을 추천하고 싶은 최적의 코스",
    "crsTourInfo": "- 경관이 아름다운 능포수변공원에서 조각상 전시를 구경할 수 있고, 캠핑도 가능함<br>- 산책을 하며 예술 작품을 감상할 수 있는 '능포양지암조각공원'<br>- 남해의 어촌 생활사를 다룬 거제어촌민속전시관에서 다채로운 기획전, 교육 프로그램을 즐길 수 있음<br>- 거제 씨월드 아쿠아리움 관람 가능",
-   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/file/2026/07/81f063b962d640a79d3ce4c10f3f08e3.gpx"
+   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/course/summap/T_CRS_MNG0000005135.gpx"
   },
   {
    "crsKorNm": "남파랑길 21코스",
@@ -164,7 +164,7 @@
    "brdDiv": "DNWW",
    "crsSummary": "- ‘섬&섬길’ 중 천주교 순례길 구간이 일부 포함되는 구간으로 지세포항을 지나 와현모래숲 해수욕장, 구조라항 등의 자원을 지나며 아름다운 해안경관과 숲길 등을 만날 수 있는 코스<br>- 해수욕장, 항구 등 바다의 다양한 모습을 감상할 수 있는 코스",
    "crsTourInfo": "- 남해의 어촌 생활사를 다룬 거제어촌민속전시관에서 다채로운 기획전, 교육 프로그램을 즐길 수 있음<br>- 거제시 지정 ‘추천명소 8경’ 중 하나인 공곶이에서 수선화와 동백나무 등 50여 종의 나무와 꽃을 감상할 수 있음<br>- 송림이 우거진 와현해수욕장에서 해수욕 가능",
-   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/file/2025/05/853b4793a97c4a53b3c7966f693a456e.gpx"
+   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/course/summap/T_CRS_MNG0000005136.gpx"
   },
   {
    "crsKorNm": "남파랑길 22코스",
@@ -242,6 +242,17 @@
    "crsSummary": "- 통영 세자트라 숲, 이순신공원, 남망산 조각공원 입구까지 이어지는 구간으로 이순신 공원에서 바라보는 바다 경관이 아름다운 코스<br>- 해안 둘레길을 걷기에 최적의 코스이자 통영의 대표 걷기여행길인 토영 이야기길과 만나는 걷기에 편안 코스",
    "crsTourInfo": "- 울창한 나무가 많고 생태 체험이 가능한 '세자트라숲'<br>- 맑은 하늘과 바다, 푸른 녹음이 모두 어우러진 일출 명소 '이순신공원'<br>- 통영의 문화와 예술이 있는 '남망산 조각공원'",
    "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/course/summap/T_CRS_MNG0000005143.gpx"
+  },
+  {
+   "crsKorNm": "남파랑길 29코스",
+   "crsDstnc": "17",
+   "crsTotlRqrmHour": "360",
+   "crsLevel": "2",
+   "sigun": "경남 통영시",
+   "brdDiv": "DNWW",
+   "crsSummary": "- 토영 이야기길을 따라 통영을 대표하는 동피랑마을, 서피랑마을, 해저터널 등 핵심 자원을 두루 경유하는 코스<br>- 동피랑 벽화마을, 서피랑 공원의 이곳저곳을 구경하고 예쁜 어촌마을을 볼 수 있으며 평인일주도로에서는 한적함을 느낄 수 있는 코스<br>- 다양한 살거리, 먹거리를 보유하고 있으며 활기찬 통영의 모습을 살펴볼 수 있는 매력적인 구간",
+   "crsTourInfo": "- 구불구불한 오르막 골목길을 따라 있는 담벼락마다 형형색색의 벽화가 눈길을 끄는 관광 명소 '동피랑 벽화마을'<br>- 임진왜란 후 한산도에 있던 삼도수군 통제영이 통영으로 옮겨지면서 지어진 객사 건물인 국보 삼도수군통제영 '세병관'<br>- 언덕을 올라 아름다운 강구안을 볼 수 있는 '서피랑 공원'<br>- 통영의 역사와 문화를 확인할 수 있는 '통영시립박물관'<br>- 작곡가 윤이상 기념관 및 기념공원<br>- 동양 최초의 해저터널이자 근대문화유산인 통영 해저터널",
+   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/course/summap/T_CRS_MNG0000005144.gpx"
   },
   {
    "crsKorNm": "남파랑길 34코스",
@@ -1128,7 +1139,7 @@
    "crsDstnc": "18",
    "crsTotlRqrmHour": "360",
    "crsLevel": "2",
-   "sigun": "경기 김포시",
+   "sigun": "경기 고양시",
    "brdDiv": "DNWW",
    "crsSummary": "- 행주산성에서 시작해 고양종합운동장으로 이어지는 코스다.<br>- DMZ 평화의길 고양시 테마노선으로 운영하는 구간이다.<br>- 한강하류의 장항습지, 한강 군 철책길 등을 둘러보는 길이다.",
    "crsTourInfo": "- 임진왜란 3대 대첩 중 하나인 행주대첩이 벌어졌던 행주산성<br>- 겨울 철새들의 경유지로, 람사르 등록 습지인 장항습지<br>- 옛 군막사를 리모델링해 전시, 체험, 교육 공간으로 활용하는 나들라온",
@@ -1264,7 +1275,7 @@
    "brdDiv": "DNWW",
    "crsSummary": "- 와수리에서 복주산자연휴양림을 거쳐 명월2리 정류장으로 이어지는 코스다.<br>- 복주산 숲길과 마을을 지나는 코스로 노선 거리가 길어 많은 체력이 필요한 노선이다.",
    "crsTourInfo": "- 복주산의 아름다운 경관과 자연을 즐길 수 있는 복주산자연휴양림<br>- 매년 여름 토마토축제를 개최하는 사내문화마을",
-   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/file/2026/09/0169443ffb014fe8a5b1c0d483c1e5b6.gpx"
+   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/file/2026/11/71bc6c823278465888a78590f2f2a9d1.gpx"
   },
   {
    "crsKorNm": "DMZ 평화의 길 20코스",
@@ -1396,7 +1407,7 @@
    "brdDiv": "DNWW",
    "crsSummary": "- 금강산 건봉사를 출발해 통일안보공원으로 향하는 코스다.<br>- 백두대간을 넘어 동해안으로 이어지는 구간이다.<br>- 난도가 쉬운 편에 속해 누구나 쉽게 걸을 수 있는 길이다.",
    "crsTourInfo": "- 신라 법흥왕 시대에 창건한 금강산의 대표적인 천년고찰 건봉사<br>- 봄마다 해당화가 가득 피어나는, 동해안 최대 규모의 자연 호수 화진포<br>- 명사십리해변과 바다가 어우러져 더욱더 아름다운 화진포역사안보전시관",
-   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/course/summap/T_CRS_MNG0000005657.gpx"
+   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/file/2026/11/568aaa0abfc4484b8eef57f36f7b2eae.gpx"
   },
   {
    "crsKorNm": "DMZ 평화의 길 33-1코스(우회로)",
@@ -1705,6 +1716,17 @@
    "crsSummary": "- 해파랑길의 31번째 코스로 삼척동해구간 중 용화리와 근덕면을 잇는 길 <br>- 궁촌 레일바이크역에서 출발해 동막교와 부남교를 거쳐 덕산해변까지 이어지는 걷는 길<br>- 도로와 둑길, 마을, 해안로를 번갈아 지나며 전통과 어촌 정경을 느낄 수 있음 ",
    "crsTourInfo": "- 고려 시대 최후의 임금 공양왕과 왕자, 시녀, 말들의 무덤이 있는 공양왕릉<br>- 울창한 송림과 바다로 이어지는 맑은 하천이 흐르는 재동소 공원<br>- 숙박 및 식당, 편의 시설, 해양레저를 즐길 수 있는 덕산해수욕장",
    "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/file/2026/01/d02ae59727f74c9b96be3cfb531d09cc.gpx"
+  },
+  {
+   "crsKorNm": "해파랑길 32코스",
+   "crsDstnc": "22",
+   "crsTotlRqrmHour": "480",
+   "crsLevel": "2",
+   "sigun": "강원 삼척시",
+   "brdDiv": "DNWW",
+   "crsSummary": "- 해파랑길의 32번째 코스로 삼척 동해 구간 중 삼척시 근덕면에서 동해시 추암동을 잇는 길<br>- 덕산 해변에서 출발해 상맹방해변과 죽서루, 삼척항을 거쳐 추암해변에 이르는 도보길<br>- 바닷길과 오십천 강변길, 하천길과 산촌마을 등 다채로운 길을 지남",
+   "crsTourInfo": "- 넓은 폭과 1.5km 이상의 길이를 자랑하는 삼척 제일의 해수욕장 삼척해변 <br>- 다양한 조형물과 야간조명이 아름다워 포토존으로 유명한 수로부인공원<br>- 삼척 시내와 가까워 삼척관광이 가능한 관동팔경의 제1경 죽서루<br>- 삼척 시내에서 가장 가까운 증산 해변 촛대바위 일출",
+   "gpxpath": "https://www.durunubi.kr/editImgUp.do?filePath=/data/koreamobility/course/summap/T_CRS_MNG0000004204.gpx"
   },
   {
    "crsKorNm": "해파랑길 33코스",
