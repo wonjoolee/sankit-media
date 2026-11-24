@@ -45,7 +45,7 @@ body{{background:#ccc;font-family:'Noto Sans CJK KR','Noto Sans CJK JP','Noto Co
 .sec span::after{{content:'';display:inline-block;vertical-align:middle;width:760px;height:2px;background:#d8d3c6;margin-left:14px}}
 .nr{{display:flex;align-items:flex-start;gap:4px;font-weight:700;line-height:1.36;letter-spacing:-1px;font-size:{fs}px}}
 .no{{flex:0 0 58px;font-size:.72em;font-weight:700;letter-spacing:1px;color:#8a5521;padding-top:.3em}}
-u{{text-decoration:none;border-bottom:3px solid #8a5521;padding-bottom:2px}}
+u{{text-decoration:none;font-weight:900;color:#141615}}
 .foot{{position:absolute;left:56px;right:56px;bottom:46px;display:flex;justify-content:space-between;
       font-size:19px;letter-spacing:2px;color:#666;border-top:2px solid #141615;padding-top:16px}}
 </style></head><body>

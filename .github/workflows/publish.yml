@@ -28,6 +28,33 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - name: Build today's SANKIT NEWS when slot1 is empty
+        continue-on-error: true
+        env:
+          KMA_KEY: ${{ secrets.KMA_KEY }}
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+        run: |
+          D=$(TZ=Asia/Seoul date +%F)
+          H=$(TZ=Asia/Seoul date +%H)
+          S="queue/$D/slot1"
+          # 이미 있으면 아무것도 설치하지 않고 빠져나온다(하루 수십 번 도는 워크플로다)
+          if [ -f "$S/post.json" ]; then echo "slot1 이미 있음 - 건너뜀"; exit 0; fi
+          if [ "$H" -lt 06 ]; then echo "06시 전 - 건너뜀"; exit 0; fi
+          for i in 1 2 3; do
+            sudo apt-get update -q >/dev/null 2>&1 || true
+            sudo apt-get install -y -q fonts-noto-cjk fonts-noto-color-emoji >/dev/null && break
+            echo "font install failed ($i)"; sleep 20
+          done
+          fc-list | grep -q "Noto Sans CJK" || { echo "Korean font missing"; exit 1; }
+          pip install -q pillow
+          npm i -s playwright@1.56.1 >/dev/null 2>&1
+          npx -y playwright@1.56.1 install --with-deps chromium >/dev/null 2>&1
+          python pipeline/fetch_data.py || echo "데이터 수집 실패 - 있는 데이터로 만든다"
+          python pipeline/news_build.py "$S"
+          git config user.name "SANKIT bot"
+          git config user.email "sankit-bot@users.noreply.github.com"
+          git add data queue
+          git diff --cached --quiet || (git commit -m "news $D" && (for i in 1 2 3 4 5; do git pull --rebase -q && git push && break; sleep $((i*7)); done) && sleep 10)
       - name: Make 9:16 story images where missing
         continue-on-error: true
         run: |
