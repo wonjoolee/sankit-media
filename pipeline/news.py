@@ -1,0 +1,133 @@
+#!/usr/bin/env python3
+"""산킷 뉴스 — 하루치 한 장 카드의 줄을 데이터에서 뽑는다.
+
+사용법:
+  python3 pipeline/news.py              오늘 날짜로 줄 뽑아 출력
+  python3 pipeline/news.py 2026-11-25   날짜 지정
+
+원칙
+- 숫자는 전부 data/latest/*.json 에서 가져온다. 손으로 쓰지 않는다.
+- 예보가 없으면 그 줄을 빼고, 있는 척하지 않는다.
+- 각 줄은 "주체 + 무엇"으로 쓰고, 핵심 수치만 강조한다(<b>로 감싼다).
+"""
+import json, sys
+from datetime import date, timedelta
+
+SKI = ['용평','하이원','휘닉스','비발디파크','알펜시아','웰리힐리','무주덕유산',
+       '곤지암','지산','엘리시안강촌','오크밸리','오투']
+MTN = ['설악산','지리산','한라산','북한산','덕유산','속리산','오대산','태백산','소백산']
+
+def load(name):
+    return json.load(open(f'data/latest/{name}.json'))
+
+def f(x):
+    try: return float(x)
+    except (TypeError, ValueError): return None
+
+def build(d0):
+    w = load('weather')
+    places = w['data']['places']
+    base = w['data'].get('base','')
+    k = d0.strftime('%Y%m%d')
+    k1 = (d0+timedelta(days=1)).strftime('%Y%m%d')
+    k2 = (d0+timedelta(days=2)).strftime('%Y%m%d')
+    lines = []
+
+    def day(name, key):
+        return places.get(name,{}).get('days',{}).get(key, {})
+
+    # 1) 오늘 스키장 기온 폭
+    tod = [(n, f(day(n,k).get('TMN')), f(day(n,k).get('TMX'))) for n in SKI if day(n,k)]
+    tod = [t for t in tod if t[1] is not None]
+    if tod:
+        cold = min(tod, key=lambda t: t[1])
+        warm = max(tod, key=lambda t: t[2] if t[2] is not None else -99)
+        lines.append(f"오늘 스키장 최저 <b>{cold[1]:.0f}℃</b> {cold[0]}, 최고 <b>{warm[2]:.0f}℃</b> {warm[0]}")
+        sub = [t for t in tod if t[2] is not None and t[2] <= 0]
+        if sub:
+            lines.append(f"낮에도 영하인 스키장 <b>{len(sub)}곳</b> — {' · '.join(t[0] for t in sub[:4])}")
+
+    # 2) 모레까지 기온 급등 / 비
+    jumps = []
+    for n in SKI:
+        a, b = f(day(n,k).get('TMX')), f(day(n,k2).get('TMX'))
+        if a is not None and b is not None and b - a >= 8:
+            jumps.append((n, a, b, b-a))
+    if jumps:
+        jumps.sort(key=lambda t: -t[3])
+        n,a,b,_ = jumps[0]
+        lines.append(f"모레 기온 급등 — {n} 최고 <b>{a:.0f}℃ → {b:.0f}℃</b>, 스키장 <b>{len(jumps)}곳</b>이 같은 흐름")
+
+    rain2 = [n for n in SKI if '비' in ''.join(day(n,k2).get('PTY',[]))]
+    if rain2:
+        lines.append(f"모레 비 예보 스키장 <b>{len(rain2)}곳</b> — {' · '.join(rain2[:4])}")
+
+    # 3) 오늘·내일 눈
+    for key, word in ((k,'오늘'), (k1,'내일')):
+        snow = []
+        for n in SKI + MTN:
+            dd = day(n,key)
+            if dd.get('SNO') or '눈' in ''.join(dd.get('PTY',[])):
+                amt = dd.get('SNO')[0] if dd.get('SNO') else ''
+                snow.append((n, amt))
+        if snow:
+            s = ' · '.join(f"{n} {a}".strip() for n,a in snow[:3])
+            lines.append(f"{word} 눈 — {s}")
+
+    # 4) 산 최저기온
+    mt = [(n, f(day(n,k).get('TMN'))) for n in MTN if day(n,k)]
+    mt = [t for t in mt if t[1] is not None]
+    if mt:
+        mt.sort(key=lambda t: t[1])
+        lines.append(f"오늘 가장 추운 산 — {mt[0][0]} <b>{mt[0][1]:.0f}℃</b>, {mt[1][0]} <b>{mt[1][1]:.0f}℃</b>")
+
+    # 5) 축제 — 겨울·산·눈 관련만. 전시·연극·예술제는 산킷 독자의 관심사가 아니다.
+    KEY = ('눈','얼음','빙어','산타','스키','스노우','스노보드','겨울','송어','트레킹',
+           '등산','산악','해맞이','일출','설경','빙벽','썰매','설산')
+    DROP = ('연극','뮤지컬','전시','미술','아트','예술','콘서트','클래식','영화','공연','풍물',
+            '도서','북','댄스','버스킹','페인팅','공예')
+    try:
+        fest = load('festivals')['data'] + load('festivals_local')['data']
+        ks = d0.strftime('%Y%m%d')
+        ke = (d0+timedelta(days=10)).strftime('%Y%m%d')
+        soon = []
+        for x in fest:
+            t = x.get('title','')
+            st = (x.get('start') or '').replace('-','')
+            en = (x.get('end') or '').replace('-','')
+            if not st or not en or st > ke or en < ks:
+                continue
+            if any(w in t for w in DROP) or not any(w in t for w in KEY):
+                continue
+            if (int(en) - int(st)) > 1000:   # 연중 상시는 뉴스가 아니다
+                continue
+            soon.append((st, en, t, x.get('addr','')))
+        soon.sort()
+        for st, en, t, addr in soon[:2]:
+            area = addr.split()[0].replace('특별자치도','').replace('특별시','').replace('광역시','').replace('도','') if addr else ''
+            lines.append(f"{area} {t} — <b>{st[4:6]}.{st[6:8]}~{en[4:6]}.{en[6:8]}</b>".strip())
+    except Exception:
+        pass
+
+    # 6) 손으로 넣는 일정 — research/calendar.csv (날짜,제목)  이번 주 것만
+    try:
+        import csv
+        with open('research/calendar.csv', encoding='utf-8') as fh:
+            for row in csv.DictReader(fh):
+                st = row['시작'].replace('-','')
+                en = (row.get('종료') or row['시작']).replace('-','')
+                if st <= (d0+timedelta(days=7)).strftime('%Y%m%d') and en >= d0.strftime('%Y%m%d'):
+                    lines.append(row['내용'])
+    except FileNotFoundError:
+        pass
+
+    return lines, base
+
+if __name__ == '__main__':
+    d0 = date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else date.today()
+    lines, base = build(d0)
+    print(f"# 산킷 뉴스 {d0:%-m월 %-d일}  (기상청 발표 {base})")
+    for i, l in enumerate(lines, 1):
+        print(f"{i:2}. {l}")
+    json.dump({"date": d0.isoformat(), "base": base, "lines": lines},
+              open('data/latest/news_lines.json','w'), ensure_ascii=False, indent=1)
