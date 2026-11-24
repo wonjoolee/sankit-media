@@ -143,3 +143,5 @@
 - 비율: 처음엔 날씨가 11줄 중 7줄이었다. 대표님이 "날씨보다 브랜드·행사", "3:7"을 지시해 news.py에 WX_N/ETC_N 상수로 고정했다.
 - 사흘 안에 끝나는 일정(고카프 할인 마감)은 브랜드 소식보다 앞에 오도록 urgent로 분리했다.
 - 이탈리아 헬멧 건은 같은 날 07:30에 KIT 068로 이미 나가서 뉴스에서 뺐다(중복).
+- 2026-11-25 발행 결과(slot4, KIT 072 산킷 뉴스 1호): 인스타 https://www.instagram.com/p/DgJHtN5CRpI/ (08:19), 쓰레드 https://www.threads.com/@sankitmag/post/DgJHxEeCePG (08:21).
+- **발견한 결함**: 쓰레드 게시는 성공했는데 queue/.../threads_posted.json 이 저장소에 커밋되지 않았다. 'Save posted record' 커밋과 시점이 겹친 것으로 보인다. 기록이 없으면 다음 실행에서 threads.py가 같은 슬롯을 '미발행'으로 보고 **중복 게시**한다. 이번에는 손으로 채워 넣었다. publish.yml의 쓰레드 단계와 기록 저장 순서를 손봐야 한다.
