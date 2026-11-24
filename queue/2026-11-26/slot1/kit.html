@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#ccc;font-family:'Noto Sans CJK KR','Noto Sans CJK JP',sans-serif;padding:40px;display:flex;flex-wrap:wrap;gap:40px;width:3600px}
+.card{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F4F2EC;color:#141615}
+.mono{font-family:'DejaVu Sans Mono',monospace}
+.wm{position:absolute;left:56px;top:56px;font-size:30px;font-weight:900;letter-spacing:10px;z-index:3}
+.wm i{font-style:normal;font-weight:300;letter-spacing:4px;margin-left:10px;font-size:.55em;vertical-align:middle}
+.kit{position:absolute;right:56px;top:62px;font-size:20px;letter-spacing:3px;z-index:3}
+.kick{position:absolute;left:56px;font-size:22px;letter-spacing:3px;color:#8a5521;font-weight:700}
+.head{position:absolute;left:56px;font-weight:800;letter-spacing:-1.5px;line-height:1.22}
+.body{position:absolute;font-size:36px;line-height:1.6;font-weight:500;letter-spacing:-.8px}
+.body b{font-weight:900}
+.foot{position:absolute;left:56px;right:56px;bottom:46px;display:flex;justify-content:space-between;font-size:19px;letter-spacing:2px;color:#666;border-top:2px solid #141615;padding-top:16px}
+.dark{background:#141615;color:#F4F2EC}
+.dark .foot{border-color:#F4F2EC;color:#9a9f9c}
+.dark .kick{color:#d9a441}
+/* 사진: 원본 비율 그대로, 위에 아무것도 얹지 않음 */
+.photo{position:absolute;display:block}
+.cred{position:absolute;font-size:15px;letter-spacing:2px;color:#8b8f8c}
+.ring{position:absolute;border:4px solid #141615;border-radius:50%;overflow:hidden;background:#F4F2EC}
+.tick{position:absolute;height:3px;background:#141615}
+.dark .tick{background:#F4F2EC}
+.call{position:absolute;font-size:20px;letter-spacing:2px;line-height:1.5}
+.spec{position:absolute;left:660px;right:56px}
+.spec div{border-top:2px solid #3a3d3b;padding:18px 0 20px}
+.spec small{display:block;font-size:17px;letter-spacing:3px;color:#9a9f9c}
+.spec b{display:block;font-family:'Noto Sans CJK KR',sans-serif;font-size:50px;font-weight:900;letter-spacing:-1px;line-height:1.15;margin-top:4px}
+.spec b span{font-size:24px;font-weight:500;margin-left:6px;letter-spacing:0}
+
+/* ===== 표지(01) 새 형식 (2026-11-11): 사진 한 장 + 한국어 두 줄. 키커·KIT 번호·푸터 없음 ===== */
+.cover{background:#141615;color:#F4F2EC}
+.cover .bg{position:absolute;left:0;top:0;width:1080px;height:1350px;object-fit:cover;display:block}          /* 운영자·공공누리 사진만(자르기 허용) */
+.cover .grad{position:absolute;left:0;right:0;bottom:0;height:720px;background:linear-gradient(180deg,rgba(20,22,21,0) 0%,rgba(20,22,21,.55) 45%,rgba(20,22,21,.92) 100%)}
+.cover .press{position:absolute;left:0;top:0;width:1080px;height:860px;display:flex;align-items:center;justify-content:center;background:#141615}
+.cover .press img{max-width:1080px;max-height:860px;display:block}                                            /* 프레스 사진: 원본 비율, 위에 아무것도 얹지 않음 */
+.cover .wm{color:#F4F2EC;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.cover .h2l{position:absolute;left:64px;right:64px;bottom:150px;font-size:76px;font-weight:900;line-height:1.22;letter-spacing:-2.5px;color:#F4F2EC;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.cover .lab{position:absolute;left:64px;bottom:80px;font-size:20px;letter-spacing:4px;color:rgba(244,242,236,.85)}
+.cover .cred{left:auto;right:64px;bottom:84px;top:auto;color:rgba(244,242,236,.6)}
+.cover .sub{position:absolute;left:64px;right:64px;bottom:128px;font-size:34px;font-weight:800;color:#F2C94C;letter-spacing:-.5px}
+.cover .sub ~ .h2l,.cover .h2l.withsub{bottom:192px}
+.cover .shade{position:absolute;left:0;right:0;top:0;height:220px;background:linear-gradient(180deg,rgba(20,22,21,.55),rgba(20,22,21,0))}
+</style></head><body>
+
+<!-- 01 표지 -->
+<div class="card cover" id="s1">
+  <img class="bg" src="../../../assets/owner/monterosa/smartwool_sock.jpg">
+  <div class="shade"></div><div class="grad"></div>
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="sub">스키 양말, 개장 전에 한 번만</div>
+  <div class="h2l withsub">두꺼운 양말이<br>더 따뜻하지<br>않습니다</div>
+  <div class="lab">2026.11.26 · 산킷</div>
+  <div class="cred">ⓒ SANKIT</div>
+</div>
+
+<!-- 02 면 양말 -->
+<div class="card dark" id="s2">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 070</div>
+  <div class="kick" style="top:200px">REI가 면 양말에 대해 쓴 문장</div>
+  <div class="head" style="top:246px;right:56px;font-size:88px">"Just say no."</div>
+  <div class="body" style="left:56px;right:56px;top:420px;font-size:33px">
+    미국 아웃도어 협동조합 REI의 장비 안내서는 스키 양말 재질을 설명하면서
+    면에 대해 딱 저렇게 적어 뒀습니다. <b>그냥 안 된다</b>는 뜻입니다.<br><br>
+    이유는 간단합니다. 면은 울이나 합성섬유 같은 <b>수분 배출 기능이 없어
+    마르는 데 훨씬 오래 걸립니다.</b> 발에서 난 땀이 하루 종일 양말에 남아
+    있다는 말이고, 젖은 양말은 체온을 가져갑니다.
+  </div>
+  <div class="spec" style="left:56px;right:56px;top:820px">
+    <div><small>메리노 울</small><b>젖어도 보온 <span>냄새에도 강하다</span></b></div>
+    <div><small>합성섬유</small><b>보온 + 수분 배출 <span>기능·내구성은 울과 비슷</span></b></div>
+    <div><small>면</small><b>쓰지 않는다</b></div>
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 070</span><span>REI Expert Advice</span></div>
+</div>
+
+<!-- 03 두께 -->
+<div class="card" id="s3">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 070</div>
+  <div class="kick" style="top:200px">두께에 대한 흔한 오해</div>
+  <div class="head" style="top:246px;right:56px;font-size:64px">두꺼운 양말이<br>반드시 더 따뜻한<br>건 아닙니다</div>
+  <div class="body" style="left:56px;right:56px;top:560px;font-size:33px">
+    REI는 쿠션 양을 <b>없음 · 약 · 중 · 강</b> 네 단계로 나눕니다. 그리고
+    두께와 보온은 비례하지 않는다고 못 박습니다.<br><br>
+    오히려 경고가 붙습니다. <b>너무 두꺼운 양말은 혈액순환을 제한할 수
+    있습니다.</b> 특히 꽉 맞는 부츠와 함께라면요. 발이 시린 이유가 양말이
+    얇아서가 아니라 <b>두꺼워서</b>일 수 있다는 뜻입니다.
+  </div>
+  <div class="call" style="left:56px;right:56px;top:1010px;font-size:29px;color:#6a6f6c;line-height:1.55">
+    부츠는 발을 감싸서 잡아 주는 물건입니다. 양말은 그 사이를 메우는 게
+    아니라, 방해하지 않는 쪽이 맞습니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 070</span><span>REI Expert Advice</span></div>
+</div>
+
+<!-- 04 길이·솔기·핏 -->
+<div class="card dark" id="s4">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 070</div>
+  <div class="kick" style="top:200px">살 때 볼 것 세 가지</div>
+  <div class="head" style="top:246px;right:56px;font-size:68px">길이 · 솔기 · 핏</div>
+  <div class="spec" style="left:56px;right:56px;top:400px">
+    <div><small>길이</small><b>무릎까지 <span>부츠 앞면이 정강이를 누르는 통증을 막아 준다</span></b></div>
+    <div><small>솔기</small><b>평평하거나 안으로 짜 넣은 것 <span>발가락 물집이 잘 생긴다면</span></b></div>
+    <div><small>핏</small><b>꼭 맞게 <span>특히 발 부분 — 남으면 뭉치고, 뭉치면 물집</span></b></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:860px;font-size:32px">
+    스키 양말이 유난히 긴 데는 이유가 있습니다. 부츠 앞쪽이 정강이를 때리거나
+    누르는 걸 막아 주기 때문입니다. <b>짧은 양말에 긴 부츠는 맞지 않습니다.</b><br><br>
+    발 쪽이 헐렁하면 주행 중에 양말이 밀려 접힙니다. 그 접힌 자리가
+    저녁에 물집이 됩니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 070</span><span>REI Expert Advice</span></div>
+</div>
+
+<!-- 05 마무리 -->
+<div class="card cover" id="s5">
+  <img class="bg" src="../../../assets/owner/monterosa/chalet_interior.jpg">
+  <div class="shade"></div><div class="grad"></div>
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="h2l" style="bottom:300px;font-size:58px">가방 싸기 전에<br>서랍부터<br>열어 보세요</div>
+  <div class="call" style="left:64px;right:64px;bottom:110px;font-size:26px;color:#F4F2EC;line-height:1.55;text-shadow:0 2px 10px rgba(0,0,0,.5)">
+    <b>산킷 한 줄</b> — 작년 양말이 면이었는지, 발 쪽이 늘어났는지만 보면 됩니다.
+    장비는 다 챙기면서 양말만 아무거나 집어넣는 분이 많습니다.
+    하루 종일 발에 닿아 있는 유일한 물건인데요.
+  </div>
+  <div class="cred" style="right:64px;bottom:72px;color:rgba(244,242,236,.6)">ⓒ SANKIT</div>
+</div>
+</body></html>
