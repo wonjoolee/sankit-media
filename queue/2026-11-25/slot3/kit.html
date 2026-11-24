@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#ccc;font-family:'Noto Sans CJK KR','Noto Sans CJK JP',sans-serif;padding:40px;display:flex;flex-wrap:wrap;gap:40px;width:3600px}
+.card{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F4F2EC;color:#141615}
+.mono{font-family:'DejaVu Sans Mono',monospace}
+.wm{position:absolute;left:56px;top:56px;font-size:30px;font-weight:900;letter-spacing:10px;z-index:3}
+.wm i{font-style:normal;font-weight:300;letter-spacing:4px;margin-left:10px;font-size:.55em;vertical-align:middle}
+.kit{position:absolute;right:56px;top:62px;font-size:20px;letter-spacing:3px;z-index:3}
+.kick{position:absolute;left:56px;font-size:22px;letter-spacing:3px;color:#8a5521;font-weight:700}
+.head{position:absolute;left:56px;font-weight:800;letter-spacing:-1.5px;line-height:1.22}
+.body{position:absolute;font-size:36px;line-height:1.6;font-weight:500;letter-spacing:-.8px}
+.body b{font-weight:900}
+.foot{position:absolute;left:56px;right:56px;bottom:46px;display:flex;justify-content:space-between;font-size:19px;letter-spacing:2px;color:#666;border-top:2px solid #141615;padding-top:16px}
+.dark{background:#141615;color:#F4F2EC}
+.dark .foot{border-color:#F4F2EC;color:#9a9f9c}
+.dark .kick{color:#d9a441}
+/* 사진: 원본 비율 그대로, 위에 아무것도 얹지 않음 */
+.photo{position:absolute;display:block}
+.cred{position:absolute;font-size:15px;letter-spacing:2px;color:#8b8f8c}
+.ring{position:absolute;border:4px solid #141615;border-radius:50%;overflow:hidden;background:#F4F2EC}
+.tick{position:absolute;height:3px;background:#141615}
+.dark .tick{background:#F4F2EC}
+.call{position:absolute;font-size:20px;letter-spacing:2px;line-height:1.5}
+.spec{position:absolute;left:660px;right:56px}
+.spec div{border-top:2px solid #3a3d3b;padding:18px 0 20px}
+.spec small{display:block;font-size:17px;letter-spacing:3px;color:#9a9f9c}
+.spec b{display:block;font-family:'Noto Sans CJK KR',sans-serif;font-size:50px;font-weight:900;letter-spacing:-1px;line-height:1.15;margin-top:4px}
+.spec b span{font-size:24px;font-weight:500;margin-left:6px;letter-spacing:0}
+
+/* ===== 표지(01) 새 형식 (2026-11-11): 사진 한 장 + 한국어 두 줄. 키커·KIT 번호·푸터 없음 ===== */
+.cover{background:#141615;color:#F4F2EC}
+.cover .bg{position:absolute;left:0;top:0;width:1080px;height:1350px;object-fit:cover;display:block}          /* 운영자·공공누리 사진만(자르기 허용) */
+.cover .grad{position:absolute;left:0;right:0;bottom:0;height:720px;background:linear-gradient(180deg,rgba(20,22,21,0) 0%,rgba(20,22,21,.55) 45%,rgba(20,22,21,.92) 100%)}
+.cover .press{position:absolute;left:0;top:0;width:1080px;height:860px;display:flex;align-items:center;justify-content:center;background:#141615}
+.cover .press img{max-width:1080px;max-height:860px;display:block}                                            /* 프레스 사진: 원본 비율, 위에 아무것도 얹지 않음 */
+.cover .wm{color:#F4F2EC;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.cover .h2l{position:absolute;left:64px;right:64px;bottom:150px;font-size:76px;font-weight:900;line-height:1.22;letter-spacing:-2.5px;color:#F4F2EC;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.cover .lab{position:absolute;left:64px;bottom:80px;font-size:20px;letter-spacing:4px;color:rgba(244,242,236,.85)}
+.cover .cred{left:auto;right:64px;bottom:84px;top:auto;color:rgba(244,242,236,.6)}
+.cover .sub{position:absolute;left:64px;right:64px;bottom:128px;font-size:34px;font-weight:800;color:#F2C94C;letter-spacing:-.5px}
+.cover .sub ~ .h2l,.cover .h2l.withsub{bottom:192px}
+.cover .shade{position:absolute;left:0;right:0;top:0;height:220px;background:linear-gradient(180deg,rgba(20,22,21,.55),rgba(20,22,21,0))}
+</style></head><body>
+
+<!-- 01 표지 -->
+<div class="card cover" id="s1">
+  <img class="bg" src="../../../assets/owner/road/road_snow.jpg">
+  <div class="shade"></div><div class="grad"></div>
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="sub">개장 주말 · 스키장 가는 길</div>
+  <div class="h2l withsub">출발 전 5분,<br>타이어부터</div>
+  <div class="lab">2026.11.25 · 산킷</div>
+  <div class="cred">ⓒ SANKIT</div>
+</div>
+
+<!-- 02 마모 한계 -->
+<div class="card dark" id="s2">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 069</div>
+  <div class="kick" style="top:200px">숫자 세 개만 외우세요</div>
+  <div class="head" style="top:246px;right:56px;font-size:66px">8~9 → 3 → 1.6</div>
+  <div class="spec" style="left:56px;right:56px;top:420px">
+    <div><small>새 타이어</small><b>8 ~ 9 mm <span>컨티넨탈 기준, 평균 트레드 깊이</span></b></div>
+    <div><small>교체를 생각할 때</small><b>3 mm <span>한국타이어 — "여유를 두고 고려"</span></b></div>
+    <div><small>마모 한계</small><b>1.6 mm <span>"이하인 타이어는 사용해서는 안 된다"</span></b></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:900px;font-size:31px">
+    1.6mm는 <b>합격선이 아니라 탈락선</b>입니다. 거기 닿으면 이미 늦은 것이고,
+    눈길이라면 더 그렇습니다. 한국타이어는 <b>매월 1회</b> 타이어를 전반적으로
+    점검하라고 권합니다. 이번 주말 가신다면, 이번 주가 그 1회입니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 069</span><span>한국타이어 · 컨티넨탈</span></div>
+</div>
+
+<!-- 03 빙판 제동거리 -->
+<div class="card" id="s3">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 069</div>
+  <div class="kick" style="top:200px">한국교통안전공단 실험 · 시속 60km</div>
+  <div class="head" style="top:246px;right:56px;font-size:66px">빙판에선 승용차도<br>4.9배를 더 갑니다</div>
+  <div class="spec" style="left:56px;right:56px;top:470px">
+    <div><small>빙판길 제동거리 (마른 노면 대비)</small><b>승용차 4.9배 <span>화물차는 7.5배</span></b></div>
+    <div><small>한국도로공사 권고 감속</small><b>평소보다 20 ~ 50 % <span>비 · 눈이 올 때</span></b></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:800px;font-size:31px">
+    같은 60km/h인데 멈추는 거리가 다섯 배가 됩니다. 속도를 줄이는 것 말고는
+    줄일 방법이 없습니다.<br><br>
+    한국도로공사는 <b>제설 작업을 끝낸 도로에서도</b> 눈이 왔던 길은 제동거리가
+    늘어날 수 있다고 말합니다. 깨끗해 보여도 마찬가지라는 뜻입니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 069</span><span>한국교통안전공단 · 한국도로공사</span></div>
+</div>
+
+<!-- 04 월동장구 -->
+<div class="card dark" id="s4">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 069</div>
+  <div class="kick" style="top:200px">트렁크에 넣어만 두면 소용없습니다</div>
+  <div class="head" style="top:246px;right:56px;font-size:68px">등판 · 제동 · 코너링,<br>셋 다 달랐습니다</div>
+  <div class="body" style="left:56px;right:56px;top:470px;font-size:33px">
+    한국도로공사가 월동장구를 걸고 실험했습니다. <b>윈터 타이어나 우레탄
+    체인을 단 차</b>가 일반 타이어 차보다 <b>올라가고, 서고, 도는 것 모두</b>
+    나았습니다. 하나만 나은 게 아니라 셋 다였습니다.<br><br>
+    체인은 사 두는 것과 끼울 줄 아는 것이 다릅니다. <b>눈 오는 갓길에서
+    처음 꺼내 보지 마세요.</b> 집 앞에서 한 번 끼워 보는 데 10분이면 됩니다.
+  </div>
+  <div class="call" style="left:56px;right:56px;top:980px;font-size:29px;color:#9a9f9c;line-height:1.55">
+    차간거리도 평소보다 넓게. 앞차가 미끄러지는 걸 보고 나서 밟으면,
+    그때는 이미 4.9배 안에 들어와 있습니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 069</span><span>한국도로공사</span></div>
+</div>
+
+<!-- 05 마무리 -->
+<div class="card cover" id="s5">
+  <img class="bg" src="../../../assets/owner/road/road_snow_2.jpg">
+  <div class="shade"></div><div class="grad"></div>
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="h2l" style="bottom:330px;font-size:58px">오늘 저녁에<br>5분이면<br>끝납니다</div>
+  <div class="call" style="left:64px;right:64px;bottom:110px;font-size:26px;color:#F4F2EC;line-height:1.55;text-shadow:0 2px 10px rgba(0,0,0,.5)">
+    <b>산킷 한 줄</b> — 홈 깊이 보고, 공기압 맞추고, 체인 한 번 끼워 보기.
+    주말에 같이 가는 운전자에게 이 글을 보내 주세요. 잔소리보다 숫자가 빠릅니다.<br>
+    출발 전에는 기상 특보와 리조트 도로 통제 공지를 꼭 확인하시고요.
+  </div>
+  <div class="cred" style="right:64px;bottom:72px;color:rgba(244,242,236,.6)">ⓒ SANKIT</div>
+</div>
+</body></html>
