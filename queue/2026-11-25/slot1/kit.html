@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#ccc;font-family:'Noto Sans CJK KR','Noto Sans CJK JP',sans-serif;padding:40px;display:flex;flex-wrap:wrap;gap:40px;width:3600px}
+.card{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F4F2EC;color:#141615}
+.mono{font-family:'DejaVu Sans Mono',monospace}
+.wm{position:absolute;left:56px;top:56px;font-size:30px;font-weight:900;letter-spacing:10px;z-index:3}
+.wm i{font-style:normal;font-weight:300;letter-spacing:4px;margin-left:10px;font-size:.55em;vertical-align:middle}
+.kit{position:absolute;right:56px;top:62px;font-size:20px;letter-spacing:3px;z-index:3}
+.kick{position:absolute;left:56px;font-size:22px;letter-spacing:3px;color:#8a5521;font-weight:700}
+.head{position:absolute;left:56px;font-weight:800;letter-spacing:-1.5px;line-height:1.22}
+.body{position:absolute;font-size:36px;line-height:1.6;font-weight:500;letter-spacing:-.8px}
+.body b{font-weight:900}
+.foot{position:absolute;left:56px;right:56px;bottom:46px;display:flex;justify-content:space-between;font-size:19px;letter-spacing:2px;color:#666;border-top:2px solid #141615;padding-top:16px}
+.dark{background:#141615;color:#F4F2EC}
+.dark .foot{border-color:#F4F2EC;color:#9a9f9c}
+.dark .kick{color:#d9a441}
+/* 사진: 원본 비율 그대로, 위에 아무것도 얹지 않음 */
+.photo{position:absolute;display:block}
+.cred{position:absolute;font-size:15px;letter-spacing:2px;color:#8b8f8c}
+.ring{position:absolute;border:4px solid #141615;border-radius:50%;overflow:hidden;background:#F4F2EC}
+.tick{position:absolute;height:3px;background:#141615}
+.dark .tick{background:#F4F2EC}
+.call{position:absolute;font-size:20px;letter-spacing:2px;line-height:1.5}
+.spec{position:absolute;left:660px;right:56px}
+.spec div{border-top:2px solid #3a3d3b;padding:18px 0 20px}
+.spec small{display:block;font-size:17px;letter-spacing:3px;color:#9a9f9c}
+.spec b{display:block;font-family:'Noto Sans CJK KR',sans-serif;font-size:50px;font-weight:900;letter-spacing:-1px;line-height:1.15;margin-top:4px}
+.spec b span{font-size:24px;font-weight:500;margin-left:6px;letter-spacing:0}
+
+/* ===== 표지(01) 새 형식 (2026-11-11): 사진 한 장 + 한국어 두 줄. 키커·KIT 번호·푸터 없음 ===== */
+.cover{background:#141615;color:#F4F2EC}
+.cover .bg{position:absolute;left:0;top:0;width:1080px;height:1350px;object-fit:cover;display:block}          /* 운영자·공공누리 사진만(자르기 허용) */
+.cover .grad{position:absolute;left:0;right:0;bottom:0;height:720px;background:linear-gradient(180deg,rgba(20,22,21,0) 0%,rgba(20,22,21,.55) 45%,rgba(20,22,21,.92) 100%)}
+.cover .press{position:absolute;left:0;top:0;width:1080px;height:860px;display:flex;align-items:center;justify-content:center;background:#141615}
+.cover .press img{max-width:1080px;max-height:860px;display:block}                                            /* 프레스 사진: 원본 비율, 위에 아무것도 얹지 않음 */
+.cover .wm{color:#F4F2EC;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.cover .h2l{position:absolute;left:64px;right:64px;bottom:150px;font-size:76px;font-weight:900;line-height:1.22;letter-spacing:-2.5px;color:#F4F2EC;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.cover .lab{position:absolute;left:64px;bottom:80px;font-size:20px;letter-spacing:4px;color:rgba(244,242,236,.85)}
+.cover .cred{left:auto;right:64px;bottom:84px;top:auto;color:rgba(244,242,236,.6)}
+.cover .sub{position:absolute;left:64px;right:64px;bottom:128px;font-size:34px;font-weight:800;color:#F2C94C;letter-spacing:-.5px}
+.cover .sub ~ .h2l,.cover .h2l.withsub{bottom:192px}
+.cover .shade{position:absolute;left:0;right:0;top:0;height:220px;background:linear-gradient(180deg,rgba(20,22,21,.55),rgba(20,22,21,0))}
+</style></head><body>
+
+<!-- 01 표지 -->
+<div class="card cover" id="s1">
+  <img class="bg" src="../../../assets/owner/monterosa/chalet_snow.jpg">
+  <div class="shade"></div><div class="grad"></div>
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="sub">이탈리아 아오스타밸리 · 몬테로사 스키</div>
+  <div class="h2l withsub">이탈리아에선<br>헬멧이 법입니다</div>
+  <div class="lab">2026.11.25 · 산킷</div>
+  <div class="cred">ⓒ SANKIT</div>
+</div>
+
+<!-- 02 안내판 -->
+<div class="card dark" id="s2">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 068</div>
+  <div class="press" style="position:absolute;left:0;top:140px;width:1080px;height:640px;display:flex;align-items:center;justify-content:center;background:#141615">
+    <img src="../../../assets/owner/monterosa/monterosa_board_crop.jpg" style="max-width:1080px;max-height:640px;display:block">
+  </div>
+  <div class="kick" style="top:810px">슬로프 안내판에 다 적혀 있습니다</div>
+  <div class="head" style="top:852px;right:56px;font-size:56px">Casco obbligatorio<br>Ski insurance is mandatory</div>
+  <div class="body" style="left:56px;right:56px;top:1030px;font-size:29px">
+    헬멧 의무, 그리고 <b>보험 의무.</b> 리프트권 살 때 같이 달라고 하라는 안내까지
+    화면에 띄워 둡니다. 샹폴뤽·그레소네라트리니테·알라냐발세시아 — <b>세 골짜기
+    마을</b>이 슬로프로 이어집니다.<br>
+    요금은 촬영 당시 기준입니다. 올 시즌 요금은 공식 사이트에서 확인하세요.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 068</span><span>ⓒ SANKIT</span></div>
+</div>
+
+<!-- 03 헬멧 규칙 -->
+<div class="card" id="s3">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 068</div>
+  <div class="kick" style="top:200px">2025년 8월부터</div>
+  <div class="head" style="top:246px;right:56px;font-size:70px">나이와 상관없이<br>전원 써야 합니다</div>
+  <div class="body" style="left:56px;right:56px;top:450px;font-size:31px">
+    2019년에는 <b>18세 미만</b>만 의무였습니다. 2021년 법령이 개정되면서
+    <b>2025년 8월부터 모든 연령</b>으로 넓어졌습니다. 스키·스노보드만이 아니라
+    <b>썰매와 터보건</b>도 포함됩니다.
+  </div>
+  <div class="spec" style="left:56px;right:56px;top:700px">
+    <div><small>대상</small><b>전 연령 <span>스키·스노보드·썰매·터보건</span></b></div>
+    <div><small>벌금</small><b>100 ~ 150 유로</b></div>
+    <div><small>반복 적발</small><b>리프트권 정지 <span>1~3일</span></b></div>
+    <div><small>규격</small><b>EN 1077:2007 <span>CE 인증 · A등급(귀 덮음)·B등급 모두 인정</span></b></div>
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 068</span><span>The Local Italy</span></div>
+</div>
+
+<!-- 04 헬멧 말고도 -->
+<div class="card dark" id="s4">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 068</div>
+  <div class="kick" style="top:200px">헬멧만이 아닙니다</div>
+  <div class="head" style="top:246px;right:56px;font-size:68px">보험은 의무,<br>음주는 벌금</div>
+  <div class="spec" style="left:56px;right:56px;top:450px">
+    <div><small>제3자 배상책임보험</small><b>의무 <span>리프트권과 함께 제공</span></b></div>
+    <div><small>음주·약물 상태로 활강</small><b>250 ~ 1,000 유로</b></div>
+    <div><small>슬로프 역주행·설피 등반</small><b>금지 <span>응급 상황 제외</span></b></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:830px;font-size:31px">
+    보험은 리조트가 리프트권과 함께 제공하게 돼 있습니다. 안내판처럼
+    <b>"리프트권 살 때 같이 요청하라"</b>고 안내하는 곳도 있습니다.<br><br>
+    남의 나라 규정이지만, 다치고 나서 알게 되면 늦습니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 068</span><span>The Local Italy · 이탈리아 법령</span></div>
+</div>
+
+<!-- 05 마무리 -->
+<div class="card cover" id="s5">
+  <img class="bg" src="../../../assets/owner/monterosa/monterosa_sign.jpg">
+  <div class="shade"></div><div class="grad"></div>
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="h2l" style="bottom:300px;font-size:58px">빌리는 장비에<br>헬멧이 있는지<br>먼저 물어보세요</div>
+  <div class="call" style="left:64px;right:64px;bottom:110px;font-size:27px;color:#F4F2EC;line-height:1.55;text-shadow:0 2px 10px rgba(0,0,0,.5)">
+    <b>산킷 한 줄</b> — 렌털 세트에 헬멧이 빠져 있는 경우가 있습니다.
+    현지에서 벌금 물고 빌리는 것보다, 예약할 때 포함 여부를 묻는 편이 쌉니다.<br>
+    저장해 두셨다가 이탈리아 가실 때 꺼내 보세요.
+  </div>
+  <div class="cred" style="right:64px;bottom:72px;color:rgba(244,242,236,.6)">ⓒ SANKIT</div>
+</div>
+</body></html>
