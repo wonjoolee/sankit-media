@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#ccc;font-family:'Noto Sans CJK KR','Noto Sans CJK JP',sans-serif;padding:40px;display:flex;flex-wrap:wrap;gap:40px;width:3600px}
+.card{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F4F2EC;color:#141615}
+.mono{font-family:'DejaVu Sans Mono',monospace}
+.wm{position:absolute;left:56px;top:56px;font-size:30px;font-weight:900;letter-spacing:10px;z-index:3}
+.wm i{font-style:normal;font-weight:300;letter-spacing:4px;margin-left:10px;font-size:.55em;vertical-align:middle}
+.kit{position:absolute;right:56px;top:62px;font-size:20px;letter-spacing:3px;z-index:3}
+.kick{position:absolute;left:56px;font-size:22px;letter-spacing:3px;color:#8a5521;font-weight:700}
+.head{position:absolute;left:56px;font-weight:800;letter-spacing:-1.5px;line-height:1.22}
+.body{position:absolute;font-size:36px;line-height:1.6;font-weight:500;letter-spacing:-.8px}
+.body b{font-weight:900}
+.foot{position:absolute;left:56px;right:56px;bottom:46px;display:flex;justify-content:space-between;font-size:19px;letter-spacing:2px;color:#666;border-top:2px solid #141615;padding-top:16px}
+.dark{background:#141615;color:#F4F2EC}
+.dark .foot{border-color:#F4F2EC;color:#9a9f9c}
+.dark .kick{color:#d9a441}
+/* 사진: 원본 비율 그대로, 위에 아무것도 얹지 않음 */
+.photo{position:absolute;display:block}
+.cred{position:absolute;font-size:15px;letter-spacing:2px;color:#8b8f8c}
+.ring{position:absolute;border:4px solid #141615;border-radius:50%;overflow:hidden;background:#F4F2EC}
+.tick{position:absolute;height:3px;background:#141615}
+.dark .tick{background:#F4F2EC}
+.call{position:absolute;font-size:20px;letter-spacing:2px;line-height:1.5}
+.spec{position:absolute;left:660px;right:56px}
+.spec div{border-top:2px solid #3a3d3b;padding:18px 0 20px}
+.spec small{display:block;font-size:17px;letter-spacing:3px;color:#9a9f9c}
+.spec b{display:block;font-family:'Noto Sans CJK KR',sans-serif;font-size:50px;font-weight:900;letter-spacing:-1px;line-height:1.15;margin-top:4px}
+.spec b span{font-size:24px;font-weight:500;margin-left:6px;letter-spacing:0}
+
+/* ===== 표지(01) 새 형식 (2026-11-11): 사진 한 장 + 한국어 두 줄. 키커·KIT 번호·푸터 없음 ===== */
+.cover{background:#141615;color:#F4F2EC}
+.cover .bg{position:absolute;left:0;top:0;width:1080px;height:1350px;object-fit:cover;display:block}          /* 운영자·공공누리 사진만(자르기 허용) */
+.cover .grad{position:absolute;left:0;right:0;bottom:0;height:720px;background:linear-gradient(180deg,rgba(20,22,21,0) 0%,rgba(20,22,21,.55) 45%,rgba(20,22,21,.92) 100%)}
+.cover .press{position:absolute;left:0;top:0;width:1080px;height:860px;display:flex;align-items:center;justify-content:center;background:#141615}
+.cover .press img{max-width:1080px;max-height:860px;display:block}                                            /* 프레스 사진: 원본 비율, 위에 아무것도 얹지 않음 */
+.cover .wm{color:#F4F2EC;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.cover .h2l{position:absolute;left:64px;right:64px;bottom:150px;font-size:76px;font-weight:900;line-height:1.22;letter-spacing:-2.5px;color:#F4F2EC;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.cover .lab{position:absolute;left:64px;bottom:80px;font-size:20px;letter-spacing:4px;color:rgba(244,242,236,.85)}
+.cover .cred{left:auto;right:64px;bottom:84px;top:auto;color:rgba(244,242,236,.6)}
+.cover .sub{position:absolute;left:64px;right:64px;bottom:128px;font-size:34px;font-weight:800;color:#F2C94C;letter-spacing:-.5px}
+.cover .sub ~ .h2l,.cover .h2l.withsub{bottom:192px}
+.cover .shade{position:absolute;left:0;right:0;top:0;height:220px;background:linear-gradient(180deg,rgba(20,22,21,.55),rgba(20,22,21,0))}
+</style></head><body>
+
+<!-- 01 표지 -->
+<div class="card cover" id="s1">
+  <img class="bg" src="../../../assets/owner/alps/italy_view_swiss_alps.jpg">
+  <div class="shade"></div><div class="grad"></div>
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="sub">이탈리아 쪽에서 본 마터호른</div>
+  <div class="h2l withsub">이 산은 스위스에만<br>있는 게 아닙니다</div>
+  <div class="lab">2026.11.24 · 산킷</div>
+  <div class="cred">ⓒ SANKIT</div>
+</div>
+
+<!-- 02 이름이 둘 -->
+<div class="card dark" id="s2">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 067</div>
+  <div class="kick" style="top:200px">같은 산, 다른 이름</div>
+  <div class="head" style="top:246px;right:56px;font-size:74px">스위스에선 마터호른<br>이탈리아에선 체르비노</div>
+  <div class="body" style="left:56px;right:56px;top:470px;font-size:34px">
+    산 하나가 국경 위에 서 있습니다. 북쪽은 스위스 체르마트, 남쪽은 이탈리아
+    <b>브로이유-체르비니아</b>입니다.<br><br>
+    우리가 사진으로 많이 본 뾰족한 모습은 체르마트 쪽에서 본 것입니다.
+    이탈리아 쪽에서는 <b>다른 면을 봅니다.</b> 같은 산인데 다른 산처럼
+    보입니다.
+  </div>
+  <div class="call" style="left:56px;right:56px;top:900px;font-size:30px;line-height:1.55">
+    이탈리아 스키장 이름 <b>체르비니아(Cervinia)</b>도, 스위스 쪽 전망대
+    <b>클라인 마터호른</b>을 이탈리아에서 <b>피콜로 체르비노</b>라 부르는 것도
+    모두 이 이름에서 왔습니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 067</span><span>ⓒ SANKIT</span></div>
+</div>
+
+<!-- 03 국경을 넘는 케이블카 -->
+<div class="card" id="s3">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 067</div>
+  <div class="kick" style="top:200px">알프스에서 가장 높은 국경</div>
+  <div class="head" style="top:246px;right:56px;font-size:72px">스키 없이도<br>국경을 넘습니다</div>
+  <div class="body" style="left:56px;right:56px;top:450px;font-size:32px">
+    두 나라 스키장은 원래 슬로프로 이어져 있었습니다. 스키를 타야만 넘을 수
+    있었습니다. 2023년 7월 1일, <b>마터호른 알파인 크로싱</b>이 열리면서
+    스키를 신지 않아도 케이블카로 넘어갈 수 있게 됐습니다.
+  </div>
+  <div class="spec" style="left:56px;right:56px;top:700px">
+    <div><small>이탈리아 쪽 · 테스타 그리자 / 플라토 로사</small><b>3,458 m</b></div>
+    <div><small>스위스 쪽 · 클라인 마터호른</small><b>3,821 m <span>피콜로 체르비노</span></b></div>
+    <div><small>개통</small><b>2023.07.01 <span>마터호른 글래시어 라이드 II</span></b></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:1130px;font-size:30px">
+    알프스에서 가장 높은 곳에 있는 국경 통과 지점입니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 067</span><span>cervinia.it 공식</span></div>
+</div>
+
+<!-- 04 가실 거면 날짜를 보세요 -->
+<div class="card dark" id="s4">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 067</div>
+  <div class="kick" style="top:200px">가실 거면 이것부터</div>
+  <div class="head" style="top:246px;right:56px;font-size:70px">겨울 한복판에<br>닫힙니다</div>
+  <div class="body" style="left:56px;right:56px;top:450px;font-size:32px">
+    공식 안내에 따르면 이 국경 케이블카는 정비를 위해
+    <b>2027년 1월 7일부터 2월 26일까지</b> 운행을 멈춥니다.
+  </div>
+  <div class="spec" style="left:56px;right:56px;top:650px">
+    <div><small>정비 휴장</small><b>2027.01.07 ~ 02.26 <span>마터호른 알파인 크로싱</span></b></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:830px;font-size:31px">
+    한국에서 알프스로 가는 스키 여행은 <b>1~2월에 몰립니다.</b> 그 기간이
+    정확히 겹칩니다.<br><br>
+    스키를 타고 슬로프로 넘는 길은 별개입니다. 다만 <b>스키를 신지 않고</b>
+    케이블카로 국경을 넘을 계획이셨다면 날짜를 다시 보셔야 합니다.
+  </div>
+  <div class="call" style="left:56px;right:56px;top:1130px;font-size:28px">
+    운행 일정은 바뀔 수 있습니다. 출발 전 cervinia.it에서 다시 확인하세요.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 067</span><span>cervinia.it 공식 안내</span></div>
+</div>
+
+<!-- 05 마무리 -->
+<div class="card cover" id="s5">
+  <img class="bg" src="../../../assets/owner/alps/sunset.jpg">
+  <div class="shade"></div><div class="grad"></div>
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="h2l" style="bottom:300px;font-size:60px">보는 자리가 바뀌면<br>산도 달라집니다</div>
+  <div class="call" style="left:64px;right:64px;bottom:120px;font-size:28px;color:#F4F2EC;line-height:1.55;text-shadow:0 2px 10px rgba(0,0,0,.5)">
+    <b>산킷 한 줄</b> — 같은 산을 두 나라가 다른 이름으로 부릅니다.
+    어느 쪽에서 오르느냐에 따라 이름도, 모습도, 넘어가는 방법도 달라집니다.<br>
+    저장해 두셨다가 알프스 일정 잡으실 때 날짜부터 확인하세요.
+  </div>
+  <div class="cred" style="right:64px;bottom:80px;color:rgba(244,242,236,.6)">ⓒ SANKIT</div>
+</div>
+</body></html>
