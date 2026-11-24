@@ -13,12 +13,37 @@
 import json, sys
 from datetime import date, timedelta
 
+WX_N, ETC_N = 3, 7      # 한 장에 싣는 날씨 줄 / 업계·행사 줄 수 (3:7)
+
 SKI = ['용평','하이원','휘닉스','비발디파크','알펜시아','웰리힐리','무주덕유산',
        '곤지암','지산','엘리시안강촌','오크밸리','오투']
 MTN = ['설악산','지리산','한라산','북한산','덕유산','속리산','오대산','태백산','소백산']
 
 def load(name):
     return json.load(open(f'data/latest/{name}.json'))
+
+EMO = [
+    # (앞에서부터 먼저 맞는 것 하나를 쓴다)
+    (('기온 급등','급등'), '🌡️'),
+    (('비 예보','비'), '🌧️'),
+    (('눈',), '❄️'),
+    (('가장 추운',), '🥶'),
+    (('최저','영하'), '🎿'),
+    (('산불','통제','금지'), '⛔'),
+    (('마감','까지'), '⏰'),
+    (('헬멧','과태료','의무'), '⛑️'),
+    (('개막','부스','박람회','전시'), '🏕️'),
+    (('축제','페스티벌'), '🎪'),
+    (('리프트','개장','슬로프'), '🚡'),
+    (('바람','풍속'), '💨'),
+]
+
+def emoji(line):
+    t = line.replace('<b>','').replace('</b>','')
+    for words, e in EMO:
+        if any(w in t for w in words):
+            return e
+    return '⛰️'
 
 def f(x):
     try: return float(x)
@@ -32,21 +57,13 @@ def build(d0):
     k1 = (d0+timedelta(days=1)).strftime('%Y%m%d')
     k2 = (d0+timedelta(days=2)).strftime('%Y%m%d')
     lines = []
+    etc = []
+    urgent = []
 
     def day(name, key):
         return places.get(name,{}).get('days',{}).get(key, {})
 
-    # 1) 오늘 스키장 기온 폭
-    tod = [(n, f(day(n,k).get('TMN')), f(day(n,k).get('TMX'))) for n in SKI if day(n,k)]
-    tod = [t for t in tod if t[1] is not None]
-    if tod:
-        cold = min(tod, key=lambda t: t[1])
-        warm = max(tod, key=lambda t: t[2] if t[2] is not None else -99)
-        lines.append(f"오늘 스키장 최저 <b>{cold[1]:.0f}℃</b> {cold[0]}, 최고 <b>{warm[2]:.0f}℃</b> {warm[0]}")
-        sub = [t for t in tod if t[2] is not None and t[2] <= 0]
-        if sub:
-            lines.append(f"낮에도 영하인 스키장 <b>{len(sub)}곳</b> — {' · '.join(t[0] for t in sub[:4])}")
-
+    # 날씨 줄은 쓸모 있는 순서로 쌓는다: 변화 → 오늘 기온 → 눈
     # 2) 모레까지 기온 급등 / 비
     jumps = []
     for n in SKI:
@@ -61,6 +78,18 @@ def build(d0):
     rain2 = [n for n in SKI if '비' in ''.join(day(n,k2).get('PTY',[]))]
     if rain2:
         lines.append(f"모레 비 예보 스키장 <b>{len(rain2)}곳</b> — {' · '.join(rain2[:4])}")
+
+    # 1) 오늘 스키장 기온 폭
+    tod = [(n, f(day(n,k).get('TMN')), f(day(n,k).get('TMX'))) for n in SKI if day(n,k)]
+    tod = [t for t in tod if t[1] is not None]
+    if tod:
+        cold = min(tod, key=lambda t: t[1])
+        warm = max(tod, key=lambda t: t[2] if t[2] is not None else -99)
+        lines.append(f"오늘 스키장 최저 <b>{cold[1]:.0f}℃</b> {cold[0]}, 최고 <b>{warm[2]:.0f}℃</b> {warm[0]}")
+        sub = [t for t in tod if t[2] is not None and t[2] <= 0]
+        if sub:
+            lines.append(f"낮에도 영하인 스키장 <b>{len(sub)}곳</b> — {' · '.join(t[0] for t in sub[:4])}")
+        del tod
 
     # 3) 오늘·내일 눈
     for key, word in ((k,'오늘'), (k1,'내일')):
@@ -105,7 +134,8 @@ def build(d0):
         soon.sort()
         for st, en, t, addr in soon[:2]:
             area = addr.split()[0].replace('특별자치도','').replace('특별시','').replace('광역시','').replace('도','') if addr else ''
-            lines.append(f"{area} {t} — <b>{st[4:6]}.{st[6:8]}~{en[4:6]}.{en[6:8]}</b>".strip())
+            x = f"{area} {t} — <b>{st[4:6]}.{st[6:8]}~{en[4:6]}.{en[6:8]}</b>".strip()
+            etc.append(f"{emoji(x)} {x}")
     except Exception:
         pass
 
@@ -117,11 +147,29 @@ def build(d0):
                 st = row['시작'].replace('-','')
                 en = (row.get('종료') or row['시작']).replace('-','')
                 if st <= (d0+timedelta(days=7)).strftime('%Y%m%d') and en >= d0.strftime('%Y%m%d'):
-                    lines.append(row['내용'])
+                    line = f"{emoji(row['내용'])} {row['내용']}"
+                    (urgent if en <= (d0+timedelta(days=3)).strftime('%Y%m%d') else etc).append(line)
     except FileNotFoundError:
         pass
 
-    return lines, base
+    wx = [f"{emoji(l)} {l}" for l in lines]
+
+    # 7) 업계 소식 — research/news_industry.csv (수집일,내용,출처). 이모지는 파일에 직접 쓴다.
+    try:
+        import csv
+        with open('research/news_industry.csv', encoding='utf-8') as fh:
+            rows = [r for r in csv.DictReader(fh)
+                    if r['수집일'] <= d0.isoformat()
+                    and (date.fromisoformat(r['수집일']) + timedelta(days=21)) >= d0]
+        industry = [r['내용'] for r in rows]
+    except FileNotFoundError:
+        pass
+
+    # 대표님 지시(2026-11-25): 날씨와 업계·행사 소식의 비율은 3:7.
+    # 사흘 안에 끝나는 일정은 브랜드 소식보다 앞에 둔다. 나머지 일정은 뒤로.
+    industry = locals().get('industry', [])
+    out = wx[:WX_N] + ['## 업계 · 행사'] + (urgent + industry + etc)[:ETC_N]
+    return out, base
 
 if __name__ == '__main__':
     d0 = date.fromisoformat(sys.argv[1]) if len(sys.argv) > 1 else date.today()
