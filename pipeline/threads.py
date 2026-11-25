@@ -152,16 +152,37 @@ def post_slot(rel):
     return out
 
 
-def latest_slot():
-    """오늘 날짜 폴더에서 threads.json 이 있고 아직 안 올라간 가장 이른 슬롯."""
+SLOT_TIMES = {"1": "07:30", "4": "10:00", "2": "12:10", "5": "18:00", "3": "21:00"}  # run_slot.py와 같아야 한다
+
+
+def due_slot():
+    """올릴 슬롯 하나를 고른다.
+
+    2026-11-25 수정: 전에는 '아직 안 올라간 가장 이른 슬롯'을 시각과 무관하게 골랐다.
+    그래서 아침에 돌 때 21시 글(slot3)까지 쓰레드에 먼저 올라가 버렸다.
+    이제 run_slot.py와 똑같이 **게시 시각이 지난 슬롯만** 고른다.
+    SLOT 환경변수가 있으면 그 슬롯만 본다(인스타와 같은 글을 쓰레드에 올리기 위해).
+    """
     now = datetime.datetime.now(KST)
     day = os.path.join(ROOT, "queue", f"{now:%Y-%m-%d}")
     if not os.path.isdir(day):
         return None
-    for s in sorted(os.listdir(day)):
-        d = os.path.join(day, s)
-        if os.path.exists(os.path.join(d, "threads.json")) and not os.path.exists(os.path.join(d, "threads_posted.json")):
-            return f"queue/{now:%Y-%m-%d}/{s}"
+
+    def ready(sl):
+        d = os.path.join(day, f"slot{sl}")
+        return (os.path.exists(os.path.join(d, "threads.json"))
+                and not os.path.exists(os.path.join(d, "threads_posted.json")))
+
+    env = (os.environ.get("SLOT") or "").strip()
+    if env:
+        return f"queue/{now:%Y-%m-%d}/slot{int(env)}" if ready(int(env)) else None
+
+    hm = now.strftime("%H:%M")
+    for sl, t in sorted(SLOT_TIMES.items(), key=lambda kv: kv[1]):
+        if t > hm:
+            break
+        if ready(sl):
+            return f"queue/{now:%Y-%m-%d}/slot{sl}"
     return None
 
 
@@ -170,7 +191,7 @@ if __name__ == "__main__":
     if a == "whoami":
         print(json.dumps(me(), ensure_ascii=False))
     else:
-        rel = a.strip("/") if a else latest_slot()
+        rel = a.strip("/") if a else due_slot()
         if not rel:
             print("올릴 쓰레드 글 없음")
         else:
