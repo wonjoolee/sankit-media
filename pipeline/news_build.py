@@ -9,7 +9,7 @@ import json, os, re, subprocess, sys, unicodedata
 from datetime import date
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-import news, news_card
+import news, news_card, news_reel
 
 WD = ['월','화','수','목','금','토','일']
 BASE_TAGS = ['#산킷뉴스', '#스키장날씨', '#등산날씨', '#스키시즌', '#겨울산', '#아웃도어']
@@ -44,6 +44,12 @@ await p.locator('#s1').screenshot({{path:'{shot}'}});await b.close();}})()'''], 
     from PIL import Image
     Image.open(shot).convert('RGB').save(os.path.join(outdir, '01.jpg'), 'JPEG', quality=92)
     os.remove(shot)
+
+    # 릴스 — 한 줄씩 끊어 보여주는 타이포 영상(EDITORIAL 27절)
+    try:
+        news_reel.main(outdir, d0)
+    except Exception as e:
+        print('릴스 생성 실패 — 카드만 올린다:', e)
 
     wx  = [strip(l) for l in lines if not l.startswith('## ')][:news.WX_N]
     etc = [strip(l) for l in lines if not l.startswith('## ')][news.WX_N:]
