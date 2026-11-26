@@ -1,0 +1,63 @@
+name: SANKIT NEWS build
+
+# 뉴스는 07:28 게시 워크플로 안에서 만들지 않는다.
+# 새벽에 미리 만들어 두고, 실패하면 07:28 전에 두 번 더 시도한다.
+on:
+  schedule:
+    - cron: "35 20 * * *"   # 05:35 KST
+    - cron: "15 21 * * *"   # 06:15 KST  (1차 실패 시)
+    - cron: "50 21 * * *"   # 06:50 KST  (2차 실패 시)
+  workflow_dispatch:
+    inputs:
+      selftest:
+        description: "1이면 /tmp 에만 만들고 커밋하지 않는다(점검용)"
+        default: "0"
+      date:
+        description: "YYYY-MM-DD (비우면 오늘 KST)"
+        default: ""
+
+concurrency:
+  group: sankit-news
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+
+      - name: 오늘 뉴스가 이미 있는지 본다
+        id: g
+        run: |
+          D="${{ github.event.inputs.date }}"; [ -n "$D" ] || D=$(TZ=Asia/Seoul date +%F)
+          echo "d=$D" >> $GITHUB_OUTPUT
+          if [ "${{ github.event.inputs.selftest }}" = "1" ]; then
+            echo "out=/tmp/newstest" >> $GITHUB_OUTPUT; echo "go=1" >> $GITHUB_OUTPUT
+            echo "점검 모드"; exit 0
+          fi
+          echo "out=queue/$D/slot1" >> $GITHUB_OUTPUT
+          if [ -f "queue/$D/slot1/post.json" ]; then
+            echo "go=0" >> $GITHUB_OUTPUT; echo "$D 뉴스 이미 있음 - 건너뜀"
+          else
+            echo "go=1" >> $GITHUB_OUTPUT
+          fi
+
+      - name: 뉴스 제작
+        if: steps.g.outputs.go == '1'
+        env:
+          KMA_KEY: ${{ secrets.KMA_KEY }}
+          DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
+        run: bash pipeline/news_ci.sh "${{ steps.g.outputs.out }}" "${{ steps.g.outputs.d }}"
+
+      - name: 커밋
+        if: steps.g.outputs.go == '1' && github.event.inputs.selftest != '1'
+        run: |
+          git config user.name "SANKIT bot"
+          git config user.email "sankit-bot@users.noreply.github.com"
+          git add data queue
+          git diff --cached --quiet && exit 0
+          git commit -m "news ${{ steps.g.outputs.d }}"
+          for i in 1 2 3 4 5; do git pull --rebase -q && git push && exit 0; sleep $((i*7)); done
+          exit 1

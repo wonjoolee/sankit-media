@@ -9,10 +9,17 @@
 import json, os, re, subprocess, sys
 from datetime import date
 
-N_BEATS = 7          # 영상에 싣는 줄 수. 다 넣지 않는다 — 나머지는 카드에서 본다.
-SEC_TITLE, SEC_BEAT, SEC_END = 1.8, 2.3, 2.6
+N_BEATS = 8          # 영상에 싣는 줄 수. 다 넣지 않는다 — 나머지는 카드에서 본다.
+SEC_TITLE, SEC_BEAT, SEC_END = 2.6, 2.3, 2.6
 W, H = 1080, 1920
 WD = ['월','화','수','목','금','토','일']
+
+def split_emoji(line):
+    """줄 맨 앞 이모지를 떼어 낸다. 표지에서 크게 쓴다."""
+    m = re.match(r'^(\S+?)\s+(.*)$', line)
+    if m and not re.match(r'^[\w가-힣<]', m.group(1)):
+        return m.group(1), m.group(2)
+    return '⛰️', line
 
 def frames_html(d0, beats):
     css = """
@@ -27,6 +34,11 @@ body{background:#000;font-family:'Noto Sans CJK KR','Noto Sans CJK JP','Noto Col
 .tx{position:absolute;left:70px;right:70px;top:520px;height:740px;display:flex;align-items:center;font-size:70px;font-weight:800;line-height:1.34;letter-spacing:-2.5px;word-break:keep-all;overflow-wrap:break-word}
 .tx b{font-weight:800;color:#8a5521}
 .ft{position:absolute;left:70px;bottom:80px;font-size:24px;letter-spacing:4px;color:#8a8d8a}
+.cv{position:absolute;left:70px;right:70px;top:0;height:1920px;display:flex;flex-direction:column;justify-content:center}
+.cv .e{font-size:132px;line-height:1;margin-bottom:46px}
+.cv .h{font-size:84px;font-weight:800;line-height:1.3;letter-spacing:-3px;word-break:keep-all;overflow-wrap:break-word}
+.cv .h b{color:#8a5521;font-weight:800}
+.cv .r{margin-top:54px;border-top:3px solid #141615;padding-top:26px;font-size:30px;font-weight:700;color:#5d615e;letter-spacing:-.5px}
 .tt{position:absolute;left:70px;right:70px;top:620px}
 .tt .k{font-size:34px;letter-spacing:6px;color:#8a5521;font-weight:700;margin-bottom:24px}
 .tt .d{font-size:150px;font-weight:800;letter-spacing:-5px;line-height:1.05}
@@ -36,13 +48,13 @@ body{background:#000;font-family:'Noto Sans CJK KR','Noto Sans CJK JP','Noto Col
 .end .b{font-size:36px;font-weight:700;color:#5d615e;margin-top:40px;line-height:1.5;letter-spacing:-1px}
 """
     out = [f'<!doctype html><meta charset="utf-8"><style>{css}</style>']
+    e0, h0 = split_emoji(beats[0])
     out.append(f'''<div class="f" id="f0"><div class="wm">SANKIT<i>산킷</i></div>
-      <div class="tag mono">NEWS</div>
-      <div class="tt"><div class="k">오늘의 산 · 오늘의 눈</div>
-        <div class="d">{d0.month}월 {d0.day}일</div>
-        <div class="s">{WD[d0.weekday()]}요일 · 스키장 날씨와 국내외 업계 소식</div></div>
+      <div class="tag mono">NEWS · {d0.month:02d}.{d0.day:02d} {WD[d0.weekday()]}</div>
+      <div class="cv"><div class="e">{e0}</div><div class="h">{h0}</div>
+        <div class="r">오늘의 산 · 오늘의 눈 — 스키장 날씨와 국내외 업계 소식</div></div>
       <div class="ft mono">SANKIT · NEWS</div></div>''')
-    for i, b in enumerate(beats, 1):
+    for i, b in enumerate(beats[1:], 2):
         out.append(f'''<div class="f" id="f{i}"><div class="wm">SANKIT<i>산킷</i></div>
           <div class="tag mono">{d0.month:02d}.{d0.day:02d}</div>
           <div class="no mono">{i:02d}</div>
@@ -63,7 +75,7 @@ def main(outdir, d0):
     html = os.path.join(outdir, 'reel.html')
     open(html, 'w', encoding='utf-8').write(frames_html(d0, beats))
 
-    ids = ['f0'] + [f'f{i}' for i in range(1, len(beats) + 1)] + [f'f{len(beats)+1}']
+    ids = ['f0'] + [f'f{i}' for i in range(2, len(beats) + 1)] + [f'f{len(beats)+1}']
     subprocess.run(['node', '-e', f'''
 const {{chromium}}=require('playwright');
 (async()=>{{const b=await chromium.launch();
@@ -93,7 +105,7 @@ await b.close();}})()'''], check=True)
         if f.startswith('_'):
             os.remove(os.path.join(outdir, f))
     os.remove(html)
-    total = SEC_TITLE + SEC_BEAT * len(beats) + SEC_END
+    total = SEC_TITLE + SEC_BEAT * (len(beats) - 1) + SEC_END
     print(f'REEL {outdir}/reel.mp4  장면 {len(ids)}개 · {total:.1f}초')
 
 if __name__ == '__main__':
