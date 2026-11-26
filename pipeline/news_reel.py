@@ -84,9 +84,10 @@ await b.close();}})()'''], check=True)
 
     lst = os.path.join(outdir, '_cc.txt')
     open(lst, 'w').write(''.join(f"file '{os.path.basename(s)}'\n" for s in segs))
-    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0', '-i', lst,
+    subprocess.run(['ffmpeg', '-v', 'error', '-y', '-f', 'concat', '-safe', '0',
+                    '-i', os.path.basename(lst),
                     '-c:v', 'libx264', '-pix_fmt', 'yuv420p', '-r', '30', '-crf', '21', '-an',
-                    os.path.join(outdir, 'reel.mp4')], check=True, cwd=outdir)
+                    'reel.mp4'], check=True, cwd=outdir)
 
     for f in os.listdir(outdir):
         if f.startswith('_'):

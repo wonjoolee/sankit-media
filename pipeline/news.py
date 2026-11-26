@@ -76,7 +76,7 @@ def build(d0):
         lines.append(f"모레 기온 급등 — {n} 최고 <b>{a:.0f}℃ → {b:.0f}℃</b>, 스키장 <b>{len(jumps)}곳</b>이 같은 흐름")
 
     rain2 = [n for n in SKI if '비' in ''.join(day(n,k2).get('PTY',[]))]
-    if rain2:
+    if len(rain2) >= 3:   # 한두 곳이면 뉴스가 아니다
         lines.append(f"모레 비 예보 스키장 <b>{len(rain2)}곳</b> — {' · '.join(rain2[:4])}")
 
     # 1) 오늘 스키장 기온 폭
