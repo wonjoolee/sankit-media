@@ -88,8 +88,32 @@ def build(d0):
         lines.append(f"오늘 스키장 최저 <b>{cold[1]:.0f}℃</b> {cold[0]}, 최고 <b>{warm[2]:.0f}℃</b> {warm[0]}")
         sub = [t for t in tod if t[2] is not None and t[2] <= 0]
         if sub:
-            lines.append(f"낮에도 영하인 스키장 <b>{len(sub)}곳</b> — {' · '.join(t[0] for t in sub[:4])}")
+            lines.append(f"낮에도 영하라 제설 가능한 스키장 <b>{len(sub)}곳</b> — {' · '.join(t[0] for t in sub[:4])}")
         del tod
+
+    # 2-1) 주말 전망 — 독자는 주말 단위로 움직인다
+    wk = []
+    for i in range(0, 8):
+        d = d0 + timedelta(days=i)
+        if d.weekday() in (5, 6):
+            wk.append(d)
+        if len(wk) == 2:
+            break
+    if wk:
+        tx = []
+        for n in SKI:
+            v = [f(day(n, w.strftime('%Y%m%d')).get('TMX')) for w in wk]
+            v = [x for x in v if x is not None]
+            if v:
+                tx.append((n, max(v)))
+        if tx:
+            warm = max(tx, key=lambda t: t[1])
+            cold = min(tx, key=lambda t: t[1])
+            label = "이번 주말" if wk[0] - d0 <= timedelta(days=6) else "주말"
+            if warm[1] >= 5:
+                lines.append(f"{label} 스키장 최고 <b>{cold[1]:.0f}℃</b> {cold[0]} ~ <b>{warm[1]:.0f}℃</b> {warm[0]} — 포근합니다")
+            else:
+                lines.append(f"{label} 스키장 최고 <b>{cold[1]:.0f}℃</b> {cold[0]} ~ <b>{warm[1]:.0f}℃</b> {warm[0]}")
 
     # 3) 오늘·내일 눈
     for key, word in ((k,'오늘'), (k1,'내일')):
@@ -108,7 +132,8 @@ def build(d0):
     mt = [t for t in mt if t[1] is not None]
     if mt:
         mt.sort(key=lambda t: t[1])
-        lines.append(f"오늘 가장 추운 산 — {mt[0][0]} <b>{mt[0][1]:.0f}℃</b>, {mt[1][0]} <b>{mt[1][1]:.0f}℃</b>")
+        if mt[0][1] <= -5:
+            lines.append(f"오늘 가장 추운 산 — {mt[0][0]} <b>{mt[0][1]:.0f}℃</b>, {mt[1][0]} <b>{mt[1][1]:.0f}℃</b>")
 
     # 5) 축제 — 겨울·산·눈 관련만. 전시·연극·예술제는 산킷 독자의 관심사가 아니다.
     KEY = ('눈','얼음','빙어','산타','스키','스노우','스노보드','겨울','송어','트레킹',
