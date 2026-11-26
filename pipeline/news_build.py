@@ -6,6 +6,7 @@
 GitHub Actions에서 사람 없이 돌리기 위한 것이다. 숫자는 전부 data/latest 에서 온다.
 """
 import json, os, re, subprocess, sys, unicodedata
+from PIL import Image
 from datetime import date
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -41,9 +42,24 @@ const {{chromium}}=require('playwright');
 (async()=>{{const b=await chromium.launch();const p=await b.newPage({{viewport:{{width:1200,height:1500}}}});
 await p.goto('file://{os.path.abspath(outdir)}/kit.html');await p.waitForTimeout(900);
 await p.locator('#s1').screenshot({{path:'{shot}'}});await b.close();}})()'''], check=True)
-    from PIL import Image
     Image.open(shot).convert('RGB').save(os.path.join(outdir, '01.jpg'), 'JPEG', quality=92)
     os.remove(shot)
+
+    # 스토리 — 릴스를 스토리로 올리면 1~2초 만에 넘겨 아무것도 전달되지 않는다.
+    # 9:16 전용 카드를 따로 만든다(run_slot은 story.jpg를 릴스보다 먼저 쓴다).
+    try:
+        news_card.main(outdir, d0, story=True)
+        subprocess.run(['node', '-e', f'''
+const {{chromium}}=require('playwright');
+(async()=>{{const b=await chromium.launch();const p=await b.newPage({{viewport:{{width:1200,height:2050}}}});
+await p.goto('file://{os.path.abspath(outdir)}/story.html');await p.waitForTimeout(700);
+await p.locator('#s1').screenshot({{path:'{outdir}/_st.png'}});await b.close();}})()'''], check=True)
+        Image.open(os.path.join(outdir, '_st.png')).convert('RGB').save(
+            os.path.join(outdir, 'story.jpg'), 'JPEG', quality=92)
+        os.remove(os.path.join(outdir, '_st.png'))
+        os.remove(os.path.join(outdir, 'story.html'))
+    except Exception as e:
+        print('스토리 생성 실패 — 릴스가 스토리로 올라간다:', e)
 
     # 릴스 — 한 줄씩 끊어 보여주는 타이포 영상(EDITORIAL 27절)
     try:
@@ -67,7 +83,11 @@ await p.locator('#s1').screenshot({{path:'{shot}'}});await b.close();}})()'''], 
            "매일 아침 이 한 장으로 정리해 드립니다. 저장해 두시면 출발 전에 꺼내 보기 좋습니다.\n\n"
            + tags)
 
-    th = head + "\n\n" + "\n\n".join((wx + etc)[:4]) + "\n\n오늘 어디 가십니까?"
+    # 쓰레드는 목록이 아니라 한 가지를 먼저 세운다.
+    # 국내 관련(🇰🇷·🚫) 줄이 있으면 그게 산킷에만 있는 줄이니 맨 앞에 둔다.
+    kr = [l for l in etc if l.startswith(('🇰🇷', '🚫'))]
+    rest = [l for l in (wx + etc) if l not in kr[:1]]
+    th = head + "\n\n" + "\n\n".join((kr[:1] + rest)[:4]) + "\n\n오늘 어디 가십니까?"
     while th_len(th) > 490 and th.count('\n\n') > 3:
         th = th.rsplit('\n\n', 2)[0] + "\n\n오늘 어디 가십니까?"
 
