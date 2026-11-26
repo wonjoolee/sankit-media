@@ -16,6 +16,9 @@ on:
         description: "YYYY-MM-DD (비우면 오늘 KST)"
         default: ""
 
+permissions:
+  contents: write   # 다른 워크플로와 같다. 없으면 커밋 push가 403으로 막힌다(11/27 05:3x 실패)
+
 concurrency:
   group: sankit-news
   cancel-in-progress: false
