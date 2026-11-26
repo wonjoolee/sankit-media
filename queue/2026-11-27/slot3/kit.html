@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#ccc;font-family:'Noto Sans CJK KR','Noto Sans CJK JP',sans-serif;padding:40px;display:flex;flex-wrap:wrap;gap:40px;width:3600px}
+.card{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F4F2EC;color:#141615}
+.mono{font-family:'DejaVu Sans Mono',monospace}
+.wm{position:absolute;left:56px;top:56px;font-size:30px;font-weight:900;letter-spacing:10px;z-index:3}
+.wm i{font-style:normal;font-weight:300;letter-spacing:4px;margin-left:10px;font-size:.55em;vertical-align:middle}
+.kit{position:absolute;right:56px;top:62px;font-size:20px;letter-spacing:3px;z-index:3}
+.kick{position:absolute;left:56px;font-size:22px;letter-spacing:3px;color:#8a5521;font-weight:700}
+.head{position:absolute;left:56px;font-weight:800;letter-spacing:-1.5px;line-height:1.22}
+.body{position:absolute;font-size:36px;line-height:1.6;font-weight:500;letter-spacing:-.8px}
+.body b{font-weight:900}
+.foot{position:absolute;left:56px;right:56px;bottom:46px;display:flex;justify-content:space-between;font-size:19px;letter-spacing:2px;color:#666;border-top:2px solid #141615;padding-top:16px}
+.dark{background:#141615;color:#F4F2EC}
+.dark .foot{border-color:#F4F2EC;color:#9a9f9c}
+.dark .kick{color:#d9a441}
+/* 사진: 원본 비율 그대로, 위에 아무것도 얹지 않음 */
+.photo{position:absolute;display:block}
+.cred{position:absolute;font-size:15px;letter-spacing:2px;color:#8b8f8c}
+.ring{position:absolute;border:4px solid #141615;border-radius:50%;overflow:hidden;background:#F4F2EC}
+.tick{position:absolute;height:3px;background:#141615}
+.dark .tick{background:#F4F2EC}
+.call{position:absolute;font-size:20px;letter-spacing:2px;line-height:1.5}
+.spec{position:absolute;left:660px;right:56px}
+.spec div{border-top:2px solid #3a3d3b;padding:18px 0 20px}
+.spec small{display:block;font-size:17px;letter-spacing:3px;color:#9a9f9c}
+.spec b{display:block;font-family:'Noto Sans CJK KR',sans-serif;font-size:50px;font-weight:900;letter-spacing:-1px;line-height:1.15;margin-top:4px}
+.spec b span{font-size:24px;font-weight:500;margin-left:6px;letter-spacing:0}
+
+/* ===== 표지(01) 새 형식 (2026-11-11): 사진 한 장 + 한국어 두 줄. 키커·KIT 번호·푸터 없음 ===== */
+.cover{background:#141615;color:#F4F2EC}
+.cover .bg{position:absolute;left:0;top:0;width:1080px;height:1350px;object-fit:cover;display:block}          /* 운영자·공공누리 사진만(자르기 허용) */
+.cover .grad{position:absolute;left:0;right:0;bottom:0;height:720px;background:linear-gradient(180deg,rgba(20,22,21,0) 0%,rgba(20,22,21,.55) 45%,rgba(20,22,21,.92) 100%)}
+.cover .press{position:absolute;left:0;top:0;width:1080px;height:860px;display:flex;align-items:center;justify-content:center;background:#141615}
+.cover .press img{max-width:1080px;max-height:860px;display:block}                                            /* 프레스 사진: 원본 비율, 위에 아무것도 얹지 않음 */
+.cover .wm{color:#F4F2EC;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.cover .h2l{position:absolute;left:64px;right:64px;bottom:150px;font-size:76px;font-weight:900;line-height:1.22;letter-spacing:-2.5px;color:#F4F2EC;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.cover .lab{position:absolute;left:64px;bottom:80px;font-size:20px;letter-spacing:4px;color:rgba(244,242,236,.85)}
+.cover .cred{left:auto;right:64px;bottom:84px;top:auto;color:rgba(244,242,236,.6)}
+.cover .sub{position:absolute;left:64px;right:64px;bottom:128px;font-size:34px;font-weight:800;color:#F2C94C;letter-spacing:-.5px}
+.cover .sub ~ .h2l,.cover .h2l.withsub{bottom:192px}
+.cover .shade{position:absolute;left:0;right:0;top:0;height:220px;background:linear-gradient(180deg,rgba(20,22,21,.55),rgba(20,22,21,0))}
+</style>
+<style>
+.tbl{position:absolute;left:56px;right:56px;font-size:32px}
+.tbl .r{display:flex;justify-content:space-between;align-items:baseline;border-top:2px solid #3a3d3b;padding:16px 0}
+.tbl .r b{font-weight:900;font-size:40px}
+.tbl .r span{color:#9a9f9c;font-size:26px}
+.card:not(.dark) .tbl .r{border-color:#141615}
+.card:not(.dark) .tbl .r span{color:#666}
+</style></head><body>
+
+<!-- 01 표지 -->
+<div class="card cover" id="s1">
+  <img class="bg" src="../../../assets/library/taebaeksan_201800_2563774.jpg" style="object-position:62% 50%">
+  <div class="shade"></div><div class="grad"></div>
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="sub">주말 정상 날씨 #3 · 11.28~29</div>
+  <div class="h2l withsub">일요일 태백산,<br>맑음에 -10℃</div>
+  <div class="lab">WEEKLY · 기상청 11.27 02시 발표</div>
+  <div class="cred">PHOTO · 한국관광공사 박병갑</div>
+</div>
+
+<!-- 02 토요일 -->
+<div class="card dark" id="s2">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 074 · 02/05</div>
+  <div class="kick" style="top:200px">토요일 11.28 · 23곳 중 눈·비 60%는 6곳</div>
+  <div class="head" style="top:246px;right:56px;font-size:72px">토요일은<br>남쪽 산에 눈</div>
+  <div class="tbl" style="top:480px">
+    <div class="r"><b>덕유산</b><span>눈·비 60% · 최대 0.8cm · 낮 -1℃</span></div>
+    <div class="r"><b>한라산</b><span>눈·비 60% · 최대 1.0cm · 낮 0℃</span></div>
+    <div class="r"><b>지리산</b><span>눈·비 60% · 0.5cm 미만 · 낮 2℃</span></div>
+    <div class="r"><b>소백산 · 지산</b><span>비 60%</span></div>
+    <div class="r"><b>설악산</b><span>아침 -5℃ · 낮에도 -2℃</span></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:1010px;font-size:31px">
+    나머지 17곳은 강수확률 30% 이하입니다. 토요일 아침 영하는 <b>10곳</b>,
+    낮에도 영하인 곳은 <b>설악산·덕유산 두 산(무주 포함 3곳)</b>뿐입니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 074</span><span>기상청 단기예보</span></div>
+</div>
+
+<!-- 03 일요일 -->
+<div class="card" id="s3">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 074 · 03/05</div>
+  <div class="kick" style="top:200px">일요일 11.29 · 가장 추운 아침</div>
+  <div class="head" style="top:246px;right:56px;font-size:72px">23곳 중 22곳이<br>영하로 시작</div>
+  <div class="tbl" style="top:500px">
+    <div class="r"><b>설악산</b><span>-11℃ / 낮 -1℃</span></div>
+    <div class="r"><b>오대산</b><span>-10℃ / 낮 0℃</span></div>
+    <div class="r"><b>태백산</b><span>-10℃ / 낮 0℃ · 강수 0%</span></div>
+    <div class="r"><b>소백산</b><span>-10℃ / 낮 0℃ · 강수 0%</span></div>
+    <div class="r"><b>덕유산</b><span>-9℃ / 낮 -1℃</span></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:1000px;font-size:31px">
+    영상으로 시작하는 곳은 부산 황령산(2℃) 하나입니다.
+    강수확률 <b>0%</b>는 9곳, 한라산만 눈 예보(60%)가 남아 있습니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 074</span><span>기상청 단기예보</span></div>
+</div>
+
+<!-- 04 산킷이 고른 곳 -->
+<div class="card dark" id="s4">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 074 · 04/05</div>
+  <div class="kick" style="top:200px">산킷이 고른 세 곳 · 이번엔 일요일</div>
+  <div class="head" style="top:246px;right:56px;font-size:66px">맑은 날을 고르면<br>일요일입니다</div>
+  <div class="spec" style="left:56px;right:56px;top:470px">
+    <div><small>강원 · 일요일</small><b>태백산 <span>강수 0% · -10℃ / 0℃ · 맑음</span></b></div>
+    <div><small>충청·경북 · 일요일</small><b>소백산 · 속리산 <span>둘 다 강수 0% · 소백 -10℃ / 속리 -5℃</span></b></div>
+    <div><small>스키장 · 일요일 강수 0%</small><b>용평 · 하이원 · 알펜시아 · 오투 <span></span></b></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:1000px;font-size:30px">
+    덕유산은 토요일 눈이 온 뒤 일요일 아침 -9℃입니다. 길이 얼 수 있으니
+    아이젠을 챙깁니다. 산불조심기간 통제 탐방로는 출발 전 국립공원공단 공지로 확인합니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 074</span><span>기상청 단기예보</span></div>
+</div>
+
+<!-- 05 마무리 -->
+<div class="card cover" id="s5">
+  <img class="bg" src="../../../assets/library/sobaeksan_201100_1414194.jpg" style="object-position:50% 40%">
+  <div class="shade"></div><div class="grad" style="height:900px"></div>
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="h2l" style="bottom:470px;font-size:58px">토요일 아침,<br>출발 전에 한 번 더</div>
+  <div class="call" style="left:64px;right:64px;bottom:150px;font-size:25px;color:#F4F2EC;line-height:1.55;text-shadow:0 2px 10px rgba(0,0,0,.5)">
+    <b>산킷 한 줄</b> — 영하 10℃ 아침에는 장갑 두 켤레와 보온병이 장비보다 먼저입니다.<br>
+    ※ 정상부 산악예보가 수집되지 않아 기상청 단기예보(산 아래 격자, 11.27 02시 발표) 값입니다. 정상은 더 춥습니다.<br>
+    저장해 두고 토요일 아침에 꺼내 보세요. 매주 금요일 밤 9시, 주말 정상 날씨를 올립니다 — 팔로우해 두세요.
+  </div>
+  <div class="cred" style="right:64px;bottom:72px;color:rgba(244,242,236,.6)">PHOTO · 한국관광공사 차정남 · 분위기 사진</div>
+</div>
+</body></html>
