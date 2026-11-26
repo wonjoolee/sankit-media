@@ -26,7 +26,8 @@ python -c "import PIL; print('   pillow', PIL.__version__)"
 
 echo "[3] playwright + chromium"
 npm i -s playwright@1.56.1
-npx -y playwright@1.56.1 install --with-deps chromium
+npx -y playwright@1.56.1 install --with-deps chromium \
+  || { echo "   --with-deps 실패(러너 OS 변경?) - 의존성 없이 다시"; npx -y playwright@1.56.1 install chromium; }
 node -e "require('playwright').chromium.executablePath()" && echo "   ok"
 
 echo "[4] ffmpeg"
