@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#ccc;font-family:'Noto Sans CJK KR','Noto Sans CJK JP',sans-serif;padding:40px;display:flex;flex-wrap:wrap;gap:40px;width:3600px}
+.card{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F4F2EC;color:#141615}
+.mono{font-family:'DejaVu Sans Mono',monospace}
+.wm{position:absolute;left:56px;top:56px;font-size:30px;font-weight:900;letter-spacing:10px;z-index:3}
+.wm i{font-style:normal;font-weight:300;letter-spacing:4px;margin-left:10px;font-size:.55em;vertical-align:middle}
+.kit{position:absolute;right:56px;top:62px;font-size:20px;letter-spacing:3px;z-index:3}
+.kick{position:absolute;left:56px;font-size:22px;letter-spacing:3px;color:#8a5521;font-weight:700}
+.head{position:absolute;left:56px;font-weight:800;letter-spacing:-1.5px;line-height:1.22}
+.body{position:absolute;font-size:36px;line-height:1.6;font-weight:500;letter-spacing:-.8px}
+.body b{font-weight:900}
+.foot{position:absolute;left:56px;right:56px;bottom:46px;display:flex;justify-content:space-between;font-size:19px;letter-spacing:2px;color:#666;border-top:2px solid #141615;padding-top:16px}
+.dark{background:#141615;color:#F4F2EC}
+.dark .foot{border-color:#F4F2EC;color:#9a9f9c}
+.dark .kick{color:#d9a441}
+/* 사진: 원본 비율 그대로, 위에 아무것도 얹지 않음 */
+.photo{position:absolute;display:block}
+.cred{position:absolute;font-size:15px;letter-spacing:2px;color:#8b8f8c}
+.ring{position:absolute;border:4px solid #141615;border-radius:50%;overflow:hidden;background:#F4F2EC}
+.tick{position:absolute;height:3px;background:#141615}
+.dark .tick{background:#F4F2EC}
+.call{position:absolute;font-size:20px;letter-spacing:2px;line-height:1.5}
+.spec{position:absolute;left:660px;right:56px}
+.spec div{border-top:2px solid #3a3d3b;padding:18px 0 20px}
+.spec small{display:block;font-size:17px;letter-spacing:3px;color:#9a9f9c}
+.spec b{display:block;font-family:'Noto Sans CJK KR',sans-serif;font-size:50px;font-weight:900;letter-spacing:-1px;line-height:1.15;margin-top:4px}
+.spec b span{font-size:24px;font-weight:500;margin-left:6px;letter-spacing:0}
+
+/* ===== 표지(01) 새 형식 (2026-11-11): 사진 한 장 + 한국어 두 줄. 키커·KIT 번호·푸터 없음 ===== */
+.cover{background:#141615;color:#F4F2EC}
+.cover .bg{position:absolute;left:0;top:0;width:1080px;height:1350px;object-fit:cover;display:block}          /* 운영자·공공누리 사진만(자르기 허용) */
+.cover .grad{position:absolute;left:0;right:0;bottom:0;height:720px;background:linear-gradient(180deg,rgba(20,22,21,0) 0%,rgba(20,22,21,.55) 45%,rgba(20,22,21,.92) 100%)}
+.cover .press{position:absolute;left:0;top:0;width:1080px;height:860px;display:flex;align-items:center;justify-content:center;background:#141615}
+.cover .press img{max-width:1080px;max-height:860px;display:block}                                            /* 프레스 사진: 원본 비율, 위에 아무것도 얹지 않음 */
+.cover .wm{color:#F4F2EC;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.cover .h2l{position:absolute;left:64px;right:64px;bottom:150px;font-size:76px;font-weight:900;line-height:1.22;letter-spacing:-2.5px;color:#F4F2EC;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.cover .lab{position:absolute;left:64px;bottom:80px;font-size:20px;letter-spacing:4px;color:rgba(244,242,236,.85)}
+.cover .cred{left:auto;right:64px;bottom:84px;top:auto;color:rgba(244,242,236,.6)}
+.cover .sub{position:absolute;left:64px;right:64px;bottom:128px;font-size:34px;font-weight:800;color:#F2C94C;letter-spacing:-.5px}
+.cover .sub ~ .h2l,.cover .h2l.withsub{bottom:192px}
+.cover .shade{position:absolute;left:0;right:0;top:0;height:220px;background:linear-gradient(180deg,rgba(20,22,21,.55),rgba(20,22,21,0))}
+</style></head><body>
+
+<!-- 01 표지 -->
+<div class="card cover" id="s1">
+  <img class="bg" src="../../../assets/press/gocaf/gocaf_hall.jpg">
+  <div class="shade"></div><div class="grad"></div>
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="sub">내일 개막 · 일산 킨텍스 2전시장</div>
+  <div class="h2l withsub">고카프,<br>내일 10시에<br>엽니다</div>
+  <div class="lab">2026.11.26 · 산킷</div>
+  <div class="cred">사진 제공=메쎄이상(고카프 전시사무국) · 지난 회차 현장</div>
+</div>
+
+<!-- 02 정정 -->
+<div class="card dark" id="s2">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 073</div>
+  <div class="kick" style="top:200px">먼저 정정합니다</div>
+  <div class="head" style="top:246px;right:56px;font-size:70px">20만 원이 아니라<br>10만 원입니다</div>
+  <div class="body" style="left:56px;right:56px;top:470px;font-size:34px">
+    오늘 아침 올린 글에서 구매영수증 이벤트 기준을 <b>20만 원 이상</b>으로 적었습니다.
+    <b>10만 원 이상</b>이 맞습니다.<br><br>
+    고카프 전시사무국에서 정정 요청을 받아 다시 올립니다. 먼저 글을 보시고
+    기준이 높다고 접으신 분이 계실 수 있어 서둘러 바로잡습니다.
+  </div>
+  <div class="spec" style="left:56px;right:56px;top:830px">
+    <div><small>구매영수증 이벤트</small><b>10만 원 이상 <span>마라 소스 등 증정</span></b></div>
+    <div><small>오픈런</small><b>매일 오전 10시 <span>선착순 1,000명 — 텐트 타프 폴</span></b></div>
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 073</span><span>고카프 전시사무국</span></div>
+</div>
+
+<!-- 03 사진 -->
+<div class="card cover" id="s3">
+  <img class="bg" src="../../../assets/press/gocaf/gocaf_stove.jpg">
+  <div class="shade"></div><div class="grad"></div>
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="h2l" style="bottom:300px;font-size:56px">화목난로는<br>직접 보고<br>고르세요</div>
+  <div class="call" style="left:64px;right:64px;bottom:120px;font-size:27px;color:#F4F2EC;line-height:1.55;text-shadow:0 2px 10px rgba(0,0,0,.5)">
+    크기와 마감은 사진으로 안 보입니다. 연통 지름, 유리문 두께, 다리 접히는 방식을
+    손으로 만져 보고 정하는 게 낫습니다. 일산화탄소 경보기도 같이 보세요.
+  </div>
+  <div class="cred" style="right:64px;bottom:72px;color:rgba(244,242,236,.6)">사진 제공=메쎄이상(고카프 전시사무국)</div>
+</div>
+
+<!-- 04 정보 -->
+<div class="card" id="s4">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 073</div>
+  <div class="kick" style="top:200px">가시기 전에</div>
+  <div class="head" style="top:246px;right:56px;font-size:66px">11.27 ~ 29<br>10시 ~ 18시</div>
+  <div class="spec" style="left:56px;right:56px;top:460px">
+    <div><small>장소</small><b>일산 킨텍스 제2전시장 <span>주최 — 주식회사 메쎄이상</span></b></div>
+    <div><small>규모</small><b>약 1,200부스 · 140여 브랜드 <span>겨울 캠핑 · 크리스마스 기획전</span></b></div>
+    <div><small>동시 개최</small><b>코리아 라면페스타 <span>8B홀</span></b></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:880px;font-size:32px">
+    입장권 할인 선결제 예약은 <b>오늘 마감</b>입니다. 공식 앱이나 홈페이지에서
+    예약하면 최대 <b>35%</b>, 현장에서 사면 정가입니다.<br><br>
+    수험생은 수험표를 가져가면 8B홀 '라면작전본부'에서 유니짜장면과 충칭마라탕면을 줍니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 073</span><span>2026 고카프 킨텍스 더 파이널 시즌 PART 2</span></div>
+</div>
+
+<!-- 05 마무리 -->
+<div class="card dark" id="s5">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 073</div>
+  <div class="kick" style="top:280px">산킷 한 줄</div>
+  <div class="head" style="top:330px;right:56px;font-size:62px">틀리면 고쳐서<br>다시 올립니다</div>
+  <div class="body" style="left:56px;right:56px;top:620px;font-size:34px">
+    오늘 아침 글의 숫자가 틀렸습니다. 주최사가 알려 주셔서 알았습니다.
+    숨기고 넘어가는 대신 다시 올립니다.<br><br>
+    산킷이 쓰는 숫자는 공식 발표에서 가져옵니다. 그래도 틀릴 때가 있습니다.
+    <b>보시다가 이상한 게 있으면 알려 주세요.</b> 확인하고 고치겠습니다.
+  </div>
+  <div class="call" style="left:56px;right:56px;top:1030px;font-size:27px;color:#9a9f9c;line-height:1.5">
+    산킷은 이 행사와 아무 관계가 없습니다. 주최사가 배포한 보도자료와 제공 사진으로 만들었습니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 073</span><span>사진 제공=메쎄이상</span></div>
+</div>
+</body></html>
