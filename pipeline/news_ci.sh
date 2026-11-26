@@ -9,11 +9,15 @@ OUT="${1:-queue/$D/slot1}"
 echo "::group::산킷 뉴스 빌드 $D -> $OUT"
 echo "[0] KST $(TZ=Asia/Seoul date '+%F %H:%M')  UTC $(date -u '+%F %H:%M')"
 
-echo "[1] 한글·이모지 글꼴"
-if ! fc-list | grep -q "Noto Sans CJK"; then
+echo "[1] 한글·이모지 글꼴 + ffmpeg"
+NEED=""
+fc-list | grep -q "Noto Sans CJK"     || NEED="$NEED fonts-noto-cjk"
+fc-list | grep -qi "Noto Color Emoji" || NEED="$NEED fonts-noto-color-emoji"
+command -v ffmpeg >/dev/null          || NEED="$NEED ffmpeg"
+if [ -n "$NEED" ]; then
   for i in 1 2 3; do
-    sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk fonts-noto-color-emoji && break
-    echo "   글꼴 설치 실패 ($i/3)"; sleep 20
+    sudo apt-get update -qq && sudo apt-get install -y -qq $NEED && break
+    echo "   설치 실패 ($i/3):$NEED"; sleep 20
   done
 fi
 fc-list | grep -q "Noto Sans CJK"      || { echo "::error::한글 글꼴 없음"; exit 1; }
@@ -31,6 +35,7 @@ npx -y playwright@1.56.1 install --with-deps chromium \
 node -e "require('playwright').chromium.executablePath()" && echo "   ok"
 
 echo "[4] ffmpeg"
+command -v ffmpeg >/dev/null || { echo "::error::ffmpeg 없음"; exit 1; }
 ffmpeg -version | head -1
 
 echo "[5] 데이터 수집"
