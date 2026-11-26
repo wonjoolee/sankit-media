@@ -4,9 +4,9 @@ name: SANKIT NEWS build
 # 새벽에 미리 만들어 두고, 실패하면 07:28 전에 두 번 더 시도한다.
 on:
   schedule:
-    - cron: "35 20 * * *"   # 05:35 KST
-    - cron: "15 21 * * *"   # 06:15 KST  (1차 실패 시)
-    - cron: "50 21 * * *"   # 06:50 KST  (2차 실패 시)
+    - cron: "5 20 * * *"    # 05:05 KST — 매일 제작 작업(05:23)보다 먼저 슬롯1을 잡는다
+    - cron: "50 20 * * *"   # 05:50 KST  (1차 실패 시)
+    - cron: "40 21 * * *"   # 06:40 KST  (2차 실패 시)
   workflow_dispatch:
     inputs:
       selftest:
