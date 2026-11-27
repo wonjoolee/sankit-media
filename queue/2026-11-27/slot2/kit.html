@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#ccc;font-family:'Noto Sans CJK KR','Noto Sans CJK JP',sans-serif;padding:40px;display:flex;flex-wrap:wrap;gap:40px;width:3600px}
+.card{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F4F2EC;color:#141615}
+.mono{font-family:'DejaVu Sans Mono',monospace}
+.wm{position:absolute;left:56px;top:56px;font-size:30px;font-weight:900;letter-spacing:10px;z-index:3}
+.wm i{font-style:normal;font-weight:300;letter-spacing:4px;margin-left:10px;font-size:.55em;vertical-align:middle}
+.kit{position:absolute;right:56px;top:62px;font-size:20px;letter-spacing:3px;z-index:3}
+.kick{position:absolute;left:56px;font-size:22px;letter-spacing:3px;color:#8a5521;font-weight:700}
+.head{position:absolute;left:56px;font-weight:800;letter-spacing:-1.5px;line-height:1.22}
+.body{position:absolute;font-size:36px;line-height:1.6;font-weight:500;letter-spacing:-.8px}
+.body b{font-weight:900}
+.foot{position:absolute;left:56px;right:56px;bottom:46px;display:flex;justify-content:space-between;font-size:19px;letter-spacing:2px;color:#666;border-top:2px solid #141615;padding-top:16px}
+.dark{background:#141615;color:#F4F2EC}
+.dark .foot{border-color:#F4F2EC;color:#9a9f9c}
+.dark .kick{color:#d9a441}
+/* 사진: 원본 비율 그대로, 위에 아무것도 얹지 않음 */
+.photo{position:absolute;display:block}
+.cred{position:absolute;font-size:15px;letter-spacing:2px;color:#8b8f8c}
+.ring{position:absolute;border:4px solid #141615;border-radius:50%;overflow:hidden;background:#F4F2EC}
+.tick{position:absolute;height:3px;background:#141615}
+.dark .tick{background:#F4F2EC}
+.call{position:absolute;font-size:20px;letter-spacing:2px;line-height:1.5}
+.spec{position:absolute;left:660px;right:56px}
+.spec div{border-top:2px solid #3a3d3b;padding:18px 0 20px}
+.spec small{display:block;font-size:17px;letter-spacing:3px;color:#9a9f9c}
+.spec b{display:block;font-family:'Noto Sans CJK KR',sans-serif;font-size:50px;font-weight:900;letter-spacing:-1px;line-height:1.15;margin-top:4px}
+.spec b span{font-size:24px;font-weight:500;margin-left:6px;letter-spacing:0}
+
+/* ===== 표지(01) 새 형식 (2026-11-11): 사진 한 장 + 한국어 두 줄. 키커·KIT 번호·푸터 없음 ===== */
+.cover{background:#141615;color:#F4F2EC}
+.cover .bg{position:absolute;left:0;top:0;width:1080px;height:1350px;object-fit:cover;display:block}          /* 운영자·공공누리 사진만(자르기 허용) */
+.cover .grad{position:absolute;left:0;right:0;bottom:0;height:720px;background:linear-gradient(180deg,rgba(20,22,21,0) 0%,rgba(20,22,21,.55) 45%,rgba(20,22,21,.92) 100%)}
+.cover .press{position:absolute;left:0;top:0;width:1080px;height:860px;display:flex;align-items:center;justify-content:center;background:#141615}
+.cover .press img{max-width:1080px;max-height:860px;display:block}                                            /* 프레스 사진: 원본 비율, 위에 아무것도 얹지 않음 */
+.cover .wm{color:#F4F2EC;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.cover .h2l{position:absolute;left:64px;right:64px;bottom:150px;font-size:76px;font-weight:900;line-height:1.22;letter-spacing:-2.5px;color:#F4F2EC;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.cover .lab{position:absolute;left:64px;bottom:80px;font-size:20px;letter-spacing:4px;color:rgba(244,242,236,.85)}
+.cover .cred{left:auto;right:64px;bottom:84px;top:auto;color:rgba(244,242,236,.6)}
+.cover .sub{position:absolute;left:64px;right:64px;bottom:128px;font-size:34px;font-weight:800;color:#F2C94C;letter-spacing:-.5px}
+.cover .sub ~ .h2l,.cover .h2l.withsub{bottom:192px}
+.cover .shade{position:absolute;left:0;right:0;top:0;height:220px;background:linear-gradient(180deg,rgba(20,22,21,.55),rgba(20,22,21,0))}
+</style></head><body>
+<div class="card dark" id="s1">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 075</div>
+  <div class="kick" style="top:290px">해외 48시간 · 11월 28일(토)</div>
+  <div class="head" style="top:340px;right:56px;font-size:94px">이번 토요일,<br>세계 스키장이<br>한꺼번에 엽니다</div>
+  <div class="body" style="left:56px;right:56px;top:780px;font-size:38px">
+    🇯🇵 일본 니세코 4곳 동시 개장<br>
+    🇫🇷 프랑스 샤모니·발디제르 개장<br>
+    🇺🇸 미국에서 알파인 월드컵 개막<br>
+    🇨🇳 중국 숭리는 이미 9곳이 열렸습니다
+  </div>
+  <div class="call" style="left:56px;right:56px;top:1110px;font-size:28px;color:#d9a441">한국에서 가려면, 보려면 무엇을 알아야 하는지 정리했습니다.</div>
+  <div class="foot"><span class="mono">SANKIT · 075</span><span>일본·프랑스·미국·중국 공식 발표와 현지 보도</span></div>
+</div>
+<div class="card" id="s2">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 075</div>
+  <div class="kick" style="top:200px">🇯🇵 일본 · 홋카이도</div>
+  <div class="head" style="top:246px;right:56px;font-size:72px">니세코 4곳이<br>같은 날 엽니다</div>
+  <div class="spec" style="left:56px;right:56px;top:480px">
+    <div><small>개장</small><b>11월 28일(토) <span>눈 상황에 따라 바뀔 수 있음</span></b></div>
+    <div><small>스키장</small><b>그랑 히라후 · 하나조노 <span>· 빌리지 · 안누푸리</span></b></div>
+    <div><small>시즌 끝</small><b>2027년 5월 5일 <span>히라후·안누푸리 기준</span></b></div>
+    <div><small>전산 공통권</small><b>13,500엔 <span>성수기 1일권</span></b></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:1020px;font-size:30px">
+    <b>한국에서는?</b> 참고 환산 약 11만 3천 원(수출입은행 11.17 고시 100엔=837.17원). 일본 리프트권은 올해도 오름세입니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 075</span><span>니세코 유나이티드 발표 · tabiris(일본)</span></div>
+</div>
+<div class="card dark" id="s3">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 075</div>
+  <div class="kick" style="top:200px">🇫🇷 프랑스 · 알프스</div>
+  <div class="head" style="top:246px;right:56px;font-size:72px">샤모니·발디제르,<br>토요일 개장</div>
+  <div class="spec" style="left:56px;right:56px;top:480px">
+    <div><small>11월 21일 먼저 연 곳</small><b>티뉴 · 발토랑스</b></div>
+    <div><small>11월 28일 개장 예정</small><b>발디제르 · 샤모니 <span>· 레되잘프 · 몽주네브르</span></b></div>
+    <div><small>나머지 큰 스키장</small><b>12월 초부터 <span>차례로</span></b></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:960px;font-size:31px">
+    프랑스 스키 시즌이 이번 주말부터 본격적으로 시작됩니다. 개장일은 모두
+    <b>눈 상황에 따라 바뀔 수 있다</b>는 조건이 붙어 있습니다. 1월 원정을
+    계획 중이라면 지금이 숙소를 잡는 때입니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 075</span><span>J2Ski(영국) 11.17 · 각 리조트 발표</span></div>
+</div>
+<div class="card" id="s4">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 075</div>
+  <div class="kick" style="top:200px">🇺🇸 미국 · 알파인 월드컵</div>
+  <div class="head" style="top:246px;right:56px;font-size:72px">시프린의 홈,<br>킬링턴이 돌아옵니다</div>
+  <div class="spec" style="left:56px;right:56px;top:480px">
+    <div><small>킬링턴(버몬트) · 여자</small><b>대회전 · 회전 <span>11.28~29 · 1년 쉬고 복귀</span></b></div>
+    <div><small>코퍼마운틴(콜로라도) · 남자</small><b>슈퍼대회전 · 대회전 <span>11.28~29</span></b></div>
+    <div><small>한국 시간 (킬링턴 1차 시작)</small><b>토 23:30 · 월 00:30 <span>대회전 · 회전</span></b></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:1000px;font-size:30px">
+    <b>한국에서는?</b> 국내 중계는 아직 확인되지 않았습니다. 시간은 킬링턴이 발표한 미국 동부 시각 방송 일정을 한국 시간으로 옮긴 것입니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 075</span><span>U.S. Ski &amp; Snowboard · killington.com</span></div>
+</div>
+<div class="card dark" id="s5">
+  <div class="wm">SANKIT<i>산킷</i></div><div class="kit mono">KIT 075</div>
+  <div class="kick" style="top:200px">🇨🇳 중국 · 허베이성 숭리</div>
+  <div class="head" style="top:246px;right:56px;font-size:70px">이미 9곳이 열렸고,<br>지난 시즌 605만 명</div>
+  <div class="spec" style="left:56px;right:56px;top:480px">
+    <div><small>규모</small><b>슬로프 219개 <span>총 약 178km</span></b></div>
+    <div><small>지난 시즌 방문객</small><b>605만 명 <span>전년보다 16.3% 증가</span></b></div>
+    <div><small>첫 개장</small><b>완룽 10월 23일 <span>첫 주 하루 평균 3,000명 이상</span></b></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:970px;font-size:31px">
+    베이징 동계올림픽이 열린 곳입니다. <b>이번 주말 한 곳만 갈 수 있다면 어디로 가시겠어요?</b> 댓글로 알려 주세요. 저장해 두시면 원정 계획 짤 때 꺼내 보기 좋습니다.
+  </div>
+  <div class="foot"><span class="mono">SANKIT · 075</span><span>신화사 11.17·11.19 보도</span></div>
+</div>
+</body></html>

@@ -13,7 +13,8 @@
 import json, sys
 from datetime import date, timedelta
 
-WX_N, ETC_N = 3, 7      # 한 장에 싣는 날씨 줄 / 업계·행사 줄 수 (3:7)
+WX_N, ETC_N = 3, 7
+OVERSEAS_MIN = 4         # 업계 7줄 중 해외 최소 줄 수 (2026-11-27)      # 한 장에 싣는 날씨 줄 / 업계·행사 줄 수 (3:7)
 
 SKI = ['용평','하이원','휘닉스','비발디파크','알펜시아','웰리힐리','무주덕유산',
        '곤지암','지산','엘리시안강촌','오크밸리','오투']
@@ -186,7 +187,16 @@ def build(d0):
             rows = [r for r in csv.DictReader(fh)
                     if r['수집일'] <= d0.isoformat()
                     and (date.fromisoformat(r['수집일']) + timedelta(days=21)) >= d0]
-        industry = [r['내용'] for r in rows]
+        # 2026-11-27 운영자 지시: 해외 소식을 뉴스의 주 통로로 쓴다.
+        # 최신순으로 정렬하고(같은 줄이 매일 맨 위에 남지 않게), 업계 줄 중 해외(🇰🇷·🚫 아닌 줄)를
+        # 최소 OVERSEAS_MIN 개 앞세운다. 해외 줄은 수집 후 3일까지만 싣는다(신선도).
+        rows.sort(key=lambda r: r['수집일'], reverse=True)
+        dom = [r for r in rows if r['내용'].startswith(('🇰🇷', '🚫'))]
+        ovs = [r for r in rows if not r['내용'].startswith(('🇰🇷', '🚫'))
+               and (date.fromisoformat(r['수집일']) + timedelta(days=3)) >= d0]
+        room = ETC_N - len(urgent)
+        n_ovs = min(len(ovs), max(OVERSEAS_MIN, room - len(dom)))
+        industry = [r['내용'] for r in ovs[:n_ovs]] + [r['내용'] for r in dom]
     except FileNotFoundError:
         pass
 
