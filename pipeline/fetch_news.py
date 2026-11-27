@@ -18,24 +18,29 @@ DAYS = int(sys.argv[sys.argv.index('--days')+1]) if '--days' in sys.argv else 14
 OUT = 'research/news_feed.csv'
 UA = {'User-Agent': 'Mozilla/5.0 (compatible; SANKIT-magazine/1.0; +https://instagram.com/sankitmag)'}
 
-# (지역, 매체, 피드)  — 지역은 뉴스 줄의 국가 이모지를 고르는 데 쓴다
+# (지역, 매체, [후보 주소...]) — 주소는 바뀐다. 여러 개 적어 두고 먼저 읽히는 것을 쓴다.
+# 뺀 곳: PlanetSKI, Snow-Forecast — 자동 접근을 403으로 거절한다. 우회하지 않는다.
+# 쓰려면 사람이 직접 읽거나 프레스 메일로 허락을 받아야 한다.
 SOURCES = [
-    ('미국', 'SnowBrains',            'https://snowbrains.com/feed/'),
-    ('미국', 'Unofficial Networks',   'https://unofficialnetworks.com/feed/'),
-    ('미국', 'Outside Business Jrnl', 'https://www.outsidebusinessjournal.com/feed/'),
-    ('미국', 'SGB Media',             'https://sgbonline.com/feed/'),
-    ('미국', 'GearJunkie',            'https://gearjunkie.com/feed'),
-    ('미국', 'Blister',               'https://blisterreview.com/feed'),
-    ('미국', 'Freeskier',             'https://freeskier.com/feed'),
-    ('유럽', 'PlanetSKI',             'https://planetski.eu/feed/'),
-    ('유럽', 'InTheSnow',             'https://www.inthesnow.com/feed/'),
-    ('유럽', 'J2Ski',                 'https://www.j2ski.com/ski-news/rss.xml'),
-    ('유럽', 'Snow-Forecast',         'https://www.snow-forecast.com/whiteroom/feed'),
-    ('유럽', 'ISPO',                  'https://www.ispo.com/en/rss.xml'),
-    ('국제', 'FIS',                   'https://www.fis-ski.com/DB/general/rss.html'),
-    ('국제', 'Outdoor Industry',      'https://outdoorindustry.org/feed/'),
-    ('일본', 'SnowJapan',             'https://www.snowjapan.com/feed'),
-    ('일본', 'Traicy',                'https://www.traicy.com/feed'),
+    ('미국', 'SnowBrains',            ['https://snowbrains.com/feed/']),
+    ('미국', 'Unofficial Networks',   ['https://unofficialnetworks.com/feed/']),
+    ('미국', 'Outside Business Jrnl', ['https://www.outsidebusinessjournal.com/feed/']),
+    ('미국', 'SGB Media',             ['https://sgbonline.com/feed/']),
+    ('미국', 'GearJunkie',            ['https://gearjunkie.com/feed']),
+    ('미국', 'Blister',               ['https://blisterreview.com/feed']),
+    ('미국', 'Freeskier',             ['https://freeskier.com/feed']),
+    ('미국', 'SKI Magazine',          ['https://www.skimag.com/feed/']),
+    ('유럽', 'InTheSnow',             ['https://www.inthesnow.com/feed/']),
+    ('유럽', 'J2Ski',                 ['https://www.j2ski.com/rss/ski-news.xml',
+                                       'https://www.j2ski.com/ski-news/rss',
+                                       'https://www.j2ski.com/feed/']),
+    ('유럽', 'MountainBlog',          ['https://www.mountainblog.it/feed/']),
+    ('유럽', 'ISPO',                  ['https://www.ispo.com/en/rss',
+                                       'https://www.ispo.com/rss.xml']),
+    ('국제', 'Outdoor Industry',      ['https://outdoorindustry.org/feed/']),
+    ('일본', 'SnowJapan',             ['https://www.snowjapan.com/news/feed',
+                                       'https://www.snowjapan.com/rss']),
+    ('일본', 'Traicy',                ['https://www.traicy.com/feed']),
 ]
 
 def txt(e, *tags):
@@ -93,11 +98,18 @@ def main():
     seen = {r['링크'] for r in old}
 
     fresh, report = [], []
-    for region, name, url in SOURCES:
-        try:
-            items = pull(url)
-        except Exception as e:
-            report.append(f'  {name:<22} 실패  {type(e).__name__} {str(e)[:60]}')
+    for region, name, urls in SOURCES:
+        items, why = None, ''
+        for u in urls:
+            try:
+                items = pull(u)
+                if items:
+                    break
+                why = '항목 0개'
+            except Exception as e:
+                why = f'{type(e).__name__} {str(e)[:50]}'
+        if not items:
+            report.append(f'  {name:<22} 실패  {why}')
             continue
         n = 0
         for pub, title, link in items[:30]:
