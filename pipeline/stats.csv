@@ -1,12 +1,12 @@
 date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,posted_at
-2026-11-03,slot1,carousel,KIT 009 · GARMIN ENDURO 4,,,,,3,0,,,,09:09
-2026-11-03,slot1,reel,KIT 009 · GARMIN ENDURO 4,,,,,0,0,,,,09:09
-2026-11-03,slot2,carousel,KIT 010 · THE GEAR HE WINS ON,,,,,3,0,,,,12:33
-2026-11-03,slot2,reel,KIT 010 · THE GEAR HE WINS ON,,,,,4,0,,,,12:33
-2026-11-03,slot3,carousel,KIT 011 · ROAD TO NAMELESS TOWER,,,,,2,0,,,,19:46
-2026-11-03,slot3,reel,KIT 011 · ROAD TO NAMELESS TOWER,,,,,0,0,,,,19:46
-2026-11-04,slot1,carousel,KIT 012 · GARMIN EDGE 1060,,,,,2,0,,,,08:01
-2026-11-04,slot1,reel,KIT 012 · GARMIN EDGE 1060,,,,,0,0,,,,08:01
+2026-11-03,slot1,carousel,KIT 009 · GARMIN ENDURO 4,,,,,,,,,,09:09
+2026-11-03,slot1,reel,KIT 009 · GARMIN ENDURO 4,,,,,,,,,,09:09
+2026-11-03,slot2,carousel,KIT 010 · THE GEAR HE WINS ON,,,,,,,,,,12:33
+2026-11-03,slot2,reel,KIT 010 · THE GEAR HE WINS ON,,,,,,,,,,12:33
+2026-11-03,slot3,carousel,KIT 011 · ROAD TO NAMELESS TOWER,,,,,,,,,,19:46
+2026-11-03,slot3,reel,KIT 011 · ROAD TO NAMELESS TOWER,,,,,,,,,,19:46
+2026-11-04,slot1,carousel,KIT 012 · GARMIN EDGE 1060,,,,,,,,,,08:01
+2026-11-04,slot1,reel,KIT 012 · GARMIN EDGE 1060,,,,,,,,,,08:01
 2026-11-04,slot2,carousel,KIT 014 · X-PYR 2026,,,,,1,0,,,,19:45
 2026-11-04,slot2,reel,KIT 014 · X-PYR 2026,,,,,1,0,,,,19:45
 2026-11-04,slot4,carousel,KIT 013 · 단신,,,,,,,,,,12:00
@@ -35,7 +35,7 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-08,slot3,reel,KIT 031 · THE SHRINKING KOREAN SKI SEASO,news,,,number,2,0,,,,20:59
 2026-11-09,slot1,carousel,KIT 033 · GARMIN FĒNIX 9,product,narrow,,question,3,0,,,,07:29
 2026-11-09,slot1,reel,KIT 033 · GARMIN FĒNIX 9,product,narrow,,question,2,0,,,,07:29
-2026-11-09,slot2,carousel,SANKIT · START HERE,guide,broad,,statement,56,0,,,,09:43
+2026-11-09,slot2,carousel,SANKIT · START HERE,guide,broad,,statement,62,0,,,,09:43
 2026-11-09,slot2,reel,SANKIT · START HERE,guide,broad,,statement,3,0,,,,09:43
 2026-11-09,slot3,carousel,KIT 034 · SHIFFRIN'S EXPLORATION SEASON,news,broad,,question,2,0,,,,20:59
 2026-11-09,slot3,reel,KIT 034 · SHIFFRIN'S EXPLORATION SEASON,news,broad,,question,0,0,,,,20:59
@@ -55,7 +55,7 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-12,slot2,carousel,"이번 주 산킷 #1 — 주말 비 60%, 갈 곳 셋 (SANKIT WEE",weekly,broad,E,number,3,0,,,,12:09
 2026-11-12,slot3,carousel,"올겨울 첫 슬로프, 11월 20일 휘닉스 (KIT 043)",news,broad,list,date,1,0,,,,09:10
 2026-11-12,slot3,reel,"올겨울 첫 슬로프, 11월 20일 휘닉스 (KIT 043)",news,broad,list,date,4,0,,,,09:10
-2026-11-13,slot1,carousel,"주말 내내 비 예보, 부산은 오늘 밤 황령산 (KIT 044)",guide,broad,E,contrast,3,0,,,,07:29
+2026-11-13,slot1,carousel,"주말 내내 비 예보, 부산은 오늘 밤 황령산 (KIT 044)",guide,broad,E,contrast,5,0,,,,07:29
 2026-11-13,slot1,reel,"주말 내내 비 예보, 부산은 오늘 밤 황령산 (KIT 044)",guide,broad,E,contrast,3,0,,,,07:29
 2026-11-13,slot2,carousel,"18년 만에 처음, 비 막는 마이크로라이트 (KIT 042)",product,narrow,A,number,4,0,,,,12:09
 2026-11-13,slot2,reel,"18년 만에 처음, 비 막는 마이크로라이트 (KIT 042)",product,narrow,A,number,3,0,,,,12:09
@@ -64,10 +64,10 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-14,slot1,carousel,"월요일 설악산에 눈 예보, 낮 최고 3℃ (KIT 046)",news,broad,E,number,4,0,,,,07:29
 2026-11-14,slot1,reel,"월요일 설악산에 눈 예보, 낮 최고 3℃ (KIT 046)",news,broad,E,number,4,0,,,,07:29
 2026-11-14,slot3,carousel,"11월 20일 휘닉스부터, 올겨울 스키 달력 (KIT 047)",guide,broad,E,number,5,0,,,,20:59
-2026-11-14,slot3,reel,"11월 20일 휘닉스부터, 올겨울 스키 달력 (KIT 047)",guide,broad,E,number,2,0,,,,20:59
+2026-11-14,slot3,reel,"11월 20일 휘닉스부터, 올겨울 스키 달력 (KIT 047)",guide,broad,E,number,3,0,,,,20:59
 2026-11-15,slot1,carousel,"오늘부터 한 달, 148구간이 닫힌다 (KIT 048)",news,broad,E,number,10,0,,,,07:29
-2026-11-15,slot1,reel,"오늘부터 한 달, 148구간이 닫힌다 (KIT 048)",news,broad,E,number,11,0,,,,07:29
-2026-11-15,slot2,carousel,주말 어디 다녀오셨어요 #1 — 첫 스키는 11월? 12월?,weekly,broad,E,question,9,0,,,,12:09
+2026-11-15,slot1,reel,"오늘부터 한 달, 148구간이 닫힌다 (KIT 048)",news,broad,E,number,12,0,,,,07:29
+2026-11-15,slot2,carousel,주말 어디 다녀오셨어요 #1 — 첫 스키는 11월? 12월?,weekly,broad,E,question,10,0,,,,12:09
 2026-11-15,slot2,reel,주말 어디 다녀오셨어요 #1 — 첫 스키는 11월? 12월?,weekly,broad,E,question,3,0,,,,12:09
 2026-11-16,slot1,carousel,"사흘 비 그친 목요일, 23곳 중 22곳이 영하 (KIT 049)",news,broad,E,number,,,,,,10:00
 2026-11-16,slot1,reel,"사흘 비 그친 목요일, 23곳 중 22곳이 영하 (KIT 049)",news,broad,E,number,,,,,,10:00
@@ -76,26 +76,42 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-16,slot3,carousel,"PCT에서 가장 많이 쓴 텐트, 왜 한국엔 없을까 (KIT 051)",whynot,narrow,A,number,10,0,,,,21:00
 2026-11-17,slot1,carousel,"한라산, 수요일부터 나흘 내리 눈 예보 (KIT 053)",news,broad,E,number,16,0,,,,07:29
 2026-11-17,slot1,reel,"한라산, 수요일부터 나흘 내리 눈 예보 (KIT 053)",news,broad,E,number,7,0,,,,07:29
-2026-11-17,slot2,carousel,"18분이면 1,458m, 케이블카로 가는 겨울 산 (KIT 050)",guide,broad,E,number,17,0,,,,12:09
+2026-11-17,slot2,carousel,"18분이면 1,458m, 케이블카로 가는 겨울 산 (KIT 050)",guide,broad,E,number,18,0,,,,12:09
 2026-11-17,slot2,reel,"18분이면 1,458m, 케이블카로 가는 겨울 산 (KIT 050)",guide,broad,E,number,3,0,,,,12:09
-2026-11-17,slot3,carousel,"프리라이드 챔피언의 스키, 왜 한국엔 없을까 (KIT 054)",whynot,narrow,A,question,15,0,,,,21:00
-2026-11-17,slot5,carousel,낙엽이 다 떨어지기 전에 브롬톤을 타자고요 :) (KIT 055),owner,narrow,news,question,23,1,,,,22:09
+2026-11-17,slot3,carousel,"프리라이드 챔피언의 스키, 왜 한국엔 없을까 (KIT 054)",whynot,narrow,A,question,14,0,,,,21:00
+2026-11-17,slot5,carousel,낙엽이 다 떨어지기 전에 브롬톤을 타자고요 :) (KIT 055),owner,narrow,news,question,22,1,,,,22:09
 2026-11-17,slot5,reel,낙엽이 다 떨어지기 전에 브롬톤을 타자고요 :) (KIT 055),owner,narrow,news,question,4,0,,,,22:09
-2026-11-18,slot1,carousel,"강원 스키장 6곳 오늘 눈, 내일 아침은 -7℃ (KIT 056)",news,broad,E,number,25,0,,,,07:29
+2026-11-18,slot1,carousel,"강원 스키장 6곳 오늘 눈, 내일 아침은 -7℃ (KIT 056)",news,broad,E,number,24,0,,,,07:29
 2026-11-18,slot1,reel,"강원 스키장 6곳 오늘 눈, 내일 아침은 -7℃ (KIT 056)",news,broad,E,number,3,0,,,,07:29
-2026-11-18,slot3,carousel,"유타에 이번 주 1m 눈 예보, 파크시티 금요일 개장 (KIT 057)",news,broad,D,number,21,0,,,,21:00
-2026-11-19,slot1,carousel,"일요일 모나용평 개장, 리프트권 1만 원 (KIT 058)",news,broad,E,number,22,0,,,,07:29
+2026-11-18,slot3,carousel,"유타에 이번 주 1m 눈 예보, 파크시티 금요일 개장 (KIT 057)",news,broad,D,number,20,0,,,,21:00
+2026-11-19,slot1,carousel,"일요일 모나용평 개장, 리프트권 1만 원 (KIT 058)",news,broad,E,number,21,0,,,,07:29
 2026-11-19,slot2,carousel,"포항 불꽃, 순창 떡볶이, 그리고 산 셋 (이번 주 산킷 #2)",weekly,broad,E,statement,,,,,,12:09
-2026-11-19,slot3,carousel,"아크테릭스, 내년 가을 서울에 4층 매장 연다 (KIT 059)",news,narrow,D,number,18,0,,,,21:00
-2026-11-20,slot1,carousel,"네파의 주인이 바뀝니다 — K2, 아이더, 그리고 네파 (KIT 060)",news,narrow,D,statement,23,0,,,,07:29
-2026-11-20,slot2,carousel,"일본 스키 시즌, 이번 주말 열린다 (KIT 062)",news,broad,E,statement,23,0,,,,12:10
-2026-11-20,slot3,carousel,"주말 정상 날씨 #2 — 일요일 아침, 23곳 모두 영하 (KIT 063",weekly,broad,E,number,22,0,,,,20:59
+2026-11-19,slot3,carousel,"아크테릭스, 내년 가을 서울에 4층 매장 연다 (KIT 059)",news,narrow,D,number,17,0,,,,21:00
+2026-11-20,slot1,carousel,"네파의 주인이 바뀝니다 — K2, 아이더, 그리고 네파 (KIT 060)",news,narrow,D,statement,22,0,,,,07:29
+2026-11-20,slot2,carousel,"일본 스키 시즌, 이번 주말 열린다 (KIT 062)",news,broad,E,statement,22,0,,,,12:10
+2026-11-20,slot3,carousel,"주말 정상 날씨 #2 — 일요일 아침, 23곳 모두 영하 (KIT 063",weekly,broad,E,number,21,0,,,,20:59
 2026-11-20,slot3,reel,"주말 정상 날씨 #2 — 일요일 아침, 23곳 모두 영하 (KIT 063",weekly,broad,E,number,8,1,,,,20:59
-2026-11-20,slot4,carousel,"엔저에 아웃도어 쇼핑, 지금 어떨까요 (에디터가 다녀왔습니다 01)",owner,narrow,visit,question,20,0,,,,01:07
+2026-11-20,slot4,carousel,"엔저에 아웃도어 쇼핑, 지금 어떨까요 (에디터가 다녀왔습니다 01)",owner,narrow,visit,question,19,0,,,,01:07
 2026-11-20,slot4,reel,"엔저에 아웃도어 쇼핑, 지금 어떨까요 (에디터가 다녀왔습니다 01)",owner,narrow,visit,question,5,0,,,,01:07
-2026-11-21,slot1,carousel,시즌이 열렸습니다 — 레비 (KIT 061),news,narrow,D,statement,14,0,,,,07:29
-2026-11-21,slot2,carousel,"하이원, 화요일 연다 종일권 2,000원 (KIT 064)",news,broad,E,number,11,0,,,,12:09
-2026-11-21,slot3,carousel,한라산 성판악은 오전 11시 30분에 닫힌다 (KIT 065),guide,broad,E,number,26,0,,,,20:59
-2026-11-21,slot3,reel,한라산 성판악은 오전 11시 30분에 닫힌다 (KIT 065),guide,broad,E,number,8,0,,,,20:59
-2026-11-22,slot1,carousel,손님 540만 명이 주인이던 가게 (KIT 066),,,,,19,0,,,,10:54
-2026-11-24,slot3,carousel,이 산은 스위스에만 있는 게 아닙니다 (KIT 067),,broad,E,,7,1,,,,19:30
+2026-11-21,slot1,carousel,시즌이 열렸습니다 — 레비 (KIT 061),news,narrow,D,statement,16,0,,,,07:29
+2026-11-21,slot2,carousel,"하이원, 화요일 연다 종일권 2,000원 (KIT 064)",news,broad,E,number,12,0,,,,12:09
+2026-11-21,slot3,carousel,한라산 성판악은 오전 11시 30분에 닫힌다 (KIT 065),guide,broad,E,number,29,0,,,,20:59
+2026-11-21,slot3,reel,한라산 성판악은 오전 11시 30분에 닫힌다 (KIT 065),guide,broad,E,number,9,0,,,,20:59
+2026-11-22,slot1,carousel,손님 540만 명이 주인이던 가게 (KIT 066),,,,,22,2,,,,10:54
+2026-11-24,slot3,carousel,이 산은 스위스에만 있는 게 아닙니다 (KIT 067),,broad,E,,13,1,,,,19:30
+2026-11-25,slot1,carousel,이탈리아에선 헬멧이 법입니다 (KIT 068),,broad,E,,10,1,,,,07:49
+2026-11-25,slot2,carousel,KIT 016 · SANKIT GUIDE,,broad,E,,10,1,,,,13:46
+2026-11-25,slot2,reel,KIT 016 · SANKIT GUIDE,,broad,E,,3,0,,,,13:46
+2026-11-25,slot3,carousel,"출발 전 5분, 타이어부터 (KIT 069)",,broad,E,,16,1,,,,21:50
+2026-11-25,slot3,reel,"출발 전 5분, 타이어부터 (KIT 069)",,broad,E,,23,0,,,,21:50
+2026-11-25,slot4,carousel,산킷 뉴스 11월 25일 수요일 ⛰️,,broad,E,,10,0,,,,08:19
+2026-11-26,slot1,carousel,산킷 뉴스 11월 26일 목요일 ⛰️,,broad,E,,7,0,,,,09:38
+2026-11-26,slot1,reel,산킷 뉴스 11월 26일 목요일 ⛰️,,broad,E,,6,0,,,,09:38
+2026-11-26,slot2,carousel,KIT 020 · SANKIT GUIDE,,broad,E,,7,0,,,,12:57
+2026-11-26,slot2,reel,KIT 020 · SANKIT GUIDE,,broad,E,,3,0,,,,12:57
+2026-11-26,slot3,carousel,두꺼운 양말이 더 따뜻하지 않습니다 (KIT 071),,broad,E,,8,1,,,,20:42
+2026-11-26,slot4,carousel,"올해 마지막 캠핑 페스티벌, 할인은 오늘까지 (KIT 070)",,broad,E,,,,,,,09:41
+2026-11-26,slot5,carousel,"고카프, 내일 10시에 엽니다 — 그리고 정정합니다 (KIT 073)",,broad,E,,10,0,,,,16:03
+2026-11-27,slot1,carousel,산킷 뉴스 11월 27일 금요일 ⛰️,,broad,E,,8,0,,,,07:29
+2026-11-27,slot1,reel,산킷 뉴스 11월 27일 금요일 ⛰️,,broad,E,,6,0,,,,07:29
+2026-11-27,slot2,carousel,"이번 토요일, 세계 스키장이 한꺼번에 엽니다 (KIT 075)",,broad,C,,0,0,,,,12:10
