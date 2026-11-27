@@ -3,7 +3,8 @@ name: SANKIT fetch public data
 on:
   workflow_dispatch:
   schedule:
-    - cron: "40 19 * * *"   # 04:40 KST 백업 (실제로는 새벽 제작 세션이 직접 실행)
+    - cron: "40 19 * * *"   # 04:40 KST — 뉴스 제작(05:05)과 제작 세션(05:23)보다 먼저
+    - cron: "0 10 * * *"    # 19:00 KST — 유럽·미국 낮 시간대 기사를 한 번 더 긁는다
 
 permissions:
   contents: write
@@ -14,7 +15,7 @@ concurrency:
 
 jobs:
   fetch:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -25,9 +26,12 @@ jobs:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
           KMA_KEY: ${{ secrets.KMA_KEY }}
         run: python pipeline/fetch_data.py
+      - name: 해외 업계 소식 RSS 수집
+        continue-on-error: true
+        run: python pipeline/fetch_news.py --days 14
       - name: Commit
         run: |
           git config user.name "SANKIT bot"
           git config user.email "sankit-bot@users.noreply.github.com"
-          git add data
+          git add data research/news_feed.csv
           git diff --cached --quiet || (git commit -m "data $(TZ=Asia/Seoul date +%F-%H%M)" && (git push || (git pull --rebase && git push)))
