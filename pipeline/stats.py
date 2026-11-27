@@ -7,8 +7,16 @@ if not (T and U):
     raise SystemExit(0)
 import datetime  # every 3h: 호출 수 절약(앱 호출 한도)
 _n = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9)))
-if not os.environ.get("FORCE_STATS") and not (_n.hour % 3 == 0 and _n.minute < 15):
+# 2026-11-27: GitHub 예약 실행이 거의 돌지 않아 "3의 배수 시 00~14분" 창에 실행이 걸리지 않았다(반응 수가 멈춤).
+# 시계 창 대신 마지막 갱신 시각으로 판단한다: 마지막 갱신 후 2시간 50분이 지났으면 돈다.
+_last = os.path.join(ROOT, "pipeline", "stats_last.txt")
+try:
+    _prev = datetime.datetime.fromisoformat(open(_last).read().strip())
+except Exception:
+    _prev = None
+if not os.environ.get("FORCE_STATS") and _prev and (_n - _prev) < datetime.timedelta(hours=2, minutes=50):
     raise SystemExit(0)
+open(_last, "w").write(_n.isoformat())
 q = urllib.parse.urlencode({"fields": "id,like_count,comments_count", "limit": 100, "access_token": T})
 with urllib.request.urlopen(f"https://graph.facebook.com/v21.0/{U}/media?{q}", timeout=60) as r:
     m = {x["id"]: x for x in json.load(r).get("data", [])}
@@ -19,7 +27,7 @@ sp = os.path.join(ROOT, "pipeline", "stats.csv")
 if os.path.exists(sp):
     for r0 in csv.DictReader(open(sp, encoding="utf-8")):
         old[(r0["date"], r0["slot"], r0["kind"])] = r0
-want_ins = os.environ.get("FORCE_STATS") or _n.hour == 9
+want_ins = os.environ.get("FORCE_STATS") or (_n.hour >= 9 and (_prev is None or _prev.date() < _n.date() or _prev.hour < 9))
 
 
 def insights(mid):
