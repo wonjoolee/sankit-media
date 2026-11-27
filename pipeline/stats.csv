@@ -7,8 +7,8 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-03,slot3,reel,KIT 011 · ROAD TO NAMELESS TOWER,,,,,,,,,,19:46
 2026-11-04,slot1,carousel,KIT 012 · GARMIN EDGE 1060,,,,,,,,,,08:01
 2026-11-04,slot1,reel,KIT 012 · GARMIN EDGE 1060,,,,,,,,,,08:01
-2026-11-04,slot2,carousel,KIT 014 · X-PYR 2026,,,,,1,0,,,,19:45
-2026-11-04,slot2,reel,KIT 014 · X-PYR 2026,,,,,1,0,,,,19:45
+2026-11-04,slot2,carousel,KIT 014 · X-PYR 2026,,,,,,,,,,19:45
+2026-11-04,slot2,reel,KIT 014 · X-PYR 2026,,,,,,,,,,19:45
 2026-11-04,slot4,carousel,KIT 013 · 단신,,,,,,,,,,12:00
 2026-11-05,slot1,carousel,KIT 017 · HAGLÖFS × POLARTEC STANDARD IS,,,,,1,0,,,,09:04
 2026-11-05,slot1,reel,KIT 017 · HAGLÖFS × POLARTEC STANDARD IS,,,,,,,,,,09:04
@@ -101,18 +101,20 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-24,slot3,carousel,이 산은 스위스에만 있는 게 아닙니다 (KIT 067),,broad,E,,13,1,,,,19:30
 2026-11-25,slot1,carousel,이탈리아에선 헬멧이 법입니다 (KIT 068),,broad,E,,10,1,,,,07:49
 2026-11-25,slot2,carousel,KIT 016 · SANKIT GUIDE,,broad,E,,11,1,,,,13:46
-2026-11-25,slot2,reel,KIT 016 · SANKIT GUIDE,,broad,E,,3,0,,,,13:46
+2026-11-25,slot2,reel,KIT 016 · SANKIT GUIDE,,broad,E,,4,0,,,,13:46
 2026-11-25,slot3,carousel,"출발 전 5분, 타이어부터 (KIT 069)",,broad,E,,17,1,,,,21:50
-2026-11-25,slot3,reel,"출발 전 5분, 타이어부터 (KIT 069)",,broad,E,,23,0,,,,21:50
+2026-11-25,slot3,reel,"출발 전 5분, 타이어부터 (KIT 069)",,broad,E,,25,0,,,,21:50
 2026-11-25,slot4,carousel,산킷 뉴스 11월 25일 수요일 ⛰️,,broad,E,,11,0,,,,08:19
 2026-11-26,slot1,carousel,산킷 뉴스 11월 26일 목요일 ⛰️,,broad,E,,8,0,,,,09:38
-2026-11-26,slot1,reel,산킷 뉴스 11월 26일 목요일 ⛰️,,broad,E,,6,0,,,,09:38
+2026-11-26,slot1,reel,산킷 뉴스 11월 26일 목요일 ⛰️,,broad,E,,7,0,,,,09:38
 2026-11-26,slot2,carousel,KIT 020 · SANKIT GUIDE,,broad,E,,8,0,,,,12:57
-2026-11-26,slot2,reel,KIT 020 · SANKIT GUIDE,,broad,E,,3,0,,,,12:57
+2026-11-26,slot2,reel,KIT 020 · SANKIT GUIDE,,broad,E,,4,0,,,,12:57
 2026-11-26,slot3,carousel,두꺼운 양말이 더 따뜻하지 않습니다 (KIT 071),,broad,E,,10,1,,,,20:42
 2026-11-26,slot4,carousel,"올해 마지막 캠핑 페스티벌, 할인은 오늘까지 (KIT 070)",,broad,E,,,,,,,09:41
 2026-11-26,slot5,carousel,"고카프, 내일 10시에 엽니다 — 그리고 정정합니다 (KIT 073)",,broad,E,,11,0,,,,16:03
-2026-11-27,slot1,carousel,산킷 뉴스 11월 27일 금요일 ⛰️,,broad,E,,10,0,,,,07:29
-2026-11-27,slot1,reel,산킷 뉴스 11월 27일 금요일 ⛰️,,broad,E,,6,0,,,,07:29
-2026-11-27,slot2,carousel,"이번 토요일, 세계 스키장이 한꺼번에 엽니다 (KIT 075)",,broad,C,,6,0,,,,12:10
+2026-11-27,slot1,carousel,산킷 뉴스 11월 27일 금요일 ⛰️,,broad,E,,11,0,,,,07:29
+2026-11-27,slot1,reel,산킷 뉴스 11월 27일 금요일 ⛰️,,broad,E,,7,0,,,,07:29
+2026-11-27,slot2,carousel,"이번 토요일, 세계 스키장이 한꺼번에 엽니다 (KIT 075)",,broad,C,,7,0,,,,12:10
 2026-11-27,slot3,carousel,"주말 정상 날씨 #3 — 일요일 태백산, 맑음에 -10℃ (KIT 074",weekly,broad,E,number,,,,,,13:21
+2026-11-28,slot1,carousel,산킷 뉴스 11월 28일 토요일 ⛰️,,broad,E,,0,0,,,,07:32
+2026-11-28,slot1,reel,산킷 뉴스 11월 28일 토요일 ⛰️,,broad,E,,0,0,,,,07:32
