@@ -12,6 +12,10 @@ on:
         description: "1이면 게시하지 않고 확인만"
         required: false
         default: "0"
+      feed_only:
+        description: "1이면 인스타 피드(캐러셀)만 올린다 — 릴스·스토리·쓰레드 없음"
+        required: false
+        default: "0"
 
 permissions:
   contents: write
@@ -62,6 +66,8 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           SLOT: ${{ github.event.inputs.slot }}
           DRY_RUN: ${{ github.event.inputs.dry_run }}
+          NO_REEL: ${{ github.event.inputs.feed_only }}
+          NO_STORY: ${{ github.event.inputs.feed_only }}
         run: python pipeline/run_slot.py
       - name: Post to Threads
         if: always()
@@ -73,6 +79,7 @@ jobs:
           SLOT: ${{ github.event.inputs.slot }}
         run: |
           if [ -z "$TH_TOKEN" ]; then echo "TH_TOKEN 없음 - 쓰레드 건너뜀"; exit 0; fi
+          if [ "${{ github.event.inputs.feed_only }}" = "1" ]; then echo "feed_only - 쓰레드 건너뜀"; exit 0; fi
           python pipeline/threads.py
 
       - name: Update reaction stats

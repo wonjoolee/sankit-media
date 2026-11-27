@@ -388,14 +388,18 @@ def main():
         json.dump(out, open(os.path.join(d, "posted.json"), "w"), ensure_ascii=False, indent=1)
         time.sleep(60)
     print("carousel:", out["carousel_url"])
-    if os.path.exists(os.path.join(d, "reel.mp4")):
+    if os.environ.get("NO_REEL") == "1":
+        out["reel_note"] = "feed_only - reel not posted"
+    elif os.path.exists(os.path.join(d, "reel.mp4")):
         try:
             out["reel_id"], out["reel_url"] = reel(rel, post)
             print("reel:", out["reel_url"])
         except SystemExit as e:
             out["reel_error"] = str(e)
             print("reel failed:", e)
-    if os.environ.get("NO_STORY") != "1":
+    if os.environ.get("NO_STORY") == "1":
+        out["story_note"] = "feed_only - story not posted"
+    else:
         try:
             out["story_id"] = story(rel)
             print("story:", out["story_id"])
