@@ -166,3 +166,4 @@
 - 2026-11-27 11:1x 수정(slot2 KIT 075): 운영자 지시 "사진이 한 장만 있더라도 그 사진을 사용"에 따라 표지를 운영자 사진(assets/owner/alps/france_view_italy.jpg, 프랑스에서 바라본 알프스)으로 교체. 11-24 KIT 067은 italy_view_swiss_alps·sunset만 써서 7일 규칙 저촉 없음. EDITORIAL §31 추가(사진 1장이면 진행, 0장이면 해외 48시간·뉴스로).
 - 2026-11-27 13:21 운영자 지시로 slot3(KIT 074 주말 정상 날씨)을 인스타 피드에만 테스트 게시(publish.yml feed_only=1 새 입력): https://www.instagram.com/p/DgOz-skEqdi/ — 릴스·스토리·쓰레드 없음. 21:00 slot3 자리는 비게 됨.
 - 2026-11-27 21:4x 점검: GitHub 예약 실행이 11/26 이후 4회뿐(15분 간격 거의 미작동, news.yml 05:05가 11:41에 실행). 반응 통계가 '3의 배수 시 00~14분' 창에만 돌아 13:23 이후 멈춤 → stats.py를 마지막 갱신 후 2시간 50분 기준으로 변경(pipeline/stats_last.txt). 매일 제작 예약 작업 지시문 갱신(§30·31, 주말 1개, 사진 1장 규칙).
+- 2026-11-27 22:0x 릴스 자동 생성 추가(ensure_reel.py + publish.yml 단계, EDITORIAL §32). 지난 1주 릴스 8/21 → 앞으로 모든 글. reel.py 크레딧에 한글이 들어가면 한글 글꼴로 그리도록 수정.

@@ -92,7 +92,7 @@ def text(fr, s, t):
         f = fb
         while d.textlength(l, font=f) > W - 180: f = ImageFont.truetype(BLK, f.size - 4, index=1)
         d.text((64, y0 + 58 + j * 108 + rise), l, font=f, fill=(244, 242, 236, al))
-    d.text((64, 1530), cfg.get('credit', '@SANKITMAG'), font=fm, fill=(190, 192, 189, 255))
+    _cr = cfg.get('credit', '@SANKITMAG'); d.text((64, 1530), _cr, font=(fm if _cr.isascii() else ImageFont.truetype(BLK, 26, index=1)), fill=(190, 192, 189, 255))
     fr.paste(lay, (0, 0), lay)
 
 

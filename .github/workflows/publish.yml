@@ -49,6 +49,31 @@ jobs:
           git config user.email "sankit-bot@users.noreply.github.com"
           git add data queue
           git diff --cached --quiet || (git commit -m "news $D (backstop)" && (for i in 1 2 3 4 5; do git pull --rebase -q && git push && break; sleep $((i*7)); done) && sleep 10)
+      - name: Make reels where missing (모든 글을 릴스로도 — 2026-11-27)
+        continue-on-error: true
+        run: |
+          pip install -q pillow
+          D=$(TZ=Asia/Seoul date +%F)
+          NEED=0
+          for s in queue/$D/slot*; do
+            [ -f "$s/post.json" ] || continue
+            [ -f "$s/posted.json" ] && continue
+            [ -f "$s/reel.mp4" ] && continue
+            grep -q '"no_reel": *true' "$s/post.json" && continue
+            NEED=1
+          done
+          if [ "$NEED" = "0" ]; then echo "릴스 필요 없음"; exit 0; fi
+          PK=""
+          fc-list | grep -q "Noto Sans CJK" || PK="$PK fonts-noto-cjk"
+          command -v ffmpeg >/dev/null || PK="$PK ffmpeg"
+          [ -n "$PK" ] && (sudo apt-get update -qq && sudo apt-get install -y -qq $PK)
+          python pipeline/ensure_reel.py | tee /tmp/reel.log
+          if ! grep -q "^created 0" /tmp/reel.log; then
+            git config user.name "SANKIT bot"
+            git config user.email "sankit-bot@users.noreply.github.com"
+            git add queue
+            git commit -m "auto reels $(TZ=Asia/Seoul date +%F-%H%M)" && (for i in 1 2 3 4 5; do git pull --rebase -q && git push && break; sleep $((i*7)); done) && sleep 10
+          fi
       - name: Make 9:16 story images where missing
         continue-on-error: true
         run: |
