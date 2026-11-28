@@ -213,11 +213,14 @@ def main():
         report.append(f'  {name:<22} 항목 {len(items):>3}개 · 새 글 {n:>3}개'
                       + (f' · 거름 {dropped}개' if dropped else ''))
 
-    keep = [r for r in old
+    # 변수 이름을 keep 으로 두면 모듈의 keep() 함수를 가려
+    # 위 루프의 keep(name, title) 이 UnboundLocalError 로 죽는다(2026-11-28에 당했다).
+    kept = [r for r in old
             if not r.get('수집일') or
             (datetime.fromisoformat(r['수집일']).date() + timedelta(days=DAYS)) >= today]
-    for r in keep: r.setdefault('분야', '공통')
-    rows = fresh + keep
+    for r in kept:
+        r.setdefault('분야', '공통')
+    rows = fresh + kept
     rows.sort(key=lambda r: (r.get('발행일') or r.get('수집일') or ''), reverse=True)
 
     os.makedirs('research', exist_ok=True)
@@ -228,6 +231,10 @@ def main():
     print('\n'.join(report))
     ok = sum(1 for l in report if '실패' not in l)
     print(f'\n매체 {ok}/{len(SOURCES)} 성공 · 새 글 {len(fresh)}개 · 보관 {len(rows)}개 -> {OUT}')
+    if ok == 0:
+        # continue-on-error 가 실패를 '성공'으로 덮어 버리므로 로그에 못을 박는다
+        print('::error::해외 수집이 한 곳도 성공하지 못했다 — 코드나 네트워크를 확인할 것')
+        sys.exit(1)
 
 if __name__ == '__main__':
     main()
