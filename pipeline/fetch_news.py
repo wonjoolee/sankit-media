@@ -23,6 +23,23 @@ UA = {'User-Agent': 'Mozilla/5.0 (compatible; SANKIT-magazine/1.0; +https://inst
 # 뺀 곳(403, 자동 접근 거부 — 우회하지 않는다): PlanetSKI · Snow-Forecast · ALPIN ·
 #   Pinkbike · Rennrad-News. 필요하면 프레스 메일로 수신 허락을 받는다.
 SOURCES = [
+    # ── 한국 ──────────────────────────────────────────────
+    # 종합 매체는 NEED 로 주제어를 걸러 받는다. 전문지는 그대로 받는다.
+    ('한국', '공통',   '연합뉴스 스포츠',      ['https://www.yna.co.kr/rss/sports.xml']),
+    ('한국', '공통',   '연합뉴스 산업',        ['https://www.yna.co.kr/rss/industry.xml']),
+    ('한국', '공통',   '연합뉴스 경제',        ['https://www.yna.co.kr/rss/economy.xml']),
+    ('한국', '공통',   '연합뉴스 지역',        ['https://www.yna.co.kr/rss/local.xml']),
+    ('한국', '하이킹', '아웃도어뉴스',         ['https://www.outdoornews.co.kr/rss/allArticle.xml',
+                                               'http://www.outdoornews.co.kr/rss/allArticle.xml']),
+    ('한국', '자전거', '자전거생활',           ['https://www.bicyclelife.net/rss/allArticle.xml',
+                                               'http://www.bicyclelife.net/rss/allArticle.xml']),
+    ('한국', '공통',   '스포츠경향 레저',      ['https://sports.khan.co.kr/rss/rssdata/kh_sports.xml']),
+    ('한국', '공통',   '국립공원공단',         ['https://www.knps.or.kr/rss/news.xml',
+                                               'https://www.knps.or.kr/front/portal/rss/newsRss.do']),
+    ('한국', '공통',   '산림청',               ['https://www.forest.go.kr/kfsweb/rss/kfs_news.xml',
+                                               'https://www.forest.go.kr/rss/news.xml']),
+    ('한국', '스키',   '한국스키장경영협회',    ['https://www.skiresort.or.kr/rss/allArticle.xml',
+                                               'http://www.skiresort.or.kr/rss/allArticle.xml']),
     # ── 스키 ──
     ('미국', '스키',   'SnowBrains',          ['https://snowbrains.com/feed/']),
     ('미국', '스키',   'Unofficial Networks', ['https://unofficialnetworks.com/feed/']),
@@ -87,6 +104,17 @@ DROP = ('black friday', 'cyber monday', 'gift guide', 'best gifts', 'holiday gif
 NEED = {
     '中国新闻网 体育': ('滑雪', '滑冰', '雪', '冰', '登山', '徒步', '自行车', '骑行',
                       '单板', '双板', '越野', '冬奥', '冬运', '索道', '户外'),
+    '연합뉴스 스포츠': ('스키', '스노보드', '설상', '빙상', '등산', '산악', '자전거', '사이클',
+                      '국립공원', '아웃도어', '캠핑', '동계', '리프트', '슬로프', '설악', '한라', '지리산'),
+    '연합뉴스 산업':   ('스키', '아웃도어', '등산', '자전거', '캠핑', '레저', '스포츠용품',
+                      '영원무역', '코오롱', '블랙야크', 'K2', '네파', '디스커버리'),
+    '연합뉴스 경제':   ('스키', '아웃도어', '등산', '자전거', '캠핑', '레저', '스포츠용품',
+                      '영원무역', '코오롱', '블랙야크', '리조트'),
+    '연합뉴스 지역':   ('스키장', '설악', '한라', '지리산', '국립공원', '둘레길', '자전거길',
+                      '등산', '산행', '케이블카', '눈축제', '빙어'),
+    '스포츠경향 레저': ('스키', '스노보드', '등산', '산행', '자전거', '캠핑', '아웃도어', '국립공원'),
+    '국립공원공단':   ('탐방', '등산', '산', '설악', '지리', '한라', '입산', '통제', '적설', '안전'),
+    '산림청':         ('등산', '산행', '숲길', '입산', '산불', '적설', '둘레길', '휴양림', '안전'),
     'Traicy':        ('スキー', 'スノー', '雪', 'ゲレンデ', '登山', '山', 'アウトドア',
                       '自転車', 'サイクリング', 'リフト', '白馬', 'ニセコ'),
 }
