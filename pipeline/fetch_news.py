@@ -18,60 +18,60 @@ DAYS = int(sys.argv[sys.argv.index('--days')+1]) if '--days' in sys.argv else 14
 OUT = 'research/news_feed.csv'
 UA = {'User-Agent': 'Mozilla/5.0 (compatible; SANKIT-magazine/1.0; +https://instagram.com/sankitmag)'}
 
-# (지역, 매체, [후보 주소...]) — 주소는 바뀐다. 여러 개 적어 두고 먼저 읽히는 것을 쓴다.
-# 뺀 곳: PlanetSKI, Snow-Forecast — 자동 접근을 403으로 거절한다. 우회하지 않는다.
-# 쓰려면 사람이 직접 읽거나 프레스 메일로 허락을 받아야 한다.
+# (지역, 분야, 매체, [후보 주소...])
+# 분야: 스키 · 하이킹 · 자전거 · 공통(아웃도어 업계 전반)
+# 뺀 곳: PlanetSKI · Snow-Forecast · ALPIN — 자동 접근을 403으로 거절한다. 우회하지 않는다.
 SOURCES = [
-    # ── 미국 ──
-    ('미국', 'SnowBrains',            ['https://snowbrains.com/feed/']),
-    ('미국', 'Unofficial Networks',   ['https://unofficialnetworks.com/feed/']),
-    ('미국', 'Outside Business Jrnl', ['https://www.outsidebusinessjournal.com/feed/']),
-    ('미국', 'SGB Media',             ['https://sgbonline.com/feed/']),
-    ('미국', 'GearJunkie',            ['https://gearjunkie.com/feed']),
-    ('미국', 'Blister',               ['https://blisterreview.com/feed']),
-    ('미국', 'Freeskier',             ['https://freeskier.com/feed']),
-    ('미국', 'SKI Magazine',          ['https://www.skimag.com/feed/']),
-    # ── 영국 ──
-    ('영국', 'InTheSnow',             ['https://www.inthesnow.com/feed/']),
-    ('영국', 'grough',                ['https://www.grough.co.uk/mountain/rss',
-                                       'https://www.grough.co.uk/rss']),
-    ('영국', 'UKClimbing',            ['https://www.ukclimbing.com/news/rss.php',
-                                       'https://www.ukclimbing.com/rss/news.xml']),
-    ('영국', 'Ski Club GB',           ['https://www.skiclub.co.uk/rss',
-                                       'https://www.skiclub.co.uk/feed/']),
-    ('영국', 'J2Ski',                 ['https://www.j2ski.com/rss/ski-news.xml',
-                                       'https://www.j2ski.com/ski-news/rss']),
-    # ── 독일·오스트리아·스위스 ──
-    ('독일', 'ISPO',                  ['https://www.ispo.com/en/rss',
-                                       'https://www.ispo.com/rss.xml',
-                                       'https://www.ispo.com/de/rss']),
-    ('독일', 'Bergzeit Magazin',      ['https://www.bergzeit.de/magazin/feed/']),
-    ('독일', 'ALPIN',                 ['https://www.alpin.de/feed.xml',
-                                       'https://www.alpin.de/rss']),
-    ('독일', 'outdoor-magazin',       ['https://www.outdoor-magazin.com/rss/',
-                                       'https://www.outdoor-magazin.com/feed/']),
-    ('독일', 'Skiinfo DE',            ['https://www.skiinfo.de/news/rss']),
-    # ── 호주·뉴질랜드 ──
-    ('호주', 'Mountainwatch',         ['https://www.mountainwatch.com/feed/',
-                                       'https://www.mountainwatch.com/news/feed']),
-    ('호주', 'SnowsBest',             ['https://www.snowsbest.com/feed/']),
-    ('호주', 'Wild Magazine',         ['https://wild.com.au/feed/']),
-    # ── 일본 ──
-    ('일본', 'Traicy',                ['https://www.traicy.com/feed']),
-    ('일본', 'SnowJapan',             ['https://www.snowjapan.com/news/feed',
-                                       'https://www.snowjapan.com/rss',
-                                       'https://www.snowjapan.com/feed/']),
-    ('일본', '山と溪谷 YAMAKEI',       ['https://www.yamakei-online.com/rss/news.xml',
-                                       'https://www.yamakei-online.com/feed']),
-    ('일본', 'Impress トラベル',       ['https://travel.watch.impress.co.jp/data/rss/1.0/trw/feed.rdf']),
-    # ── 중국 ──
-    ('중국', '新华网 体育',            ['http://www.xinhuanet.com/sports/news_sports.xml',
-                                       'https://www.news.cn/sports/news_sports.xml']),
-    ('중국', '中国新闻网 体育',         ['https://www.chinanews.com.cn/rss/sports.xml',
-                                       'https://www.chinanews.com/rss/sports.xml']),
-    # ── 국제 ──
-    ('국제', 'Outdoor Industry',      ['https://outdoorindustry.org/feed/']),
-    ('국제', 'MountainBlog',          ['https://www.mountainblog.it/feed/']),
+    # ── 스키 ──
+    ('미국', '스키',   'SnowBrains',          ['https://snowbrains.com/feed/']),
+    ('미국', '스키',   'Unofficial Networks', ['https://unofficialnetworks.com/feed/']),
+    ('미국', '스키',   'Freeskier',           ['https://freeskier.com/feed']),
+    ('미국', '스키',   'SKI Magazine',        ['https://www.skimag.com/feed/']),
+    ('미국', '스키',   'Blister',             ['https://blisterreview.com/feed']),
+    ('영국', '스키',   'InTheSnow',           ['https://www.inthesnow.com/feed/']),
+    ('영국', '스키',   'Ski Club GB',         ['https://www.skiclub.co.uk/rss']),
+    ('독일', '스키',   'Skiinfo DE',          ['https://www.skiinfo.de/news/rss']),
+    ('호주', '스키',   'Mountainwatch',       ['https://www.mountainwatch.com/feed/']),
+    ('호주', '스키',   'SnowsBest',           ['https://www.snowsbest.com/feed/']),
+    ('일본', '스키',   'Traicy',              ['https://www.traicy.com/feed']),
+    # ── 하이킹·등산 ──
+    ('영국', '하이킹', 'grough',              ['https://www.grough.co.uk/mountain/rss']),
+    ('영국', '하이킹', 'UKClimbing',          ['https://www.ukclimbing.com/news/rss/',
+                                               'https://www.ukclimbing.com/rss/']),
+    ('호주', '하이킹', 'Wild Magazine',       ['https://wild.com.au/feed/']),
+    ('미국', '하이킹', 'Backpacker',          ['https://www.backpacker.com/feed/']),
+    ('미국', '하이킹', 'SectionHiker',        ['https://sectionhiker.com/feed/']),
+    ('일본', '하이킹', 'YAMAKEI',             ['https://www.yamakei-online.com/news/feed',
+                                               'https://www.yamakei-online.com/rss.xml']),
+    # ── 자전거 ──
+    ('국제', '자전거', 'Bike Europe',         ['https://www.bike-eu.com/feed',
+                                               'https://www.bike-eu.com/rss']),
+    ('미국', '자전거', 'Bicycle Retailer',    ['https://www.bicycleretailer.com/rss.xml',
+                                               'https://www.bicycleretailer.com/feed']),
+    ('미국', '자전거', 'Bikerumor',           ['https://bikerumor.com/feed/']),
+    ('미국', '자전거', 'Pinkbike',            ['https://www.pinkbike.com/pinkbike.rss',
+                                               'https://www.pinkbike.com/rss/news/']),
+    ('미국', '자전거', 'Singletracks',        ['https://www.singletracks.com/feed/']),
+    ('영국', '자전거', 'road.cc',             ['https://road.cc/rss']),
+    ('영국', '자전거', 'BikeRadar',           ['https://www.bikeradar.com/feed',
+                                               'https://www.bikeradar.com/rss']),
+    ('영국', '자전거', 'Cyclingnews',         ['https://www.cyclingnews.com/rss/']),
+    ('독일', '자전거', 'MTB-News',            ['https://www.mtb-news.de/news/feed/']),
+    ('독일', '자전거', 'Rennrad-News',        ['https://www.rennrad-news.de/news/feed/']),
+    ('일본', '자전거', 'Cyclowired',          ['https://www.cyclowired.jp/rss.xml',
+                                               'https://www.cyclowired.jp/feed']),
+    ('호주', '자전거', 'Flow Mountain Bike',  ['https://flowmountainbike.com/feed/']),
+    # ── 공통 (아웃도어 업계 전반 — 신제품·수입사·M&A) ──
+    ('미국', '공통',   'Outside Business Jrnl', ['https://www.outsidebusinessjournal.com/feed/']),
+    ('미국', '공통',   'SGB Media',           ['https://sgbonline.com/feed/']),
+    ('미국', '공통',   'GearJunkie',          ['https://gearjunkie.com/feed']),
+    ('국제', '공통',   'Outdoor Industry',    ['https://outdoorindustry.org/feed/']),
+    ('국제', '공통',   'MountainBlog',        ['https://www.mountainblog.it/feed/']),
+    ('독일', '공통',   'ISPO',                ['https://www.ispo.com/en/feed',
+                                               'https://www.ispo.com/feed']),
+    ('독일', '공통',   'outdoor-magazin',     ['https://www.outdoor-magazin.com/rss.xml']),
+    ('독일', '공통',   'Bergzeit Magazin',    ['https://www.bergzeit.de/magazin/feed/']),
+    ('중국', '공통',   '中国新闻网 体育',       ['https://www.chinanews.com.cn/rss/sports.xml']),
 ]
 
 
@@ -130,7 +130,7 @@ def main():
     seen = {r['링크'] for r in old}
 
     fresh, report = [], []
-    for region, name, urls in SOURCES:
+    for region, field, name, urls in SOURCES:
         items, why = None, ''
         for u in urls:
             try:
@@ -152,19 +152,20 @@ def main():
             seen.add(link)
             fresh.append({'수집일': today.isoformat(),
                           '발행일': pub.date().isoformat() if pub else '',
-                          '지역': region, '매체': name, '제목': title, '링크': link})
+                          '지역': region, '분야': field, '매체': name, '제목': title, '링크': link})
             n += 1
         report.append(f'  {name:<22} 항목 {len(items):>3}개 · 새 글 {n:>3}개')
 
     keep = [r for r in old
             if not r.get('수집일') or
             (datetime.fromisoformat(r['수집일']).date() + timedelta(days=DAYS)) >= today]
+    for r in keep: r.setdefault('분야', '공통')
     rows = fresh + keep
     rows.sort(key=lambda r: (r.get('발행일') or r.get('수집일') or ''), reverse=True)
 
     os.makedirs('research', exist_ok=True)
     with open(OUT, 'w', encoding='utf-8', newline='') as f:
-        w = csv.DictWriter(f, ['수집일', '발행일', '지역', '매체', '제목', '링크'])
+        w = csv.DictWriter(f, ['수집일', '발행일', '지역', '분야', '매체', '제목', '링크'])
         w.writeheader(); w.writerows(rows)
 
     print('\n'.join(report))

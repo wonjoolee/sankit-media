@@ -26,8 +26,11 @@ used = {strip(r['내용'])[:24] for r in ind}
 
 out = [f'# 산킷 뉴스 수집 요약 — {d0}', '']
 out.append(f'자동 수집 **{len(feed)}건 보관** · 오늘 새로 **{len(today)}건** · 최근 48시간 발행 **{len(recent)}건**')
-by = collections.Counter(r['지역'] for r in recent)
-out.append('지역별(48시간): ' + ' · '.join(f'{k} {v}' for k, v in by.most_common()) or '없음')
+reg = collections.Counter(r['지역'] for r in recent)
+fld = collections.Counter(r.get('분야', '공통') for r in recent)
+out.append('지역별(48시간): ' + (' · '.join(f'{k} {v}' for k, v in reg.most_common()) or '없음'))
+out.append('')
+out.append('분야별(48시간): ' + (' · '.join(f'{k} {v}' for k, v in fld.most_common()) or '없음'))
 out.append('')
 
 out.append('## 오늘 카드에 실린 줄')
@@ -43,7 +46,7 @@ n = 0
 for r in sorted(recent, key=lambda x: x.get('발행일', ''), reverse=True):
     if any(k and k[:16].lower() in r['제목'].lower() for k in used):
         continue
-    out.append(f"- [{r['지역']}·{r['매체']}] {r['제목']}  \n  {r['링크']}")
+    out.append(f"- [{r.get('분야','공통')}·{r['지역']}·{r['매체']}] {r['제목']}  \n  {r['링크']}")
     n += 1
     if n >= 25:
         break
