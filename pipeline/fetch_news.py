@@ -22,6 +22,7 @@ UA = {'User-Agent': 'Mozilla/5.0 (compatible; SANKIT-magazine/1.0; +https://inst
 # 뺀 곳: PlanetSKI, Snow-Forecast — 자동 접근을 403으로 거절한다. 우회하지 않는다.
 # 쓰려면 사람이 직접 읽거나 프레스 메일로 허락을 받아야 한다.
 SOURCES = [
+    # ── 미국 ──
     ('미국', 'SnowBrains',            ['https://snowbrains.com/feed/']),
     ('미국', 'Unofficial Networks',   ['https://unofficialnetworks.com/feed/']),
     ('미국', 'Outside Business Jrnl', ['https://www.outsidebusinessjournal.com/feed/']),
@@ -30,18 +31,49 @@ SOURCES = [
     ('미국', 'Blister',               ['https://blisterreview.com/feed']),
     ('미국', 'Freeskier',             ['https://freeskier.com/feed']),
     ('미국', 'SKI Magazine',          ['https://www.skimag.com/feed/']),
-    ('유럽', 'InTheSnow',             ['https://www.inthesnow.com/feed/']),
-    ('유럽', 'J2Ski',                 ['https://www.j2ski.com/rss/ski-news.xml',
-                                       'https://www.j2ski.com/ski-news/rss',
-                                       'https://www.j2ski.com/feed/']),
-    ('유럽', 'MountainBlog',          ['https://www.mountainblog.it/feed/']),
-    ('유럽', 'ISPO',                  ['https://www.ispo.com/en/rss',
-                                       'https://www.ispo.com/rss.xml']),
-    ('국제', 'Outdoor Industry',      ['https://outdoorindustry.org/feed/']),
-    ('일본', 'SnowJapan',             ['https://www.snowjapan.com/news/feed',
-                                       'https://www.snowjapan.com/rss']),
+    # ── 영국 ──
+    ('영국', 'InTheSnow',             ['https://www.inthesnow.com/feed/']),
+    ('영국', 'grough',                ['https://www.grough.co.uk/mountain/rss',
+                                       'https://www.grough.co.uk/rss']),
+    ('영국', 'UKClimbing',            ['https://www.ukclimbing.com/news/rss.php',
+                                       'https://www.ukclimbing.com/rss/news.xml']),
+    ('영국', 'Ski Club GB',           ['https://www.skiclub.co.uk/rss',
+                                       'https://www.skiclub.co.uk/feed/']),
+    ('영국', 'J2Ski',                 ['https://www.j2ski.com/rss/ski-news.xml',
+                                       'https://www.j2ski.com/ski-news/rss']),
+    # ── 독일·오스트리아·스위스 ──
+    ('독일', 'ISPO',                  ['https://www.ispo.com/en/rss',
+                                       'https://www.ispo.com/rss.xml',
+                                       'https://www.ispo.com/de/rss']),
+    ('독일', 'Bergzeit Magazin',      ['https://www.bergzeit.de/magazin/feed/']),
+    ('독일', 'ALPIN',                 ['https://www.alpin.de/feed.xml',
+                                       'https://www.alpin.de/rss']),
+    ('독일', 'outdoor-magazin',       ['https://www.outdoor-magazin.com/rss/',
+                                       'https://www.outdoor-magazin.com/feed/']),
+    ('독일', 'Skiinfo DE',            ['https://www.skiinfo.de/news/rss']),
+    # ── 호주·뉴질랜드 ──
+    ('호주', 'Mountainwatch',         ['https://www.mountainwatch.com/feed/',
+                                       'https://www.mountainwatch.com/news/feed']),
+    ('호주', 'SnowsBest',             ['https://www.snowsbest.com/feed/']),
+    ('호주', 'Wild Magazine',         ['https://wild.com.au/feed/']),
+    # ── 일본 ──
     ('일본', 'Traicy',                ['https://www.traicy.com/feed']),
+    ('일본', 'SnowJapan',             ['https://www.snowjapan.com/news/feed',
+                                       'https://www.snowjapan.com/rss',
+                                       'https://www.snowjapan.com/feed/']),
+    ('일본', '山と溪谷 YAMAKEI',       ['https://www.yamakei-online.com/rss/news.xml',
+                                       'https://www.yamakei-online.com/feed']),
+    ('일본', 'Impress トラベル',       ['https://travel.watch.impress.co.jp/data/rss/1.0/trw/feed.rdf']),
+    # ── 중국 ──
+    ('중국', '新华网 体育',            ['http://www.xinhuanet.com/sports/news_sports.xml',
+                                       'https://www.news.cn/sports/news_sports.xml']),
+    ('중국', '中国新闻网 体育',         ['https://www.chinanews.com.cn/rss/sports.xml',
+                                       'https://www.chinanews.com/rss/sports.xml']),
+    # ── 국제 ──
+    ('국제', 'Outdoor Industry',      ['https://outdoorindustry.org/feed/']),
+    ('국제', 'MountainBlog',          ['https://www.mountainblog.it/feed/']),
 ]
+
 
 def txt(e, *tags):
     for t in tags:
