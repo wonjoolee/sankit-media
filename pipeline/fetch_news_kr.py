@@ -12,7 +12,8 @@ import csv, html, json, os, re, sys, time, urllib.parse, urllib.request
 from datetime import date, datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 
-ID, SEC = os.environ.get('NAVER_CLIENT_ID'), os.environ.get('NAVER_CLIENT_SECRET')
+ID = os.environ.get('NAVER_CLIENT_ID') or os.environ.get('NCP_API_KEY_ID')
+SEC = os.environ.get('NAVER_CLIENT_SECRET') or os.environ.get('NCP_API_KEY')
 OUT, DAYS = 'research/news_feed.csv', 14
 KST = timezone(timedelta(hours=9))
 
@@ -33,13 +34,34 @@ DROP = ('분양', '부동산', '주가', '코인', '카지노', '성형', '대�
 
 clean = lambda t: html.unescape(re.sub(r'<[^>]+>', '', t)).strip()
 
+# 네이버 검색 API는 두 갈래다.
+#  1) NAVER API HUB (네이버 클라우드 플랫폼으로 이전된 신규)  — NCP 헤더
+#  2) 구 오픈 API (developers.naver.com)                    — X-Naver 헤더
+# 어느 쪽 키인지 알 수 없으므로 둘 다 시도하고, 통하는 쪽을 기억해 쓴다.
+ENDPOINTS = [
+    ('API HUB', 'https://naverapihub.apigw.ntruss.com/search/v1/news',
+     lambda: {'X-NCP-APIGW-API-KEY-ID': ID, 'X-NCP-APIGW-API-KEY': SEC}),
+    ('구 오픈API', 'https://openapi.naver.com/v1/search/news.json',
+     lambda: {'X-Naver-Client-Id': ID, 'X-Naver-Client-Secret': SEC}),
+]
+_use = None          # 한 번 통한 엔드포인트를 기억한다
+
 def search(q, display=50):
-    u = 'https://openapi.naver.com/v1/search/news.json?' + urllib.parse.urlencode(
-        {'query': q, 'display': display, 'sort': 'date'})
-    r = urllib.request.Request(u, headers={'X-Naver-Client-Id': ID,
-                                           'X-Naver-Client-Secret': SEC})
-    with urllib.request.urlopen(r, timeout=20) as resp:
-        return json.loads(resp.read()).get('items', [])
+    global _use
+    qs = urllib.parse.urlencode({'query': q, 'display': display, 'sort': 'date'})
+    last = None
+    for name, base, hdr in ([_use] if _use else ENDPOINTS):
+        try:
+            r = urllib.request.Request(base + '?' + qs, headers=hdr())
+            with urllib.request.urlopen(r, timeout=20) as resp:
+                data = json.loads(resp.read())
+            if _use is None:
+                _use = (name, base, hdr)
+                print(f'[네이버] {name} 사용')
+            return data.get('items', [])
+        except Exception as e:
+            last = f'{name}: {type(e).__name__} {str(e)[:60]}'
+    raise RuntimeError(last or 'unknown')
 
 def main():
     if not (ID and SEC):
