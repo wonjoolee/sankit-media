@@ -24,6 +24,9 @@ UA = {'User-Agent': 'Mozilla/5.0 (compatible; SANKIT-magazine/1.0; +https://inst
 #   Pinkbike · Rennrad-News. 필요하면 프레스 메일로 수신 허락을 받는다.
 SOURCES = [
     # ── 한국 ──────────────────────────────────────────────
+    # 국내 주력은 RSS가 아니라 네이버 뉴스 검색이다(pipeline/fetch_news_kr.py).
+    # 국내 매체는 RSS 주소가 자주 바뀌고 없는 곳도 많다. 아래는 보조.
+    # 뺀 곳: 자전거생활·한국스키장경영협회 — 도메인이 조회되지 않는다.
     # 종합 매체는 NEED 로 주제어를 걸러 받는다. 전문지는 그대로 받는다.
     ('한국', '공통',   '연합뉴스 스포츠',      ['https://www.yna.co.kr/rss/sports.xml']),
     ('한국', '공통',   '연합뉴스 산업',        ['https://www.yna.co.kr/rss/industry.xml']),
@@ -31,15 +34,11 @@ SOURCES = [
     ('한국', '공통',   '연합뉴스 지역',        ['https://www.yna.co.kr/rss/local.xml']),
     ('한국', '하이킹', '아웃도어뉴스',         ['https://www.outdoornews.co.kr/rss/allArticle.xml',
                                                'http://www.outdoornews.co.kr/rss/allArticle.xml']),
-    ('한국', '자전거', '자전거생활',           ['https://www.bicyclelife.net/rss/allArticle.xml',
-                                               'http://www.bicyclelife.net/rss/allArticle.xml']),
     ('한국', '공통',   '스포츠경향 레저',      ['https://sports.khan.co.kr/rss/rssdata/kh_sports.xml']),
     ('한국', '공통',   '국립공원공단',         ['https://www.knps.or.kr/rss/news.xml',
                                                'https://www.knps.or.kr/front/portal/rss/newsRss.do']),
     ('한국', '공통',   '산림청',               ['https://www.forest.go.kr/kfsweb/rss/kfs_news.xml',
                                                'https://www.forest.go.kr/rss/news.xml']),
-    ('한국', '스키',   '한국스키장경영협회',    ['https://www.skiresort.or.kr/rss/allArticle.xml',
-                                               'http://www.skiresort.or.kr/rss/allArticle.xml']),
     # ── 스키 ──
     ('미국', '스키',   'SnowBrains',          ['https://snowbrains.com/feed/']),
     ('미국', '스키',   'Unofficial Networks', ['https://unofficialnetworks.com/feed/']),

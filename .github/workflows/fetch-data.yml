@@ -29,6 +29,13 @@ jobs:
       - name: 해외 업계 소식 RSS 수집
         continue-on-error: true
         run: python pipeline/fetch_news.py --days 14
+      - name: 국내 소식 수집 (네이버 뉴스 검색)
+        continue-on-error: true
+        env:
+          NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
+          NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}
+        run: python pipeline/fetch_news_kr.py
+
       - name: 그날 수집 요약
         continue-on-error: true
         run: python pipeline/news_digest.py
