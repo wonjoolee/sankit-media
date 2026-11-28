@@ -49,7 +49,7 @@ jobs:
           mkdir -p "$OUT"
           if [ -n "$FOLDER" ]; then
             echo "폴더 받기: $FOLDER"
-            gdown --folder "https://drive.google.com/drive/folders/$FOLDER" -O "$OUT" --remaining-ok || true
+            gdown --folder "https://drive.google.com/drive/folders/$FOLDER" -O "$OUT" || true
           fi
           if [ -n "$FILES" ]; then
             echo "$FILES" | tr ',' '\n' | sed 's/[[:space:]]//g' | grep -v '^$' | while read -r ID; do
