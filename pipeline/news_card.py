@@ -4,10 +4,30 @@
 디자인은 pipeline/assets/card_head.html 의 산킷 체계를 따른다.
 종이 #F4F2EC · 먹 #141615 · 러스트 #8a5521 · 숫자와 라벨은 DejaVu Sans Mono.
 """
-import json, re, sys
+import glob, json, os, re, sys
 from datetime import date
 
 WD = ['월','화','수','목','금','토','일']
+
+# 2026-11-28 운영자 지시: 뉴스 배경을 매일 다르게 — 운영자 드라이브의 산·스키장 사진(assets/news_bg).
+# 날짜로 고르므로 같은 날은 같은 사진, 다음 날은 다음 사진(사진 수만큼 돌고 반복).
+def pick_bg(d0, outdir):
+    bgs = sorted(glob.glob('assets/news_bg/*.jpg'))
+    if not bgs or os.environ.get('NEWS_NO_BG') == '1':
+        return None
+    return os.path.relpath(bgs[d0.toordinal() % len(bgs)], outdir)
+
+BG_CSS = '''
+.card.photo{{background:#141615;color:#F4F2EC}}
+.card.photo .bgimg{{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}}
+.card.photo .shade{{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,16,15,.12) 0%,rgba(14,16,15,.32) {h1}px,rgba(14,16,15,.76) {h2}px,rgba(14,16,15,.82) 100%)}}
+.card.photo .rule{{background:#F4F2EC}}
+.card.photo .kick,.card.photo .sec,.card.photo .no{{color:#F2C94C}}
+.card.photo .sec span::after{{background:rgba(244,242,236,.28)}}
+.card.photo u{{color:#fff}}
+.card.photo .head,.card.photo .wm,.card.photo .kit{{text-shadow:0 2px 14px rgba(0,0,0,.45)}}
+.card.photo .foot{{color:rgba(244,242,236,.75);border-top-color:#F4F2EC}}
+'''
 
 def main(outdir, d0, story=False):
     n = json.load(open('data/latest/news_lines.json'))
@@ -23,6 +43,7 @@ def main(outdir, d0, story=False):
     else:
         CW, CH, TOP, BOT = 1080, 1350, 398, 1232
         fs = 34 if len(body) <= 9 else (30 if len(body) <= 11 else 27)
+    bg = pick_bg(d0, outdir)
     rows, k = [], 0
     for l in lines:
         if l.startswith('## '):
@@ -32,6 +53,8 @@ def main(outdir, d0, story=False):
         t = l.replace('<b>', '<u>').replace('</b>', '</u>')
         rows.append(f'<div class="nr"><span class="no mono">{k:02d}</span><span>{t}</span></div>')
 
+    extra_css = BG_CSS.format(h1=(330 if not story else 500), h2=(430 if not story else 600)).replace('{{','{').replace('}}','}') if bg else ''
+    bg_html = f'<img class="bgimg" src="{bg}"><div class="shade"></div>' if bg else ''
     doc = f'''<!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><style>
 *{{box-sizing:border-box;margin:0;padding:0}}
@@ -53,8 +76,8 @@ body{{background:#ccc;font-family:'Noto Sans CJK KR','Noto Sans CJK JP','Noto Co
 u{{text-decoration:none;font-weight:900;color:#141615}}
 .foot{{position:absolute;left:56px;right:56px;bottom:46px;display:flex;justify-content:space-between;
       font-size:19px;letter-spacing:2px;color:#666;border-top:2px solid #141615;padding-top:16px}}
-</style></head><body>
-<div class="card" id="s1">
+{extra_css}</style></head><body>
+<div class="card{' photo' if bg else ''}" id="s1">{bg_html}
   <div class="wm">SANKIT<i>산킷</i></div>
   <div class="kit mono">NEWS</div>
   <div class="rule" style="top:{132 if not story else 300}px"></div>
@@ -62,7 +85,7 @@ u{{text-decoration:none;font-weight:900;color:#141615}}
   <div class="head" style="top:{216 if not story else 384}px">{d0.month}월 {d0.day}일<em>{WD[d0.weekday()]}요일</em></div>
   <div class="rule" style="top:{350 if not story else 512}px;height:2px"></div>
   <div class="list">{''.join(rows)}</div>
-  <div class="foot"><span class="mono">SANKIT · NEWS</span><span>기상청 단기예보 {when} 발표 기준 · 출발 전 공식 공지 확인</span></div>
+  <div class="foot"><span class="mono">SANKIT · NEWS</span><span>기상청 단기예보 {when} 발표 기준 · 출발 전 공식 공지 확인{' · 배경 ⓒ SANKIT' if bg else ''}</span></div>
 </div>
 </body></html>'''
     name = 'story.html' if story else 'kit.html'
