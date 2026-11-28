@@ -41,6 +41,9 @@ ffmpeg -version | head -1
 echo "[5] 데이터 수집"
 python pipeline/fetch_data.py || echo "   수집 실패 - 있는 데이터로 만든다"
 
+echo "[5-1] 사전 점검 (출처·상대 표현·중복)"
+python pipeline/news_check.py "$D" || echo "   ERROR 있는 줄은 카드에서 빠진다 (위 목록 확인)"
+
 echo "[6] 뉴스 제작"
 mkdir -p "$OUT"
 python pipeline/news_build.py "$OUT" "$D"

@@ -187,6 +187,13 @@ def build(d0):
             rows = [r for r in csv.DictReader(fh)
                     if r['수집일'] <= d0.isoformat()
                     and (date.fromisoformat(r['수집일']) + timedelta(days=21)) >= d0]
+        # 2026-11-28 오류 방지: 출처 없는 줄과 상대 표현이 든 줄은 카드에 올리지 않는다.
+        # (상대 표현은 하루만 지나도 거짓이 된다 — 25-2절. 검사는 pipeline/news_check.py)
+        import re as _re
+        _REL = ('오늘', '내일', '모레', '어제', '이번 주', '이번주', '다음 주', '지난주')
+        _bare = lambda t: _re.sub(r'<[^>]+>', '', t)
+        rows = [r for r in rows if (r.get('출처') or '').strip()
+                and not any(w in _bare(r['내용']) for w in _REL)]
         # 2026-11-27 운영자 지시: 해외 소식을 뉴스의 주 통로로 쓴다.
         # 최신순으로 정렬하고(같은 줄이 매일 맨 위에 남지 않게), 업계 줄 중 해외(🇰🇷·🚫 아닌 줄)를
         # 최소 OVERSEAS_MIN 개 앞세운다. 해외 줄은 수집 후 3일까지만 싣는다(신선도).
