@@ -20,7 +20,8 @@ UA = {'User-Agent': 'Mozilla/5.0 (compatible; SANKIT-magazine/1.0; +https://inst
 
 # (지역, 분야, 매체, [후보 주소...])
 # 분야: 스키 · 하이킹 · 자전거 · 공통(아웃도어 업계 전반)
-# 뺀 곳: PlanetSKI · Snow-Forecast · ALPIN — 자동 접근을 403으로 거절한다. 우회하지 않는다.
+# 뺀 곳(403, 자동 접근 거부 — 우회하지 않는다): PlanetSKI · Snow-Forecast · ALPIN ·
+#   Pinkbike · Rennrad-News. 필요하면 프레스 메일로 수신 허락을 받는다.
 SOURCES = [
     # ── 스키 ──
     ('미국', '스키',   'SnowBrains',          ['https://snowbrains.com/feed/']),
@@ -35,7 +36,8 @@ SOURCES = [
     ('호주', '스키',   'SnowsBest',           ['https://www.snowsbest.com/feed/']),
     ('일본', '스키',   'Traicy',              ['https://www.traicy.com/feed']),
     # ── 하이킹·등산 ──
-    ('영국', '하이킹', 'grough',              ['https://www.grough.co.uk/mountain/rss']),
+    ('영국', '하이킹', 'grough',              ['https://www.grough.co.uk/mountain/rss',
+                                               'https://www.grough.co.uk/rss.xml']),
     ('영국', '하이킹', 'UKClimbing',          ['https://www.ukclimbing.com/news/rss/',
                                                'https://www.ukclimbing.com/rss/']),
     ('호주', '하이킹', 'Wild Magazine',       ['https://wild.com.au/feed/']),
@@ -44,20 +46,17 @@ SOURCES = [
     ('일본', '하이킹', 'YAMAKEI',             ['https://www.yamakei-online.com/news/feed',
                                                'https://www.yamakei-online.com/rss.xml']),
     # ── 자전거 ──
-    ('국제', '자전거', 'Bike Europe',         ['https://www.bike-eu.com/feed',
-                                               'https://www.bike-eu.com/rss']),
+    ('국제', '자전거', 'Bike Europe',         ['https://www.bike-eu.com/rss.xml',
+                                               'https://www.bike-eu.com/feed/']),
     ('미국', '자전거', 'Bicycle Retailer',    ['https://www.bicycleretailer.com/rss.xml',
                                                'https://www.bicycleretailer.com/feed']),
     ('미국', '자전거', 'Bikerumor',           ['https://bikerumor.com/feed/']),
-    ('미국', '자전거', 'Pinkbike',            ['https://www.pinkbike.com/pinkbike.rss',
-                                               'https://www.pinkbike.com/rss/news/']),
     ('미국', '자전거', 'Singletracks',        ['https://www.singletracks.com/feed/']),
     ('영국', '자전거', 'road.cc',             ['https://road.cc/rss']),
-    ('영국', '자전거', 'BikeRadar',           ['https://www.bikeradar.com/feed',
-                                               'https://www.bikeradar.com/rss']),
+    ('영국', '자전거', 'BikeRadar',           ['https://www.bikeradar.com/rss.xml',
+                                               'https://www.bikeradar.com/feed/']),
     ('영국', '자전거', 'Cyclingnews',         ['https://www.cyclingnews.com/rss/']),
     ('독일', '자전거', 'MTB-News',            ['https://www.mtb-news.de/news/feed/']),
-    ('독일', '자전거', 'Rennrad-News',        ['https://www.rennrad-news.de/news/feed/']),
     ('일본', '자전거', 'Cyclowired',          ['https://www.cyclowired.jp/rss.xml',
                                                'https://www.cyclowired.jp/feed']),
     ('호주', '자전거', 'Flow Mountain Bike',  ['https://flowmountainbike.com/feed/']),

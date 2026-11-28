@@ -11,7 +11,7 @@
 - 각 줄은 "주체 + 무엇"으로 쓰고, 핵심 수치만 강조한다(<b>로 감싼다).
 """
 import json, sys
-from datetime import date, timedelta
+from datetime import date, datetime, timedelta, timezone
 
 WX_N, ETC_N = 3, 7
 OVERSEAS_MIN = 4         # 업계 7줄 중 해외 최소 줄 수 (2026-11-27)      # 한 장에 싣는 날씨 줄 / 업계·행사 줄 수 (3:7)
@@ -129,12 +129,39 @@ def build(d0):
             lines.append(f"{word} 눈 — {s}")
 
     # 4) 산 최저기온
-    mt = [(n, f(day(n,k).get('TMN'))) for n in MTN if day(n,k)]
-    mt = [t for t in mt if t[1] is not None]
-    if mt:
-        mt.sort(key=lambda t: t[1])
-        if mt[0][1] <= -5:
-            lines.append(f"오늘 가장 추운 산 — {mt[0][0]} <b>{mt[0][1]:.0f}℃</b>, {mt[1][0]} <b>{mt[1][1]:.0f}℃</b>")
+    # 산악예보(정상부 실측 지점 114곳)가 신선하면 그걸 쓴다 — 동네예보는 산 아래 값이라
+    # "설악산 -3℃"처럼 정상과 동떨어진 숫자가 나온다. 산악예보는 1708m 정상값을 준다.
+    peak = None
+    try:
+        mw = load('mountain_weather')
+        age_h = (datetime.now(timezone(timedelta(hours=9)))
+                 - datetime.fromisoformat(mw['fetched_at'])).total_seconds() / 3600
+        if age_h <= 18:
+            cand = []
+            for name, dd in mw['data'].get('mountains', {}).items() if isinstance(mw['data'].get('mountains'), dict) else []:
+                pass
+            ms = mw['data'].get('mountains', [])
+            for m in (ms if isinstance(ms, list) else []):
+                nm = m.get('stn_nm') or m.get('name')
+                t = m.get('tmin')
+                if nm and t is not None and '정상' in str(nm):
+                    cand.append((str(nm).replace('(정상)', ''), float(t)))
+            cand.sort(key=lambda x: x[1])
+            if len(cand) >= 2 and cand[0][1] <= -3:
+                peak = cand
+    except Exception:
+        peak = None
+
+    if peak:
+        lines.append(f"오늘 가장 추운 산 정상 — {peak[0][0]} <b>{peak[0][1]:.0f}℃</b>, "
+                     f"{peak[1][0]} <b>{peak[1][1]:.0f}℃</b>")
+    else:
+        mt = [(n, f(day(n,k).get('TMN'))) for n in MTN if day(n,k)]
+        mt = [t for t in mt if t[1] is not None]
+        if mt:
+            mt.sort(key=lambda t: t[1])
+            if mt[0][1] <= -5:
+                lines.append(f"오늘 가장 추운 산 — {mt[0][0]} <b>{mt[0][1]:.0f}℃</b>, {mt[1][0]} <b>{mt[1][1]:.0f}℃</b>")
 
     # 5) 축제 — 겨울·산·눈 관련만. 전시·연극·예술제는 산킷 독자의 관심사가 아니다.
     KEY = ('눈','얼음','빙어','산타','스키','스노우','스노보드','겨울','송어','트레킹',
