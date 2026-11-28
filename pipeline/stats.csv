@@ -65,7 +65,7 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-14,slot1,reel,"월요일 설악산에 눈 예보, 낮 최고 3℃ (KIT 046)",news,broad,E,number,4,0,,,,07:29
 2026-11-14,slot3,carousel,"11월 20일 휘닉스부터, 올겨울 스키 달력 (KIT 047)",guide,broad,E,number,5,0,,,,20:59
 2026-11-14,slot3,reel,"11월 20일 휘닉스부터, 올겨울 스키 달력 (KIT 047)",guide,broad,E,number,3,0,,,,20:59
-2026-11-15,slot1,carousel,"오늘부터 한 달, 148구간이 닫힌다 (KIT 048)",news,broad,E,number,10,0,,,,07:29
+2026-11-15,slot1,carousel,"오늘부터 한 달, 148구간이 닫힌다 (KIT 048)",news,broad,E,number,11,0,,,,07:29
 2026-11-15,slot1,reel,"오늘부터 한 달, 148구간이 닫힌다 (KIT 048)",news,broad,E,number,12,0,,,,07:29
 2026-11-15,slot2,carousel,주말 어디 다녀오셨어요 #1 — 첫 스키는 11월? 12월?,weekly,broad,E,question,10,0,,,,12:09
 2026-11-15,slot2,reel,주말 어디 다녀오셨어요 #1 — 첫 스키는 11월? 12월?,weekly,broad,E,question,3,0,,,,12:09
@@ -95,7 +95,7 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-20,slot4,reel,"엔저에 아웃도어 쇼핑, 지금 어떨까요 (에디터가 다녀왔습니다 01)",owner,narrow,visit,question,5,0,,,,01:07
 2026-11-21,slot1,carousel,시즌이 열렸습니다 — 레비 (KIT 061),news,narrow,D,statement,16,0,,,,07:29
 2026-11-21,slot2,carousel,"하이원, 화요일 연다 종일권 2,000원 (KIT 064)",news,broad,E,number,12,0,,,,12:09
-2026-11-21,slot3,carousel,한라산 성판악은 오전 11시 30분에 닫힌다 (KIT 065),guide,broad,E,number,29,0,,,,20:59
+2026-11-21,slot3,carousel,한라산 성판악은 오전 11시 30분에 닫힌다 (KIT 065),guide,broad,E,number,30,0,,,,20:59
 2026-11-21,slot3,reel,한라산 성판악은 오전 11시 30분에 닫힌다 (KIT 065),guide,broad,E,number,9,0,,,,20:59
 2026-11-22,slot1,carousel,손님 540만 명이 주인이던 가게 (KIT 066),,,,,22,2,,,,10:54
 2026-11-24,slot3,carousel,이 산은 스위스에만 있는 게 아닙니다 (KIT 067),,broad,E,,13,1,,,,19:30
@@ -109,12 +109,12 @@ date,slot,kind,title,type,role,format,hook,likes,comments,saved,reach,shares,pos
 2026-11-26,slot1,reel,산킷 뉴스 11월 26일 목요일 ⛰️,,broad,E,,7,0,,,,09:38
 2026-11-26,slot2,carousel,KIT 020 · SANKIT GUIDE,,broad,E,,8,0,,,,12:57
 2026-11-26,slot2,reel,KIT 020 · SANKIT GUIDE,,broad,E,,4,0,,,,12:57
-2026-11-26,slot3,carousel,두꺼운 양말이 더 따뜻하지 않습니다 (KIT 071),,broad,E,,10,1,,,,20:42
+2026-11-26,slot3,carousel,두꺼운 양말이 더 따뜻하지 않습니다 (KIT 071),,broad,E,,11,1,,,,20:42
 2026-11-26,slot4,carousel,"올해 마지막 캠핑 페스티벌, 할인은 오늘까지 (KIT 070)",,broad,E,,,,,,,09:41
 2026-11-26,slot5,carousel,"고카프, 내일 10시에 엽니다 — 그리고 정정합니다 (KIT 073)",,broad,E,,11,0,,,,16:03
-2026-11-27,slot1,carousel,산킷 뉴스 11월 27일 금요일 ⛰️,,broad,E,,11,0,,,,07:29
+2026-11-27,slot1,carousel,산킷 뉴스 11월 27일 금요일 ⛰️,,broad,E,,12,0,,,,07:29
 2026-11-27,slot1,reel,산킷 뉴스 11월 27일 금요일 ⛰️,,broad,E,,7,0,,,,07:29
-2026-11-27,slot2,carousel,"이번 토요일, 세계 스키장이 한꺼번에 엽니다 (KIT 075)",,broad,C,,9,0,,,,12:10
+2026-11-27,slot2,carousel,"이번 토요일, 세계 스키장이 한꺼번에 엽니다 (KIT 075)",,broad,C,,11,0,,,,12:10
 2026-11-27,slot3,carousel,"주말 정상 날씨 #3 — 일요일 태백산, 맑음에 -10℃ (KIT 074",weekly,broad,E,number,,,,,,13:21
-2026-11-28,slot1,carousel,산킷 뉴스 11월 28일 토요일 ⛰️,,broad,E,,2,0,,,,07:32
-2026-11-28,slot1,reel,산킷 뉴스 11월 28일 토요일 ⛰️,,broad,E,,3,0,,,,07:32
+2026-11-28,slot1,carousel,산킷 뉴스 11월 28일 토요일 ⛰️,,broad,E,,4,0,,,,07:32
+2026-11-28,slot1,reel,산킷 뉴스 11월 28일 토요일 ⛰️,,broad,E,,5,0,,,,07:32
