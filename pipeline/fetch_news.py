@@ -74,6 +74,32 @@ SOURCES = [
 ]
 
 
+
+# ── 잡음 거르기 (2026-11-28) ────────────────────────────────────────────
+# 커머스 글. "deal" 한 단어로 거르면 "Eldora $120M deal" 같은 진짜 업계 뉴스가
+# 같이 날아가므로, 상거래 표현만 콕 집는다.
+DROP = ('black friday', 'cyber monday', 'gift guide', 'best gifts', 'holiday gift',
+        '% off', 'discount code', 'coupon', 'deals:', 'deal of the day', 'on sale',
+        'best deals', 'deals for', 'ブラックフライデー', '블랙프라이데이')
+
+# 종합 매체는 우리 주제가 제목에 있어야 받는다.
+# (中国新闻网 체육은 농구·축구·무술까지 다 나오고, Traicy는 항공·호텔 매체다)
+NEED = {
+    '中国新闻网 体育': ('滑雪', '滑冰', '雪', '冰', '登山', '徒步', '自行车', '骑行',
+                      '单板', '双板', '越野', '冬奥', '冬运', '索道', '户外'),
+    'Traicy':        ('スキー', 'スノー', '雪', 'ゲレンデ', '登山', '山', 'アウトドア',
+                      '自転車', 'サイクリング', 'リフト', '白馬', 'ニセコ'),
+}
+
+def keep(name, title):
+    t = title.lower()
+    if any(d in t for d in DROP):
+        return False
+    need = NEED.get(name)
+    if need and not any(k in title for k in need):
+        return False
+    return True
+
 def txt(e, *tags):
     for t in tags:
         x = e.find(t)
@@ -143,17 +169,22 @@ def main():
             report.append(f'  {name:<22} 실패  {why}')
             continue
         n = 0
+        dropped = 0
         for pub, title, link in items[:30]:
             if pub and pub < cut:
                 continue
             if link in seen:
+                continue
+            if not keep(name, title):
+                dropped += 1
                 continue
             seen.add(link)
             fresh.append({'수집일': today.isoformat(),
                           '발행일': pub.date().isoformat() if pub else '',
                           '지역': region, '분야': field, '매체': name, '제목': title, '링크': link})
             n += 1
-        report.append(f'  {name:<22} 항목 {len(items):>3}개 · 새 글 {n:>3}개')
+        report.append(f'  {name:<22} 항목 {len(items):>3}개 · 새 글 {n:>3}개'
+                      + (f' · 거름 {dropped}개' if dropped else ''))
 
     keep = [r for r in old
             if not r.get('수집일') or
