@@ -22,15 +22,18 @@ jobs:
         with:
           python-version: "3.12"
       - name: Fetch
+        timeout-minutes: 8
         env:
           DATA_GO_KR_KEY: ${{ secrets.DATA_GO_KR_KEY }}
           KMA_KEY: ${{ secrets.KMA_KEY }}
         run: python pipeline/fetch_data.py
       - name: 해외 업계 소식 RSS 수집
         continue-on-error: true
+        timeout-minutes: 12
         run: python pipeline/fetch_news.py --days 14
       - name: 국내 소식 수집 (네이버 뉴스 검색)
         continue-on-error: true
+        timeout-minutes: 6
         env:
           NAVER_CLIENT_ID: ${{ secrets.NAVER_CLIENT_ID }}
           NAVER_CLIENT_SECRET: ${{ secrets.NAVER_CLIENT_SECRET }}

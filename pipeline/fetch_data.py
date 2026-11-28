@@ -181,15 +181,25 @@ def mountain_weather():
     if h is None:
         now -= datetime.timedelta(days=1); h = 23
     bd, bt = now.strftime("%Y%m%d"), f"{h:02d}00"
-    out = []
-    for n, name in MTN.items():
-        u = f"https://apihub.kma.go.kr/api/typ08/getMountainWeather?mountainNum={n}&base_date={bd}&base_time={bt}&authKey={kk}"
-        d = None
-        for _ in range(3):
+    # 114개 지점을 순차로 40초씩 기다리면 최악에 몇 시간이 걸린다(2026-11-28 실측 15분 초과).
+    # 동시에 던지고 타임아웃·재시도를 줄인다. 한 지점이 죽어도 전체는 돈다.
+    import concurrent.futures as _cf
+
+    def _one(item):
+        n, name = item
+        u = (f"https://apihub.kma.go.kr/api/typ08/getMountainWeather?mountainNum={n}"
+             f"&base_date={bd}&base_time={bt}&authKey={kk}")
+        for _ in range(2):
             try:
-                d = json.loads(urllib.request.urlopen(u, timeout=40).read()); break
+                return name, json.loads(urllib.request.urlopen(u, timeout=15).read())
             except Exception:
-                time.sleep(2)
+                time.sleep(1)
+        return name, None
+
+    out = []
+    with _cf.ThreadPoolExecutor(max_workers=8) as _ex:
+        _res = list(_ex.map(_one, MTN.items()))
+    for name, d in _res:
         if not isinstance(d, list) or not d:
             continue
         days = {}
