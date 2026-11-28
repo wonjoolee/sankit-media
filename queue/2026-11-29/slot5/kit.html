@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#ccc;font-family:'Noto Sans CJK KR','Noto Sans CJK JP',sans-serif;padding:40px;display:flex;flex-wrap:wrap;gap:40px;width:3600px}
+.card{width:1080px;height:1350px;position:relative;overflow:hidden;background:#F4F2EC;color:#141615}
+.mono{font-family:'DejaVu Sans Mono',monospace}
+.wm{position:absolute;left:56px;top:56px;font-size:30px;font-weight:900;letter-spacing:10px;z-index:3}
+.wm i{font-style:normal;font-weight:300;letter-spacing:4px;margin-left:10px;font-size:.55em;vertical-align:middle}
+.kit{position:absolute;right:56px;top:62px;font-size:20px;letter-spacing:3px;z-index:3}
+.kick{position:absolute;left:56px;font-size:22px;letter-spacing:3px;color:#8a5521;font-weight:700}
+.head{position:absolute;left:56px;font-weight:800;letter-spacing:-1.5px;line-height:1.22}
+.body{position:absolute;font-size:36px;line-height:1.6;font-weight:500;letter-spacing:-.8px}
+.body b{font-weight:900}
+.foot{position:absolute;left:56px;right:56px;bottom:46px;display:flex;justify-content:space-between;font-size:19px;letter-spacing:2px;color:#666;border-top:2px solid #141615;padding-top:16px}
+.dark{background:#141615;color:#F4F2EC}
+.dark .foot{border-color:#F4F2EC;color:#9a9f9c}
+.dark .kick{color:#d9a441}
+/* 사진: 원본 비율 그대로, 위에 아무것도 얹지 않음 */
+.photo{position:absolute;display:block}
+.cred{position:absolute;font-size:15px;letter-spacing:2px;color:#8b8f8c}
+.ring{position:absolute;border:4px solid #141615;border-radius:50%;overflow:hidden;background:#F4F2EC}
+.tick{position:absolute;height:3px;background:#141615}
+.dark .tick{background:#F4F2EC}
+.call{position:absolute;font-size:20px;letter-spacing:2px;line-height:1.5}
+.spec{position:absolute;left:660px;right:56px}
+.spec div{border-top:2px solid #3a3d3b;padding:18px 0 20px}
+.spec small{display:block;font-size:17px;letter-spacing:3px;color:#9a9f9c}
+.spec b{display:block;font-family:'Noto Sans CJK KR',sans-serif;font-size:50px;font-weight:900;letter-spacing:-1px;line-height:1.15;margin-top:4px}
+.spec b span{font-size:24px;font-weight:500;margin-left:6px;letter-spacing:0}
+
+/* ===== 표지(01) 새 형식 (2026-11-11): 사진 한 장 + 한국어 두 줄. 키커·KIT 번호·푸터 없음 ===== */
+.cover{background:#141615;color:#F4F2EC}
+.cover .bg{position:absolute;left:0;top:0;width:1080px;height:1350px;object-fit:cover;display:block}          /* 운영자·공공누리 사진만(자르기 허용) */
+.cover .grad{position:absolute;left:0;right:0;bottom:0;height:720px;background:linear-gradient(180deg,rgba(20,22,21,0) 0%,rgba(20,22,21,.55) 45%,rgba(20,22,21,.92) 100%)}
+.cover .press{position:absolute;left:0;top:0;width:1080px;height:860px;display:flex;align-items:center;justify-content:center;background:#141615}
+.cover .press img{max-width:1080px;max-height:860px;display:block}                                            /* 프레스 사진: 원본 비율, 위에 아무것도 얹지 않음 */
+.cover .wm{color:#F4F2EC;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+.cover .h2l{position:absolute;left:64px;right:64px;bottom:150px;font-size:76px;font-weight:900;line-height:1.22;letter-spacing:-2.5px;color:#F4F2EC;text-shadow:0 2px 12px rgba(0,0,0,.35)}
+.cover .lab{position:absolute;left:64px;bottom:80px;font-size:20px;letter-spacing:4px;color:rgba(244,242,236,.85)}
+.cover .cred{left:auto;right:64px;bottom:84px;top:auto;color:rgba(244,242,236,.6)}
+.cover .sub{position:absolute;left:64px;right:64px;bottom:128px;font-size:34px;font-weight:800;color:#F2C94C;letter-spacing:-.5px}
+.cover .sub ~ .h2l,.cover .h2l.withsub{bottom:192px}
+.cover .shade{position:absolute;left:0;right:0;top:0;height:220px;background:linear-gradient(180deg,rgba(20,22,21,.55),rgba(20,22,21,0))}
+</style></head><body>
+
+<!-- 01 표지 -->
+<div class="card" id="s1">
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="kit mono">KIT 077</div>
+  <div class="kick" style="top:420px">산킷 데이터 · 산 정상 기온</div>
+  <div class="head" style="top:470px;right:56px;font-size:96px">산 아래는 영상,<br>정상은 영하였다</div>
+  <div class="body" style="left:56px;right:56px;top:790px;font-size:34px;color:#4a4e4b">
+    11월 28일 기상청 산악예보 <b>114개 지점</b>을 전부 받아<br>
+    고도와 기온을 맞춰 봤습니다. 7도 차이가 났습니다.
+  </div>
+  <div class="foot mono"><span>SANKIT · DATA</span><span>@SANKITMAG</span></div>
+</div>
+
+<!-- 02 숫자 -->
+<div class="card dark" id="s2">
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="kit mono">02</div>
+  <div class="kick" style="top:300px">같은 날 아침, 같은 시각</div>
+  <div class="head" style="top:344px;right:56px;font-size:150px;letter-spacing:-6px">7.1도</div>
+  <div class="body" style="left:56px;right:56px;top:530px;font-size:33px;color:#c9cdca">
+    낮은 지점과 높은 지점의 최저기온 평균 차이입니다.
+  </div>
+  <div class="spec" style="left:56px;right:56px;top:650px">
+    <div><small>400M 미만 · 8곳 평균</small><b>+1.9℃</b><small style="letter-spacing:0;font-size:25px;color:#7f8481;margin-top:6px">월출산 관리사무소 84m · 치악산 구룡 265m</small></div>
+    <div><small>1400M 이상 · 10곳 평균</small><b>-5.2℃</b><small style="letter-spacing:0;font-size:25px;color:#7f8481;margin-top:6px">설악산 정상 1708m · 덕유산 정상 1614m</small></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:1130px;font-size:31px;color:#9a9f9c">
+    들머리에서 외투를 벗었다가 정상에서 떠는 이유입니다.
+  </div>
+  <div class="foot mono"><span>KMA 산악예보 2026.11.28</span><span>@SANKITMAG</span></div>
+</div>
+
+<!-- 03 규칙 -->
+<div class="card" id="s3">
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="kit mono">03</div>
+  <div class="kick" style="top:300px">어림잡는 법</div>
+  <div class="head" style="top:350px;right:56px;font-size:58px">100m 올라갈 때마다<br>약 0.5도</div>
+  <div class="body" style="left:56px;right:56px;top:560px;font-size:36px">
+    114개 지점을 회귀로 맞춰 보면 <b>100m당 0.45℃</b>가 떨어집니다.<br><br>
+    들머리 기온을 알면 정상을 어림할 수 있습니다.<br>
+    <b>고도차 ÷ 100 × 0.5</b>를 빼면 됩니다.
+  </div>
+  <div class="body" style="left:56px;right:56px;top:960px;font-size:32px;color:#4a4e4b">
+    예를 들어 들머리 600m에서 3℃, 정상이 1600m라면<br>
+    1000 ÷ 100 × 0.5 = <b>5도</b>를 빼서 <b>-2℃</b> 안팎.
+  </div>
+  <div class="foot mono"><span>SANKIT · DATA</span><span>@SANKITMAG</span></div>
+</div>
+
+<!-- 04 예외 -->
+<div class="card" id="s4">
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="kit mono">04</div>
+  <div class="kick" style="top:300px">그런데 높이가 전부는 아니다</div>
+  <div class="head" style="top:350px;right:56px;font-size:58px">한라산이<br>설악산보다 따뜻했다</div>
+  <div class="spec" style="left:56px;right:56px;top:620px">
+    <div style="border-color:#c9c5bb"><small style="color:#8b8f8c">한라산 정상 · 1950M</small><b style="color:#141615">-4℃<span style="color:#4a4e4b">더 높은데 더 따뜻했다</span></b></div>
+    <div style="border-color:#c9c5bb"><small style="color:#8b8f8c">설악산 정상 · 1708M</small><b style="color:#141615">-8℃<span style="color:#4a4e4b">242m 낮은데 4도 더 춥다</span></b></div>
+  </div>
+  <div class="body" style="left:56px;right:56px;top:1010px;font-size:32px;color:#4a4e4b">
+    고도만으로 설명되는 건 <b>3분의 1</b> 정도입니다. 나머지는 위도와
+    바람, 그날의 기압계가 정합니다. 그래서 <b>어림은 어림으로만</b> 쓰십시오.
+  </div>
+  <div class="foot mono"><span>SANKIT · DATA</span><span>@SANKITMAG</span></div>
+</div>
+
+<!-- 05 마무리 -->
+<div class="card dark" id="s5">
+  <div class="wm">SANKIT<i>산킷</i></div>
+  <div class="kit mono">05</div>
+  <div class="kick" style="top:330px">출발 전에</div>
+  <div class="head" style="top:380px;right:56px;font-size:54px">정상 기온은<br>따로 있습니다</div>
+  <div class="body" style="left:56px;right:56px;top:620px;font-size:34px;color:#c9cdca">
+    보통 보는 동네예보는 <b>산 아래</b> 값입니다.<br>
+    기상청은 산 정상부만 따로 예보합니다 — <b>114개 지점</b>.<br><br>
+    기상청 날씨누리에서 <b>산악 예보</b>로 찾으면 나옵니다.
+  </div>
+  <div class="call" style="left:56px;right:56px;top:1010px;font-size:30px;color:#d9a441">
+    저장해 두셨다가 산에 가기 전날 한 번 보십시오.
+  </div>
+  <div class="body" style="left:56px;right:56px;top:1100px;font-size:28px;color:#9a9f9c">
+    산킷은 스키장과 산의 숫자를 매일 직접 받아 정리합니다.<br>
+    아침 7시 30분에 하루치 뉴스를 올립니다.
+  </div>
+  <div class="foot mono"><span>KMA 산악예보 2026.11.28</span><span>@SANKITMAG</span></div>
+</div>
+
+</body></html>
