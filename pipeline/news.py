@@ -138,14 +138,12 @@ def build(d0):
                  - datetime.fromisoformat(mw['fetched_at'])).total_seconds() / 3600
         if age_h <= 18:
             cand = []
-            for name, dd in mw['data'].get('mountains', {}).items() if isinstance(mw['data'].get('mountains'), dict) else []:
-                pass
-            ms = mw['data'].get('mountains', [])
-            for m in (ms if isinstance(ms, list) else []):
-                nm = m.get('stn_nm') or m.get('name')
-                t = m.get('tmin')
-                if nm and t is not None and '정상' in str(nm):
-                    cand.append((str(nm).replace('(정상)', ''), float(t)))
+            for m in mw['data'].get('mountains', []):
+                nm = m.get('name') or m.get('station') or ''
+                dd = (m.get('days') or {}).get(k) or {}
+                t = dd.get('tmin')
+                if '정상' in nm and t is not None:
+                    cand.append((nm.replace('(정상)', ''), float(t), m.get('alt', '')))
             cand.sort(key=lambda x: x[1])
             if len(cand) >= 2 and cand[0][1] <= -3:
                 peak = cand
@@ -153,8 +151,9 @@ def build(d0):
         peak = None
 
     if peak:
-        lines.append(f"오늘 가장 추운 산 정상 — {peak[0][0]} <b>{peak[0][1]:.0f}℃</b>, "
-                     f"{peak[1][0]} <b>{peak[1][1]:.0f}℃</b>")
+        a, b = peak[0], peak[1]
+        lines.append(f"오늘 가장 추운 산 정상 — {a[0]} {a[2]}m <b>{a[1]:.0f}℃</b>, "
+                     f"{b[0]} <b>{b[1]:.0f}℃</b>")
     else:
         mt = [(n, f(day(n,k).get('TMN'))) for n in MTN if day(n,k)]
         mt = [t for t in mt if t[1] is not None]
@@ -237,6 +236,12 @@ def build(d0):
     # 대표님 지시(2026-11-25): 날씨와 업계·행사 소식의 비율은 3:7.
     # 사흘 안에 끝나는 일정은 브랜드 소식보다 앞에 둔다. 나머지 일정은 뒤로.
     industry = locals().get('industry', [])
+    # 2026-11-28: 산 정상 기온은 산킷만 가진 줄이다(기상청 산악예보 113지점).
+    # 날씨 3줄 제한에 잘려 나가지 않도록 앞으로 끌어올린다.
+    _peak = [l for l in wx if '가장 추운 산 정상' in l]
+    if _peak:
+        wx = _peak + [l for l in wx if l not in _peak]
+        wx = wx[1:2] + wx[0:1] + wx[2:]      # 1순위는 변화(급등·비), 정상 기온은 2순위
     out = wx[:WX_N] + ['## 업계 · 행사'] + (urgent + industry + etc)[:ETC_N]
     return out, base
 
